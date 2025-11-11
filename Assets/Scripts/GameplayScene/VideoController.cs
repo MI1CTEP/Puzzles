@@ -1,35 +1,31 @@
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.Events;
-using Zenject;
 
-namespace MyGame
+namespace MyGame.Gameplay
 {
-    public sealed class VideoController : MonoBehaviour
+    public sealed class VideoController : MonoBehaviour, IGameStage
     {
         private VideoPlayer _videoPlayer;
 
         public UnityAction OnEnd { get; set; }
 
-        [Inject]
-        private void Initialize()
+        public void Init()
         {
             _videoPlayer = GetComponent<VideoPlayer>();
             _videoPlayer.loopPointReached += OnVideoFinished;
         }
 
-        public void SetVideoClip(VideoClip videoClip)
+        public void Play(ScenarioStage scenarioStage)
         {
-            _videoPlayer.clip = videoClip;
-        }
-
-        public void Play()
-        {
+            gameObject.SetActive(true);
+            _videoPlayer.clip = scenarioStage.VideoClip;
             _videoPlayer.Play();
         }
 
         private void OnVideoFinished(VideoPlayer vp)
         {
+            gameObject.SetActive(false);
             OnEnd?.Invoke();
         }
 

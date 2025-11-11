@@ -1,9 +1,8 @@
 using UnityEngine;
-using Zenject;
 
 namespace MyGame.Gameplay.Puzzle
 {
-    public sealed class PuzzleBackground : IInitializable
+    public sealed class PuzzleBackground
     {
         private SpriteMask _spriteMask;
         private SpriteRenderer _spriteRenderer;
@@ -12,10 +11,7 @@ namespace MyGame.Gameplay.Puzzle
         public PuzzleBackground(Transform puzzleParent)
         {
             _puzzleParent = puzzleParent;
-        }
 
-        public void Initialize()
-        {
             GameObject mask = new("Mask");
             _spriteMask = mask.AddComponent<SpriteMask>();
             _spriteMask.transform.SetParent(_puzzleParent);

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cafc7164d880b874dbedcf52bc5df330, type: 3}
+  m_Name: Scenario_1
+  m_EditorClassIdentifier: 
+  _scenarioStages:
+  - _typeStage: 0
+    _sprite: {fileID: 21300000, guid: 4af133f2c23758949b464d249edc82ae, type: 3}
+    _puzzleValueX: 0
+    _videoClip: {fileID: 0}
+    _dialogue:
+      _firstPhrase: {fileID: 0}
+      _phraseVariants: []
+  - _typeStage: 1
+    _sprite: {fileID: 21300000, guid: 4af133f2c23758949b464d249edc82ae, type: 3}
+    _puzzleValueX: 2
+    _videoClip: {fileID: 0}
+    _dialogue:
+      _firstPhrase: {fileID: 0}
+      _phraseVariants: []
+  - _typeStage: 2
+    _sprite: {fileID: 21300000, guid: 4af133f2c23758949b464d249edc82ae, type: 3}
+    _puzzleValueX: 2
+    _videoClip: {fileID: 32900000, guid: 8ca1c3005a165554c80fe103037ad01d, type: 3}
+    _dialogue:
+      _firstPhrase: {fileID: 0}
+      _phraseVariants: []
+  - _typeStage: 1
+    _sprite: {fileID: 21300000, guid: b8d25e605ba36fd4bb211450087eb7ea, type: 3}
+    _puzzleValueX: 3
+    _videoClip: {fileID: 32900000, guid: 8ca1c3005a165554c80fe103037ad01d, type: 3}
+    _dialogue:
+      _firstPhrase: {fileID: 0}
+      _phraseVariants: []
+  - _typeStage: 2
+    _sprite: {fileID: 21300000, guid: 4af133f2c23758949b464d249edc82ae, type: 3}
+    _puzzleValueX: 2
+    _videoClip: {fileID: 32900000, guid: 39f49433bc1a6e64c8f2e4098d9dc84c, type: 3}
+    _dialogue:
+      _firstPhrase: {fileID: 0}
+      _phraseVariants: []
