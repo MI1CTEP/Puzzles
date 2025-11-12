@@ -81,6 +81,11 @@ namespace MyGame.Gameplay.Dialogue
 
         private void SetSecondPhrase(int id)
         {
+            if(_simpleDialogue.PhraseVariants[id].SecondPhrase == null)
+            {
+                End();
+                return;
+            }
             SetPhrase(_simpleDialogue.PhraseVariants[id].SecondPhrase, false, End);
         }
 
