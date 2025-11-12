@@ -1,6 +1,6 @@
 using UnityEngine.Events;
 
-namespace MyGame
+namespace MyGame.Gameplay
 {
     public interface IGameStage
     {

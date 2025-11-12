@@ -1,5 +1,6 @@
 using UnityEngine;
 using MyGame.Gameplay.Puzzle;
+using MyGame.Gameplay.Dialogue;
 
 namespace MyGame.Gameplay
 {
@@ -9,6 +10,7 @@ namespace MyGame.Gameplay
         [SerializeField] private VideoController _videoController;
         [SerializeField] private PuzzleController _puzzleController;
         [SerializeField] private BackgroundController _backgroundController;
+        [SerializeField] private DialogueController _dialogueController;
         [SerializeField] private CameraController _cameraController;
 
         private ScenarioStage _currentScenarioStage;
@@ -26,6 +28,7 @@ namespace MyGame.Gameplay
             _videoController.Init();
             _puzzleController.Init();
             _backgroundController.Init();
+            _dialogueController.Init();
             _cameraController.Init();
         }
 
@@ -43,11 +46,6 @@ namespace MyGame.Gameplay
 
             switch (_currentScenarioStage.TypeStage)
             {
-                case TypeStage.SetSprite:
-                    _cameraController.UpdateSize(_currentScenarioStage.Sprite.texture.width);
-                    _currentGameStage = _backgroundController;
-                    StartNextStage();
-                    break;
                 case TypeStage.SetPuzzle:
                     _currentGameStage = _puzzleController;
                     StartNextStage();
@@ -57,6 +55,10 @@ namespace MyGame.Gameplay
                     StartNextStage();
                     break;
                 case TypeStage.SetDialogue:
+                    _currentGameStage = _dialogueController;
+                    _cameraController.UpdateSize(_currentScenarioStage.Sprite.texture.width);
+                    _backgroundController.SetSprite(_currentScenarioStage.Sprite);
+                    StartNextStage();
                     break;
                 default:
                     End();

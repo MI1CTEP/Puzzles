@@ -13,38 +13,51 @@ MonoBehaviour:
   m_Name: Scenario_1
   m_EditorClassIdentifier: 
   _scenarioStages:
-  - _typeStage: 0
+  - _typeStage: 2
     _sprite: {fileID: 21300000, guid: 4af133f2c23758949b464d249edc82ae, type: 3}
     _puzzleValueX: 0
     _videoClip: {fileID: 0}
-    _dialogue:
-      _firstPhrase: {fileID: 0}
-      _phraseVariants: []
-  - _typeStage: 1
+    _simpleDialogue:
+      _firstPhrase: {fileID: 11400000, guid: 118b02050d8b4844e9d911a2f18efa8e, type: 2}
+      _phraseVariants:
+      - _answer: {fileID: 11400000, guid: 74bae130889e2784397160f6d6ed6a33, type: 2}
+        _respect: 0
+        _secondPhrase: {fileID: 11400000, guid: 93794f3b23dbfb3438d2c547f59a1212, type: 2}
+      - _answer: {fileID: 11400000, guid: d743a55f82a7e444dab9c29e4f8e8eb6, type: 2}
+        _respect: 0
+        _secondPhrase: {fileID: 11400000, guid: be6ac2d862321d746b665bb5e4ba53e1, type: 2}
+      - _answer: {fileID: 11400000, guid: 759770307ae1aaa4f8fa81f7773e05c3, type: 2}
+        _respect: 0
+        _secondPhrase: {fileID: 11400000, guid: 8193868074e440d4bbfa9f2683113628, type: 2}
+  - _typeStage: 0
     _sprite: {fileID: 21300000, guid: 4af133f2c23758949b464d249edc82ae, type: 3}
     _puzzleValueX: 2
     _videoClip: {fileID: 0}
-    _dialogue:
-      _firstPhrase: {fileID: 0}
-      _phraseVariants: []
-  - _typeStage: 2
-    _sprite: {fileID: 21300000, guid: 4af133f2c23758949b464d249edc82ae, type: 3}
-    _puzzleValueX: 2
-    _videoClip: {fileID: 32900000, guid: 8ca1c3005a165554c80fe103037ad01d, type: 3}
-    _dialogue:
-      _firstPhrase: {fileID: 0}
-      _phraseVariants: []
+    _simpleDialogue:
+      _firstPhrase: {fileID: 11400000, guid: 118b02050d8b4844e9d911a2f18efa8e, type: 2}
+      _phraseVariants:
+      - _answer: {fileID: 11400000, guid: 74bae130889e2784397160f6d6ed6a33, type: 2}
+        _respect: 0
+        _secondPhrase: {fileID: 11400000, guid: 93794f3b23dbfb3438d2c547f59a1212, type: 2}
+      - _answer: {fileID: 11400000, guid: d743a55f82a7e444dab9c29e4f8e8eb6, type: 2}
+        _respect: 0
+        _secondPhrase: {fileID: 11400000, guid: be6ac2d862321d746b665bb5e4ba53e1, type: 2}
+      - _answer: {fileID: 11400000, guid: 759770307ae1aaa4f8fa81f7773e05c3, type: 2}
+        _respect: 0
+        _secondPhrase: {fileID: 11400000, guid: 8193868074e440d4bbfa9f2683113628, type: 2}
   - _typeStage: 1
-    _sprite: {fileID: 21300000, guid: b8d25e605ba36fd4bb211450087eb7ea, type: 3}
-    _puzzleValueX: 3
-    _videoClip: {fileID: 32900000, guid: 8ca1c3005a165554c80fe103037ad01d, type: 3}
-    _dialogue:
-      _firstPhrase: {fileID: 0}
-      _phraseVariants: []
-  - _typeStage: 2
     _sprite: {fileID: 21300000, guid: 4af133f2c23758949b464d249edc82ae, type: 3}
     _puzzleValueX: 2
-    _videoClip: {fileID: 32900000, guid: 39f49433bc1a6e64c8f2e4098d9dc84c, type: 3}
-    _dialogue:
-      _firstPhrase: {fileID: 0}
-      _phraseVariants: []
+    _videoClip: {fileID: 32900000, guid: 8ca1c3005a165554c80fe103037ad01d, type: 3}
+    _simpleDialogue:
+      _firstPhrase: {fileID: 11400000, guid: 118b02050d8b4844e9d911a2f18efa8e, type: 2}
+      _phraseVariants:
+      - _answer: {fileID: 11400000, guid: 74bae130889e2784397160f6d6ed6a33, type: 2}
+        _respect: 0
+        _secondPhrase: {fileID: 11400000, guid: 93794f3b23dbfb3438d2c547f59a1212, type: 2}
+      - _answer: {fileID: 11400000, guid: d743a55f82a7e444dab9c29e4f8e8eb6, type: 2}
+        _respect: 0
+        _secondPhrase: {fileID: 11400000, guid: be6ac2d862321d746b665bb5e4ba53e1, type: 2}
+      - _answer: {fileID: 11400000, guid: 759770307ae1aaa4f8fa81f7773e05c3, type: 2}
+        _respect: 0
+        _secondPhrase: {fileID: 11400000, guid: 8193868074e440d4bbfa9f2683113628, type: 2}

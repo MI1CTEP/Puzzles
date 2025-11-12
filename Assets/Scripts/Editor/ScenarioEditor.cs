@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-using UnityEngine.Video;
 using UnityEditor;
 
-namespace MyGame
+namespace MyGame.Gameplay
 {
     [CustomEditor(typeof(Scenario))]
     public sealed class ScenarioEditor : Editor
@@ -40,10 +39,6 @@ namespace MyGame
 
                 switch ((TypeStage)typeStage.enumValueIndex)
                 {
-                    case TypeStage.SetSprite:
-                        EditorGUILayout.PropertyField(sprite);
-                        break;
-
                     case TypeStage.SetPuzzle:
                         EditorGUILayout.PropertyField(sprite);
                         EditorGUILayout.PropertyField(puzzleValueX);
@@ -54,7 +49,8 @@ namespace MyGame
                         break;
 
                     case TypeStage.SetDialogue:
-                        SerializedProperty dialogue = stage.FindPropertyRelative("_dialogue");
+                        EditorGUILayout.PropertyField(sprite);
+                        SerializedProperty dialogue = stage.FindPropertyRelative("_simpleDialogue");
                         SerializedProperty firstPhrase = dialogue.FindPropertyRelative("_firstPhrase");
                         EditorGUILayout.PropertyField(firstPhrase);
                         SerializedProperty phraseVariantsProp = dialogue.FindPropertyRelative("_phraseVariants");

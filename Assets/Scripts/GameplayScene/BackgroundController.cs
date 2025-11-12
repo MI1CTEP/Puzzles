@@ -3,21 +3,18 @@ using UnityEngine.Events;
 
 namespace MyGame.Gameplay
 {
-    public sealed class BackgroundController : MonoBehaviour, IGameStage
+    public sealed class BackgroundController : MonoBehaviour
     {
         private SpriteRenderer _spriteRenderer;
-
-        public UnityAction OnEnd { get; set; }
 
         public void Init()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
-        public void Play(ScenarioStage scenarioStage)
+        public void SetSprite(Sprite sprite)
         {
-            _spriteRenderer.sprite = scenarioStage.Sprite;
-            OnEnd?.Invoke();
+            _spriteRenderer.sprite = sprite;
         }
     }
 }

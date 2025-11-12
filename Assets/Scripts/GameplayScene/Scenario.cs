@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace MyGame
+namespace MyGame.Gameplay
 {
     [CreateAssetMenu(menuName = "ScriptableObjects/Scenario")]
     public sealed class Scenario : ScriptableObject

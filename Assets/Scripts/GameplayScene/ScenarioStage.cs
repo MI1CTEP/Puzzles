@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.Video;
+using MyGame.Gameplay.Dialogue;
 
-namespace MyGame
+namespace MyGame.Gameplay
 {
     [System.Serializable]
     public sealed class ScenarioStage
@@ -10,16 +11,17 @@ namespace MyGame
         [SerializeField] private Sprite _sprite;
         [SerializeField] private int _puzzleValueX;
         [SerializeField] private VideoClip _videoClip;
-        [SerializeField] private Dialogue _dialogue;
+        [SerializeField] private SimpleDialogue _simpleDialogue;
 
         public TypeStage TypeStage => _typeStage;
         public Sprite Sprite => _sprite;
         public int PuzzleValueX => _puzzleValueX;
         public VideoClip VideoClip => _videoClip;
+        public SimpleDialogue SimpleDialogue => _simpleDialogue;
     }
 
     public enum TypeStage
     {
-        SetSprite, SetPuzzle, SetVideo, SetDialogue
+        SetPuzzle, SetVideo, SetDialogue
     }
 }
