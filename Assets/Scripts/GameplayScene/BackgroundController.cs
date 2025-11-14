@@ -1,20 +1,41 @@
 using UnityEngine;
-using UnityEngine.Events;
+using DG.Tweening;
 
 namespace MyGame.Gameplay
 {
     public sealed class BackgroundController : MonoBehaviour
     {
-        private SpriteRenderer _spriteRenderer;
+        [SerializeField] private SpriteRenderer _frontSprite;
+        [SerializeField] private SpriteRenderer _backSprite;
 
-        public void Init()
+        private Sprite _newSprite;
+        private Sequence _seq;
+        private Color _clearColor = new(1, 1, 1, 0);
+        private float _timeAnim = 0.3f;
+
+        public void SetSprite(Sprite sprite, bool isAnim)
         {
-            _spriteRenderer = GetComponent<SpriteRenderer>();
+            if (isAnim)
+            {
+                _frontSprite.sprite = _backSprite.sprite;
+                _frontSprite.color = Color.white;
+
+                _backSprite.sprite = sprite;
+
+                _seq.Kill();
+                _seq = DOTween.Sequence();
+                _seq.Insert(0, _frontSprite.DOFade(0, _timeAnim));
+            }
+            else
+            {
+                _backSprite.sprite = sprite;
+                _frontSprite.color = _clearColor;
+            }
         }
 
-        public void SetSprite(Sprite sprite)
+        private void OnDestroy()
         {
-            _spriteRenderer.sprite = sprite;
+            _seq.Kill();
         }
     }
 }

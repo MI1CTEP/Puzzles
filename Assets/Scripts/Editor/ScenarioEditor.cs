@@ -17,6 +17,7 @@ namespace MyGame.Gameplay
                 SerializedProperty stage = stagesProp.GetArrayElementAtIndex(i);
                 SerializedProperty typeStage = stage.FindPropertyRelative("_typeStage");
                 SerializedProperty sprite = stage.FindPropertyRelative("_sprite");
+                SerializedProperty isAnim = stage.FindPropertyRelative("_isAnim");
                 SerializedProperty puzzleValueX = stage.FindPropertyRelative("_puzzleValueX");
                 SerializedProperty videoClip = stage.FindPropertyRelative("_videoClip");
                 EditorGUILayout.BeginVertical("Box");
@@ -40,7 +41,7 @@ namespace MyGame.Gameplay
                 switch ((TypeStage)typeStage.enumValueIndex)
                 {
                     case TypeStage.SetPuzzle:
-                        EditorGUILayout.PropertyField(sprite);
+                        ShowSprite(sprite, isAnim);
                         EditorGUILayout.PropertyField(puzzleValueX);
                         break;
 
@@ -49,7 +50,7 @@ namespace MyGame.Gameplay
                         break;
 
                     case TypeStage.SetDialogue:
-                        EditorGUILayout.PropertyField(sprite);
+                        ShowSprite(sprite, isAnim);
                         SerializedProperty dialogue = stage.FindPropertyRelative("_simpleDialogue");
                         SerializedProperty firstPhrase = dialogue.FindPropertyRelative("_firstPhrase");
                         EditorGUILayout.PropertyField(firstPhrase);
@@ -99,6 +100,17 @@ namespace MyGame.Gameplay
             }
 
             serializedObject.ApplyModifiedProperties();
+        }
+
+        private void ShowSprite(SerializedProperty sprite, SerializedProperty isAnim)
+        {
+            EditorGUILayout.BeginHorizontal();
+            GUILayout.Label("Sprite", GUILayout.Width(40));
+            EditorGUILayout.PropertyField(sprite, GUIContent.none, GUILayout.Width(150));
+            GUILayout.Space(20);
+            GUILayout.Label("Is anim", GUILayout.Width(50));
+            EditorGUILayout.PropertyField(isAnim, GUIContent.none);
+            EditorGUILayout.EndHorizontal();
         }
     }
 }

@@ -27,7 +27,6 @@ namespace MyGame.Gameplay
         {
             _videoController.Init();
             _puzzleController.Init();
-            _backgroundController.Init();
             _dialogueController.Init();
             _cameraController.Init();
         }
@@ -57,7 +56,7 @@ namespace MyGame.Gameplay
                 case TypeStage.SetDialogue:
                     _currentGameStage = _dialogueController;
                     _cameraController.UpdateSize(_currentScenarioStage.Sprite.texture.width);
-                    _backgroundController.SetSprite(_currentScenarioStage.Sprite);
+                    _backgroundController.SetSprite(_currentScenarioStage.Sprite, _currentScenarioStage.IsAnim);
                     StartNextStage();
                     break;
                 default:
