@@ -24,6 +24,6 @@ namespace MyGame.Gameplay
 
     public enum TypeStage
     {
-        SetPuzzle, SetVideo, SetDialogue
+        SetPuzzle, SetVideo, SetDialogue, SetGiftsGiver
     }
 }

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ab78591e63a124bae69d25240f9b20, type: 3}
+  m_Name: GiftsSettings
+  m_EditorClassIdentifier: 
+  _giftsGroups:
+  - outlineColor: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
+    sprites:
+    - {fileID: 21300000, guid: ec26ade6d0359b34ebed6042dd869c7f, type: 3}
+    - {fileID: 21300000, guid: 1f5e53908c7865c418c9be0da827b4f1, type: 3}
+    - {fileID: 21300000, guid: 15815cf6d0e61764bab10f6aa8ba149d, type: 3}
+    - {fileID: 21300000, guid: 0ffe15ceede992248b56959b1f9eff2b, type: 3}
+    - {fileID: 21300000, guid: 195f249a36e936c419b8db128c9b907c, type: 3}
+    - {fileID: 21300000, guid: db4a9541e152b814087d475abc43f6ff, type: 3}
+    - {fileID: 21300000, guid: d9420184406b90b4f97522339d49896e, type: 3}
+    - {fileID: 21300000, guid: 8bb09e5fb345d7343a86adad49bda086, type: 3}
+    - {fileID: 21300000, guid: 0bca85f2c612fcd4abba01aa06564e6b, type: 3}
+    quantityInRoulette: 5
+    respect: 1
+  - outlineColor: {r: 0.19433957, g: 0.6319275, b: 1, a: 1}
+    sprites:
+    - {fileID: 21300000, guid: b939a1949ee66c040affdba6d477a702, type: 3}
+    - {fileID: 21300000, guid: 11c4f057449da974eab861877e7fab97, type: 3}
+    - {fileID: 21300000, guid: 47197d13c7ba7aa46b2f8cc884591475, type: 3}
+    - {fileID: 21300000, guid: 25ecb198a40e5e84a957342384f4bd05, type: 3}
+    - {fileID: 21300000, guid: 826a1e7e90f83174d8715339ef55e1a9, type: 3}
+    - {fileID: 21300000, guid: d579daf07d05461438da4f0fb133fe30, type: 3}
+    - {fileID: 21300000, guid: 6d5e475432fcd4448a5b7bbbd0e81b34, type: 3}
+    quantityInRoulette: 3
+    respect: 2
+  - outlineColor: {r: 0.9526746, g: 0.20943397, b: 1, a: 1}
+    sprites:
+    - {fileID: 21300000, guid: c499ff17c6cb8f847a36dbcd2ed30148, type: 3}
+    - {fileID: 21300000, guid: 95b167650905f82479b4acb5caac6a29, type: 3}
+    - {fileID: 21300000, guid: 4c989200f341d2041a8e433be91dd8da, type: 3}
+    - {fileID: 21300000, guid: 8eb6e0a01a852624db48d88ab3cee266, type: 3}
+    - {fileID: 21300000, guid: 57cf15eb1c2c267488fd1a6e5afc1b30, type: 3}
+    - {fileID: 21300000, guid: d6e1db3b417295a41abdc3a66c1966d4, type: 3}
+    quantityInRoulette: 2
+    respect: 5
+  - outlineColor: {r: 0.98490566, g: 0.697358, b: 0.24343893, a: 1}
+    sprites:
+    - {fileID: 21300000, guid: 6661b7b035ba96c429c60f5bed4fa1ef, type: 3}
+    - {fileID: 21300000, guid: f485a1d3f88842f4e8f935a5ec78d728, type: 3}
+    - {fileID: 21300000, guid: 538a499c7d2fcc4438cf9fce6ea2270d, type: 3}
+    quantityInRoulette: 1
+    respect: 10

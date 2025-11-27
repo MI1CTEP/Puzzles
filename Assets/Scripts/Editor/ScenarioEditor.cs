@@ -90,6 +90,9 @@ namespace MyGame.Gameplay
                             phraseVariantsProp.arraySize++;
                         }
                         break;
+                    case TypeStage.SetGiftsGiver:
+                        ShowSprite(sprite, isAnim);
+                        break;
                 }
                 EditorGUILayout.EndVertical();
             }

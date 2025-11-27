@@ -12,6 +12,7 @@ namespace MyGame.Gameplay.Dialogue
         [SerializeField] private Button _continueButton;
         [SerializeField] private float _offsetAnswers;
 
+        private ScaleOfSympathy _scaleOfSympathy;
         private SimpleDialogue _simpleDialogue;
         private PhraseButton[] _phraseButtons;
         private DialogueAnim _anim;
@@ -19,8 +20,9 @@ namespace MyGame.Gameplay.Dialogue
 
         public UnityAction OnEnd { get; set; }
 
-        public void Init()
+        public void Init(ScaleOfSympathy scaleOfSympathy)
         {
+            _scaleOfSympathy = scaleOfSympathy;
             _anim = new(_messageHistory);
             _continueButton.onClick.AddListener(End);
             _continueButton.gameObject.SetActive(false);
@@ -73,6 +75,7 @@ namespace MyGame.Gameplay.Dialogue
         private void SetAnswer(int id)
         {
             SetPhrase(_simpleDialogue.PhraseVariants[id].Answer, true, () => SetSecondPhrase(id));
+            _scaleOfSympathy.AddValue(_simpleDialogue.PhraseVariants[id].Respect);
             TryDestroyPhraseButtons();
         }
 
