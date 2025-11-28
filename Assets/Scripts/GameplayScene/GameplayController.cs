@@ -55,6 +55,8 @@ namespace MyGame.Gameplay
                 case TypeStage.SetPuzzle:
                     _currentGameStage = _puzzleController;
                     _scaleOfSympathy.Hide();
+                    _cameraController.UpdateSize(_currentScenarioStage.Sprite.texture.width);
+                    _backgroundController.SetSprite(_currentScenarioStage.Sprite, _currentScenarioStage.IsAnim);
                     StartNextStage();
                     break;
                 case TypeStage.SetVideo:

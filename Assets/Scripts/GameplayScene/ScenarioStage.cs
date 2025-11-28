@@ -10,14 +10,18 @@ namespace MyGame.Gameplay
         [SerializeField] private TypeStage _typeStage;
         [SerializeField] private Sprite _sprite;
         [SerializeField] private bool _isAnim;
-        [SerializeField] private int _puzzleValueX;
+        [SerializeField] private int _puzzleValueXEasy = 3;
+        [SerializeField] private int _puzzleValueXMedium = 4;
+        [SerializeField] private int _puzzleValueXHard = 6;
         [SerializeField] private VideoClip _videoClip;
         [SerializeField] private SimpleDialogue _simpleDialogue;
 
         public TypeStage TypeStage => _typeStage;
         public Sprite Sprite => _sprite;
         public bool IsAnim => _isAnim;
-        public int PuzzleValueX => _puzzleValueX;
+        public int PuzzleValueXEasy => _puzzleValueXEasy;
+        public int PuzzleValueXMedium => _puzzleValueXMedium;
+        public int PuzzleValueXHard => _puzzleValueXHard;
         public VideoClip VideoClip => _videoClip;
         public SimpleDialogue SimpleDialogue => _simpleDialogue;
     }

@@ -18,7 +18,9 @@ namespace MyGame.Gameplay
                 SerializedProperty typeStage = stage.FindPropertyRelative("_typeStage");
                 SerializedProperty sprite = stage.FindPropertyRelative("_sprite");
                 SerializedProperty isAnim = stage.FindPropertyRelative("_isAnim");
-                SerializedProperty puzzleValueX = stage.FindPropertyRelative("_puzzleValueX");
+                SerializedProperty puzzleValueXEasy = stage.FindPropertyRelative("_puzzleValueXEasy");
+                SerializedProperty puzzleValueXMedium = stage.FindPropertyRelative("_puzzleValueXMedium");
+                SerializedProperty puzzleValueXHard = stage.FindPropertyRelative("_puzzleValueXHard");
                 SerializedProperty videoClip = stage.FindPropertyRelative("_videoClip");
                 EditorGUILayout.BeginVertical("Box");
 
@@ -42,7 +44,9 @@ namespace MyGame.Gameplay
                 {
                     case TypeStage.SetPuzzle:
                         ShowSprite(sprite, isAnim);
-                        EditorGUILayout.PropertyField(puzzleValueX);
+                        EditorGUILayout.PropertyField(puzzleValueXEasy);
+                        EditorGUILayout.PropertyField(puzzleValueXMedium);
+                        EditorGUILayout.PropertyField(puzzleValueXHard);
                         break;
 
                     case TypeStage.SetVideo:

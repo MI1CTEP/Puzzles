@@ -7,6 +7,7 @@ namespace MyGame.Gameplay.Puzzle
     public sealed class PuzzleController : MonoBehaviour, IGameStage
     {
         [SerializeField] private PuzzlePart _partPrefab;
+        [SerializeField] private PuzzleChoices _puzzleChoices;
 
         private PuzzleBoard _board;
         private PuzzlePartsPool _partsPool;
@@ -14,6 +15,7 @@ namespace MyGame.Gameplay.Puzzle
         private PuzzleMixer _mixer;
         private PuzzleBackground _background;
         private PuzzlePart[,] _parts;
+        private ScenarioStage _scenarioStage;
         private Vector2Int _partsLength;
 
         public UnityAction OnEnd { get; set; }
@@ -25,17 +27,24 @@ namespace MyGame.Gameplay.Puzzle
             _partsGenerator = new(_partsPool, transform);
             _mixer = new();
             _background = new(transform);
+            _puzzleChoices.Init(this);
         }
 
         public void Play(ScenarioStage scenarioStage)
         {
+            _scenarioStage = scenarioStage;
             gameObject.SetActive(true);
 
             for (int y = 0; y < _partsLength.y; y++)
                 for (int x = 0; x < _partsLength.x; x++)
                     _partsPool.Return(_parts[x, y]);
 
-            _parts = _partsGenerator.GetPuzzleParts(scenarioStage.Sprite.texture, scenarioStage.PuzzleValueX);
+            _puzzleChoices.Open(scenarioStage);
+        }
+
+        public void StartGameplay(int puzzleValueX)
+        {
+            _parts = _partsGenerator.GetPuzzleParts(_scenarioStage.Sprite.texture, puzzleValueX);
             _partsLength = new(_parts.GetUpperBound(0) + 1, _parts.GetUpperBound(1) + 1);
             _board.ResetProgress();
             _board.SetParts(_parts, _partsLength);
@@ -43,7 +52,6 @@ namespace MyGame.Gameplay.Puzzle
             _board.SetPartsPosition();
             _board.OnComplete += End;
             _background.SetMask(_partsLength * _partsGenerator.PartSize);
-            _background.SetBackground(scenarioStage.Sprite.texture);
         }
 
         private void End()
