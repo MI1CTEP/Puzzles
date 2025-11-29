@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f0b0c553be8edd4682e9180fdd13e37, type: 3}
+  m_Name: I2Languages
+  m_EditorClassIdentifier: 
+  mSource:
+    UserAgreesToHaveItOnTheScene: 0
+    UserAgreesToHaveItInsideThePluginsFolder: 0
+    GoogleLiveSyncIsUptoDate: 1
+    mTerms:
+    - Term: "\u0421\u0442\u0430\u0440\u0442"
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0421\u0442\u0430\u0440\u0442"
+      - Start
+      - Start
+      - "\u5F00\u59CB"
+      - "D\xE9marrer"
+      - "\u092A\u094D\u0930\u093E\u0930\u0902\u092D"
+      - Avvia
+      - "\u30B9\u30BF\u30FC\u30C8"
+      - Iniciar
+      Flags: 000000000000000000
+      Languages_Touch: []
+    - Term: "\u0413\u0430\u043B\u0435\u0440\u0435\u044F"
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0413\u0430\u043B\u0435\u0440\u0435\u044F"
+      - Gallery
+      - Galerie
+      - "\u753B\u5ECA"
+      - Galerie
+      - "\u0917\u0948\u0932\u0930\u0940"
+      - Galleria
+      - "\u30AE\u30E3\u30E9\u30EA\u30FC"
+      - Galeria
+      Flags: 000000000000000000
+      Languages_Touch: []
+    - Term: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
+      - Settings
+      - Einstellungen
+      - "\u8BBE\u7F6E"
+      - "Param\xE8tres"
+      - "\u0938\u0947\u091F\u093F\u0902\u0917\u094D\u0938"
+      - Impostazioni
+      - "\u8A2D\u5B9A"
+      - "Configura\xE7\xF5es"
+      Flags: 000000000000000000
+      Languages_Touch: []
+    - Term: "\u0412\u044B\u0445\u043E\u0434"
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0412\u044B\u0445\u043E\u0434"
+      - Exit
+      - Beenden
+      - "\u9000\u51FA"
+      - Quitter
+      - "\u092C\u093E\u0939\u0930 \u0928\u093F\u0915\u0932\u0947\u0902 "
+      - Esci
+      - "\u7D42\u4E86"
+      - Sair
+      Flags: 000000000000000000
+      Languages_Touch: []
+    - Term: "\u0420\u0430\u0441\u043A\u0440\u044B\u0442\u044C"
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0420\u0430\u0441\u043A\u0440\u044B\u0442\u044C"
+      - Expand
+      - Erweitern
+      - "\u5C55\u5F00"
+      - "D\xE9velopper"
+      - "\u0935\u093F\u0938\u094D\u0924\u093E\u0930 \u0915\u0930\u0947\u0902 "
+      - Espandi
+      - "\u5C55\u958B"
+      - Expandir
+      Flags: 000000000000000000
+      Languages_Touch: []
+    - Term: "\u041D\u0430\u0437\u0430\u0434"
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041D\u0430\u0437\u0430\u0434"
+      - Back
+      - "Zur\xFCck"
+      - "\u8FD4\u56DE"
+      - Retour
+      - "\u092A\u0940\u091B\u0947"
+      - Indietro
+      - "\u623B\u308B"
+      - Voltar
+      Flags: 000000000000000000
+      Languages_Touch: []
+    - Term: "\u041C\u0430\u0433\u0430\u0437\u0438\u043D"
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041C\u0430\u0433\u0430\u0437\u0438\u043D"
+      - Store
+      - "Gesch\xE4ft"
+      - "\u5546\u5E97"
+      - Boutique
+      - "\u0926\u0941\u0915\u093E\u0928"
+      - Negozio
+      - "\u30B7\u30E7\u30C3\u30D7"
+      - Loja
+      Flags: 000000000000000000
+      Languages_Touch: []
+    CaseInsensitiveTerms: 0
+    OnMissingTranslation: 1
+    mTerm_AppName: 
+    mLanguages:
+    - Name: Russian
+      Code: ru
+      Flags: 0
+    - Name: English
+      Code: en
+      Flags: 0
+    - Name: German
+      Code: de
+      Flags: 0
+    - Name: Chinese
+      Code: zh
+      Flags: 0
+    - Name: French
+      Code: fr
+      Flags: 0
+    - Name: Hindi
+      Code: hi
+      Flags: 0
+    - Name: Italian
+      Code: it
+      Flags: 0
+    - Name: Japanese
+      Code: ja
+      Flags: 0
+    - Name: Portuguese
+      Code: pt
+      Flags: 0
+    IgnoreDeviceLanguage: 0
+    _AllowUnloadingLanguages: 0
+    Google_WebServiceURL: 
+    Google_SpreadsheetKey: 
+    Google_SpreadsheetName: 
+    Google_LastUpdatedVersion: 
+    Google_Password: change_this
+    GoogleUpdateFrequency: 3
+    GoogleInEditorCheckFrequency: 2
+    GoogleUpdateSynchronization: 1
+    GoogleUpdateDelay: 0
+    Assets: []
+    Spreadsheet_LocalFileName: 
+    Spreadsheet_LocalCSVSeparator: ','
+    Spreadsheet_LocalCSVEncoding: utf-8
+    Spreadsheet_SpecializationAsRows: 1
