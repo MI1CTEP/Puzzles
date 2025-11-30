@@ -15,6 +15,7 @@ namespace MyGame.Gameplay
         [SerializeField] private CameraController _cameraController;
         [SerializeField] private GiftController _giftController;
         [SerializeField] private GiftsGiver _giftsGiver;
+        [SerializeField] private int _level;
 
         private ScenarioLoader _scenarioLoader;
         private Scenario _scenario;
@@ -31,7 +32,7 @@ namespace MyGame.Gameplay
         private void Init()
         {
             _scenarioLoader = new();
-            _scenario = _scenarioLoader.GetScenario(1);
+            _scenario = _scenarioLoader.GetScenario(_level);
             _scaleOfSympathy.Init(_scenario);
             _videoController.Init();
             _puzzleController.Init();

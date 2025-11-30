@@ -4806,7 +4806,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e898d0ccdda7cdd41a471bb9d3760cd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scenario: {fileID: 11400000, guid: 5f99b58498fbed041817fbfc812ef42a, type: 2}
   _scaleOfSympathy: {fileID: 261889779}
   _videoController: {fileID: 1410148594}
   _puzzleController: {fileID: 729319352}
@@ -4815,6 +4814,7 @@ MonoBehaviour:
   _cameraController: {fileID: 1007090608}
   _giftController: {fileID: 7761029172068945141}
   _giftsGiver: {fileID: 2042862278}
+  _level: 1
 --- !u!4 &2041977681
 Transform:
   m_ObjectHideFlags: 0
