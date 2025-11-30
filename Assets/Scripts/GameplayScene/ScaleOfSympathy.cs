@@ -53,35 +53,35 @@ namespace MyGame.Gameplay
 
         private void CountMaxValues(Scenario scenario)
         {
-            ScenarioStage scenarioStage;
-            int id = 0;
-            while (true)
-            {
-                scenarioStage = scenario.TryGetScenarioStage(id);
-                id++;
-                if (scenarioStage == null)
-                    return;
-                if(scenarioStage.TypeStage == TypeStage.SetDialogue)
-                {
-                    List<PhraseVariant> phraseVariants = scenarioStage.SimpleDialogue.PhraseVariants;
+            //ScenarioStage scenarioStage;
+            //int id = 0;
+            //while (true)
+            //{
+            //    scenarioStage = scenario.TryGetScenarioStage(id);
+            //    id++;
+            //    if (scenarioStage == null)
+            //        return;
+            //    if(scenarioStage.TypeStage == TypeStage.SetDialogue)
+            //    {
+            //        List<PhraseVariant> phraseVariants = scenarioStage.SimpleDialogue.PhraseVariants;
 
-                    if (phraseVariants == null || phraseVariants.Count == 0)
-                        continue;
+            //        if (phraseVariants == null || phraseVariants.Count == 0)
+            //            continue;
 
-                    float min = float.MaxValue;
-                    float max = float.MinValue;
-                    for (int i = 0; i < phraseVariants.Count; i++)
-                    {
-                        if (phraseVariants[i].Respect < min)
-                            min = phraseVariants[i].Respect;
-                        if (phraseVariants[i].Respect > max)
-                            max = phraseVariants[i].Respect;
-                    }
+            //        float min = float.MaxValue;
+            //        float max = float.MinValue;
+            //        for (int i = 0; i < phraseVariants.Count; i++)
+            //        {
+            //            if (phraseVariants[i].Respect < min)
+            //                min = phraseVariants[i].Respect;
+            //            if (phraseVariants[i].Respect > max)
+            //                max = phraseVariants[i].Respect;
+            //        }
 
-                    _maxNegativeValue += min;
-                    _maxPositiveValue += max;
-                }
-            }
+            //        _maxNegativeValue += min;
+            //        _maxPositiveValue += max;
+            //    }
+            //}
         }
     }
 }

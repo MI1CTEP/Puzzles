@@ -24,17 +24,17 @@ namespace MyGame.Gameplay.Puzzle
         {
             gameObject.SetActive(true);
 
-            _gridEasy.sprite = _grids[scenarioStage.PuzzleValueXEasy - 2];
+            _gridEasy.sprite = _grids[scenarioStage.easyValueX - 2];
             _buttonPlayEasy.onClick.RemoveAllListeners();
-            _buttonPlayEasy.onClick.AddListener(() => StartGameplay(scenarioStage.PuzzleValueXEasy));
+            _buttonPlayEasy.onClick.AddListener(() => StartGameplay(scenarioStage.easyValueX));
 
-            _gridMedium.sprite = _grids[scenarioStage.PuzzleValueXMedium - 2];
+            _gridMedium.sprite = _grids[scenarioStage.mediumValueX - 2];
             _buttonPlayMedium.onClick.RemoveAllListeners();
-            _buttonPlayMedium.onClick.AddListener(() => StartGameplay(scenarioStage.PuzzleValueXMedium));
+            _buttonPlayMedium.onClick.AddListener(() => StartGameplay(scenarioStage.mediumValueX));
 
-            _gridHard.sprite = _grids[scenarioStage.PuzzleValueXHard - 2];
+            _gridHard.sprite = _grids[scenarioStage.hardValueX - 2];
             _buttonPlayHard.onClick.RemoveAllListeners();
-            _buttonPlayHard.onClick.AddListener(() => StartGameplay(scenarioStage.PuzzleValueXHard));
+            _buttonPlayHard.onClick.AddListener(() => StartGameplay(scenarioStage.hardValueX));
         }
 
         private void StartGameplay(int puzzleValueX)

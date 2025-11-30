@@ -7,7 +7,6 @@ namespace MyGame.Gameplay
 {
     public sealed class GameplayController : MonoBehaviour
     {
-        [SerializeField] private Scenario _scenario;
         [SerializeField] private ScaleOfSympathy _scaleOfSympathy;
         [SerializeField] private VideoController _videoController;
         [SerializeField] private PuzzleController _puzzleController;
@@ -17,6 +16,8 @@ namespace MyGame.Gameplay
         [SerializeField] private GiftController _giftController;
         [SerializeField] private GiftsGiver _giftsGiver;
 
+        private ScenarioLoader _scenarioLoader;
+        private Scenario _scenario;
         private ScenarioStage _currentScenarioStage;
         private IGameStage _currentGameStage;
         private int _currentGameStageId;
@@ -29,6 +30,8 @@ namespace MyGame.Gameplay
 
         private void Init()
         {
+            _scenarioLoader = new();
+            _scenario = _scenarioLoader.GetScenario(1);
             _scaleOfSympathy.Init(_scenario);
             _videoController.Init();
             _puzzleController.Init();
@@ -50,38 +53,48 @@ namespace MyGame.Gameplay
 
             TryStopLastStage();
 
-            switch (_currentScenarioStage.TypeStage)
+            switch (_currentScenarioStage.typeStage)
             {
-                case TypeStage.SetPuzzle:
+                case "Puzzle":
                     _currentGameStage = _puzzleController;
                     _scaleOfSympathy.Hide();
-                    _cameraController.UpdateSize(_currentScenarioStage.Sprite.texture.width);
-                    _backgroundController.SetSprite(_currentScenarioStage.Sprite, _currentScenarioStage.IsAnim);
+                    UpdateCameraSize();
+                    SetBackgroundImage();
                     StartNextStage();
                     break;
-                case TypeStage.SetVideo:
+                case "Video":
                     _currentGameStage = _videoController;
                     _scaleOfSympathy.Hide();
                     StartNextStage();
                     break;
-                case TypeStage.SetDialogue:
+                case "Dialogue":
                     _currentGameStage = _dialogueController;
                     _scaleOfSympathy.Show();
-                    _cameraController.UpdateSize(_currentScenarioStage.Sprite.texture.width);
-                    _backgroundController.SetSprite(_currentScenarioStage.Sprite, _currentScenarioStage.IsAnim);
+                    UpdateCameraSize();
+                    SetBackgroundImage();
                     StartNextStage();
                     break;
-                case TypeStage.SetGiftsGiver:
+                case "Gifts":
                     _currentGameStage = _giftsGiver;
                     _scaleOfSympathy.Hide();
-                    _cameraController.UpdateSize(_currentScenarioStage.Sprite.texture.width);
-                    _backgroundController.SetSprite(_currentScenarioStage.Sprite, _currentScenarioStage.IsAnim);
+                    UpdateCameraSize();
+                    SetBackgroundImage();
                     StartNextStage();
                     break;
                 default:
                     End();
                     break;
             }
+        }
+
+        private void UpdateCameraSize()
+        {
+            _cameraController.UpdateSize(_currentScenarioStage.Image.texture.width);
+        }
+
+        private void SetBackgroundImage()
+        {
+            _backgroundController.SetSprite(_currentScenarioStage.Image, _currentScenarioStage.isAnimImage);
         }
 
         private void StartNextStage()

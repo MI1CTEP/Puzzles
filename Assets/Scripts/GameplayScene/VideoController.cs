@@ -19,7 +19,7 @@ namespace MyGame.Gameplay
         public void Play(ScenarioStage scenarioStage)
         {
             gameObject.SetActive(true);
-            _videoPlayer.clip = scenarioStage.VideoClip;
+            _videoPlayer.clip = scenarioStage.Video;
             _videoPlayer.Play();
         }
 

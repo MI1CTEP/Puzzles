@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using Newtonsoft.Json;
 
 namespace MyGame.Gameplay.Dialogue
 {
@@ -34,24 +35,25 @@ namespace MyGame.Gameplay.Dialogue
         {
             _messageHistory.anchoredPosition = new Vector2(0, _offsetAnswers);
             gameObject.SetActive(true);
-            _simpleDialogue = scenarioStage.SimpleDialogue;
+            TextAsset jsonAsset = Resources.Load<TextAsset>("Scenarios/Scenario_1/dialogue_1_1");
+            _simpleDialogue = JsonConvert.DeserializeObject<SimpleDialogue>(jsonAsset.text);
             SetFirstPhrase();
         }
 
         private void SetFirstPhrase()
         {
-            if(_simpleDialogue.FirstPhrase == null)
+            if(_simpleDialogue.firstPhrase == null)
             {
                 End();
                 return;
             }
 
-            SetPhrase(_simpleDialogue.FirstPhrase, false, SetVariants);
+            SetPhrase(_simpleDialogue.firstPhrase, false, SetVariants);
         }
 
         private void SetVariants()
         {
-            if (_simpleDialogue.PhraseVariants == null || _simpleDialogue.PhraseVariants.Count == 0)
+            if (_simpleDialogue.phraseVariants == null || _simpleDialogue.phraseVariants.Count == 0)
             {
                 EnableContinueButton();
                 return;
@@ -59,14 +61,14 @@ namespace MyGame.Gameplay.Dialogue
 
             TryDestroyPhraseButtons();
 
-            _phraseButtons = new PhraseButton[_simpleDialogue.PhraseVariants.Count];
+            _phraseButtons = new PhraseButton[_simpleDialogue.phraseVariants.Count];
 
             float anchorPositionY = _offsetAnswers;
-            for (int i = 0; i < _simpleDialogue.PhraseVariants.Count; i++)
+            for (int i = 0; i < _simpleDialogue.phraseVariants.Count; i++)
             {
                 int id = i;
                 _phraseButtons[i] = Instantiate(_phraseButtonPrefab, transform);
-                _phraseButtons[i].Init(_simpleDialogue.PhraseVariants[i].Answer, ref anchorPositionY, () => SetAnswer(id));
+                _phraseButtons[i].Init(_simpleDialogue.phraseVariants[i].answer, ref anchorPositionY, () => SetAnswer(id));
                 anchorPositionY += _offsetAnswers;
             }
             _anim.MoveMessageHistory(anchorPositionY);
@@ -74,8 +76,8 @@ namespace MyGame.Gameplay.Dialogue
 
         private void SetAnswer(int id)
         {
-            SetPhrase(_simpleDialogue.PhraseVariants[id].Answer, true, () => SetSecondPhrase(id));
-            _scaleOfSympathy.AddValue(_simpleDialogue.PhraseVariants[id].Respect);
+            SetPhrase(_simpleDialogue.phraseVariants[id].answer, true, () => SetSecondPhrase(id));
+            _scaleOfSympathy.AddValue(_simpleDialogue.phraseVariants[id].respect);
             TryDestroyPhraseButtons();
         }
 
@@ -89,13 +91,13 @@ namespace MyGame.Gameplay.Dialogue
 
         private void SetSecondPhrase(int id)
         {
-            if(_simpleDialogue.PhraseVariants[id].SecondPhrase == null)
+            if(_simpleDialogue.phraseVariants[id].secondPhrase == null)
             {
                 EnableContinueButton();
                 return;
             }
             _anim.MoveMessageHistory(_offsetAnswers);
-            SetPhrase(_simpleDialogue.PhraseVariants[id].SecondPhrase, false, EnableContinueButton);
+            SetPhrase(_simpleDialogue.phraseVariants[id].secondPhrase, false, EnableContinueButton);
         }
 
         private void SetPhrase(Phrase phrase, bool isPlayerPhrase, UnityAction onSetPhrase)

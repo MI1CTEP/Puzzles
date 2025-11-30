@@ -44,7 +44,7 @@ namespace MyGame.Gameplay.Puzzle
 
         public void StartGameplay(int puzzleValueX)
         {
-            _parts = _partsGenerator.GetPuzzleParts(_scenarioStage.Sprite.texture, puzzleValueX);
+            _parts = _partsGenerator.GetPuzzleParts(_scenarioStage.Image.texture, puzzleValueX);
             _partsLength = new(_parts.GetUpperBound(0) + 1, _parts.GetUpperBound(1) + 1);
             _board.ResetProgress();
             _board.SetParts(_parts, _partsLength);

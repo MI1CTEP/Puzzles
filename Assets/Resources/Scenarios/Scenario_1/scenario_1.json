@@ -1,0 +1,27 @@
+{
+	"scenarioStages": [
+		{
+			"typeStage" : "Dialogue",
+			"dialogueId" : 1,
+			"imageId" : 1,
+			"isAnimImage" : false
+		},
+		{
+			"typeStage" : "Gifts",
+			"imageId" : 1,
+			"isAnimImage" : false
+		},
+		{
+			"typeStage" : "Puzzle",
+			"easyValueX" : 2,
+			"mediumValueX" : 3,
+			"hardValueX" : 5,
+			"imageId" : 1,
+			"isAnimImage" : false
+		},
+		{
+			"typeStage" : "Video",
+			"videoId" : 1
+		}
+	]
+}
