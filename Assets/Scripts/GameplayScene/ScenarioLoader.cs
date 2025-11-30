@@ -61,7 +61,7 @@ namespace MyGame.Gameplay
                             _videos.Add(null);
                     if (_videos[stage.videoId - 1] == null)
                     {
-                        VideoClip video = Resources.Load<VideoClip>($"Scenarios/Scenario_{levelId}/video_{levelId}_{stage.imageId}");
+                        VideoClip video = Resources.Load<VideoClip>($"Scenarios/Scenario_{levelId}/video_{levelId}_{stage.videoId}");
                         _videos[stage.videoId - 1] = video;
                     }
                     stage.Video = _videos[stage.videoId - 1];

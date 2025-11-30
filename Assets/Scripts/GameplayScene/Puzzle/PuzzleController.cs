@@ -23,6 +23,7 @@ namespace MyGame.Gameplay.Puzzle
         public void Init()
         {
             _board = new();
+            _board.OnComplete += End;
             _partsPool = new(_partPrefab, _board);
             _partsGenerator = new(_partsPool, transform);
             _mixer = new();
@@ -50,12 +51,12 @@ namespace MyGame.Gameplay.Puzzle
             _board.SetParts(_parts, _partsLength);
             _mixer.MixParts(_parts, _partsLength);
             _board.SetPartsPosition();
-            _board.OnComplete += End;
             _background.SetMask(_partsLength * _partsGenerator.PartSize);
         }
 
         private void End()
         {
+            Debug.Log("end");
             gameObject.SetActive(false);
             OnEnd?.Invoke();
         }
