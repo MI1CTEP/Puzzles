@@ -1,104 +1,59 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using TMPro;
 using DG.Tweening;
 
 public class CardItem : MonoBehaviour
 {
+    [Header("Настройки")]
+    public GameObject frontPanel;   // Лицо карточки
+    public GameObject backPanel;    // Обратная сторона
+
     [Header("UI Front")]
-    [SerializeField] private Text nameText;
-    [SerializeField] private Image portraitImage;
-    [SerializeField] private Slider progressSlider;
-    [SerializeField] private Text sympathyText;
-    [SerializeField] private Button revealButton;
+    [SerializeField] private TextMeshProUGUI nameText;      // Имя персонажа
+    [SerializeField] private Image portraitImage;           // Портрет
 
     [Header("UI Back")]
-    [SerializeField] private Text storyText;
-    [SerializeField] private Image mediaImage;
-    [SerializeField] private RawImage rawImage; // Для VideoPlayer
-    [SerializeField] private VideoPlayer videoPlayer;
-    [SerializeField] private Button leftButton;
-    [SerializeField] private Button rightButton;
+    [SerializeField] private TextMeshProUGUI storyText;     // Сюжет
+    [SerializeField] private Image mediaImage;              // Изображение
+    [SerializeField] private RawImage rawImage;             // Для VideoPlayer
+    [SerializeField] private VideoPlayer videoPlayer;       // Видео
 
-    [Header("Настройки")]
-    [SerializeField] private GameObject frontPanel;
-    [SerializeField] private GameObject backPanel;
-    [SerializeField] private float flipDuration = 0.6f;
+    private CardData _data;      // Данные карточки
+    private int _currentMediaIndex = 0;     // Текущий индекс медиа
 
-    private CardData _data;
-    private int _currentMediaIndex = 0;
-    private Action<CardItem> _onRevealed;
-    private Canvas _canvas; // Чтобы отключать при видео
-
-    private void Awake()
-    {
-        _canvas = GetComponentInParent<Canvas>();
-    }
-
-    public void SetData(CardData data, Action<CardItem> onRevealed)
+    public void SetData(CardData data) // Обновляем данные карточки
     {
         _data = data;
-        _onRevealed = onRevealed;
         _currentMediaIndex = 0;
-
         nameText.text = data.characterName;
-        sympathyText.text = $"Симпатия: {data.sympathy}";
         storyText.text = data.story;
-
-        // Обновляем портрет — первое открытое изображение
-        UpdatePortrait();
-
-        // Обновляем прогресс (если используется)
-        progressSlider.value = data.GetUnlockProgress();
-
-        // Кнопка "раскрыть" — только если карточка целиком закрыта
-        revealButton.gameObject.SetActive(!IsAnyMediaUnlocked());
 
         UpdateMedia();
         ShowFront();
     }
 
-    private void UpdatePortrait()
+    public CardData GetData() => _data;  // Получить данные карточки
+
+    public int GetCurrentMediaIndex() => _currentMediaIndex;    // Получить индекс текущего медиа
+
+    public void OnLeft() => ChangeMedia(-1);    // Влево
+
+    public void OnRight() => ChangeMedia(1);    // Вправо
+
+    private void ChangeMedia(int delta) // Изменение медиа (влево/вправо)
     {
-        foreach (var img in _data.images)
-        {
-            if (img.isUnlocked && img.sprite != null)
-            {
-                portraitImage.sprite = img.sprite;
-                return;
-            }
-        }
-        // Если ничего не открыто — ставим placeholder
-        portraitImage.sprite = null; // или заглушка
+        var unlockedMedia = GetUnlockedMedia();
+        int newIndex = _currentMediaIndex + delta;
+
+        if (newIndex < 0 || newIndex >= unlockedMedia.Count) return;
+
+        _currentMediaIndex = newIndex;
+        UpdateMedia();
     }
 
-    private bool IsAnyMediaUnlocked()
-    {
-        foreach (var img in _data.images) if (img.isUnlocked) return true;
-        foreach (var vid in _data.videos) if (vid.isUnlocked) return true;
-        return false;
-    }
-
-
-    public void OnRevealButton()
-    {
-        _onRevealed?.Invoke(this);
-        PlayFlipAnimation();
-    }
-
-    private void PlayFlipAnimation()
-    {
-        transform.DORotate(new Vector3(0, 90, 0), flipDuration * 0.5f)
-            .OnComplete(() =>
-            {
-                frontPanel.SetActive(false);
-                backPanel.SetActive(true);
-                transform.DORotate(Vector3.zero, flipDuration * 0.5f);
-            });
-    }
-
-    public void ShowFront()
+    public void ShowFront() // Показываем лицо карточки
     {
         frontPanel.SetActive(true);
         backPanel.SetActive(false);
@@ -106,87 +61,89 @@ public class CardItem : MonoBehaviour
         StopCurrentMedia();
     }
 
-    private void UpdateMedia()
+    private void UpdateMedia()  // Обновляем медиа (изображение или видео)
     {
         StopCurrentMedia();
 
-        // Собираем все открытые медиа
-        var unlockedMedia = new System.Collections.Generic.List<(bool isImage, int index)>();
+        var unlockedMedia = new System.Collections.Generic.List<(bool isImage, int index)>();   // Собираем все открытые медиа
 
-        for (int i = 0; i < _data.images.Length; i++)
-            if (_data.images[i].isUnlocked) unlockedMedia.Add((true, i));
-
-        for (int i = 0; i < _data.videos.Length; i++)
-            if (_data.videos[i].isUnlocked) unlockedMedia.Add((false, i));
+        for (int i = 0; i < _data.images.Length; i++) if (_data.images[i].isUnlocked) unlockedMedia.Add((true, i));
+        for (int i = 0; i < _data.videos.Length; i++) if (_data.videos[i].isUnlocked) unlockedMedia.Add((false, i));
 
         if (unlockedMedia.Count == 0)
         {
             mediaImage.gameObject.SetActive(true);
             rawImage.gameObject.SetActive(false);
             mediaImage.sprite = null;
-            leftButton.interactable = false;
-            rightButton.interactable = false;
             return;
         }
 
-        // Ограничиваем индекс
-        _currentMediaIndex = Mathf.Clamp(_currentMediaIndex, 0, unlockedMedia.Count - 1);
+        _currentMediaIndex = Mathf.Clamp(_currentMediaIndex, 0, unlockedMedia.Count - 1);   // Ограничиваем индекс
         var (isImage, index) = unlockedMedia[_currentMediaIndex];
 
-        if (isImage)
+        if (isImage)    // Показываем изображение
         {
-            // Показываем изображение
             mediaImage.gameObject.SetActive(true);
             rawImage.gameObject.SetActive(false);
             videoPlayer.Stop();
             mediaImage.sprite = _data.images[index].sprite;
         }
-        else
+        else           // Показываем видео
         {
-            // Показываем видео
             mediaImage.gameObject.SetActive(false);
             rawImage.gameObject.SetActive(true);
             videoPlayer.clip = _data.videos[index].clip;
             videoPlayer.Play();
         }
 
-        // Активность кнопок
-        leftButton.interactable = _currentMediaIndex > 0;
-        rightButton.interactable = _currentMediaIndex < unlockedMedia.Count - 1;
+        if (CardUIManager.Instance != null) CardUIManager.Instance.OnCardMediaChanged();
     }
 
-
-    private void StopCurrentMedia()
+    private void StopCurrentMedia() // Останавливаем текущее медиа
     {
         if (videoPlayer.isPlaying) videoPlayer.Stop();
         rawImage.gameObject.SetActive(false);
         mediaImage.gameObject.SetActive(true);
     }
 
-    public void OnLeft()
-    {
-        // Пересобираем открытые медиа
-        var unlockedMedia = GetUnlockedMedia();
-        if (_currentMediaIndex <= 0 || unlockedMedia.Count == 0) return;
-        _currentMediaIndex--;
-        UpdateMedia();
-    }
-
-    public void OnRight()
-    {
-        var unlockedMedia = GetUnlockedMedia();
-        if (_currentMediaIndex >= unlockedMedia.Count - 1 || unlockedMedia.Count == 0) return;
-        _currentMediaIndex++;
-        UpdateMedia();
-    }
-
-    private System.Collections.Generic.List<(bool isImage, int index)> GetUnlockedMedia()
+    private System.Collections.Generic.List<(bool isImage, int index)> GetUnlockedMedia()   // Получить список открытых медиа
     {
         var list = new System.Collections.Generic.List<(bool, int)>();
-        for (int i = 0; i < _data.images.Length; i++)
-            if (_data.images[i].isUnlocked) list.Add((true, i));
-        for (int i = 0; i < _data.videos.Length; i++)
-            if (_data.videos[i].isUnlocked) list.Add((false, i));
+        for (int i = 0; i < _data.images.Length; i++) if (_data.images[i].isUnlocked) list.Add((true, i));
+        for (int i = 0; i < _data.videos.Length; i++) if (_data.videos[i].isUnlocked) list.Add((false, i));
         return list;
+    }
+
+    private bool IsRevealing = false;           // Флаг анимации переворота
+
+    public void FlipCard()      // Перевернуть карточку
+    {
+        if (IsRevealing) return;
+        StartCoroutine(AnimateFlip());
+    }
+
+    private System.Collections.IEnumerator AnimateFlip()        // Анимация переворота
+    {
+        IsRevealing = true;
+        float duration = 0.3f;
+
+        transform.DORotate(new Vector3(0, 90, 0), duration).SetUpdate(true);
+        yield return new WaitForSeconds(duration);
+
+        if (frontPanel.activeSelf)
+        {
+            frontPanel.SetActive(false);
+            backPanel.SetActive(true);
+            transform.DORotate(new Vector3(0, 180, 0), duration).SetUpdate(true);
+        }
+        else
+        {
+            frontPanel.SetActive(true);
+            backPanel.SetActive(false);
+            transform.DORotate(new Vector3(0, 0, 0), duration).SetUpdate(true);
+        }
+
+        yield return new WaitForSeconds(duration);
+        IsRevealing = false;
     }
 }

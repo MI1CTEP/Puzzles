@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eacbeb50dc60496eb07e2c3e7739d6e, type: 3}
+  m_Name: Girls 2
+  m_EditorClassIdentifier: 
+  characterName: RIta
+  story: "\u0411\u043B\u0430 \u0431\u043B\u0430 \u0431\u043B\u0430"
+  sympathy: 10
+  progress: 0
+  images:
+  - sprite: {fileID: 21300000, guid: 4d8fc509b2c0b4080af1634cc4b23c82, type: 3}
+    isUnlocked: 1
+  - sprite: {fileID: 21300000, guid: 311b5011e2773438db1a5eaa99bd39e5, type: 3}
+    isUnlocked: 1
+  - sprite: {fileID: 21300000, guid: 13808e25ecfa04088a7efa736554d838, type: 3}
+    isUnlocked: 1
+  - sprite: {fileID: 21300000, guid: aaa3f1070e635496f973d9c0779b4883, type: 3}
+    isUnlocked: 1
+  - sprite: {fileID: 21300000, guid: f2625f9aae81e4ae6a7d53e91eb9bcd1, type: 3}
+    isUnlocked: 1
+  videos:
+  - clip: {fileID: 32900000, guid: 0ae563ab45a124a3eb1034c223955339, type: 3}
+    isUnlocked: 1
+  - clip: {fileID: 32900000, guid: b4dd32c9e61b84dc9ba8390a8b2ee8dc, type: 3}
+    isUnlocked: 1
+  - clip: {fileID: 32900000, guid: 4a9d82275a4324659b9a78398a8d7ad5, type: 3}
+    isUnlocked: 1
+  - clip: {fileID: 32900000, guid: a0ababb4500814247b7554f7d5ddd9f8, type: 3}
+    isUnlocked: 1

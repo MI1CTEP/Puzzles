@@ -3,23 +3,19 @@ using System;
 using UnityEngine.Video;
 
 [CreateAssetMenu(fileName = "CardData", menuName = "Cards/Card Data")]
-[Serializable]
-public class CardData : ScriptableObject
+
+[Serializable] public class CardData : ScriptableObject
 {
-    public string characterName;
-    [TextArea(5, 10)] public string story;
-
-    [Range(-10, 10)] public int sympathy; // Симпатия: -10 до +10
+    public string characterName;    // Имя персонажа
+    [TextArea(5, 10)] public string story;  // Сюжет
+    [Range(0, 100)] public int sympathy; // Симпатия: 0 до 100
     [Range(0, 100)] public int progress;  // Общий прогресс
-
     [Header("Изображения (5)")]
-    public UnlockableSprite[] images = new UnlockableSprite[5];
-
+    public UnlockableSprite[] images = new UnlockableSprite[5]; // Изображения
     [Header("Видео (4)")]
-    public UnlockableVideo[] videos = new UnlockableVideo[4];
+    public UnlockableVideo[] videos = new UnlockableVideo[4];   // Видео
 
-    // Получить общий прогресс открытия
-    public float GetUnlockProgress()
+    public float GetUnlockProgress()    // Получить общий прогресс открытия
     {
         int total = images.Length + videos.Length;
         int unlocked = 0;
@@ -29,15 +25,13 @@ public class CardData : ScriptableObject
     }
 }
 
-[Serializable]
-public class UnlockableSprite
+[Serializable] public class UnlockableSprite    // Спрайт с флагом открытия
 {
     public Sprite sprite;
     public bool isUnlocked = false;
 }
 
-[Serializable]
-public class UnlockableVideo
+[Serializable] public class UnlockableVideo     // Видео с флагом открытия
 {
     public VideoClip clip;
     public bool isUnlocked = false;

@@ -5,45 +5,36 @@ using UnityEngine.Audio;
 public class UIAudioSettings : MonoBehaviour
 {
     [SerializeField] private Slider volumeSlider;   // Слайдер громкости (0–10)
+    [SerializeField] private AudioMixer audioMixer; // Ссылка на Audio Mixer
     [Space]
     [SerializeField] private GameObject[] waves;    // Визуальные "волны" (UI Images)
-    [Space]
-    [SerializeField] private AudioMixer audioMixer; // Ссылка на Audio Mixer
-    private readonly string mixerParameter = "MasterVolume";       // Параметр в Audio Mixer
+
+    private readonly string mixerParameter = "MasterVolume"; // Параметр в Audio Mixer
     private readonly string volumeKey = "AudioVolume"; // Ключ в PlayerPrefs
 
     private void Start()
     {
-        // Проверка микшера
-        if (audioMixer == null)
-        {
-            Debug.LogError("AudioMixer не назначен в UIAudioSettings!", this);
-            enabled = false;
-            return;
-        }
+        volumeSlider.value = PlayerPrefs.GetFloat(volumeKey, 10f);   // Загружаем сохранённое значение
 
-        // Загружаем сохранённое значение
-        float savedVolume = PlayerPrefs.GetFloat(volumeKey, 10f); // По умолчанию = 10
-        volumeSlider.value = savedVolume;
-
-        UpdateVolume(savedVolume);  // Применяем громкость (микшер + волны)
+        UpdateVolume(volumeSlider.value);  // Применяем громкость (микшер + волны)
 
         volumeSlider.onValueChanged.AddListener(UpdateVolume);  // Подписываемся на изменение слайдера
     }
 
-    private void UpdateVolume(float value)
+    public void Volume() => UpdateVolume(volumeSlider.value);   // Обновление громкости
+
+    private void UpdateVolume(float value)  // Обновление громкости и волны
     {
         int intValue = Mathf.RoundToInt(value); // Округляем до 0–10
 
         PlayerPrefs.SetFloat(volumeKey, intValue);
         PlayerPrefs.Save(); // Сохраняем в PlayerPrefs
 
-        UpdateEffectObjects(intValue);  // Обновляем волны звука
-
         SetMixerVolume(intValue);   // Обновляем громкость в AudioMixer
+        UpdateEffectObjects(intValue);  // Обновляем волны звука
     }
 
-    private void SetMixerVolume(int volumeLevel)
+    private void SetMixerVolume(int volumeLevel)    // Установка громкости в Audio Mixer
     {
         float db = volumeLevel switch
         {
@@ -64,7 +55,7 @@ public class UIAudioSettings : MonoBehaviour
         audioMixer.SetFloat(mixerParameter, db);
     }
 
-    private void UpdateEffectObjects(int volumeLevel)
+    private void UpdateEffectObjects(int volumeLevel)   // Обновление визуальных эффектов
     {
         foreach (var wave in waves) wave.SetActive(false);
 
@@ -73,6 +64,4 @@ public class UIAudioSettings : MonoBehaviour
         if (volumeLevel >= 5) waves[1].SetActive(true);
         if (volumeLevel >= 10) waves[2].SetActive(true);
     }
-
-    public void Volume() => UpdateVolume(volumeSlider.value);
 }

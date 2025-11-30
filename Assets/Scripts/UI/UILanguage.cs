@@ -47,22 +47,20 @@ public class UILanguage : MonoBehaviour
 
     private void Start() => LoadSettings();
 
-    private void LoadSettings()
+    private void LoadSettings() // Загрузка настроек языка из PlayerPrefs
     {
         string savedLanguage = PlayerPrefs.GetString("language", "");
 
-        // Если язык сохранён и поддерживается
         if (!string.IsNullOrEmpty(savedLanguage) && _languageSprites.ContainsKey(savedLanguage))
-        { ApplyLanguage(savedLanguage); }
-        else
+        { ApplyLanguage(savedLanguage); }   // Если язык сохранён и поддерживается
+        else                                // Или определяем по спрайту
         {
-            // Или определяем по спрайту (обратная совместимость)
             string fallbackLanguage = DetectLanguageFromSprite();
             ApplyLanguage(fallbackLanguage);
         }
     }
 
-    private string DetectLanguageFromSprite()
+    private string DetectLanguageFromSprite()   // Определение языка по спрайту
     {
         if (_languageImage.sprite == _russian) return "Russian";
         if (_languageImage.sprite == _english) return "English";
@@ -77,7 +75,7 @@ public class UILanguage : MonoBehaviour
         return "Russian";
     }
 
-    public void ChangeLanguage()
+    public void ChangeLanguage()    // Смена языка по нажатию кнопки
     {
         string current = PlayerPrefs.GetString("language", "Russian");
         int currentIndex = System.Array.IndexOf(_languages, current);
@@ -89,18 +87,13 @@ public class UILanguage : MonoBehaviour
         ApplyLanguage(nextLanguage);
     }
 
-    private void ApplyLanguage(string language)
+    private void ApplyLanguage(string language) // Применение выбранного языка
     {
-        if (!_languageSprites.TryGetValue(language, out Sprite sprite))
-        {
-            Debug.LogWarning($"[UILanguage] Спрайт для языка '{language}' не найден.");
-            return;
-        }
+        if (!_languageSprites.TryGetValue(language, out Sprite sprite)) return;
 
         _languageImage.sprite = sprite;
         PlayerPrefs.SetString("language", language);
         PlayerPrefs.Save();
-
         LocalizationManager.CurrentLanguage = language;
 
         OnLanguageChanged?.Invoke();

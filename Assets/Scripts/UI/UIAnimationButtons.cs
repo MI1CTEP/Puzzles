@@ -24,7 +24,7 @@ public class UIAnimationButtons : MonoBehaviour, IPointerEnterHandler, IPointerE
     }
 
     [Header("Настройки анимации")]
-    [SerializeField] private float hoverScaleFactor = 1.1f; // 1.1 = +10% при наведении
+    [SerializeField] private float hoverScaleFactor = 1.1f;
     [SerializeField] private float pressScale = 0.7f;
     [SerializeField] private float popUpScale = 1.2f;
     [SerializeField] private float hoverDuration = 0.2f;
@@ -62,7 +62,7 @@ public class UIAnimationButtons : MonoBehaviour, IPointerEnterHandler, IPointerE
         ShowButtonsMenu();
     }
 
-    private void AddEventListeners(Button button)
+    private void AddEventListeners(Button button)    // Добавляем обработчики событий для каждой кнопки
     {
         if (!button.gameObject.TryGetComponent<EventTrigger>(out var trigger)) trigger = button.gameObject.AddComponent<EventTrigger>();
 
@@ -74,15 +74,14 @@ public class UIAnimationButtons : MonoBehaviour, IPointerEnterHandler, IPointerE
         AddTrigger(trigger, EventTriggerType.PointerUp, _ => OnButtonUp(button));
     }
 
-    private void AddTrigger(EventTrigger trigger, EventTriggerType type, UnityEngine.Events.UnityAction<BaseEventData> callback)
+    private void AddTrigger(EventTrigger trigger, EventTriggerType type, UnityEngine.Events.UnityAction<BaseEventData> callback)    // Добавляем триггер для события
     {
-        EventTrigger.Entry entry = new();
-        entry.eventID = type;
+        EventTrigger.Entry entry = new() { eventID = type };
         entry.callback.AddListener(data => callback.Invoke(data));
         trigger.triggers.Add(entry);
     }
 
-    private void OnButtonEnter(Button button)
+    private void OnButtonEnter(Button button)   // Анимация при наведении мыши
     {
         if (_isBlocked) return;
 
@@ -91,7 +90,7 @@ public class UIAnimationButtons : MonoBehaviour, IPointerEnterHandler, IPointerE
         button.transform.DOScale(targetScale, hoverDuration).SetEase(Ease.OutSine);
     }
 
-    private void OnButtonExit(Button button)
+    private void OnButtonExit(Button button)    // Анимация при выходе мыши
     {
         if (_isBlocked) return;
 
@@ -99,7 +98,7 @@ public class UIAnimationButtons : MonoBehaviour, IPointerEnterHandler, IPointerE
         button.transform.DOScale(GetOriginalScale(button), hoverDuration).SetEase(Ease.OutSine);
     }
 
-    private void OnButtonDown(Button button)
+    private void OnButtonDown(Button button)    // Анимация при нажатии
     {
         if (_isBlocked) return;
 
@@ -108,7 +107,7 @@ public class UIAnimationButtons : MonoBehaviour, IPointerEnterHandler, IPointerE
         button.transform.DOScale(targetScale, pressDuration).SetEase(Ease.OutQuad);
     }
 
-    private void OnButtonUp(Button button)
+    private void OnButtonUp(Button button)      // Анимация при отпускании
     {
         if (_isBlocked) return;
         _isBlocked = true;
@@ -119,7 +118,7 @@ public class UIAnimationButtons : MonoBehaviour, IPointerEnterHandler, IPointerE
         button.transform.DOScale(original * popUpScale, popUpDuration / 2f);
     }
 
-    private Vector3 GetOriginalScale(Button button)
+    private Vector3 GetOriginalScale(Button button)    // Получаем оригинальный масштаб кнопки
     {
         if (menuGroup.buttons.Contains(button)) return menuGroup.GetOriginalScale(button);
         if (galleryGroup.buttons.Contains(button)) return galleryGroup.GetOriginalScale(button);
@@ -128,7 +127,6 @@ public class UIAnimationButtons : MonoBehaviour, IPointerEnterHandler, IPointerE
     }
 
     // === Методы Show/Hide для каждой группы ===
-
     public void ShowButtonsMenu() => ShowGroup(menuGroup);
     public void HideButtonsMenu() => HideGroup(menuGroup);
     public void ShowButtonsGallery() => ShowGroup(galleryGroup);
@@ -137,10 +135,11 @@ public class UIAnimationButtons : MonoBehaviour, IPointerEnterHandler, IPointerE
     public void HideButtonsSettings() => HideGroup(settingsGroup);
 
 
-    private async void ShowGroup(ButtonGroup group)
+    private async void ShowGroup(ButtonGroup group)    // Анимация появления группы кнопок
     {
         await Task.Delay(1000);
         if (group == null) return;
+
         foreach (var button in group.buttons)
         {
             if (button == null) continue;
@@ -150,15 +149,15 @@ public class UIAnimationButtons : MonoBehaviour, IPointerEnterHandler, IPointerE
         }
     }
 
-    private void HideGroup(ButtonGroup group)
+    private void HideGroup(ButtonGroup group)   // Анимация исчезновения группы кнопок
     {
         if (group == null) return;
+
         foreach (var button in group.buttons)
         {
             if (button == null) continue;
             button.transform.DOKill();
-            button.transform.DOScale(0, shrinkDuration)
-                .SetEase(Ease.OutBack)
+            button.transform.DOScale(0, shrinkDuration).SetEase(Ease.OutBack)
                 .OnComplete(() =>
                 {
                     _isBlocked = false;
@@ -168,7 +167,6 @@ public class UIAnimationButtons : MonoBehaviour, IPointerEnterHandler, IPointerE
         }
     }
 
-    // Для интерфейса
     public void OnPointerEnter(PointerEventData eventData) { }
     public void OnPointerExit(PointerEventData eventData) { }
 }
