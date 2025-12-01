@@ -9,17 +9,34 @@ namespace MyGame.Gameplay.Dialogue
     {
         private Coroutine _cor;
         private readonly WaitForSeconds _wait = new(0.05f);
+        private Text _text;
+        private string _fullText;
+        private bool _isPlaingAnim;
 
         public UnityAction OnEndAnim { get; set; }
 
         public void Play(Text text)
         {
-            _cor = StartCoroutine(ShowText(text));
+            _isPlaingAnim = true;
+            _text = text;
+            _cor = StartCoroutine(ShowText());
         }
 
-        private IEnumerator ShowText(Text text)
+        public void TrySkipAnim()
         {
-            string clearText = text.text;
+            if (!_isPlaingAnim) return;
+
+            if (_cor != null)
+                StopCoroutine(_cor);
+            _text.text = _fullText;
+            _isPlaingAnim = false;
+            OnEndAnim?.Invoke();
+        }
+
+        private IEnumerator ShowText()
+        {
+            _fullText = _text.text;
+            string clearText = _fullText;
             string showText = "";
             string startShowColor = "<color=#323232>";
             string startClearColor = "<color=#00000000>";
@@ -27,11 +44,12 @@ namespace MyGame.Gameplay.Dialogue
 
             while (clearText.Length > 0)
             {
-                text.text = startShowColor + showText + endColor + startClearColor + clearText + endColor;
+                _text.text = startShowColor + showText + endColor + startClearColor + clearText + endColor;
                 showText += clearText[0];
                 clearText = clearText.Remove(0, 1);
                 yield return _wait;
             }
+            _isPlaingAnim = false;
             OnEndAnim?.Invoke();
         }
 

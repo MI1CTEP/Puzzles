@@ -12,6 +12,7 @@ namespace MyGame.Gameplay.Dialogue
         [SerializeField] private Button _continueButton;
         [SerializeField] private float _offsetAnswers;
 
+        private Button _button;
         private ScaleOfSympathy _scaleOfSympathy;
         private SimpleDialogue _simpleDialogue;
         private PhraseButton[] _phraseButtons;
@@ -19,9 +20,12 @@ namespace MyGame.Gameplay.Dialogue
         private RectTransform _continueButtonRect;
 
         public UnityAction OnEnd { get; set; }
+        public UnityAction OnSkipTextAnim { get; set; }
 
         public void Init(ScaleOfSympathy scaleOfSympathy)
         {
+            _button = GetComponent<Button>();
+            _button.onClick.AddListener(TrySkipTextAnim);
             _scaleOfSympathy = scaleOfSympathy;
             _anim = new(_messageHistory);
             _continueButton.onClick.AddListener(End);
@@ -101,7 +105,7 @@ namespace MyGame.Gameplay.Dialogue
         private void SetPhrase(Phrase phrase, bool isPlayerPhrase, UnityAction onSetPhrase)
         {
             PhraseImage phraseImage = Instantiate(_phraseImagePrefab, _messageHistory);
-            phraseImage.Init(phrase, isPlayerPhrase, onSetPhrase);
+            phraseImage.Init(this, phrase, isPlayerPhrase, onSetPhrase);
         }
 
         private void EnableContinueButton()
@@ -109,6 +113,11 @@ namespace MyGame.Gameplay.Dialogue
             float anchorPositionY = _offsetAnswers * 2 + _continueButtonRect.sizeDelta.y;
             _continueButton.gameObject.SetActive(true);
             _anim.MoveMessageHistory(anchorPositionY);
+        }
+
+        private void TrySkipTextAnim()
+        {
+            OnSkipTextAnim?.Invoke();
         }
 
         private void End()
