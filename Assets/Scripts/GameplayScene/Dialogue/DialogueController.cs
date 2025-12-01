@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-using Newtonsoft.Json;
 
 namespace MyGame.Gameplay.Dialogue
 {
@@ -35,8 +34,7 @@ namespace MyGame.Gameplay.Dialogue
         {
             _messageHistory.anchoredPosition = new Vector2(0, _offsetAnswers);
             gameObject.SetActive(true);
-            TextAsset jsonAsset = Resources.Load<TextAsset>("Scenarios/Scenario_1/dialogue_1_1");
-            _simpleDialogue = JsonConvert.DeserializeObject<SimpleDialogue>(jsonAsset.text);
+            _simpleDialogue = scenarioStage.Dialogue;
             SetFirstPhrase();
         }
 
