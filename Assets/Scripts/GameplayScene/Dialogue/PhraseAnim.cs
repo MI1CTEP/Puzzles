@@ -8,24 +8,37 @@ namespace MyGame.Gameplay.Dialogue
     public sealed class PhraseAnim : MonoBehaviour
     {
         private Coroutine _cor;
-        private WaitForSeconds _wait = new(0.07f);
+        private readonly WaitForSeconds _wait = new(0.05f);
 
         public UnityAction OnEndAnim { get; set; }
 
-        public void Play(Text text, string value)
+        public void Play(Text text)
         {
-            text.text = "";
-            _cor = StartCoroutine(ShowText(text, value));
+            _cor = StartCoroutine(ShowText(text));
         }
 
-        private IEnumerator ShowText(Text text, string value)
+        private IEnumerator ShowText(Text text)
         {
-            foreach (char c in value)
+            string clearText = text.text;
+            string showText = "";
+            string startShowColor = "<color=#323232>";
+            string startClearColor = "<color=#00000000>";
+            string endColor = "</color>";
+
+            while (clearText.Length > 0)
             {
-                text.text += c;
+                text.text = startShowColor + showText + endColor + startClearColor + clearText + endColor;
+                showText += clearText[0];
+                clearText = clearText.Remove(0, 1);
                 yield return _wait;
             }
             OnEndAnim?.Invoke();
+        }
+
+        private void OnDestroy()
+        {
+            if (_cor != null)
+                StopCoroutine(_cor);
         }
     }
 }

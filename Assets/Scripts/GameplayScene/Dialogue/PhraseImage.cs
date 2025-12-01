@@ -19,7 +19,6 @@ namespace MyGame.Gameplay.Dialogue
 
             _onSetPhrase = onSetPhrase;
 
-
             if (isPlayerPhrase)
             {
                 _background.transform.localPosition += Vector3.right * 100;
@@ -31,7 +30,7 @@ namespace MyGame.Gameplay.Dialogue
                 _background.transform.localPosition += Vector3.left * 100;
                 _background.color = _colorForCharacter;
                 _anim = gameObject.AddComponent<PhraseAnim>();
-                _anim.Play(_text, phrase.ru);
+                _anim.Play(_text);
                 _anim.OnEndAnim += SetPhrase;
             }
         }
