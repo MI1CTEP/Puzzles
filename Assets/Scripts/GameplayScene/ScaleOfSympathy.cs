@@ -1,87 +1,128 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 using MyGame.Gameplay.Dialogue;
+using DG.Tweening;
 
 namespace MyGame.Gameplay
 {
     public sealed class ScaleOfSympathy : MonoBehaviour
     {
-        [SerializeField] private Image _negativeScale;
-        [SerializeField] private Image _positiveScale;
+        [SerializeField] private RectTransform _scale;
+        [SerializeField] private TextMeshProUGUI _valueText;
 
         private RectTransform _rectTransform;
-        private float _maxNegativeValue;
-        private float _maxPositiveValue;
-        private float _value;
+        private Sequence _seqValue;
+        private Sequence _seqPosition;
+        private float _maxValue;
+        private float _currentValue;
         private float _startPositionY;
+        private float _valueSize;
+        private readonly float _timeValueAnim = 0.3f;
+        private readonly float _timePositionAnim = 0.3f;
+        private bool _isActive = true;
 
         public void Init(Scenario scenario)
         {
             CountMaxValues(scenario);
+            _valueSize = _scale.anchoredPosition.x / _maxValue;
+            _scale.anchoredPosition = Vector2.zero;
+            UpdateValueText();
             _rectTransform = GetComponent<RectTransform>();
             _startPositionY = _rectTransform.anchoredPosition.y;
-            Hide();
-            _negativeScale.fillAmount = 0;
-            _positiveScale.fillAmount = 0;
+            Hide(false);
         }
 
-        public void Show()
+        public void Show(bool isAnim)
         {
-            _rectTransform.anchoredPosition = new Vector2(0, _startPositionY);
+            if (_isActive) return;
+
+            _isActive = true;
+            TryStopPositionAnim();
+            Move(isAnim, _startPositionY);
         }
 
-        public void Hide()
+        public void Hide(bool isAnim)
         {
-            _rectTransform.anchoredPosition = new Vector2(0, -_startPositionY);
+            if (!_isActive) return;
+
+            _isActive = false;
+            TryStopPositionAnim();
+            Move(isAnim, -_startPositionY);
         }
 
         public void AddValue(float value)
         {
-            _value += value;
-            if(_value > 0)
+            _currentValue += value;
+            UpdateValueText();
+            TryStopValueAnim();
+            _seqValue = DOTween.Sequence();
+            _seqValue.Insert(0, _scale.DOAnchorPosX(_currentValue * _valueSize, _timeValueAnim));
+        }
+
+        private void Move(bool isAnim, float positionY)
+        {
+            TryStopPositionAnim();
+            if (isAnim)
             {
-                _negativeScale.fillAmount = 0;
-                _positiveScale.fillAmount = _value / _maxPositiveValue;
+                _seqPosition = DOTween.Sequence();
+                _seqPosition.Insert(0, _rectTransform.DOAnchorPosY(positionY, _timePositionAnim));
             }
             else
             {
-                _positiveScale.fillAmount = 0;
-                _negativeScale.fillAmount = _value / _maxNegativeValue;
+                _rectTransform.anchoredPosition = new Vector2(0, positionY);
             }
+        }
+
+        private void UpdateValueText()
+        {
+            _valueText.text = $"{_currentValue}/{_maxValue}";
         }
 
         private void CountMaxValues(Scenario scenario)
         {
-            //ScenarioStage scenarioStage;
-            //int id = 0;
-            //while (true)
-            //{
-            //    scenarioStage = scenario.TryGetScenarioStage(id);
-            //    id++;
-            //    if (scenarioStage == null)
-            //        return;
-            //    if(scenarioStage.TypeStage == TypeStage.SetDialogue)
-            //    {
-            //        List<PhraseVariant> phraseVariants = scenarioStage.SimpleDialogue.PhraseVariants;
+            ScenarioStage scenarioStage;
+            int id = 0;
+            while (true)
+            {
+                scenarioStage = scenario.TryGetScenarioStage(id);
+                id++;
+                if (scenarioStage == null)
+                    return;
+                if (scenarioStage.typeStage == "Dialogue")
+                {
+                    List<PhraseVariant> phraseVariants = scenarioStage.Dialogue.phraseVariants;
 
-            //        if (phraseVariants == null || phraseVariants.Count == 0)
-            //            continue;
+                    if (phraseVariants == null || phraseVariants.Count == 0)
+                        continue;
 
-            //        float min = float.MaxValue;
-            //        float max = float.MinValue;
-            //        for (int i = 0; i < phraseVariants.Count; i++)
-            //        {
-            //            if (phraseVariants[i].Respect < min)
-            //                min = phraseVariants[i].Respect;
-            //            if (phraseVariants[i].Respect > max)
-            //                max = phraseVariants[i].Respect;
-            //        }
+                    float max = float.MinValue;
+                    for (int i = 0; i < phraseVariants.Count; i++)
+                    {
+                        if (phraseVariants[i].respect > max)
+                            max = phraseVariants[i].respect;
+                    }
+                    _maxValue += max;
+                }
+            }
+        }
 
-            //        _maxNegativeValue += min;
-            //        _maxPositiveValue += max;
-            //    }
-            //}
+        private void TryStopValueAnim()
+        {
+            if (_seqValue != null)
+                _seqValue.Kill();
+        }
+
+        private void TryStopPositionAnim()
+        {
+            if (_seqPosition != null)
+                _seqPosition.Kill();
+        }
+
+        private void OnDestroy()
+        {
+            TryStopValueAnim();
+            TryStopPositionAnim();
         }
     }
 }

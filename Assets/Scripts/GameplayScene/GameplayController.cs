@@ -58,26 +58,26 @@ namespace MyGame.Gameplay
             {
                 case "Puzzle":
                     _currentGameStage = _puzzleController;
-                    _scaleOfSympathy.Hide();
+                    _scaleOfSympathy.Hide(true);
                     UpdateCameraSize();
                     SetBackgroundImage();
                     StartNextStage();
                     break;
                 case "Video":
                     _currentGameStage = _videoController;
-                    _scaleOfSympathy.Hide();
+                    _scaleOfSympathy.Hide(true);
                     StartNextStage();
                     break;
                 case "Dialogue":
                     _currentGameStage = _dialogueController;
-                    _scaleOfSympathy.Show();
+                    _scaleOfSympathy.Show(true);
                     UpdateCameraSize();
                     SetBackgroundImage();
                     StartNextStage();
                     break;
                 case "Gifts":
                     _currentGameStage = _giftsGiver;
-                    _scaleOfSympathy.Hide();
+                    _scaleOfSympathy.Hide(true);
                     UpdateCameraSize();
                     SetBackgroundImage();
                     StartNextStage();

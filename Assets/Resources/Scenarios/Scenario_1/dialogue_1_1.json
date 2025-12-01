@@ -23,7 +23,7 @@
         "ja": "",
         "pt": ""
       },
-      "respect": 0,
+      "respect": 1,
       "secondPhrase": {
         "ru": "Пока_1",
         "en": "",
@@ -73,7 +73,7 @@
         "ja": "",
         "pt": ""
       },
-      "respect": 0,
+      "respect": 5,
       "secondPhrase": {
         "ru": "Пока_3",
         "en": "",
