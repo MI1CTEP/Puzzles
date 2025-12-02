@@ -44,9 +44,9 @@ namespace MyGame.Gameplay.Dialogue
 
             while (clearText.Length > 0)
             {
-                _text.text = startShowColor + showText + endColor + startClearColor + clearText + endColor;
                 showText += clearText[0];
                 clearText = clearText.Remove(0, 1);
+                _text.text = startShowColor + showText + endColor + startClearColor + clearText + endColor;
                 yield return _wait;
             }
             _isPlaingAnim = false;
