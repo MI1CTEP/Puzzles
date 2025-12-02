@@ -7,7 +7,7 @@ namespace MyGame.Gameplay
 {
     public sealed class GameplayController : MonoBehaviour
     {
-        [SerializeField] private ScaleOfSympathy _scaleOfSympathy;
+        [SerializeField] private ProgressPanel _progressPanel;
         [SerializeField] private VideoController _videoController;
         [SerializeField] private PuzzleController _puzzleController;
         [SerializeField] private BackgroundController _backgroundController;
@@ -33,10 +33,10 @@ namespace MyGame.Gameplay
         {
             _scenarioLoader = new();
             _scenario = _scenarioLoader.GetScenario(_level);
-            _scaleOfSympathy.Init(_scenario);
+            _progressPanel.Init();
             _videoController.Init();
-            _puzzleController.Init();
-            _dialogueController.Init(_scaleOfSympathy);
+            _puzzleController.Init(_progressPanel);
+            _dialogueController.Init(_scenario, _progressPanel);
             _cameraController.Init();
             _giftController.Init();
             _giftsGiver.Init(_giftController);
@@ -58,26 +58,26 @@ namespace MyGame.Gameplay
             {
                 case "Puzzle":
                     _currentGameStage = _puzzleController;
-                    _scaleOfSympathy.Hide(true);
+                    _progressPanel.Hide(true);
                     UpdateCameraSize();
                     SetBackgroundImage();
                     StartNextStage();
                     break;
                 case "Video":
                     _currentGameStage = _videoController;
-                    _scaleOfSympathy.Hide(true);
+                    _progressPanel.Hide(true);
                     StartNextStage();
                     break;
                 case "Dialogue":
                     _currentGameStage = _dialogueController;
-                    _scaleOfSympathy.Show(true);
+                    _progressPanel.Show(true);
                     UpdateCameraSize();
                     SetBackgroundImage();
                     StartNextStage();
                     break;
                 case "Gifts":
                     _currentGameStage = _giftsGiver;
-                    _scaleOfSympathy.Hide(true);
+                    _progressPanel.Hide(true);
                     UpdateCameraSize();
                     SetBackgroundImage();
                     StartNextStage();

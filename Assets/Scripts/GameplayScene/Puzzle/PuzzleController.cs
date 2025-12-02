@@ -9,6 +9,7 @@ namespace MyGame.Gameplay.Puzzle
         [SerializeField] private PuzzlePart _partPrefab;
         [SerializeField] private PuzzleChoices _puzzleChoices;
 
+        private ProgressPanel _progressPanel;
         private PuzzleBoard _board;
         private PuzzlePartsPool _partsPool;
         private PuzzlePartsGenerator _partsGenerator;
@@ -20,8 +21,9 @@ namespace MyGame.Gameplay.Puzzle
 
         public UnityAction OnEnd { get; set; }
 
-        public void Init()
+        public void Init(ProgressPanel progressPanel)
         {
+            _progressPanel = progressPanel;
             _board = new();
             _board.OnComplete += End;
             _partsPool = new(_partPrefab, _board);
@@ -51,18 +53,29 @@ namespace MyGame.Gameplay.Puzzle
             _board.SetParts(_parts, _partsLength);
             _mixer.MixParts(_parts, _partsLength);
             _board.SetPartsPosition();
+            _board.OnAddProgress += UpdateProgressView;
             _background.SetMask(_partsLength * _partsGenerator.PartSize);
+            _progressPanel.SetPuzzle(_board.Progress, _board.NecessaryProgress);
+            _progressPanel.Show(true);
+        }
+
+        private void UpdateProgressView()
+        {
+            _progressPanel.ChangeValue(_board.Progress);
         }
 
         private void End()
         {
             gameObject.SetActive(false);
+            _board.OnAddProgress -= UpdateProgressView;
             _background.SetActiveMask(false);
             OnEnd?.Invoke();
         }
 
         private void OnDestroy()
         {
+            if(gameObject.activeSelf)
+                _board.OnAddProgress -= UpdateProgressView;
             _board.OnComplete -= End;
         }
     }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
@@ -13,29 +14,33 @@ namespace MyGame.Gameplay.Dialogue
         [SerializeField] private float _offsetAnswers;
 
         private Button _button;
-        private ScaleOfSympathy _scaleOfSympathy;
+        private ProgressPanel _progressPanel;
         private SimpleDialogue _simpleDialogue;
         private PhraseButton[] _phraseButtons;
         private DialogueAnim _anim;
         private RectTransform _continueButtonRect;
+        private float _currentSympathy;
+        private float _maxSympathy;
 
         public UnityAction OnEnd { get; set; }
         public UnityAction OnSkipTextAnim { get; set; }
 
-        public void Init(ScaleOfSympathy scaleOfSympathy)
+        public void Init(Scenario scenario, ProgressPanel progressPanel)
         {
             _button = GetComponent<Button>();
             _button.onClick.AddListener(TrySkipTextAnim);
-            _scaleOfSympathy = scaleOfSympathy;
+            _progressPanel = progressPanel;
             _anim = new(_messageHistory);
             _continueButton.onClick.AddListener(End);
             _continueButton.gameObject.SetActive(false);
             _continueButtonRect = _continueButton.GetComponent<RectTransform>();
             _continueButtonRect.anchoredPosition = new Vector2(0, _offsetAnswers);
+            CountMaxSympathy(scenario);
         }
 
         public void Play(ScenarioStage scenarioStage)
         {
+            _progressPanel.SetSympathy(_currentSympathy, _maxSympathy);
             _messageHistory.anchoredPosition = new Vector2(0, _offsetAnswers);
             gameObject.SetActive(true);
             _simpleDialogue = scenarioStage.Dialogue;
@@ -79,7 +84,8 @@ namespace MyGame.Gameplay.Dialogue
         private void SetAnswer(int id)
         {
             SetPhrase(_simpleDialogue.phraseVariants[id].answer, true, () => SetSecondPhrase(id));
-            _scaleOfSympathy.AddValue(_simpleDialogue.phraseVariants[id].respect);
+            _currentSympathy += _simpleDialogue.phraseVariants[id].respect;
+            _progressPanel.ChangeValue(_currentSympathy);
             TryDestroyPhraseButtons();
         }
 
@@ -118,6 +124,34 @@ namespace MyGame.Gameplay.Dialogue
         private void TrySkipTextAnim()
         {
             OnSkipTextAnim?.Invoke();
+        }
+
+        private void CountMaxSympathy(Scenario scenario)
+        {
+            ScenarioStage scenarioStage;
+            int id = 0;
+            while (true)
+            {
+                scenarioStage = scenario.TryGetScenarioStage(id);
+                id++;
+                if (scenarioStage == null)
+                    return;
+                if (scenarioStage.typeStage == "Dialogue")
+                {
+                    List<PhraseVariant> phraseVariants = scenarioStage.Dialogue.phraseVariants;
+
+                    if (phraseVariants == null || phraseVariants.Count == 0)
+                        continue;
+
+                    float max = float.MinValue;
+                    for (int i = 0; i < phraseVariants.Count; i++)
+                    {
+                        if (phraseVariants[i].respect > max)
+                            max = phraseVariants[i].respect;
+                    }
+                    _maxSympathy += max;
+                }
+            }
         }
 
         private void End()

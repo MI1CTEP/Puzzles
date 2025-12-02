@@ -1,19 +1,24 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using MyGame.Gameplay.Dialogue;
 using DG.Tweening;
 
 namespace MyGame.Gameplay
 {
-    public sealed class ScaleOfSympathy : MonoBehaviour
+    public sealed class ProgressPanel : MonoBehaviour
     {
+        [SerializeField] private GameObject[] _nameTextes;
+        [SerializeField] private Sprite[] _scaleSprites;
         [SerializeField] private RectTransform _scale;
+        [SerializeField] private Image _scaleImage;
         [SerializeField] private TextMeshProUGUI _valueText;
 
         private RectTransform _rectTransform;
         private Sequence _seqValue;
         private Sequence _seqPosition;
+        private float _maxAnchoredPositionX;
         private float _maxValue;
         private float _currentValue;
         private float _startPositionY;
@@ -22,15 +27,41 @@ namespace MyGame.Gameplay
         private readonly float _timePositionAnim = 0.3f;
         private bool _isActive = true;
 
-        public void Init(Scenario scenario)
+        public void Init()
         {
-            CountMaxValues(scenario);
-            _valueSize = _scale.anchoredPosition.x / _maxValue;
-            _scale.anchoredPosition = Vector2.zero;
             UpdateValueText();
             _rectTransform = GetComponent<RectTransform>();
+            _maxAnchoredPositionX = _scale.anchoredPosition.x;
             _startPositionY = _rectTransform.anchoredPosition.y;
             Hide(false);
+        }
+
+        public void SetSympathy(float currentValue, float maxValue)
+        {
+            for (int i = 0; i < _nameTextes.Length; i++)
+                _nameTextes[i].SetActive(false);
+            _nameTextes[0].SetActive(true);
+            _scaleImage.sprite = _scaleSprites[0];
+            SetStartValues(currentValue, maxValue);
+        }
+
+        public void SetPuzzle(float currentValue, float maxValue)
+        {
+            for (int i = 0; i < _nameTextes.Length; i++)
+                _nameTextes[i].SetActive(false);
+            _nameTextes[1].SetActive(true);
+            _scaleImage.sprite = _scaleSprites[1];
+            SetStartValues(currentValue, maxValue);
+        }
+
+        private void SetStartValues(float currentValue, float maxValue)
+        {
+            _currentValue = currentValue;
+            _maxValue = maxValue;
+            if (_maxValue != 0)
+                _valueSize = _maxAnchoredPositionX / _maxValue;
+            _scale.anchoredPosition = new Vector2(_currentValue * _valueSize, 0);
+            UpdateValueText();
         }
 
         public void Show(bool isAnim)
@@ -51,9 +82,9 @@ namespace MyGame.Gameplay
             Move(isAnim, -_startPositionY);
         }
 
-        public void AddValue(float value)
+        public void ChangeValue(float value)
         {
-            _currentValue += value;
+            _currentValue = value;
             UpdateValueText();
             TryStopValueAnim();
             _seqValue = DOTween.Sequence();
@@ -77,34 +108,6 @@ namespace MyGame.Gameplay
         private void UpdateValueText()
         {
             _valueText.text = $"{_currentValue}/{_maxValue}";
-        }
-
-        private void CountMaxValues(Scenario scenario)
-        {
-            ScenarioStage scenarioStage;
-            int id = 0;
-            while (true)
-            {
-                scenarioStage = scenario.TryGetScenarioStage(id);
-                id++;
-                if (scenarioStage == null)
-                    return;
-                if (scenarioStage.typeStage == "Dialogue")
-                {
-                    List<PhraseVariant> phraseVariants = scenarioStage.Dialogue.phraseVariants;
-
-                    if (phraseVariants == null || phraseVariants.Count == 0)
-                        continue;
-
-                    float max = float.MinValue;
-                    for (int i = 0; i < phraseVariants.Count; i++)
-                    {
-                        if (phraseVariants[i].respect > max)
-                            max = phraseVariants[i].respect;
-                    }
-                    _maxValue += max;
-                }
-            }
         }
 
         private void TryStopValueAnim()
