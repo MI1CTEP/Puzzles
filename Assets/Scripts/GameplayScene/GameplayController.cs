@@ -90,7 +90,7 @@ namespace MyGame.Gameplay
 
         private void UpdateCameraSize()
         {
-            _cameraController.UpdateSize(_currentScenarioStage.Image.texture.width);
+            _cameraController.UpdateSize(_currentScenarioStage.Image.texture.height, _currentScenarioStage.Image.texture.width);
         }
 
         private void SetBackgroundImage()
