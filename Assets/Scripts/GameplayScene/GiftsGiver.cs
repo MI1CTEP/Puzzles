@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using DG.Tweening;
 using MyGame.Gifts;
 using MyGame.Shop;
 
@@ -12,16 +13,20 @@ namespace MyGame.Gameplay
         [SerializeField] private GiftRespect _giftRespectPrefab;
         [SerializeField] private Button _continueButton;
         [SerializeField] private RespectController _respectController;
+        [SerializeField] private Image _background;
 
+        private Sequence _seq;
         private GiftsSettings _giftsSettings;
         private GiftsPool _giftsPool;
         private GiftRespect[] _giftRespects;
         private Gift[] _gifts;
+        private readonly float _timeShowGiftsAnim = 0.8f;
 
         public UnityAction OnEnd { get; set; }
 
         public void Init(GiftController giftController)
         {
+            gameObject.SetActive(false);
             _giftsSettings = giftController.GiftsSettings;
             _giftsPool = giftController.GiftsPool;
             CreateGiftRespects();
@@ -31,6 +36,8 @@ namespace MyGame.Gameplay
 
         public void Play(ScenarioStage scenarioStage)
         {
+            _background.color = Color.clear;
+            _continueButton.gameObject.SetActive(false);
             gameObject.SetActive(true);
             _gifts = new Gift[_giftsSettings.GiftsGroups.Length];
             for (int i = 0; i < _gifts.Length; i++)
@@ -40,12 +47,32 @@ namespace MyGame.Gameplay
                 _gifts[i].Init(_giftsSettings, i, randomGiftId);
                 _gifts[i].SetParent(_giftsParent);
                 _gifts[i].ShowValue(0);
+                _gifts[i].transform.localPosition = new Vector3(-405 + i * 270,  -600, 0);
                 _gifts[i].SetClickLogic(TryGiveGift);
 
-                _giftRespects[i].gameObject.SetActive(true);
+                _giftRespects[i].gameObject.SetActive(false);
                 _giftRespects[i].transform.SetParent(_gifts[i].transform);
                 _giftRespects[i].transform.localPosition = new Vector3(0, -175, 0);
                 _giftRespects[i].SetRespect(_giftsSettings.GiftsGroups[i].respect);
+            }
+            ShowGiftsAnim();
+        }
+
+        private void ShowGiftsAnim()
+        {
+            TryStopAnim();
+            _seq = DOTween.Sequence();
+            _seq.Insert(0, _background.DOFade(0.9f, _timeShowGiftsAnim));
+            for (int i = 0; i < _gifts.Length; i++)
+            {
+                int id = i;
+                _seq.Insert(id * 0.1f, _gifts[id].transform.DOLocalMoveY(0, _timeShowGiftsAnim - 0.1f * _gifts.Length));
+            }
+            _seq.InsertCallback(_timeShowGiftsAnim, () => _continueButton.gameObject.SetActive(true));
+            for (int i = 0; i < _giftRespects.Length; i++)
+            {
+                int id = i;
+                _seq.InsertCallback(_timeShowGiftsAnim + id * 0.1f, () => _giftRespects[id].gameObject.SetActive(true));
             }
         }
 
@@ -94,8 +121,15 @@ namespace MyGame.Gameplay
             OnEnd?.Invoke();
         }
 
+        private void TryStopAnim()
+        {
+            if (_seq != null)
+                _seq.Kill();
+        }
+
         private void OnDestroy()
         {
+            TryStopAnim();
             ShopController.Instance.OnBuy -= UpdateGiftsValue;
         }
     }

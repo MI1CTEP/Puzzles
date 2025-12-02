@@ -56,8 +56,8 @@ namespace MyGame.Gameplay.Puzzle
 
         private void End()
         {
-            Debug.Log("end");
             gameObject.SetActive(false);
+            _background.SetActiveMask(false);
             OnEnd?.Invoke();
         }
 

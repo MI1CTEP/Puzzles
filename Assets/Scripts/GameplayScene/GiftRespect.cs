@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace MyGame.Gameplay
 {
     public sealed class GiftRespect : MonoBehaviour
     {
-        [SerializeField] private Text _text;
+        [SerializeField] private TextMeshProUGUI _text;
 
         public void SetRespect(int value)
         {

@@ -52,7 +52,7 @@ namespace MyGame.Gameplay.Puzzle
             if (IsTruePosition)
                 return;
             _isMove = true;
-            _spriteRenderer.sortingOrder = 1;
+            _spriteRenderer.sortingOrder = 2;
             _clickPosition = transform.position - _camera.ScreenToWorldPoint(Input.mousePosition);
         }
 
@@ -61,7 +61,7 @@ namespace MyGame.Gameplay.Puzzle
             if (IsTruePosition)
                 return;
             _isMove = false;
-            _spriteRenderer.sortingOrder = 0;
+            _spriteRenderer.sortingOrder = 1;
             Vector2Int newPosition = _board.TryChangePosition(this);
             UpdatePosition(newPosition);
         }
