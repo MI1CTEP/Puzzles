@@ -15,6 +15,7 @@ namespace MyGame.Gameplay
         [SerializeField] private CameraController _cameraController;
         [SerializeField] private GiftController _giftController;
         [SerializeField] private GiftsGiver _giftsGiver;
+        [SerializeField] private EndPanel _endPanel;
         [SerializeField] private int _level;
 
         private ScenarioLoader _scenarioLoader;
@@ -25,6 +26,7 @@ namespace MyGame.Gameplay
 
         private void Start()
         {
+            GameData.CurrentLevel = _level;
             Init();
             TryStartNextStage();
         }
@@ -32,7 +34,7 @@ namespace MyGame.Gameplay
         private void Init()
         {
             _scenarioLoader = new();
-            _scenario = _scenarioLoader.GetScenario(_level);
+            _scenario = _scenarioLoader.GetScenario(GameData.CurrentLevel);
             _progressPanel.Init();
             _videoController.Init();
             _puzzleController.Init(_progressPanel);
@@ -40,6 +42,7 @@ namespace MyGame.Gameplay
             _cameraController.Init();
             _giftController.Init();
             _giftsGiver.Init(_giftController);
+            _endPanel.Init(_dialogueController, _giftController);
         }
 
         private void TryStartNextStage()
@@ -57,6 +60,7 @@ namespace MyGame.Gameplay
             switch (_currentScenarioStage.typeStage)
             {
                 case "Puzzle":
+                    _videoController.Disable();
                     _currentGameStage = _puzzleController;
                     _progressPanel.Hide(true);
                     UpdateCameraSize();
@@ -69,6 +73,7 @@ namespace MyGame.Gameplay
                     StartNextStage();
                     break;
                 case "Dialogue":
+                    _videoController.Disable();
                     _currentGameStage = _dialogueController;
                     _progressPanel.Show(true);
                     UpdateCameraSize();
@@ -76,6 +81,7 @@ namespace MyGame.Gameplay
                     StartNextStage();
                     break;
                 case "Gifts":
+                    _videoController.Disable();
                     _currentGameStage = _giftsGiver;
                     _progressPanel.Hide(true);
                     UpdateCameraSize();
@@ -106,7 +112,7 @@ namespace MyGame.Gameplay
 
         private void End()
         {
-            _giftController.ShowRoulette(null);
+            _endPanel.Show();
         }
 
         private void TryStopLastStage()

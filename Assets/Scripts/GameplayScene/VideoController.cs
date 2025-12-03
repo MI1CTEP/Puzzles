@@ -36,6 +36,11 @@ namespace MyGame.Gameplay
             _videoPlayer.Play();
         }
 
+        public void Disable()
+        {
+            gameObject.SetActive(false);
+        }
+
         private void OnVideoFinished(VideoPlayer vp)
         {
             _buttons.SetActive(true);
@@ -44,7 +49,6 @@ namespace MyGame.Gameplay
         private void End()
         {
             _buttons.SetActive(false);
-            gameObject.SetActive(false);
             OnEnd?.Invoke();
         }
 

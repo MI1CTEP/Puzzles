@@ -19,8 +19,11 @@ namespace MyGame.Gameplay.Dialogue
         private PhraseButton[] _phraseButtons;
         private DialogueAnim _anim;
         private RectTransform _continueButtonRect;
-        private float _currentSympathy;
-        private float _maxSympathy;
+        private int _currentSympathy;
+        private int _maxSympathy;
+
+        public int CurrentSympathy => _currentSympathy;
+        public int MaxSympathy => _maxSympathy;
 
         public UnityAction OnEnd { get; set; }
         public UnityAction OnSkipTextAnim { get; set; }
@@ -143,7 +146,7 @@ namespace MyGame.Gameplay.Dialogue
                     if (phraseVariants == null || phraseVariants.Count == 0)
                         continue;
 
-                    float max = float.MinValue;
+                    int max = 0;
                     for (int i = 0; i < phraseVariants.Count; i++)
                     {
                         if (phraseVariants[i].respect > max)

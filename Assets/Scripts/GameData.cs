@@ -4,6 +4,8 @@ namespace MyGame
 {
     public static class GameData
     {
+        public static int CurrentLevel { get; set; }
+
         public static class Score
         {
             private static string _key = "Score";
@@ -15,6 +17,20 @@ namespace MyGame
             }
 
             public static int Load() => PlayerPrefs.GetInt(_key);
+        }
+
+        public static class Sympathy
+        {
+            private static string _key = "Sympathy_";
+
+            public static void Save(int id, int value)
+            {
+                float currentValue = Load(id);
+                if (currentValue < value)
+                    PlayerPrefs.SetInt(_key + id.ToString(), value);
+            }
+
+            public static int Load(int id) => PlayerPrefs.GetInt(_key + id.ToString());
         }
 
         public static class Gifts
