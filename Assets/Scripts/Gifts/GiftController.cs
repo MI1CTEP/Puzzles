@@ -27,7 +27,6 @@ namespace MyGame.Gifts
                 _giftRoulette.Show(onEndShowing);
                 return;
             }
-            onEndShowing?.Invoke();
         }
     }
 }

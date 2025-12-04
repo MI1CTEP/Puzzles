@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using TMPro;
 
 namespace MyGame.Gifts
 {
@@ -10,7 +11,7 @@ namespace MyGame.Gifts
         [SerializeField] private Image _outline;
         [SerializeField] private Button _button;
         [SerializeField] private Image _valueImage;
-        [SerializeField] private Text _valueText;
+        [SerializeField] private TextMeshProUGUI _valueText;
 
         private int _groupId;
         private int _id;

@@ -11,7 +11,10 @@ namespace MyGame.Gameplay.Puzzle
         private int _necessaryProgress;
         private int _progress;
 
+        public UnityAction OnAddProgress { get; set; }
         public UnityAction OnComplete { get; set; }
+        public int NecessaryProgress => _necessaryProgress;
+        public int Progress => _progress;
 
         public void SetParts(PuzzlePart[,] parts, Vector2Int partsLength)
         {
@@ -23,6 +26,7 @@ namespace MyGame.Gameplay.Puzzle
         public void AddProgress()
         {
             _progress++;
+            OnAddProgress?.Invoke();
             if (_progress >= _necessaryProgress)
                 OnComplete?.Invoke();
         }

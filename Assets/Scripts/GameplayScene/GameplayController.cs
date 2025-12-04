@@ -7,7 +7,7 @@ namespace MyGame.Gameplay
 {
     public sealed class GameplayController : MonoBehaviour
     {
-        [SerializeField] private ScaleOfSympathy _scaleOfSympathy;
+        [SerializeField] private ProgressPanel _progressPanel;
         [SerializeField] private VideoController _videoController;
         [SerializeField] private PuzzleController _puzzleController;
         [SerializeField] private BackgroundController _backgroundController;
@@ -15,6 +15,7 @@ namespace MyGame.Gameplay
         [SerializeField] private CameraController _cameraController;
         [SerializeField] private GiftController _giftController;
         [SerializeField] private GiftsGiver _giftsGiver;
+        [SerializeField] private EndPanel _endPanel;
         [SerializeField] private int _level;
 
         private ScenarioLoader _scenarioLoader;
@@ -25,6 +26,7 @@ namespace MyGame.Gameplay
 
         private void Start()
         {
+            GameData.CurrentLevel = _level;
             Init();
             TryStartNextStage();
         }
@@ -32,14 +34,15 @@ namespace MyGame.Gameplay
         private void Init()
         {
             _scenarioLoader = new();
-            _scenario = _scenarioLoader.GetScenario(_level);
-            _scaleOfSympathy.Init(_scenario);
+            _scenario = _scenarioLoader.GetScenario(GameData.CurrentLevel);
+            _progressPanel.Init();
             _videoController.Init();
-            _puzzleController.Init();
-            _dialogueController.Init(_scaleOfSympathy);
+            _puzzleController.Init(_progressPanel);
+            _dialogueController.Init(_scenario, _progressPanel);
             _cameraController.Init();
             _giftController.Init();
             _giftsGiver.Init(_giftController);
+            _endPanel.Init(_dialogueController, _giftController);
         }
 
         private void TryStartNextStage()
@@ -57,27 +60,30 @@ namespace MyGame.Gameplay
             switch (_currentScenarioStage.typeStage)
             {
                 case "Puzzle":
+                    _videoController.Disable();
                     _currentGameStage = _puzzleController;
-                    _scaleOfSympathy.Hide();
+                    _progressPanel.Hide(true);
                     UpdateCameraSize();
                     SetBackgroundImage();
                     StartNextStage();
                     break;
                 case "Video":
                     _currentGameStage = _videoController;
-                    _scaleOfSympathy.Hide();
+                    _progressPanel.Hide(true);
                     StartNextStage();
                     break;
                 case "Dialogue":
+                    _videoController.Disable();
                     _currentGameStage = _dialogueController;
-                    _scaleOfSympathy.Show();
+                    _progressPanel.Show(true);
                     UpdateCameraSize();
                     SetBackgroundImage();
                     StartNextStage();
                     break;
                 case "Gifts":
+                    _videoController.Disable();
                     _currentGameStage = _giftsGiver;
-                    _scaleOfSympathy.Hide();
+                    _progressPanel.Hide(true);
                     UpdateCameraSize();
                     SetBackgroundImage();
                     StartNextStage();
@@ -90,7 +96,7 @@ namespace MyGame.Gameplay
 
         private void UpdateCameraSize()
         {
-            _cameraController.UpdateSize(_currentScenarioStage.Image.texture.width);
+            _cameraController.UpdateSize(_currentScenarioStage.Image.texture.height, _currentScenarioStage.Image.texture.width);
         }
 
         private void SetBackgroundImage()
@@ -106,7 +112,7 @@ namespace MyGame.Gameplay
 
         private void End()
         {
-            _giftController.ShowRoulette(null);
+            _endPanel.Show();
         }
 
         private void TryStopLastStage()

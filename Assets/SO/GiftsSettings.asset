@@ -15,42 +15,57 @@ MonoBehaviour:
   _giftsGroups:
   - outlineColor: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
     sprites:
-    - {fileID: 21300000, guid: ec26ade6d0359b34ebed6042dd869c7f, type: 3}
-    - {fileID: 21300000, guid: 1f5e53908c7865c418c9be0da827b4f1, type: 3}
-    - {fileID: 21300000, guid: 15815cf6d0e61764bab10f6aa8ba149d, type: 3}
-    - {fileID: 21300000, guid: 0ffe15ceede992248b56959b1f9eff2b, type: 3}
-    - {fileID: 21300000, guid: 195f249a36e936c419b8db128c9b907c, type: 3}
-    - {fileID: 21300000, guid: db4a9541e152b814087d475abc43f6ff, type: 3}
-    - {fileID: 21300000, guid: d9420184406b90b4f97522339d49896e, type: 3}
-    - {fileID: 21300000, guid: 8bb09e5fb345d7343a86adad49bda086, type: 3}
-    - {fileID: 21300000, guid: 0bca85f2c612fcd4abba01aa06564e6b, type: 3}
+    - {fileID: 21300000, guid: b6fcdb91a3ac1d3479e6b756e498f314, type: 3}
+    - {fileID: 21300000, guid: 9433fab7f908e924eaed2a5f7e926d17, type: 3}
+    - {fileID: 21300000, guid: f74b16751c581c243b7e400b468cf18b, type: 3}
+    - {fileID: 21300000, guid: 3627ed9403e1e0548a075fff18a910c2, type: 3}
+    - {fileID: 21300000, guid: 1bde1ce8adbb3d544923acc56a7008c3, type: 3}
+    - {fileID: 21300000, guid: e934cc5bf57ccc84ca8ba82e613870de, type: 3}
+    - {fileID: 21300000, guid: 3460bd56a928e1d4eab40c7ac1de92fa, type: 3}
+    - {fileID: 21300000, guid: eea447e41c4ebb04bb7225529def48f8, type: 3}
+    - {fileID: 21300000, guid: dd0ae8c0649e38a4683d17a439c1357d, type: 3}
+    - {fileID: 21300000, guid: a08a1654243c7da4a825525d6788e3ad, type: 3}
     quantityInRoulette: 5
     respect: 1
   - outlineColor: {r: 0.19433957, g: 0.6319275, b: 1, a: 1}
     sprites:
-    - {fileID: 21300000, guid: b939a1949ee66c040affdba6d477a702, type: 3}
-    - {fileID: 21300000, guid: 11c4f057449da974eab861877e7fab97, type: 3}
-    - {fileID: 21300000, guid: 47197d13c7ba7aa46b2f8cc884591475, type: 3}
-    - {fileID: 21300000, guid: 25ecb198a40e5e84a957342384f4bd05, type: 3}
-    - {fileID: 21300000, guid: 826a1e7e90f83174d8715339ef55e1a9, type: 3}
-    - {fileID: 21300000, guid: d579daf07d05461438da4f0fb133fe30, type: 3}
-    - {fileID: 21300000, guid: 6d5e475432fcd4448a5b7bbbd0e81b34, type: 3}
+    - {fileID: 21300000, guid: f51a4cd5af331c64c962a7436ef1c41c, type: 3}
+    - {fileID: 21300000, guid: 9828382a6f964d84bb327252859cd771, type: 3}
+    - {fileID: 21300000, guid: 38523f7de01b7794bb18af02beaa7bf7, type: 3}
+    - {fileID: 21300000, guid: 85811cdcc82756741a937de4e46f6e59, type: 3}
+    - {fileID: 21300000, guid: 2c153882c7942f342a0ccabeca6394b9, type: 3}
+    - {fileID: 21300000, guid: 8d42b11fe25aba945afbad80aeeb06ea, type: 3}
+    - {fileID: 21300000, guid: 0c0e8b62da42a144baa672722d1e5ea0, type: 3}
+    - {fileID: 21300000, guid: 59c98d2cc2e39e04d8a1f5c932157f24, type: 3}
+    - {fileID: 21300000, guid: 7e3565656f0cb7949af4190a6371069e, type: 3}
+    - {fileID: 21300000, guid: 6b8e3d5f5c38140478ae67d3b9f6f560, type: 3}
     quantityInRoulette: 3
     respect: 2
   - outlineColor: {r: 0.9526746, g: 0.20943397, b: 1, a: 1}
     sprites:
-    - {fileID: 21300000, guid: c499ff17c6cb8f847a36dbcd2ed30148, type: 3}
-    - {fileID: 21300000, guid: 95b167650905f82479b4acb5caac6a29, type: 3}
-    - {fileID: 21300000, guid: 4c989200f341d2041a8e433be91dd8da, type: 3}
-    - {fileID: 21300000, guid: 8eb6e0a01a852624db48d88ab3cee266, type: 3}
-    - {fileID: 21300000, guid: 57cf15eb1c2c267488fd1a6e5afc1b30, type: 3}
-    - {fileID: 21300000, guid: d6e1db3b417295a41abdc3a66c1966d4, type: 3}
+    - {fileID: 21300000, guid: 6c4f9d1184387c348ad3206a6948144f, type: 3}
+    - {fileID: 21300000, guid: 8c2c42b36287cee46ba1290debb19132, type: 3}
+    - {fileID: 21300000, guid: 0db7a5af414392d478bc0de94e75f639, type: 3}
+    - {fileID: 21300000, guid: 9096411c9ae905c43a4f6a172fd31148, type: 3}
+    - {fileID: 21300000, guid: a3dbc3b06b6e69a4c9dea2ff7efb87d2, type: 3}
+    - {fileID: 21300000, guid: ed8d55ce2294fac4a816edc0362e1eb9, type: 3}
+    - {fileID: 21300000, guid: fee472693432e2d4fb9e6ab2b63dc4a2, type: 3}
+    - {fileID: 21300000, guid: 4b7f7b76a6c2900499e102853f71fecd, type: 3}
+    - {fileID: 21300000, guid: d244861d3aed2e44d9ca949a698cc5d2, type: 3}
+    - {fileID: 21300000, guid: 4d3b10a3b3a63f747860749b84680c6e, type: 3}
     quantityInRoulette: 2
     respect: 5
   - outlineColor: {r: 0.98490566, g: 0.697358, b: 0.24343893, a: 1}
     sprites:
-    - {fileID: 21300000, guid: 6661b7b035ba96c429c60f5bed4fa1ef, type: 3}
-    - {fileID: 21300000, guid: f485a1d3f88842f4e8f935a5ec78d728, type: 3}
-    - {fileID: 21300000, guid: 538a499c7d2fcc4438cf9fce6ea2270d, type: 3}
+    - {fileID: 21300000, guid: 5ff77f33b79ec1b4d8beab7ba81f36a6, type: 3}
+    - {fileID: 21300000, guid: c6c5cd1c52bf43e49b6b41f3cc7f79cd, type: 3}
+    - {fileID: 21300000, guid: 516327e3d7adc94429d47964905dda82, type: 3}
+    - {fileID: 21300000, guid: 85defd524d939d7468d055890c8445f6, type: 3}
+    - {fileID: 21300000, guid: 20bbcd03905405f42b4356ff60a1febc, type: 3}
+    - {fileID: 21300000, guid: a7e1c76d15cfd7b43bb2a18abddb551c, type: 3}
+    - {fileID: 21300000, guid: 08c267a3bd9a8384393e4fd72a199447, type: 3}
+    - {fileID: 21300000, guid: 2700f8e5b29ce5649a64fe8402e3b945, type: 3}
+    - {fileID: 21300000, guid: 8888182a284db574182fb8cb5fec5bc0, type: 3}
+    - {fileID: 21300000, guid: be0707ae881b35248bfe2c9de07d937e, type: 3}
     quantityInRoulette: 1
     respect: 10

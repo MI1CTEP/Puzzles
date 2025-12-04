@@ -11,10 +11,18 @@ namespace MyGame.Gameplay
             _camera = Camera.main;
         }
 
-        public void UpdateSize(float contentWidth)
+        public void UpdateSize(float contentHeight,  float contentWidth)
         {
+            float contentRatio = contentHeight / contentWidth;
             float aspectRatio = (float)Screen.height / Screen.width;
-            _camera.orthographicSize = aspectRatio * contentWidth / 200;
+            if(aspectRatio < contentRatio)
+            {
+                _camera.orthographicSize = aspectRatio * contentWidth / 200;
+            }
+            else
+            {
+                _camera.orthographicSize = contentRatio * contentWidth / 200;
+            }
         }
     }
 }

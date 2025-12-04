@@ -6,7 +6,6 @@ namespace MyGame.Gameplay.Puzzle
     {
         private PuzzlePartsPool _partsPool;
         private Transform _parent;
-        private Vector2Int _soursceTextureSize;
         private Vector2Int _partsValue;
         private Vector2Int _offset;
         private int _partsSize;
@@ -22,15 +21,24 @@ namespace MyGame.Gameplay.Puzzle
 
         public PuzzlePart[,] GetPuzzleParts(Texture2D sourceTexture, int partsValueX)
         {
-            _soursceTextureSize = new(sourceTexture.width, sourceTexture.height);
-
-            _partsSize = _soursceTextureSize.x / (partsValueX + 1);
+            float contentRatio = (float)sourceTexture.height / sourceTexture.width;
+            float aspectRatio = (float)Screen.height / Screen.width;
 
             _partsValue.x = partsValueX;
-            _partsValue.y = _soursceTextureSize.y / _partsSize - 1;
 
-            _offset.x = (_soursceTextureSize.x - _partsValue.x * _partsSize) / 2;
-            _offset.y = (_soursceTextureSize.y - _partsValue.y * _partsSize) / 2;
+            if (contentRatio > aspectRatio)
+            {
+                _partsSize = sourceTexture.width / (partsValueX + 1);
+                _partsValue.y = (int)((sourceTexture.height * aspectRatio) / (_partsSize * contentRatio)) - 1;
+            }
+            else
+            {
+                _partsSize = (int)((sourceTexture.width * contentRatio) / ((partsValueX + 1) * aspectRatio));
+                _partsValue.y = sourceTexture.height / _partsSize - 1;
+            }
+            
+            _offset.x = (sourceTexture.width - _partsValue.x * _partsSize) / 2;
+            _offset.y = (sourceTexture.height - _partsValue.y * _partsSize) / 2;
 
             _parent.position = new Vector3(_partsValue.x, _partsValue.y, 0) * _partsSize / -200f;
 

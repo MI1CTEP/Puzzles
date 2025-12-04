@@ -12,7 +12,7 @@ namespace MyGame.Gameplay.Dialogue
     public sealed class PhraseVariant
     {
         public Phrase answer;
-        public float respect;
+        public int respect;
         public Phrase secondPhrase;
     }
 

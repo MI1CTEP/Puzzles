@@ -10,15 +10,16 @@ namespace MyGame.Gameplay.Dialogue
         [SerializeField] private Color _colorForPlayer;
         [SerializeField] private Color _colorForCharacter;
 
+        private DialogueController _dialogueController;
         private UnityAction _onSetPhrase;
         private PhraseAnim _anim;
 
-        public void Init(Phrase phrase, bool isPlayerPhrase, UnityAction onSetPhrase)
+        public void Init(DialogueController dialogueController, Phrase phrase, bool isPlayerPhrase, UnityAction onSetPhrase)
         {
             Init(phrase);
 
+            _dialogueController = dialogueController;
             _onSetPhrase = onSetPhrase;
-
 
             if (isPlayerPhrase)
             {
@@ -31,7 +32,8 @@ namespace MyGame.Gameplay.Dialogue
                 _background.transform.localPosition += Vector3.left * 100;
                 _background.color = _colorForCharacter;
                 _anim = gameObject.AddComponent<PhraseAnim>();
-                _anim.Play(_text, phrase.ru);
+                _dialogueController.OnSkipTextAnim += _anim.TrySkipAnim;
+                _anim.Play(_text);
                 _anim.OnEndAnim += SetPhrase;
             }
         }
@@ -44,7 +46,10 @@ namespace MyGame.Gameplay.Dialogue
         private void OnDestroy()
         {
             if (_anim != null)
+            {
+                _dialogueController.OnSkipTextAnim -= _anim.TrySkipAnim;
                 _anim.OnEndAnim += SetPhrase;
+            }
         }
     }
 }
