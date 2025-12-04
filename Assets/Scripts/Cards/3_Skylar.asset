@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eacbeb50dc60496eb07e2c3e7739d6e, type: 3}
+  m_Name: 3_Skylar
+  m_EditorClassIdentifier: 
+  characterName: Skylar
+  story: 
+  sympathy: 0
+  progress: 0
+  images:
+  - sprite: {fileID: 21300000, guid: 4159d8fa699974ff7a172ac7187f38f0, type: 3}
+    isUnlocked: 1
+  - sprite: {fileID: 21300000, guid: 03d4e0b9658ce41be97a4fb4a6c30621, type: 3}
+    isUnlocked: 0
+  - sprite: {fileID: 21300000, guid: e32803c40b6c44a29b609509c015b25f, type: 3}
+    isUnlocked: 0
+  - sprite: {fileID: 21300000, guid: 203570bb9e9e04c178aa5d0c9f8394d6, type: 3}
+    isUnlocked: 0
+  - sprite: {fileID: 21300000, guid: 2e1a1be912c544db39fb96e57ead29e7, type: 3}
+    isUnlocked: 0
+  videos:
+  - clip: {fileID: 32900000, guid: 7010f2d9e7a2044aba4f25ea1ef9bd18, type: 3}
+    isUnlocked: 0
+  - clip: {fileID: 32900000, guid: f828ec6424b62428983b5348711dd80a, type: 3}
+    isUnlocked: 0
+  - clip: {fileID: 32900000, guid: 2b292c934c61443eb804a78255945ed6, type: 3}
+    isUnlocked: 0
+  - clip: {fileID: 32900000, guid: 8775ce572e9834bbd99bac140c4bd467, type: 3}
+    isUnlocked: 0

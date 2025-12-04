@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eacbeb50dc60496eb07e2c3e7739d6e, type: 3}
+  m_Name: 8_Nia
+  m_EditorClassIdentifier: 
+  characterName: Nia
+  story: 
+  sympathy: 0
+  progress: 0
+  images:
+  - sprite: {fileID: 21300000, guid: c9cce5b34d513400c823b48a4032ccf8, type: 3}
+    isUnlocked: 1
+  - sprite: {fileID: 21300000, guid: f32670a24fe7344d2b4fdd4a6b0b2e54, type: 3}
+    isUnlocked: 0
+  - sprite: {fileID: 21300000, guid: e51ea0d9bbf8c466fa31a97f4fa1559a, type: 3}
+    isUnlocked: 0
+  - sprite: {fileID: 21300000, guid: 03479ccbe71b54cdd9768f347c411d7b, type: 3}
+    isUnlocked: 0
+  - sprite: {fileID: 21300000, guid: 4142841defdf74da2b459b556e31f076, type: 3}
+    isUnlocked: 0
+  videos:
+  - clip: {fileID: 32900000, guid: bf50f81c3465945949ed8c38d0a4c756, type: 3}
+    isUnlocked: 0
+  - clip: {fileID: 32900000, guid: f298d00d303f8423084471eaf45157db, type: 3}
+    isUnlocked: 0
+  - clip: {fileID: 32900000, guid: b5404413da5f6449eba1afd7bf75d04f, type: 3}
+    isUnlocked: 0
+  - clip: {fileID: 32900000, guid: 8e22c93cbcece4b108afb8e791af5e88, type: 3}
+    isUnlocked: 0

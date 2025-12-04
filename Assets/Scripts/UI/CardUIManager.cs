@@ -28,17 +28,6 @@ public class CardUIManager : MonoBehaviour
     private bool isDragging = false;            // Флаг перетаскивания
     private int currentCardIndex = 0;  // Индекс текущей карточки (для зацикливания)
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else Destroy(gameObject);
-    }
-
-
     private void OnEnable() => CreateNewCard();      // Создать новую карточку при активации
 
     private void CreateNewCard()                     // Создание новой карточки

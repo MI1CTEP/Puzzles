@@ -1024,7 +1024,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 304348395}
   m_FillRect: {fileID: 1190856522}
   m_HandleRect: {fileID: 304348394}
@@ -1245,7 +1245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481ab606793a67349be805c13febeba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTarget: {fileID: 0}
+  mTarget: {fileID: 44954821}
   mAlignment_RTL: 514
   mAlignment_LTR: 514
   mAlignmentWasRTL: 0
@@ -2658,6 +2658,7 @@ MonoBehaviour:
   _portuguese: {fileID: 21300000, guid: 78972c4842da24a9f8a7c14e46299e39, type: 3}
   _italian: {fileID: 21300000, guid: 81ffdfebadcb64a619f9b1bb07f6812d, type: 3}
   _hindi: {fileID: 21300000, guid: 28f4738fad3554af58071b06d5ae3915, type: 3}
+  _spanish: {fileID: 21300000, guid: 2b1414b7e0bb34ca5a187f3e05d68ca9, type: 3}
 --- !u!114 &1063694557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4448,6 +4449,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7bd27b722f2cd4a9f84615e34ff29435, type: 2}
   - {fileID: 11400000, guid: bc3043de4c8f64024a404d82f2a3678d, type: 2}
   - {fileID: 11400000, guid: c277e00641c594c2e9121ab0d1e7050b, type: 2}
+  - {fileID: 11400000, guid: 0207a26cae6c642f59542c8f465e4632, type: 2}
+  - {fileID: 11400000, guid: a80f1729ef041471d9bac21601721465, type: 2}
+  - {fileID: 11400000, guid: ec813f0814a584bff8b89f30aaed45db, type: 2}
+  - {fileID: 11400000, guid: 8eb4c8c6b19a64f6caa77ed839771aa7, type: 2}
+  - {fileID: 11400000, guid: 0e9c862144ae94757804c9117b626d33, type: 2}
+  - {fileID: 11400000, guid: edb4172d9108c41eabc9835a09333d42, type: 2}
+  - {fileID: 11400000, guid: e3f6c45d1172d4570866448e1e85dcec, type: 2}
   progressSlider: {fileID: 2074684961}
   sympathySlider: {fileID: 396352129}
   revealButton: {fileID: 585219391}
@@ -5519,7 +5527,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1090136905}
   m_FillRect: {fileID: 1168409998}
   m_HandleRect: {fileID: 1090136904}

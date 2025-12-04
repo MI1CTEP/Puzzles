@@ -17,6 +17,7 @@ public class UILanguage : MonoBehaviour
     [SerializeField] private Sprite _portuguese;
     [SerializeField] private Sprite _italian;
     [SerializeField] private Sprite _hindi;
+    [SerializeField] private Sprite _spanish;
 
     private readonly System.Collections.Generic.Dictionary<string, Sprite> _languageSprites = new();
 
@@ -29,7 +30,8 @@ public class UILanguage : MonoBehaviour
         "French",
         "Portuguese",
         "Italian",
-        "Hindi"
+        "Hindi",
+        "Spanish"
     };
 
     private void Awake()
@@ -43,6 +45,7 @@ public class UILanguage : MonoBehaviour
         _languageSprites["Portuguese"] = _portuguese;
         _languageSprites["Italian"] = _italian;
         _languageSprites["Hindi"] = _hindi;
+        _languageSprites["Spanish"] = _spanish;
     }
 
     private void Start() => LoadSettings();
@@ -71,6 +74,7 @@ public class UILanguage : MonoBehaviour
         if (_languageImage.sprite == _portuguese) return "Portuguese";
         if (_languageImage.sprite == _italian) return "Italian";
         if (_languageImage.sprite == _hindi) return "Hindi";
+        if (_languageImage.sprite == _spanish) return "Spanish";
 
         return "Russian";
     }

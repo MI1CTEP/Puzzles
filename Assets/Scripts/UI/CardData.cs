@@ -7,7 +7,7 @@ using UnityEngine.Video;
 [Serializable] public class CardData : ScriptableObject
 {
     public string characterName;    // Имя персонажа
-    [TextArea(5, 10)] public string story;  // Сюжет
+    [TextArea(1, 10)] public string story;  // Сюжет
     [Range(0, 100)] public int sympathy; // Симпатия: 0 до 100
     [Range(0, 100)] public int progress;  // Общий прогресс
     [Header("Изображения (5)")]

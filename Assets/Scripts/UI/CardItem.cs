@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using UnityEngine.Video;
 using TMPro;
 using DG.Tweening;
+using System.Collections.Generic;
+using System.Collections;
 
 public class CardItem : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class CardItem : MonoBehaviour
     [Header("UI Front")]
     [SerializeField] private TextMeshProUGUI nameText;      // Имя персонажа
     [SerializeField] private Image portraitImage;           // Портрет
+    [SerializeField] private GameObject blur;               // Блюр
+    [SerializeField] private Transform block;               // Блок
 
     [Header("UI Back")]
     [SerializeField] private TextMeshProUGUI storyText;     // Сюжет
@@ -22,6 +26,8 @@ public class CardItem : MonoBehaviour
 
     private CardData _data;      // Данные карточки
     private int _currentMediaIndex = 0;     // Текущий индекс медиа
+    private bool _isRevealing = false;      // Флаг анимации переворота
+    private Tweener _lockTweener;           // Для анимации покачивания замка
 
     public void SetData(CardData data) // Обновляем данные карточки
     {
@@ -31,6 +37,7 @@ public class CardItem : MonoBehaviour
         storyText.text = data.story;
 
         UpdateMedia();
+        UpdateLockState();
         ShowFront();
     }
 
@@ -44,10 +51,10 @@ public class CardItem : MonoBehaviour
 
     private void ChangeMedia(int delta) // Изменение медиа (влево/вправо)
     {
-        var unlockedMedia = GetUnlockedMedia();
+        List<(bool isImage, int index)> allMedia = GetAllMedia();
         int newIndex = _currentMediaIndex + delta;
 
-        if (newIndex < 0 || newIndex >= unlockedMedia.Count) return;
+        if (newIndex < 0 || newIndex >= allMedia.Count) return;
 
         _currentMediaIndex = newIndex;
         UpdateMedia();
@@ -59,44 +66,42 @@ public class CardItem : MonoBehaviour
         backPanel.SetActive(false);
         transform.rotation = Quaternion.identity;
         StopCurrentMedia();
+        UpdateMedia();
+        UpdateLockState();
     }
 
     private void UpdateMedia()  // Обновляем медиа (изображение или видео)
     {
         StopCurrentMedia();
 
-        var unlockedMedia = new System.Collections.Generic.List<(bool isImage, int index)>();   // Собираем все открытые медиа
+        List<(bool isImage, int index)> allMedia = GetAllMedia();
+        if (allMedia.Count == 0) return;
 
-        for (int i = 0; i < _data.images.Length; i++) if (_data.images[i].isUnlocked) unlockedMedia.Add((true, i));
-        for (int i = 0; i < _data.videos.Length; i++) if (_data.videos[i].isUnlocked) unlockedMedia.Add((false, i));
+        _currentMediaIndex = Mathf.Clamp(_currentMediaIndex, 0, allMedia.Count - 1);
+        var (isImage, index) = allMedia[_currentMediaIndex];
 
-        if (unlockedMedia.Count == 0)
-        {
-            mediaImage.gameObject.SetActive(true);
-            rawImage.gameObject.SetActive(false);
-            mediaImage.sprite = null;
-            return;
-        }
+        bool isUnlocked = isImage ? _data.images[index].isUnlocked : _data.videos[index].isUnlocked;
 
-        _currentMediaIndex = Mathf.Clamp(_currentMediaIndex, 0, unlockedMedia.Count - 1);   // Ограничиваем индекс
-        var (isImage, index) = unlockedMedia[_currentMediaIndex];
-
-        if (isImage)    // Показываем изображение
+        if (isImage)
         {
             mediaImage.gameObject.SetActive(true);
             rawImage.gameObject.SetActive(false);
             videoPlayer.Stop();
             mediaImage.sprite = _data.images[index].sprite;
         }
-        else           // Показываем видео
+        else
         {
             mediaImage.gameObject.SetActive(false);
             rawImage.gameObject.SetActive(true);
             videoPlayer.clip = _data.videos[index].clip;
-            videoPlayer.Play();
+            if (isUnlocked) videoPlayer.Play();
         }
 
+        blur.SetActive(!isUnlocked);
+
         if (CardUIManager.Instance != null) CardUIManager.Instance.OnCardMediaChanged();
+        
+        UpdateLockState();
     }
 
     private void StopCurrentMedia() // Останавливаем текущее медиа
@@ -106,25 +111,46 @@ public class CardItem : MonoBehaviour
         mediaImage.gameObject.SetActive(true);
     }
 
-    private System.Collections.Generic.List<(bool isImage, int index)> GetUnlockedMedia()   // Получить список открытых медиа
+    private List<(bool isImage, int index)> GetAllMedia()   // Получить список открытых медиа
     {
-        var list = new System.Collections.Generic.List<(bool, int)>();
-        for (int i = 0; i < _data.images.Length; i++) if (_data.images[i].isUnlocked) list.Add((true, i));
-        for (int i = 0; i < _data.videos.Length; i++) if (_data.videos[i].isUnlocked) list.Add((false, i));
+        var list = new List<(bool, int)>();
+        for (int i = 0; i < _data.images.Length; i++) list.Add((true, i));
+        for (int i = 0; i < _data.videos.Length; i++) list.Add((false, i));
         return list;
     }
 
-    private bool IsRevealing = false;           // Флаг анимации переворота
+    private void UpdateLockState()
+    {
+        if (!blur.activeSelf) StopLockWiggle();
+        else StartLockWiggle();
+    }
+
+    private void StartLockWiggle()
+    {
+        if (_lockTweener != null && _lockTweener.IsPlaying()) return;
+
+        _lockTweener = block.DORotate(new Vector3(0, 0, 5), 0.8f)
+                              .SetLoops(-1, LoopType.Yoyo)
+                              .SetEase(Ease.InOutSine)
+                              .SetUpdate(true);
+    }
+
+    private void StopLockWiggle()
+    {
+        _lockTweener?.Kill();
+        _lockTweener = null;
+        block.rotation = Quaternion.identity;
+    }
 
     public void FlipCard()      // Перевернуть карточку
     {
-        if (IsRevealing) return;
+        if (_isRevealing) return;
         StartCoroutine(AnimateFlip());
     }
 
-    private System.Collections.IEnumerator AnimateFlip()        // Анимация переворота
+    private IEnumerator AnimateFlip()        // Анимация переворота
     {
-        IsRevealing = true;
+        _isRevealing = true;
         float duration = 0.3f;
 
         transform.DORotate(new Vector3(0, 90, 0), duration).SetUpdate(true);
@@ -144,6 +170,13 @@ public class CardItem : MonoBehaviour
         }
 
         yield return new WaitForSeconds(duration);
-        IsRevealing = false;
+        _isRevealing = false;
+        UpdateMedia();
+        UpdateLockState();
+    }
+
+    private void OnDestroy()
+    {
+        StopLockWiggle();
     }
 }

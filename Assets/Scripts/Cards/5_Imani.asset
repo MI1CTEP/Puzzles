@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eacbeb50dc60496eb07e2c3e7739d6e, type: 3}
+  m_Name: 5_Imani
+  m_EditorClassIdentifier: 
+  characterName: Imani
+  story: 
+  sympathy: 0
+  progress: 0
+  images:
+  - sprite: {fileID: 21300000, guid: 8991a6c8208594202816684b7518ed38, type: 3}
+    isUnlocked: 1
+  - sprite: {fileID: 21300000, guid: 864a2563e9fe14aec83113f9b1844016, type: 3}
+    isUnlocked: 0
+  - sprite: {fileID: 21300000, guid: 2591d9e988c494f9481eb6ab9d32952f, type: 3}
+    isUnlocked: 0
+  - sprite: {fileID: 21300000, guid: bd1d154caecc34ca0800f5f8b2676151, type: 3}
+    isUnlocked: 0
+  - sprite: {fileID: 21300000, guid: f33ad020016be44ec92fe5f2881d4a9b, type: 3}
+    isUnlocked: 0
+  videos:
+  - clip: {fileID: 32900000, guid: 380c9c01631e14f4885e330dfa9c9f64, type: 3}
+    isUnlocked: 0
+  - clip: {fileID: 32900000, guid: 244f819d9f31f4460a5ba3bedd0c5ba0, type: 3}
+    isUnlocked: 0
+  - clip: {fileID: 32900000, guid: 5eb0addaeb4b24d94b8a9c558acd5353, type: 3}
+    isUnlocked: 0
+  - clip: {fileID: 32900000, guid: 5922fc5f720b641ef89f9eb1d356c466, type: 3}
+    isUnlocked: 0
