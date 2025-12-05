@@ -79,6 +79,7 @@ namespace MyGame.Gameplay.Dialogue
                 int id = i;
                 _phraseButtons[i] = Instantiate(_phraseButtonPrefab, transform);
                 _phraseButtons[i].Init(_simpleDialogue.phraseVariants[i].answer, ref anchorPositionY, () => SetAnswer(id));
+                _phraseButtons[i].TryShowValue(_simpleDialogue.id, i, _simpleDialogue.phraseVariants[i].respect);
                 anchorPositionY += _offsetAnswers;
             }
             _anim.MoveMessageHistory(anchorPositionY);
@@ -89,6 +90,7 @@ namespace MyGame.Gameplay.Dialogue
             SetPhrase(_simpleDialogue.phraseVariants[id].answer, true, () => SetSecondPhrase(id));
             _currentSympathy += _simpleDialogue.phraseVariants[id].respect;
             _progressPanel.ChangeValue(_currentSympathy);
+            GameData.Dialogue.Unlock(GameData.CurrentLevel, _simpleDialogue.id, id);
             TryDestroyPhraseButtons();
         }
 

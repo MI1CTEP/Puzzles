@@ -8,7 +8,7 @@ namespace MyGame
 
         public static class Score
         {
-            private static string _key = "Score";
+            private static readonly string _key = "Score";
 
             public static void Add(int value)
             {
@@ -21,7 +21,7 @@ namespace MyGame
 
         public static class Sympathy
         {
-            private static string _key = "Sympathy_";
+            private static readonly string _key = "Sympathy_";
 
             public static void Save(int id, int value)
             {
@@ -44,6 +44,21 @@ namespace MyGame
             public static int LoadValue(int groupId, int id) => PlayerPrefs.GetInt(GetKey(groupId, id));
 
             private static string GetKey(int groupId, int id) => $"QuantityGift_{groupId}_{id}";
+        }
+
+        public static class Dialogue
+        {
+            private static readonly string _key = "Dialogue_";
+
+            public static void Unlock(int levelId, int stepId, int positionId)
+            {
+                PlayerPrefs.SetInt($"{_key}_{levelId}_{stepId}_{positionId}", 1);
+            }
+
+            public static bool IsUnlock(int levelId, int dialogueId, int positionId)
+            {
+                return PlayerPrefs.GetInt($"{_key}_{levelId}_{dialogueId}_{positionId}") == 1;
+            }
         }
     }
 }

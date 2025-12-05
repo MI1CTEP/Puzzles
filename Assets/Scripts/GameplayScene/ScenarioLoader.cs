@@ -50,6 +50,7 @@ namespace MyGame.Gameplay
                     {
                         TextAsset jsonAssetDialogue = Resources.Load<TextAsset>($"Scenarios/Scenario_{levelId}/dialogue_{levelId}_{stage.dialogueId}");
                         SimpleDialogue simpleDialogue = JsonConvert.DeserializeObject<SimpleDialogue>(jsonAssetDialogue.text);
+                        simpleDialogue.id = stage.dialogueId;
                         _simpleDialogues[stage.dialogueId - 1] = simpleDialogue;
                     }
                     stage.Dialogue = _simpleDialogues[stage.dialogueId - 1];

@@ -6,6 +6,7 @@ namespace MyGame.Gameplay.Dialogue
     {
         public Phrase firstPhrase;
         public List<PhraseVariant> phraseVariants;
+        public int id;
     }
 
     [System.Serializable]
