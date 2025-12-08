@@ -25,15 +25,20 @@ namespace MyGame.Gameplay.Puzzle
             _panelHard.Activate(this, scenarioStage, _grids, TypeDifficulty.Hard);
         }
 
-        public void StartGameplay(int puzzleValueX, float chanceGetDetail)
+        public void StartGameplay(TypeDifficulty typeDifficulty, int puzzleValueX, float chanceGetDetail)
         {
             gameObject.SetActive(false);
             _puzzleController.StartGameplay(puzzleValueX, chanceGetDetail);
+
+            if(_puzzleController.TypeDifficulty == TypeDifficulty.None || _puzzleController.TypeDifficulty == typeDifficulty)
+                _puzzleController.TypeDifficulty = typeDifficulty;
+            else
+                _puzzleController.TypeDifficulty = TypeDifficulty.Mixed;
         }
     }
 
     public enum TypeDifficulty
     {
-        Easy, Medium, Hard
+        None, Easy, Medium, Hard, Mixed
     }
 }

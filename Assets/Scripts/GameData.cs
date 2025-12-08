@@ -79,5 +79,20 @@ namespace MyGame
                 return PlayerPrefs.GetInt($"{_key}_{id}") == 1;
             }
         }
+
+        public static class Achievements
+        {
+            private static readonly string _key = "Achievement";
+
+            public static void Save(int id)
+            {
+                PlayerPrefs.SetInt($"{_key}_{id}", 1);
+            }
+
+            public static bool IsUnlock(int id)
+            {
+                return PlayerPrefs.GetInt($"{_key}_{id}") == 1;
+            }
+        }
     }
 }

@@ -25,13 +25,16 @@ namespace MyGame.Gameplay
         private Image _giftImage;
         private DialogueController _dialogueController;
         private GiftController _giftController;
+        private Achievements _achievements;
         private Sequence _seq;
         private readonly float _timeBackgroundFadeAnim = 2f;
         private readonly float _timeSympathyAnim = 3f;
-        private readonly float _timeRespectAnim = 2f;
+        private readonly float _timeRespectAnim = 1.5f;
+        private readonly float _timeAchievementsAnim = 2f;
         private readonly float _timeGiftShowAnim = 0.5f;
+        private float _anchoredPosY;
 
-        public void Init(DialogueController dialogueController, GiftController giftController)
+        public void Init(DialogueController dialogueController, GiftController giftController, Achievements achievements)
         {
             gameObject.SetActive(false);
             _backgroundImage = GetComponent<Image>();
@@ -43,6 +46,7 @@ namespace MyGame.Gameplay
             _exitButton.gameObject.SetActive(false);
             _dialogueController = dialogueController;
             _giftController = giftController;
+            _achievements = achievements;
         }
 
         public void Show()
@@ -54,40 +58,56 @@ namespace MyGame.Gameplay
             TryStopAnim();
             _seq = DOTween.Sequence();
             _seq.Insert(0, _backgroundImage.DOFade(0.8f, _timeBackgroundFadeAnim));
-            ShowSympathy(waitTimeAnim, olsSympathy);
-            waitTimeAnim += _timeSympathyAnim;
+            ShowSympathy(olsSympathy, ref waitTimeAnim);
             if (_dialogueController.CurrentSympathy > olsSympathy)
             {
                 int addedRespect = _dialogueController.CurrentSympathy - olsSympathy;
-                ShowRespect(waitTimeAnim, addedRespect);
+                ShowRespect(addedRespect, ref waitTimeAnim);
                 GameData.Score.Add(addedRespect);
-                waitTimeAnim += _timeRespectAnim;
+            }
+            if (_achievements.IsHaveAchievements())
+            {
+                ShowAchievements(ref waitTimeAnim);
             }
             ShowGift(waitTimeAnim);
         }
 
-        private void ShowSympathy(float timeWait, int olsSympathy)
+        private void ShowSympathy(int olsSympathy, ref float waitTimeAnim)
         {
             _sympathyValueText.text = $"{_dialogueController.CurrentSympathy}/{_dialogueController.MaxSympathy}";
             float valueSize = _scaleOldSympathy.anchoredPosition.x / _dialogueController.MaxSympathy;
             _scaleOldSympathy.anchoredPosition = new Vector2(olsSympathy * valueSize, 0);
             _scaleNewSympathy.anchoredPosition = Vector2.zero;
             _sympathyTransform.gameObject.SetActive(true);
-            _seq.Insert(timeWait, _sympathyTransform.DOLocalMoveY(0, _timeSympathyAnim / 2).SetEase(Ease.OutExpo));
-            _seq.Insert(timeWait + _timeSympathyAnim / 4, _scaleNewSympathy.DOAnchorPosX(_dialogueController.CurrentSympathy * valueSize, _timeSympathyAnim / 2));
-            _seq.Insert(timeWait + _timeSympathyAnim / 2, _sympathyTransform.DOAnchorPosY(0, _timeSympathyAnim / 2).SetEase(Ease.InExpo));
+            _seq.Insert(waitTimeAnim, _sympathyTransform.DOLocalMoveY(0, _timeSympathyAnim / 2).SetEase(Ease.OutExpo));
+            _seq.Insert(waitTimeAnim + _timeSympathyAnim / 4, _scaleNewSympathy.DOAnchorPosX(_dialogueController.CurrentSympathy * valueSize, _timeSympathyAnim / 2));
+            _seq.Insert(waitTimeAnim + _timeSympathyAnim / 2, _sympathyTransform.DOAnchorPosY(0, _timeSympathyAnim / 2).SetEase(Ease.InExpo));
+            waitTimeAnim += _timeSympathyAnim;
+            _anchoredPosY -= _sympathyTransform.sizeDelta.y;
         }
 
-        private void ShowRespect(float timeWait, int addedRespect)
+        private void ShowRespect(int addedRespect, ref float waitTimeAnim)
         {
             _respectValueText.text = GameData.Score.Load().ToString();
             _respectAddedValueText.text = $"+{addedRespect}";
             _respectTransform.gameObject.SetActive(true);
-            _seq.Insert(timeWait, _respectTransform.DOLocalMoveY(0, _timeRespectAnim / 2).SetEase(Ease.OutExpo));
-            _seq.Insert(timeWait + _timeRespectAnim / 4, _respectValueText.transform.DOScale(Vector3.one * 1.25f, _timeRespectAnim / 8));
-            _seq.InsertCallback(timeWait + _timeRespectAnim / 2, () => _respectValueText.text = GameData.Score.Load().ToString());
-            _seq.Insert(timeWait + _timeRespectAnim / 2, _respectValueText.transform.DOScale(Vector3.one, _timeRespectAnim / 8));
-            _seq.Insert(timeWait + _timeRespectAnim / 2, _respectTransform.DOAnchorPosY(-_sympathyTransform.sizeDelta.y, _timeRespectAnim / 2).SetEase(Ease.InExpo));
+            _seq.Insert(waitTimeAnim, _respectTransform.DOLocalMoveY(0, _timeRespectAnim / 2).SetEase(Ease.OutExpo));
+            _seq.Insert(waitTimeAnim + _timeRespectAnim / 4, _respectValueText.transform.DOScale(Vector3.one * 1.25f, _timeRespectAnim / 8));
+            _seq.InsertCallback(waitTimeAnim + _timeRespectAnim / 2, () => _respectValueText.text = GameData.Score.Load().ToString());
+            _seq.Insert(waitTimeAnim + _timeRespectAnim / 2, _respectValueText.transform.DOScale(Vector3.one, _timeRespectAnim / 8));
+            _seq.Insert(waitTimeAnim + _timeRespectAnim / 2, _respectTransform.DOAnchorPosY(_anchoredPosY, _timeRespectAnim / 2).SetEase(Ease.InExpo));
+            waitTimeAnim += _timeRespectAnim;
+            _anchoredPosY -= _respectTransform.sizeDelta.y;
+        }
+
+        private void ShowAchievements(ref float waitTimeAnim)
+        {
+            RectTransform rectTransform = _achievements.GetComponent<RectTransform>();
+            _achievements.gameObject.SetActive(true);
+            _seq.Insert(waitTimeAnim, rectTransform.DOLocalMoveY(0, _timeAchievementsAnim * 2 / 3).SetEase(Ease.OutExpo));
+            _seq.Insert(waitTimeAnim + _timeAchievementsAnim * 2 / 3, rectTransform.DOAnchorPosY(_anchoredPosY, _timeAchievementsAnim / 3).SetEase(Ease.InExpo));
+            waitTimeAnim += _timeAchievementsAnim;
+            _anchoredPosY -= rectTransform.sizeDelta.y;
         }
 
         private void ShowGift(float timeWait)
@@ -122,7 +142,7 @@ namespace MyGame.Gameplay
             _seq.Append(_giftTransform.DOScale(Vector3.one * 1.1f, 0.25f));
             _seq.AppendCallback(() => _giftImage.sprite = _openedGift);
             _seq.Append(_giftTransform.DOScale(Vector3.one, 0.25f));
-            _seq.AppendCallback(() => _giftController.ShowRoulette(OnEndShowing));
+            _seq.AppendCallback(() => _giftController.ShowRoulette(_anchoredPosY, OnEndShowing));
         }
 
         private void OnEndShowing()

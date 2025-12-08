@@ -21,6 +21,7 @@ namespace MyGame.Gameplay.Puzzle
         private Vector2Int _partsLength;
         private float _chanceGetDetail;
 
+        public TypeDifficulty TypeDifficulty { get; set; } = TypeDifficulty.None;
         public UnityAction OnEnd { get; set; }
 
         public void Init(ProgressPanel progressPanel, ExtraLevelUnlocker extraLevelUnlocker)

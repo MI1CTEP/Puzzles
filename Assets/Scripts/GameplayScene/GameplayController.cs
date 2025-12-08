@@ -19,6 +19,7 @@ namespace MyGame.Gameplay
         [SerializeField] private GiftController _giftController;
         [SerializeField] private ShopController _shopController;
         [SerializeField] private GiftsGiver _giftsGiver;
+        [SerializeField] private Achievements _achievements;
         [SerializeField] private EndPanel _endPanel;
         [SerializeField] private int _level;
 
@@ -48,7 +49,8 @@ namespace MyGame.Gameplay
             _giftController.Init();
             _shopController.Init();
             _giftsGiver.Init(_giftController, _shopController);
-            _endPanel.Init(_dialogueController, _giftController);
+            _achievements.Init(_puzzleController, _giftsGiver, _dialogueController);
+            _endPanel.Init(_dialogueController, _giftController, _achievements);
         }
 
         private void TryStartNextStage()

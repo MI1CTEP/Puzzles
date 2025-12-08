@@ -20,11 +20,11 @@ namespace MyGame.Gifts
             _giftRoulette?.Init(_giftsSettings, _giftsPool);
         }
 
-        public void ShowRoulette(UnityAction onEndShowing)
+        public void ShowRoulette(float anchoredPosY, UnityAction onEndShowing)
         {
             if(_giftRoulette != null)
             {
-                _giftRoulette.Show(onEndShowing);
+                _giftRoulette.Show(anchoredPosY, onEndShowing);
                 return;
             }
         }

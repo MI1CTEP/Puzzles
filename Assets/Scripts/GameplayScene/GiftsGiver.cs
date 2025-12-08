@@ -24,6 +24,7 @@ namespace MyGame.Gameplay
         private readonly float _timeShowGiftsAnim = 0.8f;
 
         public UnityAction OnEnd { get; set; }
+        public int GivedId { get; set; } = -1;
 
         public void Init(GiftController giftController, ShopController shopController)
         {
@@ -94,6 +95,7 @@ namespace MyGame.Gameplay
             {
                 _respectController.Add(_giftsSettings.GiftsGroups[gift.GroupId].respect);
                 GameData.Gifts.AddValue(gift.GroupId, gift.Id, -1);
+                GivedId = gift.GroupId;
                 End();
             }
             else

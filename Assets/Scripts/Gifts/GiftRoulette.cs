@@ -11,6 +11,7 @@ namespace MyGame.Gifts
         [SerializeField] private Transform _respawnPoint;
         [SerializeField] private Transform _arrows;
 
+        private RectTransform _rectTransform;
         private GiftsSettings _giftsSettings;
         private GiftsPool _giftsPool;
         private Gift[] _gifts;
@@ -26,12 +27,13 @@ namespace MyGame.Gifts
 
         public void Init(GiftsSettings giftsSettings, GiftsPool giftsPool)
         {
+            _rectTransform = GetComponent<RectTransform>();
             _giftsSettings = giftsSettings;
             _giftsPool = giftsPool;
             gameObject.SetActive(false);
         }
 
-        public void Show(UnityAction onEndShowing)
+        public void Show(float anchoredPosY, UnityAction onEndShowing)
         {
             gameObject.SetActive(true);
             CreateGiftArray();
@@ -39,7 +41,7 @@ namespace MyGame.Gifts
             MixGifts();
             for (int i = 0; i < _gifts.Length; i++)
                 SetPositionGift(i, i);
-            PlayRouletteAnim(onEndShowing);
+            PlayRouletteAnim(anchoredPosY, onEndShowing);
         }
 
         private void CreateGiftArray()
@@ -78,7 +80,7 @@ namespace MyGame.Gifts
             _gifts[idGift].transform.localPosition = new Vector3((idPosition - _startGiftsOnLeft) * (_sizeGift + _offsetGifts), 0, 0);
         }
 
-        private void PlayRouletteAnim(UnityAction onEndShowing)
+        private void PlayRouletteAnim(float anchoredPosY, UnityAction onEndShowing)
         {
             _isAnim = true;
             _positionWinner = Random.Range(_gifts.Length * 3, _gifts.Length * 4);
@@ -86,8 +88,9 @@ namespace MyGame.Gifts
 
             TryStopAnim();
             _seq = DOTween.Sequence();
-            _seq.Insert(0, _parent.DOLocalMoveX(-_positionWinner * (_sizeGift + _offsetGifts) + offset, _timeRouletreAnim).SetEase(Ease.InOutCubic));
-            _seq.InsertCallback(_timeRouletreAnim, ()=> PlayReceivingGiftAnim(onEndShowing));
+            _seq.Insert(0, _rectTransform.DOAnchorPosY(anchoredPosY, 1));
+            _seq.Insert(1, _parent.DOLocalMoveX(-_positionWinner * (_sizeGift + _offsetGifts) + offset, _timeRouletreAnim).SetEase(Ease.InOutCubic));
+            _seq.InsertCallback(_timeRouletreAnim + 1, ()=> PlayReceivingGiftAnim(onEndShowing));
         }
 
         private void PlayReceivingGiftAnim(UnityAction onEndShowing)
@@ -99,9 +102,8 @@ namespace MyGame.Gifts
             Gift winnerGift = _gifts[(_positionWinner + _startGiftsOnLeft) % _gifts.Length];
             GameData.Gifts.AddValue(winnerGift.GroupId, winnerGift.Id, 1);
             winnerGift.transform.SetParent(transform);
-            _seq.Insert(0, _parent.DOLocalMoveY(350, _timeShowWinnerAnim));
             _seq.Insert(0, winnerGift.transform.DOScale(Vector3.one * 1.2f, _timeShowWinnerAnim));
-            _seq.Insert(0, winnerGift.transform.DOLocalMove(Vector3.zero, _timeShowWinnerAnim));
+            _seq.Insert(0, winnerGift.transform.DOLocalMove(new Vector3(0, winnerGift.transform.localPosition.y - 350, 0), _timeShowWinnerAnim));
             _seq.InsertCallback(_timeShowWinnerAnim, () => onEndShowing?.Invoke());
         }
 
