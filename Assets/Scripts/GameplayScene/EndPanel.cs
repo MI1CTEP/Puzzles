@@ -33,6 +33,7 @@ namespace MyGame.Gameplay
 
         public void Init(DialogueController dialogueController, GiftController giftController)
         {
+            gameObject.SetActive(false);
             _backgroundImage = GetComponent<Image>();
             _giftButton = _giftTransform.GetComponent<Button>();
             _giftImage = _giftTransform.GetComponent<Image>();
@@ -46,6 +47,7 @@ namespace MyGame.Gameplay
 
         public void Show()
         {
+            gameObject.SetActive(true);
             float waitTimeAnim = 0;
             int olsSympathy = GameData.Sympathy.Load(GameData.CurrentLevel);
             GameData.Sympathy.Save(GameData.CurrentLevel, _dialogueController.CurrentSympathy);

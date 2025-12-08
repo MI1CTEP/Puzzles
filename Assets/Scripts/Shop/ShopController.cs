@@ -18,17 +18,10 @@ namespace MyGame.Shop
         private readonly float _timeAnim = 0.5f;
 
         public UnityAction OnBuy { get; set; }
-        public static ShopController Instance { get; set; }
-
-        private void Awake()
-        {
-            Init();
-        }
 
         public void Init()
         {
             gameObject.SetActive(false);
-            Instance = this;
             _closeButton = _background.GetComponent<Button>();
             for (int i = 0; i < _products.Length; i++)
             {

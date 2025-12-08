@@ -1,6 +1,6 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
+using MyGame.Gameplay.ExtraLevel;
 
 namespace MyGame.Gameplay.Puzzle
 {
@@ -10,6 +10,7 @@ namespace MyGame.Gameplay.Puzzle
         [SerializeField] private PuzzleChoices _puzzleChoices;
 
         private ProgressPanel _progressPanel;
+        private ExtraLevelUnlocker _extraLevelUnlocker;
         private PuzzleBoard _board;
         private PuzzlePartsPool _partsPool;
         private PuzzlePartsGenerator _partsGenerator;
@@ -18,12 +19,14 @@ namespace MyGame.Gameplay.Puzzle
         private PuzzlePart[,] _parts;
         private ScenarioStage _scenarioStage;
         private Vector2Int _partsLength;
+        private float _chanceGetDetail;
 
         public UnityAction OnEnd { get; set; }
 
-        public void Init(ProgressPanel progressPanel)
+        public void Init(ProgressPanel progressPanel, ExtraLevelUnlocker extraLevelUnlocker)
         {
             _progressPanel = progressPanel;
+            _extraLevelUnlocker = extraLevelUnlocker;
             _board = new();
             _board.OnComplete += End;
             _partsPool = new(_partPrefab, _board);
@@ -45,8 +48,9 @@ namespace MyGame.Gameplay.Puzzle
             _puzzleChoices.Open(scenarioStage);
         }
 
-        public void StartGameplay(int puzzleValueX)
+        public void StartGameplay(int puzzleValueX, float chanceGetDetail)
         {
+            _chanceGetDetail = chanceGetDetail;
             _parts = _partsGenerator.GetPuzzleParts(_scenarioStage.Image.texture, puzzleValueX);
             _partsLength = new(_parts.GetUpperBound(0) + 1, _parts.GetUpperBound(1) + 1);
             _board.ResetProgress();
@@ -69,7 +73,14 @@ namespace MyGame.Gameplay.Puzzle
             gameObject.SetActive(false);
             _board.OnAddProgress -= UpdateProgressView;
             _background.SetActiveMask(false);
-            OnEnd?.Invoke();
+            float random = Random.Range(0, 1f);
+            if (random < _chanceGetDetail)
+            {
+                _progressPanel.Hide(true);
+                _extraLevelUnlocker.Show(OnEnd);
+            }
+            else
+                OnEnd?.Invoke();
         }
 
         private void OnDestroy()

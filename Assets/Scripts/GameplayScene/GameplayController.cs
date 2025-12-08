@@ -2,6 +2,8 @@ using UnityEngine;
 using MyGame.Gameplay.Puzzle;
 using MyGame.Gameplay.Dialogue;
 using MyGame.Gifts;
+using MyGame.Gameplay.ExtraLevel;
+using MyGame.Shop;
 
 namespace MyGame.Gameplay
 {
@@ -9,11 +11,13 @@ namespace MyGame.Gameplay
     {
         [SerializeField] private ProgressPanel _progressPanel;
         [SerializeField] private VideoController _videoController;
+        [SerializeField] private ExtraLevelUnlocker _extraLevelUnlocker;
         [SerializeField] private PuzzleController _puzzleController;
         [SerializeField] private BackgroundController _backgroundController;
         [SerializeField] private DialogueController _dialogueController;
         [SerializeField] private CameraController _cameraController;
         [SerializeField] private GiftController _giftController;
+        [SerializeField] private ShopController _shopController;
         [SerializeField] private GiftsGiver _giftsGiver;
         [SerializeField] private EndPanel _endPanel;
         [SerializeField] private int _level;
@@ -37,11 +41,13 @@ namespace MyGame.Gameplay
             _scenario = _scenarioLoader.GetScenario(GameData.CurrentLevel);
             _progressPanel.Init();
             _videoController.Init();
-            _puzzleController.Init(_progressPanel);
+            _extraLevelUnlocker.Init();
+            _puzzleController.Init(_progressPanel, _extraLevelUnlocker);
             _dialogueController.Init(_scenario, _progressPanel);
             _cameraController.Init();
             _giftController.Init();
-            _giftsGiver.Init(_giftController);
+            _shopController.Init();
+            _giftsGiver.Init(_giftController, _shopController);
             _endPanel.Init(_dialogueController, _giftController);
         }
 

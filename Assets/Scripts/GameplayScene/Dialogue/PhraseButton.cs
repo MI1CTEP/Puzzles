@@ -22,7 +22,7 @@ namespace MyGame.Gameplay.Dialogue
 
         public void TryShowValue(int dialogueId, int positionId, int value)
         {
-            if(GameData.Dialogue.IsUnlock(GameData.CurrentLevel, dialogueId, positionId))
+            if(GameData.Dialogues.IsUnlock(GameData.CurrentLevel, dialogueId, positionId))
             {
                 _valueObject.SetActive(true);
                 _valueText.text = $"+{value}";

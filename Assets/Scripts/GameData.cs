@@ -46,9 +46,9 @@ namespace MyGame
             private static string GetKey(int groupId, int id) => $"QuantityGift_{groupId}_{id}";
         }
 
-        public static class Dialogue
+        public static class Dialogues
         {
-            private static readonly string _key = "Dialogue_";
+            private static readonly string _key = "Dialogue";
 
             public static void Unlock(int levelId, int stepId, int positionId)
             {
@@ -58,6 +58,25 @@ namespace MyGame
             public static bool IsUnlock(int levelId, int dialogueId, int positionId)
             {
                 return PlayerPrefs.GetInt($"{_key}_{levelId}_{dialogueId}_{positionId}") == 1;
+            }
+        }
+
+        public static class Details
+        {
+            public static float chanceEasy = 1f;
+            public static float chanceMedium = 1f;
+            public static float chanceHard = 1f;
+
+            private static readonly string _key = "Detail";
+
+            public static void Unlock(int id)
+            {
+                PlayerPrefs.SetInt($"{_key}_{id}", 1);
+            }
+
+            public static bool IsUnlock(int id)
+            {
+                return PlayerPrefs.GetInt($"{_key}_{id}") == 1;
             }
         }
     }
