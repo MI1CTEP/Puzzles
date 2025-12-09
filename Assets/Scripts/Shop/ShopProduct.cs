@@ -8,7 +8,6 @@ namespace MyGame.Shop
     public sealed class ShopProduct : MonoBehaviour
     {
         [SerializeField] private Button _buyButton;
-        [SerializeField] private Image _outline;
         [SerializeField] private int _idGroup;
 
         private GiftsSettings _giftsSettings;
@@ -19,7 +18,6 @@ namespace MyGame.Shop
         {
             _giftsSettings = giftsSettings;
             _buyButton.onClick.AddListener(Buy);
-            _outline.color = _giftsSettings.GiftsGroups[_idGroup].outlineColor;
         }
 
         public void Buy()
