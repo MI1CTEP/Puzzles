@@ -94,5 +94,20 @@ namespace MyGame
                 return PlayerPrefs.GetInt($"{_key}_{id}") == 1;
             }
         }
+
+        public static class PaidContent
+        {
+            private static readonly string _key = "PaidContent";
+
+            public static void Save(int id)
+            {
+                PlayerPrefs.SetInt($"{_key}_{id}", 1);
+            }
+
+            public static bool IsUnlock(int id)
+            {
+                return PlayerPrefs.GetInt($"{_key}_{id}") == 1;
+            }
+        }
     }
 }

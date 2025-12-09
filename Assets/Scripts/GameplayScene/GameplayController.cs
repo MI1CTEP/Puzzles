@@ -15,6 +15,7 @@ namespace MyGame.Gameplay
         [SerializeField] private PuzzleController _puzzleController;
         [SerializeField] private BackgroundController _backgroundController;
         [SerializeField] private DialogueController _dialogueController;
+        [SerializeField] private PaidContentOpenedPanel _paidContentOpenedPanel;
         [SerializeField] private CameraController _cameraController;
         [SerializeField] private GiftController _giftController;
         [SerializeField] private ShopController _shopController;
@@ -28,6 +29,7 @@ namespace MyGame.Gameplay
         private ScenarioStage _currentScenarioStage;
         private IGameStage _currentGameStage;
         private int _currentGameStageId;
+        private bool _isPaidContent = false;
 
         private void Start()
         {
@@ -45,6 +47,7 @@ namespace MyGame.Gameplay
             _extraLevelUnlocker.Init();
             _puzzleController.Init(_progressPanel, _extraLevelUnlocker);
             _dialogueController.Init(_scenario, _progressPanel);
+            _paidContentOpenedPanel.Init();
             _cameraController.Init();
             _giftController.Init();
             _shopController.Init();
@@ -57,7 +60,7 @@ namespace MyGame.Gameplay
         {
             _currentScenarioStage = _scenario.TryGetScenarioStage(_currentGameStageId);
             _currentGameStageId++;
-            if (_currentScenarioStage == null)
+            if (_currentScenarioStage == null || _isPaidContent && !GameData.PaidContent.IsUnlock(GameData.CurrentLevel))
             {
                 End();
                 return;
@@ -95,6 +98,12 @@ namespace MyGame.Gameplay
                     UpdateCameraSize();
                     SetBackgroundImage();
                     StartNextStage();
+                    break;
+                case "PaidContent":
+                    _currentGameStage = _paidContentOpenedPanel;
+                    _progressPanel.Hide(true);
+                    StartNextStage();
+                    _isPaidContent = true;
                     break;
                 default:
                     End();
