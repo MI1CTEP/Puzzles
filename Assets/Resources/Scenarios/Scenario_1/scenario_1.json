@@ -22,6 +22,27 @@
 		{
 			"typeStage" : "Video",
 			"videoId" : 1
+		},
+		{
+			"typeStage" : "Dialogue",
+			"dialogueId" : 2,
+			"imageId" : 2,
+			"isAnimImage" : false
+		},
+		{
+			"typeStage" : "PaidContent"
+		},
+		{
+			"typeStage" : "Puzzle",
+			"easyValueX" : 2,
+			"mediumValueX" : 3,
+			"hardValueX" : 5,
+			"imageId" : 2,
+			"isAnimImage" : false
+		},
+		{
+			"typeStage" : "Video",
+			"videoId" : 2
 		}
 	]
 }
