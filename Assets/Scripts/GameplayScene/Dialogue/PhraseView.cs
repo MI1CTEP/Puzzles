@@ -9,7 +9,7 @@ namespace MyGame.Gameplay.Dialogue
 
         protected RectTransform _rectTransform;
 
-        protected void Init(Phrase phrase)
+        protected void Init(Languages phrase)
         {
             _rectTransform = GetComponent<RectTransform>();
             _text.text = phrase.ru;

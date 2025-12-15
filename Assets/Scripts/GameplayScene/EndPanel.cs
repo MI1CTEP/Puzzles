@@ -4,6 +4,7 @@ using DG.Tweening;
 using TMPro;
 using MyGame.Gameplay.Dialogue;
 using MyGame.Gifts;
+using MyGame.Bundles;
 
 namespace MyGame.Gameplay
 {
@@ -44,6 +45,7 @@ namespace MyGame.Gameplay
             _respectTransform.gameObject.SetActive(false);
             _giftTransform.gameObject.SetActive(false);
             _exitButton.gameObject.SetActive(false);
+            _exitButton.onClick.AddListener(Exit);
             _dialogueController = dialogueController;
             _giftController = giftController;
             _achievements = achievements;
@@ -148,6 +150,11 @@ namespace MyGame.Gameplay
         private void OnEndShowing()
         {
             _exitButton.gameObject.SetActive(true);
+        }
+
+        private void Exit()
+        {
+            BundlesController.Instance.OnlyGameplayBundle.TryUnload();
         }
 
         private void TryStopAnim()

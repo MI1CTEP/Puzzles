@@ -10,7 +10,7 @@ namespace MyGame.Gameplay.Dialogue
         [SerializeField] private GameObject _valueObject;
         [SerializeField] private Text _valueText;
 
-        public void Init(Phrase phrase, ref float anchorPositionY, UnityAction onClick)
+        public void Init(Languages phrase, ref float anchorPositionY, UnityAction onClick)
         {
             Init(phrase);
 

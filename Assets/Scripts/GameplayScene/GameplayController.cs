@@ -4,6 +4,7 @@ using MyGame.Gameplay.Dialogue;
 using MyGame.Gifts;
 using MyGame.Gameplay.ExtraLevel;
 using MyGame.Shop;
+using Cysharp.Threading.Tasks;
 
 namespace MyGame.Gameplay
 {
@@ -22,7 +23,6 @@ namespace MyGame.Gameplay
         [SerializeField] private GiftsGiver _giftsGiver;
         [SerializeField] private Achievements _achievements;
         [SerializeField] private EndPanel _endPanel;
-        [SerializeField] private int _level;
 
         private ScenarioLoader _scenarioLoader;
         private Scenario _scenario;
@@ -33,15 +33,13 @@ namespace MyGame.Gameplay
 
         private void Start()
         {
-            GameData.CurrentLevel = _level;
             Init();
-            TryStartNextStage();
         }
 
-        private void Init()
+        private async UniTask Init()
         {
             _scenarioLoader = new();
-            _scenario = _scenarioLoader.GetScenario(GameData.CurrentLevel);
+            _scenario = await _scenarioLoader.GetScenario();
             _progressPanel.Init();
             _videoController.Init();
             _extraLevelUnlocker.Init();
@@ -54,6 +52,7 @@ namespace MyGame.Gameplay
             _giftsGiver.Init(_giftController, _shopController);
             _achievements.Init(_puzzleController, _giftsGiver, _dialogueController);
             _endPanel.Init(_dialogueController, _giftController, _achievements);
+            TryStartNextStage();
         }
 
         private void TryStartNextStage()
