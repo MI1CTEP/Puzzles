@@ -5,6 +5,7 @@ using TMPro;
 using DG.Tweening;
 using System.Collections.Generic;
 using System.Collections;
+using I2.Loc;
 
 public class CardItem : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class CardItem : MonoBehaviour
         _data = data;
         _currentMediaIndex = 0;
         nameText.text = data.characterName;
-        storyText.text = data.story;
+        storyText.text = LocalizationManager.GetTranslation($"History{data.characterName}");
 
         UpdateMedia();
         UpdateLockState();
@@ -94,7 +95,7 @@ public class CardItem : MonoBehaviour
             mediaImage.gameObject.SetActive(false);
             rawImage.gameObject.SetActive(true);
             videoPlayer.clip = _data.videos[index].clip;
-            if (isUnlocked) videoPlayer.Play();
+            videoPlayer.Play();
         }
 
         blur.SetActive(!isUnlocked);

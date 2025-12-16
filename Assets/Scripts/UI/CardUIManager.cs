@@ -38,6 +38,7 @@ public class CardUIManager : MonoBehaviour
         var data = cardDatas[index];
 
         var cardObj = Instantiate(cardPrefab, transform);
+        cardObj.name = cardDatas[index].characterName;
         cardObj.transform.localScale = Vector3.zero;
 
         cardObj.SetData(data);
@@ -45,7 +46,7 @@ public class CardUIManager : MonoBehaviour
         _currentCard = cardObj;
         cardInitialPosition = cardObj.transform.position;
 
-        cardObj.transform.DOScale(4, 0.5f).SetEase(Ease.OutBack).SetUpdate(true);   // Анимация появления
+        cardObj.transform.DOScale(new Vector3(4.5f, 5, 5), 0.5f).SetEase(Ease.OutBack).SetUpdate(true);   // Анимация появления
 
         UpdateUI();     // Обновление UI
 
@@ -124,7 +125,7 @@ public class CardUIManager : MonoBehaviour
         var data = _currentCard.GetData();              // Получаем данные карточки
 
         progressSlider.value = data.GetUnlockProgress();    // Обновляем прогресс
-        sympathySlider.value = data.sympathy / 100f;        // Обновляем симпатию
+        sympathySlider.value = data.sympathy;        // Обновляем симпатию
 
         revealButton.onClick.RemoveAllListeners();
         revealButton.onClick.AddListener(() => { _currentCard.FlipCard(); });  // Запускаем анимацию переворота
