@@ -29,6 +29,7 @@ namespace MyGame.Gameplay
         public void Init(GiftController giftController, ShopController shopController)
         {
             gameObject.SetActive(false);
+            _respectController.Init();
             _giftsSettings = giftController.GiftsSettings;
             _giftsPool = giftController.GiftsPool;
             CreateGiftRespects();

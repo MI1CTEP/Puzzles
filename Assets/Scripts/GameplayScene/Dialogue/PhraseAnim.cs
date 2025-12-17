@@ -38,7 +38,7 @@ namespace MyGame.Gameplay.Dialogue
             _fullText = _text.text;
             string clearText = _fullText;
             string showText = "";
-            string startShowColor = "<color=#323232>";
+            string startShowColor = "<color=#ffffffff>";
             string startClearColor = "<color=#00000000>";
             string endColor = "</color>";
 
