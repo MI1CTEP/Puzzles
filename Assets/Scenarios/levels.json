@@ -1,0 +1,21 @@
+{
+	"levels": [
+		{
+			"id" : 1,
+			"type" : "Free",
+			"price" : 10,
+			"version" : 3
+		},
+		{
+			"id" : 2,
+			"type" : "Paid",
+			"price" : 10,
+			"version" : 2
+		},
+		{
+			"id" : 3,
+			"type" : "Extra",
+			"version" : 3
+		}
+	]
+}

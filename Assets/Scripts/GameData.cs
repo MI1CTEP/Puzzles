@@ -63,9 +63,9 @@ namespace MyGame
 
         public static class Details
         {
-            public static float chanceEasy = 1f;
-            public static float chanceMedium = 1f;
-            public static float chanceHard = 1f;
+            public static float chanceEasy = 0.1f;
+            public static float chanceMedium = 0.2f;
+            public static float chanceHard = 0.5f;
 
             private static readonly string _key = "Detail";
 

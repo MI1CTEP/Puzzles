@@ -113,7 +113,7 @@ namespace MyGame.Gameplay.Dialogue
             SetPhrase(_simpleDialogue.phraseVariants[id].secondPhrase, false, EnableContinueButton);
         }
 
-        private void SetPhrase(Phrase phrase, bool isPlayerPhrase, UnityAction onSetPhrase)
+        private void SetPhrase(Languages phrase, bool isPlayerPhrase, UnityAction onSetPhrase)
         {
             PhraseImage phraseImage = Instantiate(_phraseImagePrefab, _messageHistory);
             phraseImage.Init(this, phrase, isPlayerPhrase, onSetPhrase);

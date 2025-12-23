@@ -4,18 +4,15 @@ using DG.Tweening;
 using TMPro;
 using MyGame.Gameplay.Dialogue;
 using MyGame.Gifts;
+using MyGame.Bundles;
 
 namespace MyGame.Gameplay
 {
     public sealed class EndPanel : MonoBehaviour
     {
-        [SerializeField] private RectTransform _sympathyTransform;
-        [SerializeField] private RectTransform _scaleOldSympathy;
-        [SerializeField] private RectTransform _scaleNewSympathy;
-        [SerializeField] private TextMeshProUGUI _sympathyValueText;
-        [SerializeField] private RectTransform _respectTransform;
-        [SerializeField] private TextMeshProUGUI _respectAddedValueText;
-        [SerializeField] private TextMeshProUGUI _respectValueText;
+        [SerializeField] private RectTransform _canvas;
+        [SerializeField] private ProgressPanel _progressPanel;
+        [SerializeField] private RespectController _respectController;
         [SerializeField] private RectTransform _giftTransform;
         [SerializeField] private Sprite _openedGift;
         [SerializeField] private Button _exitButton;
@@ -32,7 +29,7 @@ namespace MyGame.Gameplay
         private readonly float _timeRespectAnim = 1.5f;
         private readonly float _timeAchievementsAnim = 2f;
         private readonly float _timeGiftShowAnim = 0.5f;
-        private float _anchoredPosY;
+        private float _anchoredPosY = -160;
 
         public void Init(DialogueController dialogueController, GiftController giftController, Achievements achievements)
         {
@@ -40,10 +37,9 @@ namespace MyGame.Gameplay
             _backgroundImage = GetComponent<Image>();
             _giftButton = _giftTransform.GetComponent<Button>();
             _giftImage = _giftTransform.GetComponent<Image>();
-            _sympathyTransform.gameObject.SetActive(false);
-            _respectTransform.gameObject.SetActive(false);
             _giftTransform.gameObject.SetActive(false);
             _exitButton.gameObject.SetActive(false);
+            _exitButton.onClick.AddListener(Exit);
             _dialogueController = dialogueController;
             _giftController = giftController;
             _achievements = achievements;
@@ -53,51 +49,24 @@ namespace MyGame.Gameplay
         {
             gameObject.SetActive(true);
             float waitTimeAnim = 0;
-            int olsSympathy = GameData.Sympathy.Load(GameData.CurrentLevel);
+            int oldSympathy = GameData.Sympathy.Load(GameData.CurrentLevel);
             GameData.Sympathy.Save(GameData.CurrentLevel, _dialogueController.CurrentSympathy);
             TryStopAnim();
             _seq = DOTween.Sequence();
             _seq.Insert(0, _backgroundImage.DOFade(0.8f, _timeBackgroundFadeAnim));
-            ShowSympathy(olsSympathy, ref waitTimeAnim);
-            if (_dialogueController.CurrentSympathy > olsSympathy)
+            _progressPanel.ShowEnd(transform, _canvas.sizeDelta.y, _dialogueController.CurrentSympathy, oldSympathy, _dialogueController.MaxSympathy, _timeSympathyAnim, ref waitTimeAnim);
+            if (_dialogueController.CurrentSympathy > oldSympathy)
             {
-                int addedRespect = _dialogueController.CurrentSympathy - olsSympathy;
-                ShowRespect(addedRespect, ref waitTimeAnim);
+                int addedRespect = _dialogueController.CurrentSympathy - oldSympathy;
+                _respectController.ShowEnd(transform, _anchoredPosY, _canvas.sizeDelta.y, addedRespect, _timeRespectAnim, ref waitTimeAnim);
                 GameData.Score.Add(addedRespect);
+                _anchoredPosY -= 160;
             }
             if (_achievements.IsHaveAchievements())
             {
                 ShowAchievements(ref waitTimeAnim);
             }
             ShowGift(waitTimeAnim);
-        }
-
-        private void ShowSympathy(int olsSympathy, ref float waitTimeAnim)
-        {
-            _sympathyValueText.text = $"{_dialogueController.CurrentSympathy}/{_dialogueController.MaxSympathy}";
-            float valueSize = _scaleOldSympathy.anchoredPosition.x / _dialogueController.MaxSympathy;
-            _scaleOldSympathy.anchoredPosition = new Vector2(olsSympathy * valueSize, 0);
-            _scaleNewSympathy.anchoredPosition = Vector2.zero;
-            _sympathyTransform.gameObject.SetActive(true);
-            _seq.Insert(waitTimeAnim, _sympathyTransform.DOLocalMoveY(0, _timeSympathyAnim / 2).SetEase(Ease.OutExpo));
-            _seq.Insert(waitTimeAnim + _timeSympathyAnim / 4, _scaleNewSympathy.DOAnchorPosX(_dialogueController.CurrentSympathy * valueSize, _timeSympathyAnim / 2));
-            _seq.Insert(waitTimeAnim + _timeSympathyAnim / 2, _sympathyTransform.DOAnchorPosY(0, _timeSympathyAnim / 2).SetEase(Ease.InExpo));
-            waitTimeAnim += _timeSympathyAnim;
-            _anchoredPosY -= _sympathyTransform.sizeDelta.y;
-        }
-
-        private void ShowRespect(int addedRespect, ref float waitTimeAnim)
-        {
-            _respectValueText.text = GameData.Score.Load().ToString();
-            _respectAddedValueText.text = $"+{addedRespect}";
-            _respectTransform.gameObject.SetActive(true);
-            _seq.Insert(waitTimeAnim, _respectTransform.DOLocalMoveY(0, _timeRespectAnim / 2).SetEase(Ease.OutExpo));
-            _seq.Insert(waitTimeAnim + _timeRespectAnim / 4, _respectValueText.transform.DOScale(Vector3.one * 1.25f, _timeRespectAnim / 8));
-            _seq.InsertCallback(waitTimeAnim + _timeRespectAnim / 2, () => _respectValueText.text = GameData.Score.Load().ToString());
-            _seq.Insert(waitTimeAnim + _timeRespectAnim / 2, _respectValueText.transform.DOScale(Vector3.one, _timeRespectAnim / 8));
-            _seq.Insert(waitTimeAnim + _timeRespectAnim / 2, _respectTransform.DOAnchorPosY(_anchoredPosY, _timeRespectAnim / 2).SetEase(Ease.InExpo));
-            waitTimeAnim += _timeRespectAnim;
-            _anchoredPosY -= _respectTransform.sizeDelta.y;
         }
 
         private void ShowAchievements(ref float waitTimeAnim)
@@ -148,6 +117,11 @@ namespace MyGame.Gameplay
         private void OnEndShowing()
         {
             _exitButton.gameObject.SetActive(true);
+        }
+
+        private void Exit()
+        {
+            BundlesController.Instance.OnlyGameplayBundle.TryUnload();
         }
 
         private void TryStopAnim()

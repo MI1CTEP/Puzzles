@@ -10,8 +10,8 @@ namespace MyGame.Gameplay
     public sealed class ProgressPanel : MonoBehaviour
     {
         [SerializeField] private GameObject[] _nameTextes;
-        [SerializeField] private Sprite[] _scaleSprites;
         [SerializeField] private RectTransform _scale;
+        [SerializeField] private RectTransform _scaleOld;
         [SerializeField] private Image _scaleImage;
         [SerializeField] private TextMeshProUGUI _valueText;
 
@@ -41,7 +41,6 @@ namespace MyGame.Gameplay
             for (int i = 0; i < _nameTextes.Length; i++)
                 _nameTextes[i].SetActive(false);
             _nameTextes[0].SetActive(true);
-            _scaleImage.sprite = _scaleSprites[0];
             SetStartValues(currentValue, maxValue);
         }
 
@@ -50,7 +49,6 @@ namespace MyGame.Gameplay
             for (int i = 0; i < _nameTextes.Length; i++)
                 _nameTextes[i].SetActive(false);
             _nameTextes[1].SetActive(true);
-            _scaleImage.sprite = _scaleSprites[1];
             SetStartValues(currentValue, maxValue);
         }
 
@@ -71,6 +69,34 @@ namespace MyGame.Gameplay
             _isActive = true;
             TryStopPositionAnim();
             Move(isAnim, _startPositionY);
+        }
+
+        public void ShowEnd(Transform parent, float canvasSizeY, float currentValue, float oldValue, float maxValue, float timeAnim, ref float waitTimeAnim)
+        {
+            TryStopPositionAnim();
+            TryStopValueAnim();
+
+            transform.SetParent(parent);
+
+            for (int i = 0; i < _nameTextes.Length; i++)
+                _nameTextes[i].SetActive(false);
+            _nameTextes[2].SetActive(true);
+
+            SetStartValues(0, maxValue);
+
+            _currentValue = currentValue;
+            UpdateValueText();
+
+            _scaleOld.gameObject.SetActive(true);
+            _scaleOld.anchoredPosition = new Vector2(oldValue * _valueSize, 0);
+
+            _rectTransform.anchoredPosition = new Vector2(0, -canvasSizeY + _startPositionY);
+
+            _seqPosition = DOTween.Sequence();
+            _seqPosition.Insert(waitTimeAnim, _rectTransform.DOLocalMoveY(0, timeAnim / 2).SetEase(Ease.OutExpo));
+            _seqPosition.Insert(waitTimeAnim + timeAnim / 4, _scale.DOAnchorPosX(currentValue * _valueSize, timeAnim / 2));
+            _seqPosition.Insert(waitTimeAnim + timeAnim / 2, _rectTransform.DOAnchorPosY(_startPositionY, timeAnim / 2).SetEase(Ease.InExpo));
+            waitTimeAnim += timeAnim;
         }
 
         public void Hide(bool isAnim)
