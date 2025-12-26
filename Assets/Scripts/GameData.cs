@@ -84,14 +84,14 @@ namespace MyGame
         {
             private static readonly string _key = "Achievement";
 
-            public static void Save(int id)
+            public static void Save(int levelId, int id)
             {
-                PlayerPrefs.SetInt($"{_key}_{id}", 1);
+                PlayerPrefs.SetInt($"{_key}_{levelId}_{id}", 1);
             }
 
-            public static bool IsUnlock(int id)
+            public static bool IsUnlock(int levelId, int id)
             {
-                return PlayerPrefs.GetInt($"{_key}_{id}") == 1;
+                return PlayerPrefs.GetInt($"{_key}_{levelId}_{id}") == 1;
             }
         }
 

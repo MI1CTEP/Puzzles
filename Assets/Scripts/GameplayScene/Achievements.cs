@@ -44,10 +44,10 @@ namespace MyGame.Gameplay
 
         private bool TryInstantiate(int id)
         {
-            if (!GameData.Achievements.IsUnlock(id))
+            if (!GameData.Achievements.IsUnlock(GameData.CurrentLevel, id))
             {
                 Instantiate(_achievementObjects[id], _parent);
-                GameData.Achievements.Save(id);
+                GameData.Achievements.Save(GameData.CurrentLevel, id);
                 return true;
             }
             return false;

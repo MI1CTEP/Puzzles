@@ -9,6 +9,11 @@ namespace MyGame
 
         private void Start()
         {
+            QualitySettings.vSyncCount = 0;
+            Application.targetFrameRate = -1;
+
+            Input.multiTouchEnabled = false;
+
             GameData.CurrentLevel = 0;
             _bundlesController.Init(SceneLoader.LoadMenu);
         }
