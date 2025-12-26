@@ -2,6 +2,9 @@ using UnityEngine;
 using MyGame.Gameplay.Puzzle;
 using MyGame.Gameplay.Dialogue;
 using MyGame.Gifts;
+using MyGame.Gameplay.ExtraLevel;
+using MyGame.Shop;
+using Cysharp.Threading.Tasks;
 
 namespace MyGame.Gameplay
 {
@@ -9,47 +12,54 @@ namespace MyGame.Gameplay
     {
         [SerializeField] private ProgressPanel _progressPanel;
         [SerializeField] private VideoController _videoController;
+        [SerializeField] private ExtraLevelUnlocker _extraLevelUnlocker;
         [SerializeField] private PuzzleController _puzzleController;
         [SerializeField] private BackgroundController _backgroundController;
         [SerializeField] private DialogueController _dialogueController;
+        [SerializeField] private PaidContentOpenedPanel _paidContentOpenedPanel;
         [SerializeField] private CameraController _cameraController;
         [SerializeField] private GiftController _giftController;
+        [SerializeField] private ShopController _shopController;
         [SerializeField] private GiftsGiver _giftsGiver;
+        [SerializeField] private Achievements _achievements;
         [SerializeField] private EndPanel _endPanel;
-        [SerializeField] private int _level;
 
         private ScenarioLoader _scenarioLoader;
         private Scenario _scenario;
         private ScenarioStage _currentScenarioStage;
         private IGameStage _currentGameStage;
         private int _currentGameStageId;
+        private bool _isPaidContent = false;
 
         private void Start()
         {
-            GameData.CurrentLevel = _level;
             Init();
-            TryStartNextStage();
         }
 
-        private void Init()
+        private async UniTask Init()
         {
             _scenarioLoader = new();
-            _scenario = _scenarioLoader.GetScenario(GameData.CurrentLevel);
+            _scenario = await _scenarioLoader.GetScenario();
             _progressPanel.Init();
             _videoController.Init();
-            _puzzleController.Init(_progressPanel);
+            _extraLevelUnlocker.Init();
+            _puzzleController.Init(_progressPanel, _extraLevelUnlocker);
             _dialogueController.Init(_scenario, _progressPanel);
+            _paidContentOpenedPanel.Init();
             _cameraController.Init();
             _giftController.Init();
-            _giftsGiver.Init(_giftController);
-            _endPanel.Init(_dialogueController, _giftController);
+            _shopController.Init();
+            _giftsGiver.Init(_giftController, _shopController);
+            _achievements.Init(_puzzleController, _giftsGiver, _dialogueController);
+            _endPanel.Init(_dialogueController, _giftController, _achievements);
+            TryStartNextStage();
         }
 
         private void TryStartNextStage()
         {
             _currentScenarioStage = _scenario.TryGetScenarioStage(_currentGameStageId);
             _currentGameStageId++;
-            if (_currentScenarioStage == null)
+            if (_currentScenarioStage == null || _isPaidContent && !GameData.PaidContent.IsUnlock(GameData.CurrentLevel))
             {
                 End();
                 return;
@@ -87,6 +97,12 @@ namespace MyGame.Gameplay
                     UpdateCameraSize();
                     SetBackgroundImage();
                     StartNextStage();
+                    break;
+                case "PaidContent":
+                    _currentGameStage = _paidContentOpenedPanel;
+                    _progressPanel.Hide(true);
+                    StartNextStage();
+                    _isPaidContent = true;
                     break;
                 default:
                     End();

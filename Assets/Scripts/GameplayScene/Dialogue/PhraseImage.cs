@@ -14,7 +14,7 @@ namespace MyGame.Gameplay.Dialogue
         private UnityAction _onSetPhrase;
         private PhraseAnim _anim;
 
-        public void Init(DialogueController dialogueController, Phrase phrase, bool isPlayerPhrase, UnityAction onSetPhrase)
+        public void Init(DialogueController dialogueController, Languages phrase, bool isPlayerPhrase, UnityAction onSetPhrase)
         {
             Init(phrase);
 

@@ -5,12 +5,9 @@ namespace MyGame.Gameplay.Puzzle
 {
     public sealed class PuzzleChoices : MonoBehaviour
     {
-        [SerializeField] private Image _gridEasy;
-        [SerializeField] private Image _gridMedium;
-        [SerializeField] private Image _gridHard;
-        [SerializeField] private Button _buttonPlayEasy;
-        [SerializeField] private Button _buttonPlayMedium;
-        [SerializeField] private Button _buttonPlayHard;
+        [SerializeField] private PuzzleChoiceLevelPanel _panelEasy;
+        [SerializeField] private PuzzleChoiceLevelPanel _panelMedium;
+        [SerializeField] private PuzzleChoiceLevelPanel _panelHard;
         [SerializeField] private Sprite[] _grids;
 
         private PuzzleController _puzzleController;
@@ -23,24 +20,25 @@ namespace MyGame.Gameplay.Puzzle
         public void Open(ScenarioStage scenarioStage)
         {
             gameObject.SetActive(true);
-
-            _gridEasy.sprite = _grids[scenarioStage.easyValueX - 2];
-            _buttonPlayEasy.onClick.RemoveAllListeners();
-            _buttonPlayEasy.onClick.AddListener(() => StartGameplay(scenarioStage.easyValueX));
-
-            _gridMedium.sprite = _grids[scenarioStage.mediumValueX - 2];
-            _buttonPlayMedium.onClick.RemoveAllListeners();
-            _buttonPlayMedium.onClick.AddListener(() => StartGameplay(scenarioStage.mediumValueX));
-
-            _gridHard.sprite = _grids[scenarioStage.hardValueX - 2];
-            _buttonPlayHard.onClick.RemoveAllListeners();
-            _buttonPlayHard.onClick.AddListener(() => StartGameplay(scenarioStage.hardValueX));
+            _panelEasy.Activate(this, scenarioStage, _grids, TypeDifficulty.Easy);
+            _panelMedium.Activate(this, scenarioStage, _grids, TypeDifficulty.Medium);
+            _panelHard.Activate(this, scenarioStage, _grids, TypeDifficulty.Hard);
         }
 
-        private void StartGameplay(int puzzleValueX)
+        public void StartGameplay(TypeDifficulty typeDifficulty, int puzzleValueX, float chanceGetDetail)
         {
             gameObject.SetActive(false);
-            _puzzleController.StartGameplay(puzzleValueX);
+            _puzzleController.StartGameplay(puzzleValueX, chanceGetDetail);
+
+            if(_puzzleController.TypeDifficulty == TypeDifficulty.None || _puzzleController.TypeDifficulty == typeDifficulty)
+                _puzzleController.TypeDifficulty = typeDifficulty;
+            else
+                _puzzleController.TypeDifficulty = TypeDifficulty.Mixed;
         }
+    }
+
+    public enum TypeDifficulty
+    {
+        None, Easy, Medium, Hard, Mixed
     }
 }

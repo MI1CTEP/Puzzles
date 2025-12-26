@@ -20,18 +20,22 @@ namespace MyGame.Gameplay
         private GiftsPool _giftsPool;
         private GiftRespect[] _giftRespects;
         private Gift[] _gifts;
+        private ShopController _shopController;
         private readonly float _timeShowGiftsAnim = 0.8f;
 
         public UnityAction OnEnd { get; set; }
+        public int GivedId { get; set; } = -1;
 
-        public void Init(GiftController giftController)
+        public void Init(GiftController giftController, ShopController shopController)
         {
             gameObject.SetActive(false);
+            _respectController.Init();
             _giftsSettings = giftController.GiftsSettings;
             _giftsPool = giftController.GiftsPool;
             CreateGiftRespects();
             _continueButton.onClick.AddListener(End);
-            ShopController.Instance.OnBuy += UpdateGiftsValue;
+            _shopController = shopController;
+            _shopController.OnBuy += UpdateGiftsValue;
         }
 
         public void Play(ScenarioStage scenarioStage)
@@ -92,11 +96,12 @@ namespace MyGame.Gameplay
             {
                 _respectController.Add(_giftsSettings.GiftsGroups[gift.GroupId].respect);
                 GameData.Gifts.AddValue(gift.GroupId, gift.Id, -1);
+                GivedId = gift.GroupId;
                 End();
             }
             else
             {
-                ShopController.Instance.Open();
+                _shopController.Open();
             }
         }
 
@@ -130,7 +135,7 @@ namespace MyGame.Gameplay
         private void OnDestroy()
         {
             TryStopAnim();
-            ShopController.Instance.OnBuy -= UpdateGiftsValue;
+            _shopController.OnBuy -= UpdateGiftsValue;
         }
     }
 }
