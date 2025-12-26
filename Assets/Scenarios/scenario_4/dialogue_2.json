@@ -1,0 +1,61 @@
+{
+  "firstPhrase": {
+    "ru": "У меня спортивная фигура и я люблю плавать, вот смотри, как тебе мои формы?",
+    "en": "I’ve got an athletic body and love swimming — take a look, how do you like my curves?",
+    "de": "Ich hab eine sportliche Figur und liebe Schwimmen – schau mal, wie findest du meine Kurven?",
+    "zh": "我身材运动又爱游泳，看看我的曲线怎么样？",
+    "ja": "スポーツ体型で泳ぐのが大好き。ほら、私の曲線、どう？",
+    "fr": "J’ai un corps athlétique et j’adore nager — regarde, tu aimes mes formes ?",
+    "es": "Tengo un cuerpo atlético y me encanta nadar — mira, ¿qué tal mis curvas?",
+    "pt": "Tenho um corpo atlético e adoro nadar — olha, gostas das minhas curvas?",
+    "it": "Ho un fisico atletico e adoro nuotare — guarda, ti piacciono le mie curve?",
+    "hi": "मेरा स्पोर्ट्स बॉडी है और मुझे स्विमिंग पसंद है — देख, मेरी कर्व्स कैसी लगीं?"
+  },
+  "phraseVariants": [
+    {
+      "answer": {
+        "ru": "Ты девушка из моих фантазий.",
+        "en": "You’re the girl from my fantasies.",
+        "de": "Du bist die Frau aus meinen Fantasien.",
+        "zh": "你就是我幻想中的那个女孩。",
+        "ja": "まさに俺の理想の女だよ。",
+        "fr": "Tu es la femme de mes fantasmes.",
+        "es": "Eres la chica de mis fantasías.",
+        "pt": "És a mulher das minhas fantasias.",
+        "it": "Sei la donna delle mie fantasie.",
+        "hi": "तू मेरी फैंटसी वाली लड़की है।"
+      },
+      "respect": 4
+    },
+    {
+      "answer": {
+        "ru": "Твоя попка реально выглядит накаченной.",
+        "en": "That ass looks perfectly toned.",
+        "de": "Dein Arsch sieht richtig durchtrainiert aus.",
+        "zh": "你的屁股看起来超级有型。",
+        "ja": "その尻、めっちゃ鍛えられてるね。",
+        "fr": "Ton cul a l’air parfaitement musclé.",
+        "es": "Ese culo parece súper tonificado.",
+        "pt": "Essa bunda parece super malhada.",
+        "it": "Quel culo sembra super tonico.",
+        "hi": "तेरी गांड तो पूरी तरह जिम में गढ़ी हुई लग रही है।"
+      },
+      "respect": 2
+    },
+    {
+      "answer": {
+        "ru": "Может уже пора заняться сексом?",
+        "en": "How about we just fuck already?",
+        "de": "Sollen wir nicht endlich ficken?",
+        "zh": "我们不直接来一发吗？",
+        "ja": "もうセックスしちゃおうか？",
+        "fr": "On ne baise pas tout de suite ?",
+        "es": "¿No nos follamos ya de una vez?",
+        "pt": "Não vamos foder já?",
+        "it": "Non scopiamo subito?",
+        "hi": "अब तो चोदाई कर ही लें?"
+      },
+      "respect": 0
+    }
+  ]
+}

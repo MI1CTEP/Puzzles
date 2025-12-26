@@ -1,90 +1,61 @@
-﻿{
+{
   "firstPhrase": {
-    "ru": "Фраза 1",
-    "en": "",
-    "de": "",
-    "zh": "",
-    "fr": "",
-    "hi": "",
-    "it": "",
-    "ja": "",
-    "pt": ""
+    "ru": "Привет! Я новая секретарша, мне нравятся уверенные мужчины, познакомимся?",
+    "en": "Hi! I'm the new secretary — I like confident men. Shall we get acquainted?",
+    "de": "Hallo! Ich bin die neue Sekretärin – ich mag selbstbewusste Männer. Lust, uns kennenzulernen?",
+    "zh": "你好！我是新来的秘书，我喜欢自信的男人，要不要认识一下？",
+    "ja": "こんにちは！新しい秘書だよ。自信のある男性が大好き。一緒に知り合おう？",
+    "fr": "Salut ! Je suis la nouvelle secrétaire, j’adore les hommes sûrs d’eux. On fait connaissance ?",
+    "es": "¡Hola! Soy la nueva secretaria, me encantan los hombres seguros de sí mismos. ¿Nos conocemos?",
+    "pt": "Oi! Sou a nova secretária — adoro homens confiantes. Vamos nos conhecer?",
+    "it": "Ciao! Sono la nuova segretaria, mi piacciono gli uomini sicuri di sé. Ci conosciamo?",
+    "hi": "नमस्ते! मैं नई सेक्रेटरी हूँ। मुझे आत्मविश्वासी मर्द पसंद हैं। चलो जान-पहचान करते हैं?"
   },
   "phraseVariants": [
     {
       "answer": {
-        "ru": "Ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Познакомлюсь, если увижу тебя в нижнем белье!",
+        "en": "I'll get to know you if I see you in your lingerie!",
+        "de": "Ich lerne dich kennen, aber nur, wenn ich dich in Dessous sehe!",
+        "zh": "想认识可以，先让我看看你穿内衣的样子！",
+        "ja": "下着姿が見たいな。それなら仲良くなってもいいよ！",
+        "fr": "Je veux bien faire connaissance… si je te vois en lingerie !",
+        "es": "Me presento si te veo en lencería.",
+        "pt": "Só me apresento se te vir de lingerie!",
+        "it": "Mi presento solo se ti vedo in lingerie!",
+        "hi": "जान-पहचान तभी करूँगी जब तुम्हें लिंगरी में देख लूँ!"
       },
-      "respect": 1,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 4
     },
     {
       "answer": {
-        "ru": "Ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Давай знакомиться, твоя фигура меня возбуждает.",
+        "en": "Let's get to know each other — your figure turns me on.",
+        "de": "Lass uns uns kennenlernen, deine Figur macht mich total an.",
+        "zh": "来吧认识一下，你的曲线让我好兴奋。",
+        "ja": "仲良くなろうよ。君のスタイルに興奮してる。",
+        "fr": "Allons-y, ta silhouette m’excite déjà.",
+        "es": "Conozcámonos, tu figura me pone cachondo.",
+        "pt": "Vamos nos conhecer, esse teu corpo me deixa louco.",
+        "it": "Conosciamoci, la tua figura mi eccita da morire.",
+        "hi": "चलो जान-पहचान करते हैं, तेरी बॉडी देखकर मेरा लंड खड़ा हो रहा है।"
       },
-      "respect": 0,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 2
     },
     {
       "answer": {
-        "ru": "Ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Привет! Ты очень сексуальная, готов к знакомству.",
+        "en": "Hi! You're incredibly sexy — ready to get acquainted?",
+        "de": "Hallo! Du bist unglaublich sexy – bereit, uns kennenzulernen?",
+        "zh": "你好！你超级性感，准备好认识一下了吗？",
+        "ja": "こんにちは！めっちゃセクシーだね。仲良くなる準備できてる？",
+        "fr": "Salut ! Tu es hyper sexy, prêt à faire connaissance ?",
+        "es": "¡Hola! Estás increíblemente sexy, ¿listo para conocernos?",
+        "pt": "Oi! Tu és incrivelmente sexy – pronto para nos conhecermos?",
+        "it": "Ciao! Sei incredibilmente sexy, pronto a conoscersi?",
+        "hi": "हाय! तू बहुत सेक्सी है, जान-पहचान के लिए तैयार?"
       },
-      "respect": 5,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 0
     }
   ]
 }

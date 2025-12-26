@@ -1,90 +1,61 @@
-﻿{
+{
   "firstPhrase": {
-    "ru": "Фраза 4",
-    "en": "",
-    "de": "",
-    "zh": "",
-    "fr": "",
-    "hi": "",
-    "it": "",
-    "ja": "",
-    "pt": ""
+    "ru": "Чтобы ты не скучал в клинике, тебе надо хорошо возбуждаться, поэтому посмотри на мою попку!",
+    "en": "So you won’t get bored in the clinic, you need to stay really aroused — look at my ass!",
+    "de": "Damit du in der Klinik nicht langweilig wird, musst du richtig geil bleiben – schau dir meinen Arsch an!",
+    "zh": "为了让你在诊所不无聊，你得保持高度兴奋，看看我的屁股！",
+    "ja": "クリニックで退屈しないよう、ちゃんと興奮してて。私の尻見て！",
+    "fr": "Pour que tu ne t’ennuies pas à la clinique, il faut que tu restes bien excité — regarde mon cul !",
+    "es": "Para que no te aburras en la clínica, necesitas estar bien excitado — ¡mira mi culo!",
+    "pt": "Para não te entediares na clínica, precisas ficar bem excitado — olha para o meu rabo!",
+    "it": "Affinché non ti annoi in clinica, devi rimanere eccitato — guarda il mio culo!",
+    "hi": "क्लिनिक में बोर न हो, अच्छे से उत्तेजित रहना — मेरी गांड देख!"
   },
   "phraseVariants": [
     {
       "answer": {
-        "ru": "Ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Я уже возбужден, у тебя невероятная фигура!",
+        "en": "I’m already so hard — your body is incredible!",
+        "de": "Ich bin schon steinhart – dein Körper ist unglaublich!",
+        "zh": "我已经硬了，你的体型太棒了！",
+        "ja": "もう勃起してるよ。君の体、最高！",
+        "fr": "Je suis déjà dur comme fer — ton corps est incroyable !",
+        "es": "¡Ya estoy duro — tu cuerpo es increíble!",
+        "pt": "Já estou duro — o teu corpo é incrível!",
+        "it": "Sono già duro — il tuo corpo è incredibile!",
+        "hi": "मैं तो उत्तेजित हो चुका हूँ, तेरी बॉडी कमाल की है!"
       },
-      "respect": 1,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 4
     },
     {
       "answer": {
-        "ru": "Ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Хотел бы увидеть твою попку намного раньше.",
+        "en": "I wish I’d seen your ass much sooner.",
+        "de": "Ich hätte deinen Arsch viel früher sehen sollen.",
+        "zh": "真希望早点看到你的屁股。",
+        "ja": "もっと早くお尻見たかった。",
+        "fr": "J’aurais aimé voir ton cul bien plus tôt.",
+        "es": "Ojalá hubiera visto tu culo mucho antes.",
+        "pt": "Queria ter visto o teu rabo bem antes.",
+        "it": "Avrei voluto vedere il tuo culo molto prima.",
+        "hi": "काश तेरी गांड बहुत पहले देख पाता।"
       },
-      "respect": 0,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 2
     },
     {
       "answer": {
-        "ru": "Ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Зачем тебе на ней трусики?",
+        "en": "Why are you even wearing panties?",
+        "de": "Warum trägst du überhaupt einen Slip drüber?",
+        "zh": "屁股上穿内裤干嘛？",
+        "ja": "なんでパンツ履いてるの？",
+        "fr": "Pourquoi tu portes une culotte dessus ?",
+        "es": "¿Por qué llevas bragas encima?",
+        "pt": "Por que usas cueca por cima?",
+        "it": "Perché hai le mutandine sopra?",
+        "hi": "इस पर पैंटी क्यों पहनी हुई है?"
       },
-      "respect": 5,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 0
     }
   ]
 }

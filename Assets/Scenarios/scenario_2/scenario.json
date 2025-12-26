@@ -1,98 +1,87 @@
 {
 	"scenarioStages": [
 		{
-			"typeStage" : "Dialogue",
-			"dialogueId" : 1,
-			"imageId" : 1,
-			"isAnimImage" : false
+			"typeStage": "Dialogue",
+			"dialogueId": 1,
+			"imageId": 1,
+			"isAnimImage": false
 		},
 		{
-			"typeStage" : "Dialogue",
-			"dialogueId" : 2,
-			"imageId" : 2,
-			"isAnimImage" : true
+			"typeStage": "Dialogue",
+			"dialogueId": 2,
+			"imageId": 2,
+			"isAnimImage": false
 		},
 		{
-			"typeStage" : "Puzzle",
-			"easyValueX" : 2,
-			"mediumValueX" : 3,
-			"hardValueX" : 5,
-			"imageId" : 2,
-			"isAnimImage" : false
+			"typeStage": "Puzzle",
+			"easyValueX": 2,
+			"mediumValueX": 3,
+			"hardValueX": 5,
+			"imageId": 2,
+			"isAnimImage": false
 		},
 		{
-			"typeStage" : "Video",
-			"videoId" : 1
+			"typeStage": "Video",
+			"videoId": 1
 		},
 		{
-			"typeStage" : "Dialogue",
-			"dialogueId" : 3,
-			"imageId" : 3,
-			"isAnimImage" : true
+			"typeStage": "Dialogue",
+			"dialogueId": 3,
+			"imageId": 3,
+			"isAnimImage": false
 		},
 		{
-			"typeStage" : "Gifts",
-			"imageId" : 3,
-			"isAnimImage" : false
+			"typeStage": "Puzzle",
+			"easyValueX": 2,
+			"mediumValueX": 3,
+			"hardValueX": 5,
+			"imageId": 3,
+			"isAnimImage": false
 		},
 		{
-			"typeStage" : "Puzzle",
-			"easyValueX" : 2,
-			"mediumValueX" : 3,
-			"hardValueX" : 5,
-			"imageId" : 3,
-			"isAnimImage" : false
+			"typeStage": "Gifts",
+			"imageId": 3,
+			"isAnimImage": false
 		},
 		{
-			"typeStage" : "Video",
-			"videoId" : 2
+			"typeStage": "Video",
+			"videoId": 2
 		},
 		{
-			"typeStage" : "Dialogue",
-			"dialogueId" : 4,
-			"imageId" : 4,
-			"isAnimImage" : true
+			"typeStage": "Dialogue",
+			"dialogueId": 4,
+			"imageId": 4,
+			"isAnimImage": false
 		},
 		{
-			"typeStage" : "Puzzle",
-			"easyValueX" : 2,
-			"mediumValueX" : 3,
-			"hardValueX" : 5,
-			"imageId" : 4,
-			"isAnimImage" : false
+			"typeStage": "Puzzle",
+			"easyValueX": 2,
+			"mediumValueX": 3,
+			"hardValueX": 5,
+			"imageId": 4,
+			"isAnimImage": false
 		},
 		{
-			"typeStage" : "Dialogue",
-			"dialogueId" : 5,
-			"imageId" : 5,
-			"isAnimImage" : true
+			"typeStage": "Video",
+			"videoId": 3
 		},
 		{
-			"typeStage" : "Puzzle",
-			"easyValueX" : 2,
-			"mediumValueX" : 3,
-			"hardValueX" : 5,
-			"imageId" : 5,
-			"isAnimImage" : false
+			"typeStage": "Dialogue",
+			"dialogueId": 5,
+			"imageId": 5,
+			"isAnimImage": false
 		},
 		{
-			"typeStage" : "Video",
-			"videoId" : 4
+			"typeStage": "Puzzle",
+			"easyValueX": 2,
+			"mediumValueX": 3,
+			"hardValueX": 5,
+			"imageId": 5,
+			"isAnimImage": false
 		},
 		{
-			"typeStage" : "PaidContent"
-		},
-		{
-			"typeStage" : "Puzzle",
-			"easyValueX" : 2,
-			"mediumValueX" : 3,
-			"hardValueX" : 5,
-			"imageId" : 6,
-			"isAnimImage" : true
-		},
-		{
-			"typeStage" : "Video",
-			"videoId" : 5
+			"typeStage": "Video",
+			"videoId": 4
 		}
 	]
 }

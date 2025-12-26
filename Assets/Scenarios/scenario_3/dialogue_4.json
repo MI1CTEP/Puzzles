@@ -1,90 +1,61 @@
-﻿{
+{
   "firstPhrase": {
-    "ru": "Фраза 4",
-    "en": "",
-    "de": "",
-    "zh": "",
-    "fr": "",
-    "hi": "",
-    "it": "",
-    "ja": "",
-    "pt": ""
+    "ru": "Тебе нравится когда мои ножки на твоём члене?",
+    "en": "Do you like my feet on your cock?",
+    "de": "Gefällt es dir, wenn meine Füßchen auf deinem Schwanz sind?",
+    "zh": "喜欢我的脚踩在你鸡鸡上吗？",
+    "ja": "私の足が君のチンポに乗ってるの、好き？",
+    "fr": "Tu aimes quand mes petits pieds sont sur ta queue ?",
+    "es": "¿Te gusta cuando mis pies están sobre tu polla?",
+    "pt": "Gostas quando os meus pezinhos estão no teu pau?",
+    "it": "Ti piace quando i miei piedini sono sul tuo cazzo?",
+    "hi": "पसंद है जब मेरे पैर तेरे लंड पर हों?"
   },
   "phraseVariants": [
     {
       "answer": {
-        "ru": "Ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Да, мои мечты исполняются прямо сейчас.",
+        "en": "Yes — my dreams are coming true right now.",
+        "de": "Ja – genau jetzt werden meine Träume wahr.",
+        "zh": "是的，我现在的梦想正在实现。",
+        "ja": "うん、今まさに夢が叶ってる。",
+        "fr": "Oui, mes rêves se réalisent là tout de suite.",
+        "es": "Sí, mis sueños se están haciendo realidad ahora mismo.",
+        "pt": "Sim, os meus sonhos estão a tornar-se realidade agora.",
+        "it": "Sì, i miei sogni si stanno realizzando proprio ora.",
+        "hi": "हाँ, अभी मेरे सारे सपने पूरे हो रहे हैं।"
       },
-      "respect": 1,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 4
     },
     {
       "answer": {
-        "ru": "Ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Я уже максимально возбужден.",
+        "en": "I’m already at maximum arousal.",
+        "de": "Ich bin schon total geil.",
+        "zh": "我已经硬到极致了。",
+        "ja": "もうMAXに興奮してる。",
+        "fr": "Je suis déjà au max de l’excitation.",
+        "es": "Ya estoy al máximo de excitación.",
+        "pt": "Já estou no máximo do tesão.",
+        "it": "Sono già al massimo dell’eccitazione.",
+        "hi": "मैं तो पूरी तरह से उत्तेजित हो चुका हूँ।"
       },
-      "respect": 0,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 2
     },
     {
       "answer": {
-        "ru": "Ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Тебе надо ускориться и довести меня до оргазма!",
+        "en": "You need to speed up and make me cum!",
+        "de": "Du musst schneller machen und mich zum Orgasmus bringen!",
+        "zh": "快一点，让我高潮！",
+        "ja": "もっと速くしてイカせて！",
+        "fr": "Accélère et fais-moi jouir !",
+        "es": "¡Tienes que ir más rápido y hacerme correr!",
+        "pt": "Tens de ir mais rápido e fazer-me gozar!",
+        "it": "Devi accelerare e farmi venire!",
+        "hi": "तेज़ करो और मुझे झड़ने पर मजबूर कर दो!"
       },
-      "respect": 5,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 0
     }
   ]
 }

@@ -1,0 +1,61 @@
+{
+  "firstPhrase": {
+    "ru": "Добрый день! Вы первый раз в нашей библиотеке? Какую литературу предпочитаете?",
+    "en": "Good afternoon! First time in our library? What kind of books do you prefer?",
+    "de": "Guten Tag! Erstes Mal in unserer Bibliothek? Welche Literatur bevorzugen Sie?",
+    "zh": "下午好！第一次来我们图书馆吗？您喜欢哪类书？",
+    "ja": "こんにちは！初めての図書館？どんな本がお好き？",
+    "fr": "Bonjour ! Première fois dans notre bibliothèque ? Quel genre de littérature préférez-vous ?",
+    "es": "¡Buenas tardes! ¿Es tu primera vez en nuestra biblioteca? ¿Qué tipo de literatura prefieres?",
+    "pt": "Boa tarde! Primeira vez na nossa biblioteca? Que tipo de literatura preferes?",
+    "it": "Buongiorno! Prima volta nella nostra biblioteca? Che genere di letteratura preferisci?",
+    "hi": "शुभ दोपहर! हमारी लाइब्रेरी में पहली बार आए हो? किस तरह की किताबें पसंद हैं?"
+  },
+  "phraseVariants": [
+    {
+      "answer": {
+        "ru": "Добрый день! Да, поможете мне? Обожаю читать классическую литературу.",
+        "en": "Good afternoon! Yes, please help. I adore classic literature.",
+        "de": "Guten Tag! Ja, bitte helfen Sie mir. Ich liebe klassische Literatur.",
+        "zh": "下午好！是的，请帮帮我。我超爱经典文学。",
+        "ja": "こんにちは！うん、助けて。古典文学が大好き。",
+        "fr": "Bonjour ! Oui, aidez-moi s’il vous plaît. J’adore la littérature classique.",
+        "es": "¡Buen día! Sí, ayúdame por favor. Me encanta la literatura clásica.",
+        "pt": "Bom dia! Sim, ajuda-me por favor. Adoro literatura clássica.",
+        "it": "Buongiorno! Sì, mi aiuti per favore. Adoro la letteratura classica.",
+        "hi": "नमस्ते! हाँ, मदद करो। मुझे क्लासिक लिटरेचर बहुत पसंद है।"
+      },
+      "respect": 4
+    },
+    {
+      "answer": {
+        "ru": "Здравствуйте! Именно так. Мне нравится читать романы, хотя сейчас, хочу быть увлечен вами.",
+        "en": "Hello! Exactly. I love novels, but right now I’d rather be captivated by you.",
+        "de": "Hallo! Genau deswegen. Ich mag Romane… obwohl ich jetzt lieber von Ihnen fasziniert wäre.",
+        "zh": "你好！正是为此。我喜欢小说……不过现在更想被你迷倒。",
+        "ja": "こんにちは！そうそう。小説が好きだけど、今は君に夢中になりたい。",
+        "fr": "Salut ! Exactement. J’aime les romans… mais là je préférerais être captivé par vous.",
+        "es": "¡Hola! Exacto. Me gustan las novelas… aunque ahora preferiría estar cautivado por ti.",
+        "pt": "Oi! Exatamente. Gosto de romances… mas agora preferia estar fascinado por ti.",
+        "it": "Ciao! Esatto. Amo i romanzi… ma ora preferirei essere rapito da te.",
+        "hi": "हाय! बिल्कुल। मुझे नॉवेल्स पसंद हैं… पर अभी तो तुझसे ही फिदा होना चाहता हूँ।"
+      },
+      "respect": 2
+    },
+    {
+      "answer": {
+        "ru": "Да, здесь первый раз! Какая литература? Передо мной секусуальная девушка!",
+        "en": "Yes, first time! Books? There’s a sexy girl right in front of me!",
+        "de": "Ja, hier zum ersten Mal! Bücher? Vor mir steht ein megasexy Mädchen!",
+        "zh": "是的，第一次来！书？眼前就站着一个超级性感的美女！",
+        "ja": "うん、初めて！本？目の前にエロい子がいるじゃん！",
+        "fr": "Oui, première fois ici ! Des livres ? Il y a une fille hyper sexy devant moi !",
+        "es": "¡Sí, primera vez! ¿Libros? ¡Delante de mí hay una chica súper sexy!",
+        "pt": "Sim, primeira vez aqui! Livros? Tenho uma miúda super sexy à minha frente!",
+        "it": "Sì, prima volta qui! Libri? C’è una ragazza super sexy davanti a me!",
+        "hi": "हाँ, पहली बार आया हूँ! किताबें? मेरे सामने तो एक सेक्सी लड़की खड़ी है!"
+      },
+      "respect": 0
+    }
+  ]
+}

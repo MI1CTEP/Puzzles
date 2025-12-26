@@ -1,0 +1,61 @@
+{
+  "firstPhrase": {
+    "ru": "Сейчас я покажу тебе, как я провожу одинокие вечера на пляже, возбуждает?",
+    "en": "I’ll show you how I spend lonely evenings on the beach — does it turn you on?",
+    "de": "Jetzt zeig ich dir, wie ich einsame Abende am Strand verbringe – macht dich das an?",
+    "zh": "现在给你看看我在海滩上怎么度过孤单的夜晚，兴奋吗？",
+    "ja": "今から寂しいビーチの夜の過ごし方見せてあげる。興奮する？",
+    "fr": "Je vais te montrer comment je passe mes soirées solitaires sur la plage — ça t’excite ?",
+    "es": "Te muestro cómo paso mis noches solitarias en la playa — ¿te excita?",
+    "pt": "Vou mostrar-te como passo as noites sozinha na praia — excita-te?",
+    "it": "Ora ti mostro come passo le serate solitarie in spiaggia — ti eccita?",
+    "hi": "अब देख मैं अकेले बीच पर शामें कैसे बिताती हूँ — उत्तेजित हो रहा है?"
+  },
+  "phraseVariants": [
+    {
+      "answer": {
+        "ru": "На закате это выглядит волшебно, продолжай!",
+        "en": "At sunset it looks magical — keep going!",
+        "de": "Bei Sonnenuntergang sieht das magisch aus – mach weiter!",
+        "zh": "夕阳下看起来超浪漫，继续！",
+        "ja": "夕陽の下だと魔法みたい。続けて！",
+        "fr": "Au coucher du soleil c’est magique — continue !",
+        "es": "Con la puesta de sol parece mágico — ¡sigue!",
+        "pt": "Com o pôr do sol parece mágico — continua!",
+        "it": "Al tramonto sembra magico — continua!",
+        "hi": "सूरज डूबते वक्त ये जादुई लगता है — जारी रख!"
+      },
+      "respect": 4
+    },
+    {
+      "answer": {
+        "ru": "Хотел бы еще раз заняться сексом.",
+        "en": "I’d love to fuck again.",
+        "de": "Ich würde gern nochmal ficken.",
+        "zh": "我想再来一次。",
+        "ja": "もう一回セックスしたい。",
+        "fr": "J’aimerais baiser encore une fois.",
+        "es": "Me encantaría follar otra vez.",
+        "pt": "Gostaria de foder outra vez.",
+        "it": "Vorrei scopare ancora.",
+        "hi": "मुझे एक बार और चोदना है।"
+      },
+      "respect": 2
+    },
+    {
+      "answer": {
+        "ru": "Неплохо, видимо тебе нравится одиночество.",
+        "en": "Not bad — looks like you enjoy being alone.",
+        "de": "Nicht schlecht – offenbar magst du Einsamkeit.",
+        "zh": "还不错，看来你挺享受孤独的。",
+        "ja": "悪くないね。孤独も好きなんだ。",
+        "fr": "Pas mal — on dirait que tu aimes la solitude.",
+        "es": "No está mal — parece que te gusta la soledad.",
+        "pt": "Nada mau — parece que gostas da solidão.",
+        "it": "Niente male — sembra che ti piaccia la solitudine.",
+        "hi": "बुरा नहीं — लगता है तुझे अकेलापन पसंद है।"
+      },
+      "respect": 0
+    }
+  ]
+}

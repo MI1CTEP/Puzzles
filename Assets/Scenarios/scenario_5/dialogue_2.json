@@ -1,0 +1,61 @@
+{
+  "firstPhrase": {
+    "ru": "Тебе нужно лучше знать мой предмет, может моя попка повысит твое желание?",
+    "en": "You need to master my subject… maybe my ass will motivate you?",
+    "de": "Du musst mein Fach besser beherrschen… vielleicht motiviert dich mein Arsch?",
+    "zh": "你得把我的课学好……或许我的屁股能激励你？",
+    "ja": "私の授業をもっとマスターしないと……お尻でやる気出る？",
+    "fr": "Tu dois mieux maîtriser ma matière… peut-être que mon cul te motivera ?",
+    "es": "Tienes que dominar mi asignatura… ¿quizás mi culo te motive?",
+    "pt": "Tens de dominar melhor a minha disciplina… talvez a minha bunda te motive?",
+    "it": "Devi padroneggiare meglio la mia materia… forse il mio culo ti motiverà?",
+    "hi": "मेरी सब्जेक्ट को अच्छे से सीखना होगा… शायद मेरी गांड मोटिवेट कर दे?"
+  },
+  "phraseVariants": [
+    {
+      "answer": {
+        "ru": "О да, обязательно займусь учебой этим вечером и буду думать о вас.",
+        "en": "Oh yes, I’ll definitely study tonight… thinking only of you.",
+        "de": "Oh ja, heute Abend werde ich definitiv lernen – und nur an Sie denken.",
+        "zh": "哦是的，今晚我一定好好学习……脑子里只有您。",
+        "ja": "ああ、今夜は絶対勉強するよ……頭の中は先生だけ。",
+        "fr": "Oh oui, ce soir je vais absolument étudier… en ne pensant qu’à vous.",
+        "es": "Oh sí, esta noche estudiaré sin falta… pensando sólo en ti.",
+        "pt": "Oh sim, esta noite vou estudar com certeza — só a pensar em ti.",
+        "it": "Oh sì, stasera studierò di sicuro… pensando solo a te.",
+        "hi": "ओह हाँ, आज रात मैं ज़रूर पढ़ाई करूँगा… और सिर्फ़ तुम्हारे बारे में सोचूँगा।"
+      },
+      "respect": 4
+    },
+    {
+      "answer": {
+        "ru": "Мне кажется секс, намного лучше, чем учеба.",
+        "en": "Sex is way better than studying.",
+        "de": "Mir ist Sex viel lieber als Lernen.",
+        "zh": "对我来说性爱比学习爽多了。",
+        "ja": "勉強よりセックスの方がいいに決まってる。",
+        "fr": "Le sexe m’intéresse bien plus que les études.",
+        "es": "El sexo me gusta mucho más que estudiar.",
+        "pt": "Sexo é bem mais interessante do que estudar.",
+        "it": "Il sesso mi interessa molto più dello studio.",
+        "hi": "सेक्स पढ़ाई से कहीं बेहतर है।"
+      },
+      "respect": 2
+    },
+    {
+      "answer": {
+        "ru": "В этой аудитории, интерес вызываете только вы.",
+        "en": "In this classroom, you’re the only thing that interests me.",
+        "de": "In diesem Hörsaal interessierst nur du mich.",
+        "zh": "在这间教室里，只有您让我感兴趣。",
+        "ja": "この教室で興味あるのは先生だけだよ。",
+        "fr": "Dans cet amphithéâtre, seule toi m’intéresses.",
+        "es": "En este aula sólo me interesas tú.",
+        "pt": "Nesta sala só me interessas tu.",
+        "it": "In quest’aula mi interessi solo tu.",
+        "hi": "इस लेक्चर हॉल में सिर्फ़ तुम ही इंटरेस्टिंग हो।"
+      },
+      "respect": 0
+    }
+  ]
+}

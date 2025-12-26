@@ -1,0 +1,61 @@
+{
+  "firstPhrase": {
+    "ru": "Мне очень нравится! Для чего это упражнение?",
+    "en": "I love it! What’s this exercise for?",
+    "de": "Ich liebe es! Wozu dient diese Übung?",
+    "zh": "我太喜欢了！这个动作是练什么的？",
+    "ja": "めっちゃ好き！このエクササイズ何の効果？",
+    "fr": "J’adore ! Cet exercice sert à quoi ?",
+    "es": "¡Me encanta! ¿Para qué sirve este ejercicio?",
+    "pt": "Adoro! Este exercício serve para quê?",
+    "it": "Adoro! Questo esercizio a cosa serve?",
+    "hi": ""
+  },
+  "phraseVariants": [
+    {
+      "answer": {
+        "ru": "Секс повышает твою мотивацию и позволяет сохранить спортивную фигуру.",
+        "en": "Sex boosts your motivation and keeps that athletic body in shape.",
+        "de": "Sex erhöht deine Motivation und hält die sportliche Figur.",
+        "zh": "做爱能提升你的动力，保持运动身材。",
+        "ja": "セックスでモチベーション上がって、スポーツ体型キープできるよ。",
+        "fr": "Le sexe booste ta motivation et maintient une silhouette athlétique.",
+        "es": "El sexo aumenta tu motivación y mantiene la figura deportiva.",
+        "pt": "O sexo aumenta a tua motivação e mantém o corpo atlético.",
+        "it": "Il sesso aumenta la motivazione e mantiene il fisico atletico.",
+        "hi": ""
+      },
+      "respect": 4
+    },
+    {
+      "answer": {
+        "ru": "Это для твоей попки и ног, ты будешь бегать еще быстрее.",
+        "en": "This is for your ass and legs — you’ll run even faster.",
+        "de": "Das ist für deinen Arsch und die Beine – du wirst noch schneller laufen.",
+        "zh": "这是练屁股和腿的，你会跑得更快。",
+        "ja": "お尻と脚用。もっと速く走れるようになるよ。",
+        "fr": "C’est pour ton cul et tes jambes – tu courras encore plus vite.",
+        "es": "Es para tu culo y piernas – correrás aún más rápido.",
+        "pt": "Isto é para a tua bunda e pernas – vais correr ainda mais rápido.",
+        "it": "Questo è per il tuo culo e le gambe – correrai ancora più veloce.",
+        "hi": ""
+      },
+      "respect": 2
+    },
+    {
+      "answer": {
+        "ru": "Я придумал это упражнение сегодня, когда начал проводить занятие.",
+        "en": "I made up this exercise today when the session started.",
+        "de": "Ich hab mir diese Übung heute ausgedacht, als die Session begann.",
+        "zh": "这个动作是我今天开始训练时临时想出来的。",
+        "ja": "今日の練習始まったときに即興で考えたエクササイズだよ。",
+        "fr": "J’ai inventé cet exercice aujourd’hui quand la séance a commencé.",
+        "es": "Me inventé este ejercicio hoy cuando empezó la sesión.",
+        "pt": "Invente este exercício hoje quando a sessão começou.",
+        "it": "Ho inventato questo esercizio oggi quando è iniziata la sessione.",
+        "hi": ""
+      },
+      "respect": 0
+    }
+  ]
+}

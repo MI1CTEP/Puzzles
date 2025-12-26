@@ -1,0 +1,61 @@
+{
+  "firstPhrase": {
+    "ru": "В диких джунглях, мне одиноко без мужчины, кстати, как тебе моя попка?",
+    "en": "In the wild jungle I get so lonely without a man… by the way, how’s my ass look?",
+    "de": "In der wilden Wildnis fühle ich mich ohne Mann so einsam… übrigens, wie findest du meinen Arsch?",
+    "zh": "在狂野丛林里没有男人我好寂寞…对了，我的屁股怎么样？",
+    "ja": "このジャングル、男がいなくて寂しい…ところで、私のお尻どう？",
+    "fr": "Dans cette jungle sauvage je me sens si seule sans homme… au fait, comment tu trouves mon cul ?",
+    "es": "En esta selva salvaje me siento tan sola sin hombre… por cierto, ¿qué tal mi culo?",
+    "pt": "Nesta selva selvagem sinto-me tão sozinha sem homem… aliás, que tal a minha bunda?",
+    "it": "In questa giungla selvaggia mi sento così sola senza un uomo… a proposito, che ne dici del mio culo?",
+    "hi": "इस जंगली इलाक़े में बिना मर्द के मुझे बहुत तन्हाई लगती है… वैसे, मेरी गांड कैसी लगी?"
+  },
+  "phraseVariants": [
+    {
+      "answer": {
+        "ru": "Возбуждает, такие формы мне нравятся, теперь ты не будешь одинока.",
+        "en": "So arousing — I love those curves. You won’t be lonely anymore.",
+        "de": "Das macht mich an – solche Kurven mag ich, jetzt wirst du nicht mehr einsam sein.",
+        "zh": "好兴奋，这样的曲线我最爱，你不会再寂寞了。",
+        "ja": "興奮する。このカーブ大好き。もう寂しくないよ。",
+        "fr": "Ça m’excite – j’adore ces formes, tu ne seras plus seule.",
+        "es": "Eso me pone – adoro esas curvas, ya no estarás sola.",
+        "pt": "Isso excita-me – adoro essas curvas, já não vais estar sozinha.",
+        "it": "Mi eccita – adoro queste curve, non sarai più sola.",
+        "hi": "ये मुझे उत्तेजित कर रहा है – ऐसी कर्व्स मुझे पसंद हैं, अब तू अकेली नहीं रहेगी।"
+      },
+      "respect": 4
+    },
+    {
+      "answer": {
+        "ru": "Из-за этой попки, готов жить в диких джунглях.",
+        "en": "For that ass I’d live in the jungle forever.",
+        "de": "Für diesen Arsch würde ich für immer im Dschungel leben.",
+        "zh": "为了这个屁股我愿意永远住在丛林里。",
+        "ja": "この尻のためなら一生ジャングルに住む。",
+        "fr": "Pour ce cul je vivrais dans la jungle pour toujours.",
+        "es": "Por ese culo viviría en la selva para siempre.",
+        "pt": "Por essa bunda vivia na selva para sempre.",
+        "it": "Per questo culo vivrei nella giungla per sempre.",
+        "hi": "इस गांड के लिए मैं हमेशा जंगल में रह सकता हूँ।"
+      },
+      "respect": 2
+    },
+    {
+      "answer": {
+        "ru": "Тебе одиноко без члена, давай помогу тебе?",
+        "en": "You’re lonely without a cock — let me help you.",
+        "de": "Du bist einsam ohne Schwanz – lass mich dir helfen.",
+        "zh": "你没有鸡鸡才寂寞，让我来帮你吧。",
+        "ja": "チンポがないから寂しいんだろ？手伝うよ。",
+        "fr": "Tu es seule parce qu’il te manque une queue – laisse-moi t’aider.",
+        "es": "Estás sola porque te falta una polla – déjame ayudarte.",
+        "pt": "Estás sozinha porque te falta um pau – deixa-me ajudar-te.",
+        "it": "Sei sola perché ti manca un cazzo – lascia che ti aiuti.",
+        "hi": "तू लंड के बिना ही तन्हा है – मैं तेरी मदद कर दूँ?"
+      },
+      "respect": 0
+    }
+  ]
+}

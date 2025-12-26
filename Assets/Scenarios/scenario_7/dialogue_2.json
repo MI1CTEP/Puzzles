@@ -1,0 +1,61 @@
+{
+  "firstPhrase": {
+    "ru": "Тебя возбуждают связанные девушки?",
+    "en": "Do tied-up girls turn you on?",
+    "de": "Erregen dich gefesselte Mädchen?",
+    "zh": "被绑起来的女孩子会让你兴奋吗？",
+    "ja": "縛られてる女の子って興奮する？",
+    "fr": "Une fille attachée, ça t’excite ?",
+    "es": "¿Te excita una chica atada?",
+    "pt": "Uma rapariga amarrada excita-te?",
+    "it": "Una ragazza legata ti eccita?",
+    "hi": "बंधी हुई लड़की तुझे उत्तेजित करती है?"
+  },
+  "phraseVariants": [
+    {
+      "answer": {
+        "ru": "Да, это мой фетиш. Знаешь, скромность и сексуальность, это редкие качества.",
+        "en": "Yes, it’s my fetish. Shyness mixed with pure sexuality is so rare and hot.",
+        "de": "Ja, das ist mein Fetisch. Schüchternheit plus pure Geilheit ist so selten und heiß.",
+        "zh": "是的，这是我的恋物。害羞加淫荡太稀有太性感了。",
+        "ja": "うん、それが俺のフェチ。恥ずかしがり屋なのにエロいって最高。",
+        "fr": "Oui, c’est mon fétish. Timidité + pure sensualité, c’est tellement rare et excitant.",
+        "es": "Sí, es mi fetiche. Vergüenza + pura lujuria es algo rarísimo y caliente.",
+        "pt": "Sim, é o meu fetiche. Timidez misturada com luxúria pura é raríssimo e quente.",
+        "it": "Sì, è il mio fetiche. Timidezza + pura lussuria è una combinazione rarissima e bollente.",
+        "hi": "हाँ, यही मेरा फेटिश है। शर्मीली लेकिन पूरी तरह से कामुक – बहुत रेयर और हॉट।"
+      },
+      "respect": 4
+    },
+    {
+      "answer": {
+        "ru": "Да, еще обожаю жесткие ролевые игры.",
+        "en": "Yes, and I love rough role-play too.",
+        "de": "Ja, und ich liebe auch harte Rollenspiele.",
+        "zh": "是的，我还超爱重口味角色扮演。",
+        "ja": "うん、激しいロールプレイも大好き。",
+        "fr": "Oui, et j’adore aussi les jeux de rôle bien hard.",
+        "es": "Sí, y también me flipan los juegos de rol bien duros.",
+        "pt": "Sim, e adoro também role-play bem hardcore.",
+        "it": "Sì, e adoro anche i giochi di ruolo belli duri.",
+        "hi": "हाँ, और मुझे हार्ड रोल-प्ले भी बहुत पसंद है।"
+      },
+      "respect": 2
+    },
+    {
+      "answer": {
+        "ru": "Возбуждают чулки, люблю сексуальное белье.",
+        "en": "Stockings drive me crazy — I adore sexy lingerie.",
+        "de": "Strümpfe und sexy Dessous machen mich wahnsinnig.",
+        "zh": "丝袜和性感内衣让我疯狂。",
+        "ja": "ストッキングとエロ下着に弱いんだ。",
+        "fr": "Les bas et la lingerie sexy me rendent dingue.",
+        "es": "Medias y lencería sexy me vuelven loco.",
+        "pt": "Meias e lingerie sexy deixam-me louco.",
+        "it": "Calze e intimo sexy mi fanno impazzire.",
+        "hi": "स्टॉकिंग्स और सेक्सी अंडरवियर मुझे पागल कर देते हैं।"
+      },
+      "respect": 0
+    }
+  ]
+}

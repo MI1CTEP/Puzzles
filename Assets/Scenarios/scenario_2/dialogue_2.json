@@ -1,90 +1,61 @@
-﻿{
+{
   "firstPhrase": {
-    "ru": "Фраза 2",
-    "en": "",
-    "de": "",
-    "zh": "",
-    "fr": "",
-    "hi": "",
-    "it": "",
-    "ja": "",
-    "pt": ""
+    "ru": "Ой, надо поправить халат, кстати как тебе моя попка?",
+    "en": "Oops, need to fix my robe — by the way, how do you like my ass?",
+    "de": "Oje, muss meinen Bademantel richten – übrigens, wie gefällt dir mein Hintern?",
+    "zh": "哎呀，得整理下袍子，顺便问问，你觉得我的屁股怎么样？",
+    "ja": "あ、ガウン直さなきゃ。ところで、私のお尻どう？",
+    "fr": "Oups, faut que je rajuste mon peignoir – au fait, mon cul te plaît ?",
+    "es": "Ups, tengo que arreglar el bata — por cierto, ¿qué te parece mi culo?",
+    "pt": "Ops, preciso arrumar o roupão — a propósito, gostas do meu rabo?",
+    "it": "Oops, devo sistemare la vestaglia — a proposito, ti piace il mio culo?",
+    "hi": "ओह, गाउन ठीक करना पड़ेगा — वैसे, मेरी गांड कैसी लगी?"
   },
   "phraseVariants": [
     {
       "answer": {
-        "ru": "Ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Мне хочется её потрогать и страстно целовать!",
+        "en": "I want to touch it and kiss it passionately!",
+        "de": "Ich will sie anfassen und leidenschaftlich küssen!",
+        "zh": "好想摸摸它，然后热吻！",
+        "ja": "触りたくて、情熱的にキスしたい！",
+        "fr": "Je veux la caresser et l’embrasser passionnément !",
+        "es": "¡Quiero tocarla y besarla con pasión!",
+        "pt": "Quero tocá-la e beijá-la com paixão!",
+        "it": "Voglio toccarla e baciarla con passione!",
+        "hi": "इसे छूना और जोश से चूमना चाहता हूँ!"
       },
-      "respect": 1,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 4
     },
     {
       "answer": {
-        "ru": "Ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Впечатляет и возбуждает!",
+        "en": "Impressive and so arousing!",
+        "de": "Beeindruckend und total erregend!",
+        "zh": "令人印象深刻，还好刺激！",
+        "ja": "印象的で興奮する！",
+        "fr": "Impressionnant et tellement excitant !",
+        "es": "Impresionante y muy excitante!",
+        "pt": "Impressionante e excitante!",
+        "it": "Impressionante e eccitante!",
+        "hi": "प्रभावशाली और उत्तेजक!"
       },
-      "respect": 0,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 2
     },
     {
       "answer": {
-        "ru": "Ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Хочу в неё войти прямо сейчас!",
+        "en": "I want to slide inside right now!",
+        "de": "Ich will sofort in sie rein!",
+        "zh": "现在就想插进去！",
+        "ja": "今すぐ入れたい！",
+        "fr": "Je veux la pénétrer tout de suite !",
+        "es": "¡Quiero metérmela ahora mismo!",
+        "pt": "Quero entrar agora mesmo!",
+        "it": "Voglio entrarti dentro subito!",
+        "hi": "अभी तेरी गांड में घुसना चाहता हूँ!"
       },
-      "respect": 5,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 0
     }
   ]
 }

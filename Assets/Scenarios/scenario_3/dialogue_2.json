@@ -1,90 +1,61 @@
-﻿{
+{
   "firstPhrase": {
-    "ru": "Фраза 2",
-    "en": "",
-    "de": "",
-    "zh": "",
-    "fr": "",
-    "hi": "",
-    "it": "",
-    "ja": "",
-    "pt": ""
+    "ru": "Представлял мою грудь в своих фантазиях?",
+    "en": "Did you ever imagine my breasts in your fantasies?",
+    "de": "Hast du dir schon mal meine Brüste vorgestellt?",
+    "zh": "幻想过我的胸部吗？",
+    "ja": "私の胸、妄想したことある？",
+    "fr": "T’as déjà imaginé mes seins dans tes fantasmes ?",
+    "es": "¿Alguna vez imaginaste mis tetas en tus fantasías?",
+    "pt": "Já imaginaste os meus peitos nas tuas fantasias?",
+    "it": "Hai mai fantasticato sul mio seno?",
+    "hi": "कभी मेरी चूचियों को अपनी फैंटसी में सोचा है?"
   },
   "phraseVariants": [
     {
       "answer": {
-        "ru": "Ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "О да! В реальности они еще лучше, потрогай их.",
+        "en": "Oh yes! They’re even better in real life — touch them.",
+        "de": "Oh ja! In echt sind sie noch geiler – fühl sie mal an.",
+        "zh": "当然！现实中更棒，快来摸摸。",
+        "ja": "うん！実物の方がもっとエロいよ。触って。",
+        "fr": "Oui ! En vrai elles sont encore mieux — touche-les.",
+        "es": "¡Oh sí! En la realidad son aún mejores — tócalas.",
+        "pt": "Sim! Na realidade são ainda melhores — toca nelas.",
+        "it": "Sì! Dal vivo sono ancora meglio — toccale.",
+        "hi": "हाँ! असल में और भी मस्त हैं — छू कर देख।"
       },
-      "respect": 1,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 4
     },
     {
       "answer": {
-        "ru": "Ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Мне нравится грудь маленького размера, это эстетично.",
+        "en": "I love small breasts — they’re so aesthetic.",
+        "de": "Ich mag kleine Brüste – die sind so ästhetisch.",
+        "zh": "我喜欢小胸部，超有美感。",
+        "ja": "小さいおっぱいが好き。めっちゃエロくて綺麗。",
+        "fr": "J’adore les petits seins, c’est tellement esthétique.",
+        "es": "Me gustan los pechos pequeños — son muy estéticos.",
+        "pt": "Gosto de peitos pequenos — são super estéticos.",
+        "it": "Amo il seno piccolo, è così estetico.",
+        "hi": "मुझे छोटी चूचियाँ पसंद हैं — बहुत सुंदर लगती हैं।"
       },
-      "respect": 0,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 2
     },
     {
       "answer": {
-        "ru": "Ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "А твоя попка такая же упругая?",
+        "en": "Is your ass just as firm?",
+        "de": "Und dein Arsch – genauso straff?",
+        "zh": "你的屁股也一样紧实吗？",
+        "ja": "お尻も同じくらいプリプリ？",
+        "fr": "Ton cul est aussi ferme ?",
+        "es": "¿Tu culito es igual de firme?",
+        "pt": "E a tua bunda é tão durinha quanto?",
+        "it": "E il tuo culo è altrettanto sodo?",
+        "hi": "और तेरी गांड भी उतनी ही टाइट है?"
       },
-      "respect": 5,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 0
     }
   ]
 }

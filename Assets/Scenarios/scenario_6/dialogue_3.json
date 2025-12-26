@@ -1,0 +1,61 @@
+{
+  "firstPhrase": {
+    "ru": "Я показала тебе грудь, теперь посмотри на попку! Нравится?",
+    "en": "I showed you my breasts, now check out my ass! Like it?",
+    "de": "Ich hab dir meine Titten gezeigt – jetzt schau dir meinen Arsch an! Gefällt er dir?",
+    "zh": "我给你看了胸部，现在看看屁股！喜欢吗？",
+    "ja": "おっぱい見せたから、今度はお尻！気に入った？",
+    "fr": "Je t’ai montré mes seins – maintenant regarde mon cul ! Tu aimes ?",
+    "es": "Te enseñé las tetas – ahora mira mi culo. ¿Te gusta?",
+    "pt": "Mostrei-te os peitos – agora olha para a bunda! Gostas?",
+    "it": "Ti ho fatto vedere le tette – ora guarda il mio culo! Ti piace?",
+    "hi": ""
+  },
+  "phraseVariants": [
+    {
+      "answer": {
+        "ru": "Да, она возбуждает меня.",
+        "en": "Yes, it’s driving me crazy.",
+        "de": "Ja, er macht mich total geil.",
+        "zh": "是的，它让我超级兴奋。",
+        "ja": "うん、それ見てめっちゃ興奮してる。",
+        "fr": "Oui, il me rend complètement dingue.",
+        "es": "Sí, me pone supercachondo.",
+        "pt": "Sim, deixa-me louco.",
+        "it": "Sì, mi fa impazzire.",
+        "hi": "हाँ, ये मुझे बहुत उत्तेजित कर रही है।"
+      },
+      "respect": 4
+    },
+    {
+      "answer": {
+        "ru": "Уже начинаю ненавидеть стекла, но попка вызывает восторг.",
+        "en": "I’m starting to hate this glass, but your ass is breathtaking.",
+        "de": "Ich fange an, dieses Glas zu hassen – aber dein Arsch ist umwerfend.",
+        "zh": "我开始讨厌这块玻璃了，不过你的屁股太棒了。",
+        "ja": "ガラス嫌いになってきた。でもこの屁股最高。",
+        "fr": "Je commence à détester cette vitre – mais ton cul est sublime.",
+        "es": "Ya empiezo a odiar este cristal, pero tu culo es espectacular.",
+        "pt": "Já começo a odiar este vidro – mas essa bunda é espectacular.",
+        "it": "Inizio a odiare questo vetro – ma questo culo è spettacolare.",
+        "hi": "ये शीशा अब नफ़रत होने लगा है – पर तेरी गांड कमाल की है।"
+      },
+      "respect": 2
+    },
+    {
+      "answer": {
+        "ru": "Выглядит неплохо, но в униформе ты более сексуальна.",
+        "en": "Looks good, but you’re even sexier in uniform.",
+        "de": "Sieht gut aus – aber in Uniform bist du noch viel geiler.",
+        "zh": "看起来不错，但在制服里你更性感。",
+        "ja": "悪くないけど、制服の方がもっとエロいよ。",
+        "fr": "Ça claque – mais en uniforme tu es encore plus bandante.",
+        "es": "Está bien – pero en uniforme estás mucho más caliente.",
+        "pt": "Fica bom – mas de uniforme és ainda mais excitante.",
+        "it": "Ci sta – ma in uniforme sei ancora più sexy.",
+        "hi": "ठीक है – पर यूनिफॉर्म में तू और भी ज़्यादा सेक्सी लगती है।"
+      },
+      "respect": 0
+    }
+  ]
+}

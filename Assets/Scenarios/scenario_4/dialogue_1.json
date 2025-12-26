@@ -1,0 +1,61 @@
+{
+  "firstPhrase": {
+    "ru": "Я только что спасла тебя, ты чуть не утонул в океане, чем я могу помочь тебе?",
+    "en": "I just saved your life — you almost drowned. How can I help you now?",
+    "de": "Ich hab dich gerade aus dem Ozean gerettet – du wärst fast ertrunken. Wie kann ich dir jetzt helfen?",
+    "zh": "刚刚把你从海里救上来，你差点就淹死了，我还能怎么帮你？",
+    "ja": "今、君を海から救ったよ。溺れそうだったね。今、どうしてほしい？",
+    "fr": "Je viens de te sauver la vie — tu as failli te noyer. Comment puis-je t’aider maintenant ?",
+    "es": "Acabo de salvarte — casi te ahogas. ¿En qué más puedo ayudarte?",
+    "pt": "Acabei de te salvar — quase te afogaste. Como posso ajudar-te agora?",
+    "it": "Ti ho appena salvato la vita — stavi per annegare. Come posso aiutarti adesso?",
+    "hi": "मैंने अभी-अभी तुम्हें समुद्र से बचाया — तुम लगभग डूब ही गए थे। अब मैं तुम्हारी और कैसे मदद करूँ?"
+  },
+  "phraseVariants": [
+    {
+      "answer": {
+        "ru": "Ты спасла мне жизнь, хочу пригласить тебя на свидание.",
+        "en": "You saved my life — let me take you on a date.",
+        "de": "Du hast mir das Leben gerettet – ich will dich zum Date einladen.",
+        "zh": "你救了我的命，我想约你出去。",
+        "ja": "命を救ってくれた。お礼にデートに誘わせて。",
+        "fr": "Tu m’as sauvé la vie — laisse-moi t’inviter à un rendez-vous.",
+        "es": "Me salvaste la vida — quiero invitarte a una cita.",
+        "pt": "Salvaste-me a vida — quero convidar-te para um encontro.",
+        "it": "Mi hai salvato la vita — voglio invitarti a un appuntamento.",
+        "hi": "तूने मेरी जान बचाई — मैं तुझे डेट पर ले जाना चाहता हूँ।"
+      },
+      "respect": 4
+    },
+    {
+      "answer": {
+        "ru": "Сними свои трусики и помоги мне наполнится энергией.",
+        "en": "Take off your panties and help me recharge my energy.",
+        "de": "Zieh dein Höschen aus und hilf mir, wieder Energie zu tanken.",
+        "zh": "把内裤脱了，帮我补充能量吧。",
+        "ja": "パンツ脱いで、エネルギー補給手伝って。",
+        "fr": "Enlève ta culotte et aide-moi à recharger mes batteries.",
+        "es": "Quítate las bragas y ayúdame a recargar energía.",
+        "pt": "Tira as cuequinhas e ajuda-me a recarregar energia.",
+        "it": "Togliti le mutandine e aiutami a ricaricarmi.",
+        "hi": "अपनी पैंटी उतार और मुझे एनर्जी भरने में मदद कर।"
+      },
+      "respect": 2
+    },
+    {
+      "answer": {
+        "ru": "Устрой мне релакс, но твой купальник нам помешает.",
+        "en": "Give me some relaxation… but that swimsuit has to go.",
+        "de": "Mach mir Entspannung… aber dein Bikini muss weg.",
+        "zh": "给我放松一下吧……不过你的比基尼得脱掉。",
+        "ja": "リラックスさせて。でもそのビキニ、邪魔だよ。",
+        "fr": "Offre-moi de la détente… mais ton maillot doit disparaître.",
+        "es": "Relájame… pero ese bikini tiene que irse.",
+        "pt": "Dá-me relaxamento… mas esse biquíni tem de sair.",
+        "it": "Rilassami… ma quel bikini deve sparire.",
+        "hi": "मुझे रिलैक्स कर… पर तेरी बिकिनी निकालनी पड़ेगी।"
+      },
+      "respect": 0
+    }
+  ]
+}

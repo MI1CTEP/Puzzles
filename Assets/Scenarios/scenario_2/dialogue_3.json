@@ -1,90 +1,61 @@
-﻿{
+{
   "firstPhrase": {
-    "ru": "Фраза 3",
-    "en": "",
-    "de": "",
-    "zh": "",
-    "fr": "",
-    "hi": "",
-    "it": "",
-    "ja": "",
-    "pt": ""
+    "ru": "Ты ведешь себя хорошо, думаю тебе уже можно показать грудь, нравится?",
+    "en": "You’ve been good — I think you deserve to see my breasts now. Like them?",
+    "de": "Du bist brav gewesen – ich denke, du verdienst es, meine Brüste zu sehen. Gefallen sie dir?",
+    "zh": "你表现不错，我想可以给你看我的胸部了，喜欢吗？",
+    "ja": "いい子にしてたね。もうおっぱい見せてあげる。気に入った？",
+    "fr": "Tu as été sage — je pense que tu mérites de voir mes seins. Ils te plaisent ?",
+    "es": "Te has portado bien — creo que mereces ver mis pechos. ¿Te gustan?",
+    "pt": "Portaste-te bem — acho que mereces ver os meus peitos. Gostam?",
+    "it": "Ti sei comportato bene — penso che meriti di vedere il mio seno. Ti piace?",
+    "hi": "तू अच्छा बर्ताव कर रहा है, लगता है तेरे को मेरी चूचियाँ दिखा दूँ। पसंद आईं?"
   },
   "phraseVariants": [
     {
       "answer": {
-        "ru": "Ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Да, благодаря тебе я иду на поправку, ты заботливая.",
+        "en": "Yes, thanks to you I’m feeling much better — you’re so caring.",
+        "de": "Ja, dank dir geht’s mir besser – du bist so fürsorglich.",
+        "zh": "是的，多亏你我好多了，你真体贴。",
+        "ja": "うん、君のおかげで回復してるよ。優しいね。",
+        "fr": "Oui, grâce à toi je vais beaucoup mieux — tu es si attentionnée.",
+        "es": "Sí, gracias a ti me estoy recuperando — eres tan cariñosa.",
+        "pt": "Sim, graças a ti estou a melhorar — és tão carinhosa.",
+        "it": "Sì, grazie a te sto guarendo — sei così premurosa.",
+        "hi": "हाँ, तेरी वजह से ठीक हो रहा हूँ — तू कितनी केयरिंग है।"
       },
-      "respect": 1,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 4
     },
     {
       "answer": {
-        "ru": "Ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Люблю упругую грудь!",
+        "en": "I love firm breasts!",
+        "de": "Ich liebe straffe Brüste!",
+        "zh": "我喜欢紧实的胸部！",
+        "ja": "張りのあるおっぱいが好き！",
+        "fr": "J’adore les seins fermes !",
+        "es": "¡Amo los pechos firmes!",
+        "pt": "Adoro peitos firmes!",
+        "it": "Amo il seno sodo!",
+        "hi": "मुझे टाइट चूचियाँ बहुत पसंद हैं!"
       },
-      "respect": 0,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 2
     },
     {
       "answer": {
-        "ru": "Ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Хочу потрогать её!",
+        "en": "I want to touch them!",
+        "de": "Ich will sie anfassen!",
+        "zh": "想摸摸它们！",
+        "ja": "触りたい！",
+        "fr": "Je veux les toucher !",
+        "es": "¡Quiero tocarlas!",
+        "pt": "Quero tocá-las!",
+        "it": "Voglio toccarle!",
+        "hi": "इन्हें छूना चाहता हूँ!"
       },
-      "respect": 5,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 0
     }
   ]
 }

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 275d817782d12ad4f92cbb1034a4af0f
+VideoClipImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  frameRange: 0
+  startFrame: -1
+  endFrame: -1
+  colorSpace: 0
+  deinterlace: 0
+  encodeAlpha: 0
+  flipVertical: 0
+  flipHorizontal: 0
+  importAudio: 1
+  targetSettings: {}
+  userData: 
+  assetBundleName: scenario_10.only_gameplay
+  assetBundleVariant: 
