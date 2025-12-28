@@ -1,0 +1,3 @@
+[submodule "Assets/Utils"]
+	path = Assets/Utils
+	url = git@github.com:NikitaKrasilovskiy/ProjectUtils.git
