@@ -8,19 +8,21 @@ using System.Threading.Tasks;
 public class UIAnimationButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [System.Serializable]
-    public class ButtonGroup
+    public class ButtonGroup    // Класс для группы кнопок
     {
-        public List<Button> buttons = new();
-        private Dictionary<Button, Vector3> originalScales;
+        public List<Button> buttons = new();    // Список кнопок в группе
 
-        public void CacheOriginalScales()
+        private Dictionary<Button, Vector3> originalScales;  // Словарь для хранения оригинальных масштабов кнопок
+
+        public void CacheOriginalScales()   // Сохраняем оригинальные масштабы кнопок
         {
             originalScales = new Dictionary<Button, Vector3>();
             foreach (var button in buttons)
             { if (button != null) originalScales[button] = button.transform.localScale; }
         }
 
-        public Vector3 GetOriginalScale(Button button) => originalScales != null && originalScales.TryGetValue(button, out var scale) ? scale : Vector3.one;
+        public Vector3 GetOriginalScale(Button button) => originalScales != null
+               && originalScales.TryGetValue(button, out var scale) ? scale : Vector3.one;
     }
 
     [Header("Настройки анимации")]
@@ -33,15 +35,15 @@ public class UIAnimationButtons : MonoBehaviour, IPointerEnterHandler, IPointerE
     [SerializeField] private float shrinkDuration = 0.3f;
 
     [Header("Группы кнопок")]
-    [SerializeField] private ButtonGroup menuGroup;
-    [SerializeField] private ButtonGroup galleryGroup;
-    [SerializeField] private ButtonGroup settingsGroup;
+    [SerializeField] private ButtonGroup menuGroup;     // Группа кнопок меню
+    [SerializeField] private ButtonGroup galleryGroup;  // Группа кнопок галереи
+    [SerializeField] private ButtonGroup settingsGroup; // Группа кнопок настроек
 
     [Space]
-    [SerializeField] private CanvasGroup _canvasGroup;
+    [SerializeField] private CanvasGroup _canvasGroup;  // CanvasGroup для блокировки взаимодействия
 
-    private bool _isBlocked = false;
-    private List<ButtonGroup> allGroups;
+    private bool _isBlocked = false;        // Флаг блокировки анимаций
+    private List<ButtonGroup> allGroups;    // Список всех групп кнопок
 
     private void Start()
     {
@@ -126,7 +128,6 @@ public class UIAnimationButtons : MonoBehaviour, IPointerEnterHandler, IPointerE
         return Vector3.one;
     }
 
-    // === Методы Show/Hide для каждой группы ===
     public void ShowButtonsMenu() => ShowGroup(menuGroup);
     public void HideButtonsMenu() => HideGroup(menuGroup);
     public void ShowButtonsGallery() => ShowGroup(galleryGroup);

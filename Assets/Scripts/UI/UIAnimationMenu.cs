@@ -8,9 +8,9 @@ public class UIAnimationMenu : MonoBehaviour
     [SerializeField] private Vector2 finalSize = new(3500, 4000); // Конечный размер
     [SerializeField] private float scaleDuration = 1.0f; // Время растягивания
 
-    void Awake() => rectTransformMenu.sizeDelta = Vector2.zero;
+    void Awake() => rectTransformMenu.sizeDelta = Vector2.zero; // Установить начальный размер
 
-    private void Start() => ShowMenu();
+    private void Start() => ShowMenu(); // Показать меню при старте
 
     public void ShowMenu() => rectTransformMenu.DOSizeDelta(finalSize, scaleDuration).SetEase(Ease.OutBounce);    // Показать меню
 

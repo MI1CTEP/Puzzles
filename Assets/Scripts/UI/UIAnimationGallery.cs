@@ -11,12 +11,12 @@ public class UIAnimationGallery : MonoBehaviour
     public void GalleryOpen()    // Открытие галереи
     {
         rectTransformMenu.DOSizeDelta(finalSize, expandDuration).SetEase(Ease.OutBounce)
-        .OnComplete(() => { gallary.SetActive(true); }); ;  // Расширяем панель
+        .OnComplete(() => { gallary.SetActive(true); });
     }
 
     public void GalleryClose()  // Закрытие галереи
     {
         gallary.SetActive(false);
-        rectTransformMenu.DOSizeDelta(UIAnimationMenu.startSize, expandDuration * 0.8f).SetEase(Ease.OutBounce);  // Сжимаем панель
+        rectTransformMenu.DOSizeDelta(UIAnimationMenu.startSize, expandDuration * 0.8f).SetEase(Ease.OutBounce);
     }
 }
