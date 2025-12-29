@@ -2,6 +2,7 @@ using NutakuUnitySdk;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -225,6 +226,9 @@ public class PuarchaseService : MonoBehaviour
                         _inventoryItems.Add(inventoryItem);
                     }
 
+
+                    
+
                     Debug.Log($"Loaded {inventoryResponse.total_items} inventory items");
                 }
                 catch (Exception ex)
@@ -239,6 +243,17 @@ public class PuarchaseService : MonoBehaviour
         }));
     }
 
+    public bool IsAvaliableBonusStage(int idLevel)
+    {
+        foreach (var item in _inventoryItems)
+        {
+            int curIndex = int.Parse(item.name.Split('_')[^1]);
+            if (curIndex == idLevel)
+                return true;
+        }
+
+        return false;
+    }
 
 
     //Загрузка доступных предметов из магазина.

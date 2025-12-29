@@ -19,14 +19,21 @@ namespace MyGame.Gameplay
 
         public void Play(ScenarioStage scenarioStage)
         {
-            if (GameData.PaidContent.IsUnlock(GameData.CurrentLevel))
+            if(NutakuAPIInitializator.instance.PuarchaseService.IsAvaliableBonusStage(GameData.CurrentLevel))
                 OnEnd?.Invoke();
             else
                 gameObject.SetActive(true);
+
+
+            //if (GameData.PaidContent.IsUnlock(GameData.CurrentLevel))
+            //    OnEnd?.Invoke();
+            //else
+            //    gameObject.SetActive(true);
         }
 
         private void Buy()
         {
+            
             GameData.PaidContent.Save(GameData.CurrentLevel);
             Close();
         }

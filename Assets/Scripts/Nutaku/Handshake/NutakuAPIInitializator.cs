@@ -1,4 +1,5 @@
 #if UNITY_ANDROID || UNITY_IOS
+using MyGame;
 using NutakuUnitySdk;
 using System;
 using System.Collections;
@@ -51,9 +52,21 @@ public class NutakuAPIInitializator : MonoBehaviour
 
         _uIShopController.gameObject.SetActive(false);
 
+
+
+        StartCoroutine(Test());
+
     }
 
-  
+    private IEnumerator Test()
+    {
+
+        yield return new WaitForSeconds(4);
+        PuarchaseService.LoadShopItems();
+        yield return new WaitForSeconds(2);
+        _uIShopController.CreateItems(PuarchaseService.GetShopItemsFromCategory("bonus_stage"), PuarchaseService.PurchaseItem);
+
+    }
 
 
 
