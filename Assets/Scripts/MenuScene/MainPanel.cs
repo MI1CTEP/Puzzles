@@ -12,14 +12,12 @@ namespace MyGame.Menu
         [SerializeField] private MenuButton _buttonExit;
 
         private RectTransform _rectTransform;
-        private Vector2 _startSize;
 
         public void Init(UnityAction onShowGallaryPanel, UnityAction onShowSettingsPanel)
         {
             gameObject.SetActive(true);
             MenuPanelInit();
             _rectTransform = GetComponent<RectTransform>();
-            _startSize = _rectTransform.sizeDelta;
             _rectTransform.sizeDelta = Vector2.zero;
 
             _buttonGallary.Init(onShowGallaryPanel);
