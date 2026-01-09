@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using MyGame.Gameplay.ExtraLevel;
+using MyGame.Bundles;
 
 namespace MyGame.Gameplay.Puzzle
 {
@@ -75,7 +76,7 @@ namespace MyGame.Gameplay.Puzzle
             _board.OnAddProgress -= UpdateProgressView;
             _background.SetActiveMask(false);
             float random = Random.Range(0, 1f);
-            if (random < _chanceGetDetail)
+            if (random < _chanceGetDetail && BundlesController.Instance.ForCollectBundle.IsHaveBundle)
             {
                 _progressPanel.Hide(true);
                 _extraLevelUnlocker.Show(OnEnd);

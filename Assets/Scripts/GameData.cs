@@ -61,23 +61,39 @@ namespace MyGame
             }
         }
 
-        public static class Details
+        public static class ExtraLevel
         {
-            public static float chanceEasy = 0.1f;
-            public static float chanceMedium = 0.2f;
-            public static float chanceHard = 0.5f;
+            public static Vector2Int PartSize { get; } = new(7, 9);
+            public static float ChanceEasy { get; } = 1f;
+            public static float ChanceMedium { get; } = 0.2f;
+            public static float ChanceHard { get; } = 0.5f;
 
-            private static readonly string _key = "Detail";
+            private static readonly string _keyPart = "ExtraLevelPart";
+            private static readonly string _keyLevel = "ExtraLevel";
 
-            public static void Unlock(int id)
+            public static void UnlockPart(int partId)
             {
-                PlayerPrefs.SetInt($"{_key}_{id}", 1);
+                PlayerPrefs.SetInt($"{_keyPart}_{partId}", 1);
             }
 
-            public static bool IsUnlock(int id)
+            public static bool IsUnlockPart(int partId)
             {
-                return PlayerPrefs.GetInt($"{_key}_{id}") == 1;
+                return PlayerPrefs.GetInt($"{_keyPart}_{partId}") == 1;
             }
+
+            public static void UnlockLevel()
+            {
+                int unlockedLevel = UnlockedLevels();
+                PlayerPrefs.SetInt(_keyLevel, unlockedLevel + 1);
+                for (int i = 0; ; i++)
+                {
+                    if (PlayerPrefs.HasKey($"{_keyPart}_{i}"))
+                        PlayerPrefs.SetInt($"{_keyPart}_{i}", 0);
+                    else break;
+                }
+            }
+
+            public static int UnlockedLevels() => PlayerPrefs.GetInt(_keyLevel);
         }
 
         public static class Achievements

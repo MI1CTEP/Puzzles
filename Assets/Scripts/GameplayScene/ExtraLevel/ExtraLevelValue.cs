@@ -18,6 +18,13 @@ namespace MyGame.Gameplay.ExtraLevel
             _valueStep = _valueTransform.anchoredPosition.x / _maxValue;
         }
 
+        public void ResetValue()
+        {
+            _currentValue = 0;
+            _valueTransform.anchoredPosition = new Vector2(_valueStep * _currentValue, 0);
+            _valueText.text = $"{_currentValue}/{_maxValue}";
+        }
+
         public void Addvalue()
         {
             _currentValue++;

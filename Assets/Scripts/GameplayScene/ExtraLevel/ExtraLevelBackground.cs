@@ -13,13 +13,17 @@ namespace MyGame.Gameplay.ExtraLevel
         private CanvasGroup _canvasGroup;
         private RectTransform[] _masks;
 
-        public void Init(Sprite sprite, int masksLength)
+        public void Init(int masksLength)
         {
             _image = GetComponent<Image>();
             _canvasGroup = GetComponent<CanvasGroup>();
-            _image.sprite = sprite;
             _masks = new RectTransform[masksLength];
             Hide();
+        }
+
+        public void SetSprite(Sprite sprite)
+        {
+            _image.sprite = sprite;
         }
 
         public void Hide()

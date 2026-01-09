@@ -42,6 +42,8 @@ namespace MyGame.Bundles
             await DownloadBundle(_controller.MainResourcesBundle.GetFileName(id), id, 0f, 0.2f);
             await DownloadBundle(_controller.ExtraImagesBundle.GetFileName(id), id, 0.2f, 0.3f);
             await DownloadBundle(_controller.OnlyGameplayBundle.GetFileName(id), id, 0.5f, 0.5f);
+            if (_levelsInfo.Level(id).type == "Extra")
+                await DownloadBundle(_controller.ForCollectBundle.GetFileName(id), id, 1, 0);
             _levelsInfo.SetLevelStatus(TypeLevelStatus.Downloaded, id);
             _downloadedCount++;
             _controller.OnEndDownloadLevel?.Invoke(id);

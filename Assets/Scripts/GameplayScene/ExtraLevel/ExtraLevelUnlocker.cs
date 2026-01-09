@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using DG.Tweening;
+using MyGame.Bundles;
 
 namespace MyGame.Gameplay.ExtraLevel
 {
@@ -19,16 +20,15 @@ namespace MyGame.Gameplay.ExtraLevel
         private Sprite _sprite;
         private List<int> _detailIds = new();
         private readonly Vector2Int _offset = new(4, 45);
-        private readonly Vector2Int _size = new (7, 9);
         private readonly float _scale = 118f;
 
         public void Init()
         {
-            _value.Init(_size.x * _size.y);
-            _sprite = Resources.Load<Sprite>($"ExtraLevel/test");
-            _background.Init(_sprite, _size.x * _size.y);
+            _value.Init(GameData.ExtraLevel.PartSize.x * GameData.ExtraLevel.PartSize.y);
+            _background.Init(GameData.ExtraLevel.PartSize.x * GameData.ExtraLevel.PartSize.y);
+            LoadNewSprite();
             _detail.Init(Open);
-            CreateArays();
+            CreateArays(true);
             MixDetailIds();
             gameObject.SetActive(false);
             _continueButton.onClick.AddListener(End);
@@ -57,6 +57,12 @@ namespace MyGame.Gameplay.ExtraLevel
                 });
         }
 
+        private void LoadNewSprite()
+        {
+            _sprite = BundlesController.Instance.ForCollectBundle.TryGetSprite();
+            _background.SetSprite(_sprite);
+        }
+
         private void Open()
         {
             TryStopAnim();
@@ -71,8 +77,8 @@ namespace MyGame.Gameplay.ExtraLevel
         private Sprite GetDetailSprite()
         {
             Vector2Int idPosition = Vector2Int.zero;
-            idPosition.x = _detailIds[0] % _size.x;
-            idPosition.y = _detailIds[0] / _size.x;
+            idPosition.x = _detailIds[0] % GameData.ExtraLevel.PartSize.x;
+            idPosition.y = _detailIds[0] / GameData.ExtraLevel.PartSize.x;
             Rect rect = new Rect(idPosition.x * _scale + _offset.x, idPosition.y * _scale + _offset.y, _scale, _scale);
             Vector2 pivot = new Vector2(0.5f, 0.5f);
             return Sprite.Create(_sprite.texture, rect, pivot);
@@ -85,9 +91,19 @@ namespace MyGame.Gameplay.ExtraLevel
 
         private void OnEndSetDetail()
         {
-            GameData.Details.Unlock(_detailIds[0]);
+            GameData.ExtraLevel.UnlockPart(_detailIds[0]);
             _background.DestroyMask(_detailIds[0]);
             _detailIds.RemoveAt(0);
+            if(_detailIds.Count == 0)
+            {
+                GameData.ExtraLevel.UnlockLevel();
+                _sprite = null;
+                _detailIds = new();
+                _value.ResetValue();
+                CreateArays(false);
+                MixDetailIds();
+                BundlesController.Instance.ForCollectBundle.TryLoadLast(LoadNewSprite);
+            }
             _continueButton.gameObject.SetActive(true);
         }
 
@@ -97,18 +113,19 @@ namespace MyGame.Gameplay.ExtraLevel
             gameObject.SetActive(false);
         }
 
-        private void CreateArays()
+        private void CreateArays(bool createMask)
         {
             int id;
-            for (int y = 0; y < _size.y; y++)
+            for (int y = 0; y < GameData.ExtraLevel.PartSize.y; y++)
             {
-                for (int x = 0; x < _size.x; x++)
+                for (int x = 0; x < GameData.ExtraLevel.PartSize.x; x++)
                 {
-                    id = x + y * _size.x;
-                    if (GameData.Details.IsUnlock(id) == false)
+                    id = x + y * GameData.ExtraLevel.PartSize.x;
+                    if (GameData.ExtraLevel.IsUnlockPart(id) == false)
                     {
                         _detailIds.Add(id);
-                        _background.CreateMask(new Vector2(x, y) * _scale, id);
+                        if (createMask)
+                            _background.CreateMask(new Vector2(x, y) * _scale, id);
                     }
                     else
                         _value.Addvalue();
