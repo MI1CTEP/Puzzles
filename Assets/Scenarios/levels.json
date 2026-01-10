@@ -3,61 +3,61 @@
 		{
 			"id" : 1,
 			"type" : "Free",
-			"price" : 10,
-			"version" : 1
+			"price" : 0,
+			"version" : 2
 		},
 		{
 			"id" : 2,
 			"type" : "Free",
-			"price" : 10,
-			"version" : 1
+			"price" : 30,
+			"version" : 2
 		},
 		{
 			"id" : 3,
 			"type" : "Free",
-			"price" : 10,
-			"version" : 1
+			"price" : 30,
+			"version" : 2
 		},
 		{
 			"id" : 4,
 			"type" : "Free",
-			"price" : 10,
-			"version" : 1
+			"price" : 30,
+			"version" : 2
 		},
 		{
 			"id" : 5,
 			"type" : "Free",
-			"price" : 10,
-			"version" : 1
+			"price" : 40,
+			"version" : 2
 		},
 		{
 			"id" : 6,
 			"type" : "Free",
-			"price" : 10,
-			"version" : 1
+			"price" : 40,
+			"version" : 2
 		},
 		{
 			"id" : 7,
 			"type" : "Free",
-			"price" : 10,
-			"version" : 1
+			"price" : 40,
+			"version" : 2
 		},
 		{
 			"id" : 8,
 			"type" : "Free",
-			"price" : 10,
-			"version" : 1
+			"price" : 50,
+			"version" : 2
 		},
 		{
 			"id" : 9,
 			"type" : "Free",
-			"price" : 10,
-			"version" : 1
+			"price" : 50,
+			"version" : 2
 		},
 		{
 			"id" : 10,
 			"type" : "Extra",
-			"version" : 1
+			"version" : 2
 		}
 	]
 }
