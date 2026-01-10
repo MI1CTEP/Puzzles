@@ -17,6 +17,7 @@ namespace MyGame.Menu
         [SerializeField] private MenuButton _buttonPlay;
         [SerializeField] private MenuButton _buttonAlbum;
         [SerializeField] private MenuButton _buttonHistory;
+        [SerializeField] private MenuButton _buttonOpenLevel;
         [SerializeField] private ContentDownloadingPanel _contentDownloadingPanel;
         [SerializeField] private Sprite _downloadBackground;
 
@@ -39,25 +40,23 @@ namespace MyGame.Menu
             _buttonPlay.Init(SceneLoader.LoadGameplay);
             _buttonAlbum.Init(onShowAnbumPanel);
             _buttonHistory.Init(onShowStoryPanel);
+            _buttonOpenLevel.Init(null);
         }
 
         protected override void OnStartShow() { }
 
         protected override void OnEndShow()
         {
-            SwitchLevel(0);
             _contentImage.color = Color.clear;
             _seq = DOTween.Sequence();
             _seq.Insert(0, _contentImage.DOColor(Color.white, 0.2f));
             _seq.InsertCallback(0.2f, ()=> 
             {
+                SwitchLevel(0);
                 _upInfoPanel.SetActive(true);
                 _buttonPrevious.Show();
                 _buttonNext.Show();
                 _buttonClose.Show();
-                _buttonPlay.Show();
-                _buttonAlbum.Show();
-                _buttonHistory.Show();
             });
         }
 
@@ -70,6 +69,7 @@ namespace MyGame.Menu
             _buttonPlay.Hide();
             _buttonAlbum.Hide();
             _buttonHistory.Hide();
+            _buttonOpenLevel.Hide();
             _sympathyPanel.Hide();
             _achievemetnsPanel.Hide();
             _seq.Insert(0, _contentImage.DOColor(Color.clear, 0.2f));
@@ -105,24 +105,26 @@ namespace MyGame.Menu
 
         private void SetNotDownloaded()
         {
-            _upInfoPanel.UpdateText(GameData.CurrentLevel + 1, "В очереди на загрузку");
+            _upInfoPanel.UpdateText(GameData.CurrentLevel + 1, "not downloaded");
             _contentImage.sprite = _downloadBackground;
             _contentDownloadingPanel.Show(false);
-            _buttonPlay.SetInteractable(false);
-            _buttonAlbum.SetInteractable(false);
-            _buttonHistory.SetInteractable(false);
+            _buttonPlay.Hide();
+            _buttonAlbum.Hide();
+            _buttonHistory.Hide();
+            _buttonOpenLevel.Hide();
             _sympathyPanel.Hide();
             _achievemetnsPanel.Hide();
         }
 
         private void SetDownloading()
         {
-            _upInfoPanel.UpdateText(GameData.CurrentLevel + 1, "Загружается");
+            _upInfoPanel.UpdateText(GameData.CurrentLevel + 1, "downloading");
             _contentImage.sprite = _downloadBackground;
             _contentDownloadingPanel.Show(true);
-            _buttonPlay.SetInteractable(false);
-            _buttonAlbum.SetInteractable(false);
-            _buttonHistory.SetInteractable(false);
+            _buttonPlay.Hide();
+            _buttonAlbum.Hide();
+            _buttonHistory.Hide();
+            _buttonOpenLevel.Hide();
             _sympathyPanel.Hide();
             _achievemetnsPanel.Hide();
         }
@@ -130,13 +132,33 @@ namespace MyGame.Menu
         private void SetDownloaded()
         {
             _contentDownloadingPanel.Hide();
-            _buttonPlay.SetInteractable(true);
-            _buttonAlbum.SetInteractable(true);
-            _buttonHistory.SetInteractable(true);
+            Level level = _bundlesController.LevelsInfo.Level(GameData.CurrentLevel);
+            if (level.price == 0 && level.type != "Extra" || GameData.Levels.IsOpened(GameData.CurrentLevel))
+                SetOpened();
+            else
+                SetClosed();
+            _bundlesController.MainResourcesBundle.Load(GameData.CurrentLevel, EndLoad);
+        }
+
+        private void SetOpened()
+        {
+            _buttonPlay.Show();
+            _buttonAlbum.Show();
+            _buttonHistory.Show();
             _sympathyPanel.UpdateValue(GameData.Sympathy.Load(GameData.CurrentLevel));
             _sympathyPanel.Show();
             _achievemetnsPanel.Show();
-            _bundlesController.MainResourcesBundle.Load(GameData.CurrentLevel, EndLoad);
+            _buttonOpenLevel.Hide();
+        }
+
+        private void SetClosed()
+        {
+            _buttonPlay.Hide();
+            _buttonAlbum.Hide();
+            _buttonHistory.Hide();
+            _sympathyPanel.Hide();
+            _achievemetnsPanel.Hide();
+            _buttonOpenLevel.Show();
         }
 
         private void EndLoad()

@@ -68,18 +68,23 @@ namespace MyGame
             public static float ChanceMedium { get; } = 0.2f;
             public static float ChanceHard { get; } = 0.5f;
 
+            private static readonly string _keyOpenedParts = "ExtraLevelOpenedParts";
             private static readonly string _keyPart = "ExtraLevelPart";
             private static readonly string _keyLevel = "ExtraLevel";
 
             public static void UnlockPart(int partId)
             {
                 PlayerPrefs.SetInt($"{_keyPart}_{partId}", 1);
+                int openedParts = GetOpenedPartsValue();
+                PlayerPrefs.SetInt(_keyOpenedParts, openedParts + 1);
             }
 
             public static bool IsUnlockPart(int partId)
             {
                 return PlayerPrefs.GetInt($"{_keyPart}_{partId}") == 1;
             }
+
+            public static int GetOpenedPartsValue() => PlayerPrefs.GetInt(_keyOpenedParts);
 
             public static void UnlockLevel()
             {
@@ -121,6 +126,21 @@ namespace MyGame
             }
 
             public static bool IsUnlock(int id)
+            {
+                return PlayerPrefs.GetInt($"{_key}_{id}") == 1;
+            }
+        }
+
+        public static class Levels
+        {
+            private static readonly string _key = "Level";
+
+            public static void SetOpened(int id)
+            {
+                PlayerPrefs.SetInt($"{_key}_{id}", 1);
+            }
+
+            public static bool IsOpened(int id)
             {
                 return PlayerPrefs.GetInt($"{_key}_{id}") == 1;
             }

@@ -15,6 +15,7 @@ namespace MyGame.Bundles
         private readonly string _url = "https://storage.yandexcloud.net/digitalmountains.coloring/puzzles/";
 
         public static BundlesController Instance { get; private set; }
+        public LevelsInfo LevelsInfo => _levelsInfo;
         public int LevelsCount => _levelsInfo.LevelsCount;
         public int NotDownloadedCount => _levelsInfo.NotDownloadedCount;
         public int DownloadedCount => _levelDownloader.DownloadedCount;
