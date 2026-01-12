@@ -27,12 +27,12 @@ namespace MyGame.Menu
             if (!_isHide)
                 return;
             _isHide = false;
+            _button.interactable = true;
             TryStopAnim();
             _seq = DOTween.Sequence();
             transform.localScale = Vector3.one * 0.8f;
             gameObject.SetActive(true);
             _seq.Insert(0, transform.DOScale(Vector3.one, _timeAnim));
-            _seq.InsertCallback(_timeAnim, () => _button.interactable = true);
         }
 
         public void Hide()

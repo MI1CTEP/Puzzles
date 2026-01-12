@@ -19,6 +19,7 @@ public class UIEnergyTimer : MonoBehaviour
     [SerializeField] private GameObject popup;
 
     private float _currentEnergy = 10f;
+    private readonly float _maxEnergy = 10f;
     private float _lastSaveTime;
     private bool _isTimerActive = false;
     private readonly float _hidePos = 70f;
@@ -36,7 +37,7 @@ public class UIEnergyTimer : MonoBehaviour
         UpdateUI();
         StartTimerIfNeeded();
 
-        if (SceneManager.GetActiveScene().name == "MenuScene") AnimateShow();
+        //if (SceneManager.GetActiveScene().name == "MenuScene") AnimateShow();
     }
 
     private void OnEnable()
@@ -57,9 +58,9 @@ public class UIEnergyTimer : MonoBehaviour
                 _lastSaveTime = Time.time;
                 SaveEnergy();
 
-                if (_currentEnergy >= 10f)
+                if (_currentEnergy >= _maxEnergy)
                 {
-                    _currentEnergy = 10f;
+                    _currentEnergy = _maxEnergy;
                     StopTimer();
                 }
 
@@ -71,15 +72,15 @@ public class UIEnergyTimer : MonoBehaviour
 
     private void LoadEnergy()
     {
-        _currentEnergy = PlayerPrefs.GetFloat("Energy", 10f);
+        _currentEnergy = PlayerPrefs.GetFloat("Energy", _maxEnergy);
         _lastSaveTime = PlayerPrefs.GetFloat("LastSaveTime", Time.time);
 
-        _currentEnergy = Mathf.Clamp(_currentEnergy, 0f, 10f);
+        _currentEnergy = Mathf.Clamp(_currentEnergy, 0f, _maxEnergy);
 
         float offlineTime = Time.time - _lastSaveTime;
         int energyToAdd = Mathf.FloorToInt(offlineTime / refillTimePerEnergyUnit);
 
-        _currentEnergy = Mathf.Min(10f, _currentEnergy + energyToAdd);
+        _currentEnergy = Mathf.Min(_maxEnergy, _currentEnergy + energyToAdd);
         _lastSaveTime = Time.time;
 
         SaveEnergy();
@@ -96,9 +97,9 @@ public class UIEnergyTimer : MonoBehaviour
     private void UpdateUI() // Обновление UI и таймера
     {
         int energyInt = Mathf.FloorToInt(_currentEnergy);
-        energyWhite.text = energyInt.ToString();
-        energyBlack.text = energyInt.ToString();
-        energyLine.fillAmount = _currentEnergy / 10f;
+        energyWhite.text = $"{energyInt}/{_maxEnergy}";
+        energyBlack.text = $"{energyInt}/{_maxEnergy}";
+        energyLine.fillAmount = _currentEnergy / _maxEnergy;
 
         StartTimerIfNeeded();
     }
@@ -111,7 +112,7 @@ public class UIEnergyTimer : MonoBehaviour
 
     private void StartTimerIfNeeded()
     {
-        if (_currentEnergy < 10f)
+        if (_currentEnergy < _maxEnergy)
         {
             timer.gameObject.SetActive(true);
             _isTimerActive = true;
@@ -152,7 +153,7 @@ public class UIEnergyTimer : MonoBehaviour
 
     public void AddEnergy(int amount)   // Пополняет энергию на указанное количество.
     {
-        _currentEnergy = Mathf.Min(10f, _currentEnergy + amount);
+        _currentEnergy = Mathf.Min(_maxEnergy, _currentEnergy + amount);
         SaveEnergy();
         UpdateUI();
         AnimScaleBar();

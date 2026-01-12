@@ -6,9 +6,9 @@ namespace MyGame
     {
         public static int CurrentLevel { get; set; }
 
-        public static class Score
+        public static class Respect
         {
-            private static readonly string _key = "Score";
+            private static readonly string _key = "Respect";
 
             public static void Add(int value)
             {
@@ -65,8 +65,8 @@ namespace MyGame
         {
             public static Vector2Int PartSize { get; } = new(7, 9);
             public static float ChanceEasy { get; } = 1f;
-            public static float ChanceMedium { get; } = 0.2f;
-            public static float ChanceHard { get; } = 0.5f;
+            public static float ChanceMedium { get; } = 1f;
+            public static float ChanceHard { get; } = 1f;
 
             private static readonly string _keyOpenedParts = "ExtraLevelOpenedParts";
             private static readonly string _keyPart = "ExtraLevelPart";
@@ -134,6 +134,7 @@ namespace MyGame
         public static class Levels
         {
             private static readonly string _key = "Level";
+            private static readonly string _keyAll = "LevelsAll";
 
             public static void SetOpened(int id)
             {
@@ -143,6 +144,16 @@ namespace MyGame
             public static bool IsOpened(int id)
             {
                 return PlayerPrefs.GetInt($"{_key}_{id}") == 1;
+            }
+
+            public static void OpenAll()
+            {
+                PlayerPrefs.SetInt(_keyAll, 1);
+            }
+
+            public static bool IsOpenedAll()
+            {
+                return PlayerPrefs.GetInt(_keyAll) == 1;
             }
         }
     }

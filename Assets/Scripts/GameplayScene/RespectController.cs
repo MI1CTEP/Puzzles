@@ -24,8 +24,8 @@ namespace MyGame.Gameplay
 
         public void Add(int value)
         {
-            _value = GameData.Score.Load();
-            GameData.Score.Add(value);
+            _value = GameData.Respect.Load();
+            GameData.Respect.Add(value);
             _respectValueText.text = _value.ToString();
             _respectAddedValueText.text = $"+{value}";
             TryStopAnim();
@@ -41,7 +41,7 @@ namespace MyGame.Gameplay
         {
             TryStopAnim();
 
-            _respectValueText.text = GameData.Score.Load().ToString();
+            _respectValueText.text = GameData.Respect.Load().ToString();
             _respectAddedValueText.text = $"+{addedRespect}";
 
             transform.SetParent(parent);
@@ -50,7 +50,7 @@ namespace MyGame.Gameplay
             _seq = DOTween.Sequence();
             _seq.Insert(waitTimeAnim, _rectTransform.DOLocalMoveY(0, timeAnim / 2).SetEase(Ease.OutExpo));
             _seq.Insert(waitTimeAnim + timeAnim / 4, _respectValueText.transform.DOScale(Vector3.one * 1.25f, timeAnim / 8));
-            _seq.InsertCallback(waitTimeAnim + timeAnim / 2, () => _respectValueText.text = GameData.Score.Load().ToString());
+            _seq.InsertCallback(waitTimeAnim + timeAnim / 2, () => _respectValueText.text = GameData.Respect.Load().ToString());
             _seq.Insert(waitTimeAnim + timeAnim / 2, _respectValueText.transform.DOScale(Vector3.one, timeAnim / 8));
             _seq.Insert(waitTimeAnim + timeAnim / 2, _rectTransform.DOAnchorPosY(endPositionY + _startAnchorY, timeAnim / 2).SetEase(Ease.InExpo));
             waitTimeAnim += timeAnim;
