@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
 using MyGame.Bundles;
+using I2;
 
 namespace MyGame.Menu
 {
@@ -16,6 +17,7 @@ namespace MyGame.Menu
         [SerializeField] private MenuButton _buttonNext;
         [SerializeField] private MenuButton _buttonClose;
         [SerializeField] private Sprite _grayBackground;
+        [SerializeField] private Languages[] _infosLanguages;
 
         private int _currentId;
 
@@ -72,7 +74,7 @@ namespace MyGame.Menu
                 _noImage.SetActive(true);
                 _content.sprite = _grayBackground;
                 _infoBackground.SetActive(true);
-                _infoText.text = _infos[_currentId];
+                _infoText.text = _infosLanguages[_currentId].ru;
             }
         }
 
@@ -81,19 +83,5 @@ namespace MyGame.Menu
             base.OnDestroy();
             BundlesController.Instance.ExtraImagesBundle.TryUnload();
         }
-
-        private string[] _infos =
-        {
-            "��� �������� �������� �������� �������!",
-            "��� �������� �������� �������� ��� ����� ����� �� ������ ������ ���������!",
-            "��� �������� �������� �������� ������� �������!",
-            "��� �������� �������� �������� ������� �������!",
-            "��� �������� �������� �������� ��� ����� ����� �� ������� ������ ���������!",
-            "��� �������� �������� �������� ������ �������!",
-            "��� �������� �������� �������� �������� �� ����������� ������� ��������!",
-            "��� �������� �������� �������� ��� ����� ����� �� ������� ������ ���������!",
-            "��� �������� �������� �������� �������� �� ������������ ������� ��������!",
-            "��� �������� �������� �������� ������� �������!"
-        };
     }
 }

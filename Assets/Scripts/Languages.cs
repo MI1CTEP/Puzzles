@@ -1,5 +1,6 @@
 namespace MyGame
 {
+    [System.Serializable]
     public class Languages
     {
         public string ru;
