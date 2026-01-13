@@ -50,9 +50,9 @@ namespace MyGame
         {
             private static readonly string _key = "Dialogue";
 
-            public static void Unlock(int levelId, int stepId, int positionId)
+            public static void Unlock(int levelId, int dialogueId, int positionId)
             {
-                PlayerPrefs.SetInt($"{_key}_{levelId}_{stepId}_{positionId}", 1);
+                PlayerPrefs.SetInt($"{_key}_{levelId}_{dialogueId}_{positionId}", 1);
             }
 
             public static bool IsUnlock(int levelId, int dialogueId, int positionId)

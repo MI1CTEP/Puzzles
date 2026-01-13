@@ -30,6 +30,7 @@ namespace MyGame.Bundles
                 if (infoTextAsset != null)
                 {
                     SimpleDialogue simpleDialogue = JsonConvert.DeserializeObject<SimpleDialogue>(infoTextAsset.text);
+                    simpleDialogue.id = id;
                     SimpleDialogues.Add(simpleDialogue);
                     id++;
                 }
