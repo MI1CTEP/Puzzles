@@ -76,6 +76,8 @@ namespace MyGame.Gameplay.ExtraLevel
 
         private Sprite GetDetailSprite()
         {
+            if (_sprite == null)
+                LoadNewSprite();
             Vector2Int idPosition = Vector2Int.zero;
             idPosition.x = _detailIds[0] % GameData.ExtraLevel.PartSize.x;
             idPosition.y = _detailIds[0] / GameData.ExtraLevel.PartSize.x;

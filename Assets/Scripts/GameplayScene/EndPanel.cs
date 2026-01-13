@@ -122,6 +122,7 @@ namespace MyGame.Gameplay
         private void Exit()
         {
             BundlesController.Instance.OnlyGameplayBundle.TryUnload();
+            SceneLoader.LoadMenu();
         }
 
         private void TryStopAnim()
