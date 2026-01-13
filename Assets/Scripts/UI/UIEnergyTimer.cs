@@ -156,7 +156,7 @@ public class UIEnergyTimer : MonoBehaviour
         _currentEnergy = Mathf.Min(_maxEnergy, _currentEnergy + amount);
         SaveEnergy();
         UpdateUI();
-        AnimScaleBar();
+        AnimScaleBar(1);
     }
 
     private void ShowNotEnoughEnergyPopup() // Показывает поп-ап при нехватке энергии.
@@ -165,15 +165,15 @@ public class UIEnergyTimer : MonoBehaviour
         UpdateUI();
         _EnergyBar.DOKill();
         _EnergyBar.localScale = Vector3.one;
-        AnimScaleBar();
+        AnimScaleBar(3);
     }
 
-    private void AnimScaleBar()
+    private void AnimScaleBar(int loops)
     {
         Sequence sequence = DOTween.Sequence();
         sequence.Append(_EnergyBar.DOScale(1.4f, 0.3f).SetEase(Ease.OutQuad))
                 .Append(_EnergyBar.DOScale(1f, 0.2f).SetEase(Ease.OutBack))
-                .SetLoops(3);
+                .SetLoops(loops);
     }
 
     public void AnimateShow()   // Анимация появления

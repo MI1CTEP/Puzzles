@@ -119,7 +119,7 @@ namespace MyGame.Gameplay
             _exitButton.gameObject.SetActive(true);
         }
 
-        private void Exit()
+        public void Exit()
         {
             BundlesController.Instance.OnlyGameplayBundle.TryUnload();
             SceneLoader.LoadMenu();
