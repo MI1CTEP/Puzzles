@@ -3685,7 +3685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481ab606793a67349be805c13febeba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTarget: {fileID: 174699860}
+  mTarget: {fileID: 1797011311}
   mAlignment_RTL: 514
   mAlignment_LTR: 514
   mAlignmentWasRTL: 0
@@ -6839,6 +6839,7 @@ MonoBehaviour:
     it: Per sbloccare la carta, completa un livello!
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u30B9\u30C6\u30FC\u30B8\u3092\u30AF\u30EA\u30A2\u3057\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, complete um n\xEDvel!"
+    es: "\xA1Para abrir la tarjeta, completa el nivel!"
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u0440\u043E\u0439\u0434\u0438\u0442\u0435 \u0432\u0441\u0435 \u044D\u0442\u0430\u043F\u044B
       \u043F\u0430\u0437\u043B\u0430 \u043D\u0430 \u043B\u0435\u0433\u043A\u043E\u043C
@@ -6858,6 +6859,8 @@ MonoBehaviour:
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u7C21\u5358\u96E3\u6613\u5EA6\u306E\u30D1\u30BA\u30EB\u306E\u3059\u3079\u3066\u306E\u30B9\u30C6\u30C3\u30D7\u3092\u30AF\u30EA\u30A2\u3057\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, complete todas as fases do quebra\u2011cabe\xE7a
       em dificuldade f\xE1cil!"
+    es: "\xA1Para abrir la tarjeta, completa todas las etapas del rompecabezas en
+      un nivel de dificultad f\xE1cil!"
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u043E\u0434\u0430\u0440\u0438\u0442\u0435 \u043F\u0440\u043E\u0441\u0442\u043E\u0439
       \u043F\u043E\u0434\u0430\u0440\u043E\u043A!"
@@ -6871,6 +6874,7 @@ MonoBehaviour:
     it: Per sbloccare la carta, regala un dono semplice!
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u30B7\u30F3\u30D7\u30EB\u306A\u30D7\u30EC\u30BC\u30F3\u30C8\u3092\u8D08\u3063\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, ofere\xE7a um presente simples!"
+    es: Para abrir la tarjeta, dar un simple regalo!
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u043E\u0434\u0430\u0440\u0438\u0442\u0435 \u0445\u043E\u0440\u043E\u0448\u0438\u0439
       \u043F\u043E\u0434\u0430\u0440\u043E\u043A!"
@@ -6884,6 +6888,7 @@ MonoBehaviour:
     it: Per sbloccare la carta, regala un dono buono!
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u826F\u3044\u30D7\u30EC\u30BC\u30F3\u30C8\u3092\u8D08\u3063\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, ofere\xE7a um bom presente!"
+    es: Para abrir la tarjeta, dar un buen regalo!
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u0440\u043E\u0439\u0434\u0438\u0442\u0435 \u0432\u0441\u0435 \u044D\u0442\u0430\u043F\u044B
       \u043F\u0430\u0437\u043B\u0430 \u043D\u0430 \u0441\u0440\u0435\u0434\u043D\u0435\u043C
@@ -6903,6 +6908,8 @@ MonoBehaviour:
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u666E\u901A\u96E3\u6613\u5EA6\u306E\u30D1\u30BA\u30EB\u306E\u3059\u3079\u3066\u306E\u30B9\u30C6\u30C3\u30D7\u3092\u30AF\u30EA\u30A2\u3057\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, complete todas as fases do quebra\u2011cabe\xE7a
       em dificuldade m\xE9dia!"
+    es: "\xA1Para abrir la tarjeta, completa todas las etapas del rompecabezas en
+      un nivel de dificultad promedio!"
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u043E\u0434\u0430\u0440\u0438\u0442\u0435 \u0446\u0435\u043D\u043D\u044B\u0439
       \u043F\u043E\u0434\u0430\u0440\u043E\u043A!"
@@ -6916,6 +6923,7 @@ MonoBehaviour:
     it: Per sbloccare la carta, regala un dono prezioso!
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u4FA1\u5024\u306E\u3042\u308B\u30D7\u30EC\u30BC\u30F3\u30C8\u3092\u8D08\u3063\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, ofere\xE7a um presente valioso!"
+    es: Para abrir la tarjeta, dar un regalo valioso!
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u0440\u043E\u0439\u0434\u0438\u0442\u0435 \u0443\u0440\u043E\u0432\u0435\u043D\u044C
       \u043D\u0430 \u043C\u0438\u043D\u0438\u043C\u0430\u043B\u044C\u043D\u044B\u0439
@@ -6935,6 +6943,7 @@ MonoBehaviour:
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u597D\u611F\u5EA6\u304C\u6700\u3082\u4F4E\u3044\u30B9\u30C6\u30FC\u30B8\u3092\u30AF\u30EA\u30A2\u3057\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, complete um n\xEDvel com o n\xEDvel de simpatia
       mais baixo!"
+    es: "\xA1Para abrir la tarjeta, completa el nivel al nivel m\xEDnimo de simpat\xEDa!"
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u0440\u043E\u0439\u0434\u0438\u0442\u0435 \u0432\u0441\u0435 \u044D\u0442\u0430\u043F\u044B
       \u043F\u0430\u0437\u043B\u0430 \u043D\u0430 \u0432\u044B\u0441\u043E\u043A\u043E\u043C
@@ -6954,6 +6963,8 @@ MonoBehaviour:
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u96E3\u3057\u3044\u96E3\u6613\u5EA6\u306E\u30D1\u30BA\u30EB\u306E\u3059\u3079\u3066\u306E\u30B9\u30C6\u30C3\u30D7\u3092\u30AF\u30EA\u30A2\u3057\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, complete todas as fases do quebra\u2011cabe\xE7a
       em dificuldade alta!"
+    es: "\xA1Para abrir la tarjeta, completa todas las etapas del rompecabezas en
+      un alto nivel de dificultad!"
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u0440\u043E\u0439\u0434\u0438\u0442\u0435 \u0443\u0440\u043E\u0432\u0435\u043D\u044C
       \u043D\u0430 \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u044B\u0439
@@ -6973,6 +6984,7 @@ MonoBehaviour:
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u597D\u611F\u5EA6\u304C\u6700\u3082\u9AD8\u3044\u30B9\u30C6\u30FC\u30B8\u3092\u30AF\u30EA\u30A2\u3057\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, complete um n\xEDvel com o n\xEDvel de simpatia
       mais alto!"
+    es: "\xA1Para abrir la tarjeta, completa el nivel al m\xE1ximo nivel de simpat\xEDa!"
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u043E\u0434\u0430\u0440\u0438\u0442\u0435 \u0434\u043E\u0440\u043E\u0433\u043E\u0439
       \u043F\u043E\u0434\u0430\u0440\u043E\u043A!"
@@ -6986,6 +6998,10 @@ MonoBehaviour:
     it: Per sbloccare la carta, regala un dono costoso!
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u9AD8\u4FA1\u306A\u30D7\u30EC\u30BC\u30F3\u30C8\u3092\u8D08\u3063\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, ofere\xE7a um presente caro!"
+    es: "\u0427\u0442\u043E\u0431\u044B \u043E\u0442\u043A\u0440\u044B\u0442\u044C
+      \u043A\u0430\u0440\u0442\u0443, \u043F\u0440\u043E\u0439\u0434\u0438\u0442\u0435
+      \u0443\u0440\u043E\u0432\u0435\u043D\u044C \u0434\u043E \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0433\u043E
+      \u0443\u0440\u043E\u0432\u043D\u044F \u0441\u0438\u043C\u043F\u0430\u0442\u0438\u0438!"
 --- !u!1 &1406144748
 GameObject:
   m_ObjectHideFlags: 0
@@ -8615,6 +8631,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _valueImage: {fileID: 34090638}
   _valueText: {fileID: 1443305184}
+--- !u!114 &1552635707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481ab606793a67349be805c13febeba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTarget: {fileID: 1597172919}
+  mAlignment_RTL: 516
+  mAlignment_LTR: 513
+  mAlignmentWasRTL: 0
+  mInitializeAlignment: 1
 --- !u!1 &1555424225
 GameObject:
   m_ObjectHideFlags: 0
@@ -9122,7 +9155,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8838889687621783977, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1597172920}
   m_SourcePrefab: {fileID: 100100000, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
 --- !u!224 &1597172916 stripped
 RectTransform:
@@ -9134,6 +9170,62 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2477983963998414065, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
   m_PrefabInstance: {fileID: 1597172915}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1597172918 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8838889687621783977, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
+  m_PrefabInstance: {fileID: 1597172915}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1597172919 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8689497995092275594, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
+  m_PrefabInstance: {fileID: 1597172915}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597172918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1597172920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597172918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTerm: "\u041D\u0435\u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E
+    \u044D\u043D\u0435\u0440\u0433\u0438\u0438"
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  TermPrefix: 
+  TermSuffix: 
+  LocalizeOnAwake: 1
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  IgnoreNumbersInRTL: 1
+  CorrectAlignmentForRTL: 1
+  AddSpacesToJoinedLanguages: 0
+  AllowLocalizedParameters: 1
+  AllowParameters: 1
+  TranslatedObjects: []
+  LocalizeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  AlwaysForceLocalize: 0
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
+  mGUI_ShowReferences: 0
+  mGUI_ShowTems: 1
+  mGUI_ShowCallback: 0
+  mLocalizeTarget: {fileID: 1552635707}
+  mLocalizeTargetName: I2.Loc.LocalizeTarget_TextMeshPro_UGUI
 --- !u!1 &1606820560
 GameObject:
   m_ObjectHideFlags: 0

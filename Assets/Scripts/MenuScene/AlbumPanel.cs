@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
 using MyGame.Bundles;
-using I2;
 
 namespace MyGame.Menu
 {
@@ -25,7 +24,7 @@ namespace MyGame.Menu
         {
             gameObject.SetActive(false);
             MenuPanelInit();
-            _buttonPrevious.Init(()=> SetIdAndUpdate(-1));
+            _buttonPrevious.Init(() => SetIdAndUpdate(-1));
             _buttonNext.Init(() => SetIdAndUpdate(1));
             _buttonClose.Init(onShowGallaryPanel);
         }
@@ -58,12 +57,10 @@ namespace MyGame.Menu
         private void SetIdAndUpdate(int value)
         {
             _currentId += value;
-            if (_currentId < 0)
-                _currentId = 9;
-            else if (_currentId > 9)
-                _currentId = 0;
+            if (_currentId < 0) _currentId = 9;
+            else if (_currentId > 9) _currentId = 0;
 
-            if(GameData.Achievements.IsUnlock(GameData.CurrentLevel, _currentId))
+            if (GameData.Achievements.IsUnlock(GameData.CurrentLevel, _currentId))
             {
                 _noImage.SetActive(false);
                 _content.sprite = BundlesController.Instance.ExtraImagesBundle.Sprites[_currentId];
@@ -74,7 +71,23 @@ namespace MyGame.Menu
                 _noImage.SetActive(true);
                 _content.sprite = _grayBackground;
                 _infoBackground.SetActive(true);
-                _infoText.text = _infosLanguages[_currentId].ru;
+
+                string currentLang = I2.Loc.LocalizationManager.CurrentLanguage;
+                string text = currentLang switch
+                {
+                    "Russian" => _infosLanguages[_currentId].ru,
+                    "English" => _infosLanguages[_currentId].en,
+                    "German" => _infosLanguages[_currentId].de,
+                    "Chinese" => _infosLanguages[_currentId].zh,
+                    "French" => _infosLanguages[_currentId].fr,
+                    "Hindi" => _infosLanguages[_currentId].hi,
+                    "Italian" => _infosLanguages[_currentId].it,
+                    "Japanese" => _infosLanguages[_currentId].ja,
+                    "Portuguese" => _infosLanguages[_currentId].pt,
+                    "Spanish" => _infosLanguages[_currentId].es,
+                    _ => _infosLanguages[_currentId].en
+                };
+                _infoText.text = text;
             }
         }
 

@@ -12,5 +12,6 @@ namespace MyGame
         public string it;
         public string ja;
         public string pt;
+        public string es;
     }
 }

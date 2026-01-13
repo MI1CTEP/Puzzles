@@ -26,7 +26,23 @@ namespace MyGame.Menu
             _buttonClose.Show();
             _backgroundImage.SetActive(true);
             _scrollView.SetActive(true);
-            _text.text = BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.ru;
+
+            string currentLang = I2.Loc.LocalizationManager.CurrentLanguage;
+                string text = currentLang switch
+                {
+                    "Russian" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.ru,
+                    "English" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.en,
+                    "German" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.de,
+                    "Chinese" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.zh,
+                    "French" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.fr,
+                    "Hindi" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.hi,
+                    "Italian" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.it,
+                    "Japanese" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.ja,
+                    "Portuguese" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.pt,
+                    "Spanish" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.es,
+                    _ => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.en
+                };
+            _text.text = text;
         }
 
         protected override void OnHide()
