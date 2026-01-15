@@ -15,6 +15,7 @@ namespace MyGame.Gameplay.Puzzle
         private Vector2Int _idPosition;
         private float _size;
         private bool _isMove;
+        private ParticleSystem _correctPositionParticles;
 
         public bool IsTruePosition { get; set; }
         public Vector2Int IdPosition => _idPosition;
@@ -25,6 +26,8 @@ namespace MyGame.Gameplay.Puzzle
             _board = board;
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _collider = GetComponent<BoxCollider2D>();
+            _correctPositionParticles = GetComponentInChildren<ParticleSystem>();
+
         }
 
         public void SetParams(Sprite sprite, Vector2Int id, float size)
@@ -44,6 +47,8 @@ namespace MyGame.Gameplay.Puzzle
             {
                 IsTruePosition = true;
                 _board.AddProgress();
+                SoundManager.Instance.PlayRandomGemido();
+                PlayParticles();
             }
         }
 
@@ -71,6 +76,11 @@ namespace MyGame.Gameplay.Puzzle
             if (!_isMove) return;
 
             transform.position = _camera.ScreenToWorldPoint(Input.mousePosition) + _clickPosition;
+        }
+
+        private void PlayParticles()
+        {
+            if (_correctPositionParticles != null) _correctPositionParticles.Play();
         }
     }
 }

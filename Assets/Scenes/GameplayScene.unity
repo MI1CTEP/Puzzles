@@ -6696,7 +6696,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -68.7, y: -78.4}
+  m_AnchoredPosition: {x: -68.70001, y: -78.400024}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1331273569
@@ -11387,6 +11387,63 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9154114377890521097, guid: 3615ecba1815d724d9febd78a52bb8fd, type: 3}
   m_PrefabInstance: {fileID: 9006474602538486239}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4061227154048862105
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 488006142668229710, guid: 357b621edafbc487db130c6de9367118, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488006142668229710, guid: 357b621edafbc487db130c6de9367118, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488006142668229710, guid: 357b621edafbc487db130c6de9367118, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488006142668229710, guid: 357b621edafbc487db130c6de9367118, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 488006142668229710, guid: 357b621edafbc487db130c6de9367118, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488006142668229710, guid: 357b621edafbc487db130c6de9367118, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488006142668229710, guid: 357b621edafbc487db130c6de9367118, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488006142668229710, guid: 357b621edafbc487db130c6de9367118, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488006142668229710, guid: 357b621edafbc487db130c6de9367118, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488006142668229710, guid: 357b621edafbc487db130c6de9367118, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035861958109048044, guid: 357b621edafbc487db130c6de9367118, type: 3}
+      propertyPath: m_Name
+      value: Heart Particle System
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 357b621edafbc487db130c6de9367118, type: 3}
 --- !u!224 &4538474556875984200 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3549614523896091406, guid: 779a8f5839c54024bab2ea55fa7538c6, type: 3}
@@ -12150,3 +12207,4 @@ SceneRoots:
   - {fileID: 85030264}
   - {fileID: 2041977681}
   - {fileID: 2100575985}
+  - {fileID: 4061227154048862105}
