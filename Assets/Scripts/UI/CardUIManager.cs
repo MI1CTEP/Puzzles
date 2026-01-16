@@ -45,7 +45,7 @@ public class CardUIManager : MonoBehaviour
         _currentCard = cardObj;
         cardInitialPosition = cardObj.transform.position;
 
-        cardObj.transform.DOScale(4, 0.5f).SetEase(Ease.OutBack).SetUpdate(true);   // Анимация появления
+        cardObj.transform.DOScale(1, 0.5f).SetEase(Ease.OutBack).SetUpdate(true);   // Анимация появления
 
         UpdateUI();     // Обновление UI
 

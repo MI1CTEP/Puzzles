@@ -9,6 +9,7 @@ namespace MyGame.Gameplay.Puzzle
         [SerializeField] private PuzzleChoiceLevelPanel _panelMedium;
         [SerializeField] private PuzzleChoiceLevelPanel _panelHard;
         [SerializeField] private Sprite[] _grids;
+        [SerializeField] private UIEnergyTimer _energyTimer;
 
         private PuzzleController _puzzleController;
 
@@ -27,6 +28,8 @@ namespace MyGame.Gameplay.Puzzle
 
         public void StartGameplay(TypeDifficulty typeDifficulty, int puzzleValueX, float chanceGetDetail)
         {
+            if (!_energyTimer.CheckEnergy(5)) return;
+            
             gameObject.SetActive(false);
             _puzzleController.StartGameplay(puzzleValueX, chanceGetDetail);
 

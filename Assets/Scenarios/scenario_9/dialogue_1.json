@@ -1,0 +1,61 @@
+{
+  "firstPhrase": {
+    "ru": "Ты выживешь в диких джунглях, если будешь подчиняться мне! Согласен?",
+    "en": "You’ll only survive these wild jungles if you obey me. Deal?",
+    "de": "Du überlebst die wilden Dschungel nur, wenn du mir gehorchst! Einverstanden?",
+    "zh": "你只有听我的才能在野性丛林里活下来！同意吗？",
+    "ja": "このワイルドなジャングルで生き残りたければ、私に従え！いいね？",
+    "fr": "Tu ne survivras dans cette jungle sauvage que si tu m’obéis ! Marché conclu ?",
+    "es": "Sólo sobrevivirás en esta selva salvaje si me obedeces. ¿Trato hecho?",
+    "pt": "Sobrevives nesta selva selvagem só se me obedeceres! Combinado?",
+    "it": "Sopravviverai in questa giungla selvaggia solo se mi obbedisci! Affare fatto?",
+    "hi": "इस जंगली जंगल में तू सिर्फ़ मेरी बात मानेगा तभी जिंदा रहेगा! डील?"
+  },
+  "phraseVariants": [
+    {
+      "answer": {
+        "ru": "Я полностью в твоих руках, только скажи, что мне надо сделать.",
+        "en": "I’m completely in your hands — just tell me what to do.",
+        "de": "Ich bin völlig in deinen Händen – sag mir einfach, was ich tun soll.",
+        "zh": "我完全在你手里，你说怎么做就怎么做。",
+        "ja": "完全に君のものだよ。どうすればいい？",
+        "fr": "Je suis totalement entre tes mains – dis-moi juste quoi faire.",
+        "es": "Estoy completamente en tus manos – sólo dime qué hacer.",
+        "pt": "Estou completamente nas tuas mãos – diz-me o que fazer.",
+        "it": "Sono totalmente nelle tue mani – dimmi cosa devo fare.",
+        "hi": "मैं पूरी तरह तेरे हाथ में हूँ – बस बता क्या करना है।"
+      },
+      "respect": 4
+    },
+    {
+      "answer": {
+        "ru": "Давай попробуем, но у меня тоже есть свое мнение.",
+        "en": "Let’s try, but I have my own opinions too.",
+        "de": "Lass es uns versuchen – aber ich hab auch meine eigene Meinung.",
+        "zh": "我们可以试试，但我也有自己的想法。",
+        "ja": "やってみるけど、俺にも意見はあるよ。",
+        "fr": "On peut essayer – mais j’ai aussi mon propre avis.",
+        "es": "Podemos probar – pero yo también tengo mi opinión.",
+        "pt": "Podemos tentar – mas eu também tenho a minha opinião.",
+        "it": "Proviamo – ma anch’io ho la mia opinione.",
+        "hi": "चल ट्राई करते हैं – पर मेरी भी अपनी राय है।"
+      },
+      "respect": 2
+    },
+    {
+      "answer": {
+        "ru": "Лучше выживать самому, хотя если знаешь местность, помоги мне.",
+        "en": "I’d rather survive on my own… unless you know the terrain well.",
+        "de": "Besser allein überleben… es sei denn, du kennst dich hier wirklich aus.",
+        "zh": "最好自己生存，除非你真的很了解这片丛林。",
+        "ja": "一人で生き残る方がいい…よっぽど君が土地勘あるなら別だけど。",
+        "fr": "Mieux vaut survivre seul… sauf si tu connais vraiment le terrain.",
+        "es": "Mejor sobrevivir solo… a menos que realmente conozcas la zona.",
+        "pt": "Melhor sobreviver sozinho… a não ser que conheças mesmo o terreno.",
+        "it": "Meglio cavarmela da solo… a meno che tu non conosca davvero la zona.",
+        "hi": "अकेले ही सर्वाइव कर लूँगा… जब तक तू सच में इलाक़ा नहीं जानती।"
+      },
+      "respect": 0
+    }
+  ]
+}

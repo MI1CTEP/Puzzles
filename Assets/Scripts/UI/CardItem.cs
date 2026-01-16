@@ -24,7 +24,7 @@ public class CardItem : MonoBehaviour
     [SerializeField] private RawImage rawImage;             // Для VideoPlayer
     [SerializeField] private VideoPlayer videoPlayer;       // Видео
 
-    private CardData _data;      // Данные карточки
+    private CardData _data;                 // Данные карточки
     private int _currentMediaIndex = 0;     // Текущий индекс медиа
     private bool _isRevealing = false;      // Флаг анимации переворота
     private Tweener _lockTweener;           // Для анимации покачивания замка
@@ -100,7 +100,7 @@ public class CardItem : MonoBehaviour
         blur.SetActive(!isUnlocked);
 
         if (CardUIManager.Instance != null) CardUIManager.Instance.OnCardMediaChanged();
-        
+
         UpdateLockState();
     }
 
@@ -175,8 +175,5 @@ public class CardItem : MonoBehaviour
         UpdateLockState();
     }
 
-    private void OnDestroy()
-    {
-        StopLockWiggle();
-    }
+    private void OnDestroy() => StopLockWiggle();
 }

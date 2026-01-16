@@ -1,0 +1,61 @@
+{
+  "firstPhrase": {
+    "ru": "Я первый раз на стадионе. Представь, что ты мой тренер. Мне начинать разминку?",
+    "en": "It’s my first time at the stadium. Pretend you’re my coach — should I start warming up?",
+    "de": "Es ist mein erstes Mal im Stadion. Stell dir vor, du bist mein Trainer – soll ich mit dem Aufwärmen beginnen?",
+    "zh": "这是我第一次来体育场。想象你是我的教练，我要开始热身了吗？",
+    "ja": "初めてのスタジアム。君がコーチだと思って。ウォーミングアップ始める？",
+    "fr": "C’est ma première fois au stade. Imagine que tu es mon coach – je commence l’échauffement ?",
+    "es": "Es mi primera vez en el estadio. Imagina que eres mi entrenador – ¿empiezo el calentamiento?",
+    "pt": "É a minha primeira vez no estádio. Imagina que és o meu treinador – começo o aquecimento?",
+    "it": "È la mia prima volta allo stadio. Immagina di essere il mio allenatore – inizio il riscaldamento?",
+    "hi": ""
+  },
+  "phraseVariants": [
+    {
+      "answer": {
+        "ru": "Именно так, не забудь хорошо размять свою грудь!",
+        "en": "Exactly, and don’t forget to give those breasts a proper warm-up!",
+        "de": "Genau, und vergiss nicht, deine Brüste richtig durchzukneten!",
+        "zh": "对，别忘了好好热身胸部！",
+        "ja": "そう、胸もちゃんとほぐしてね！",
+        "fr": "Exactement, et n’oublie pas de bien échauffer tes seins !",
+        "es": "Exacto, y no olvides calentar bien tus tetas.",
+        "pt": "Exato, e não te esqueças de aquecer bem os peitos!",
+        "it": "Esatto, e non dimenticare di scaldare bene le tette!",
+        "hi": ""
+      },
+      "respect": 4
+    },
+    {
+      "answer": {
+        "ru": "Делай упор на ноги, майку надо снять, она тебе будеть мешать.",
+        "en": "Focus on your legs — and take off the top, it’ll only get in the way.",
+        "de": "Konzentriere dich auf die Beine – das Oberteil muss runter, es stört nur.",
+        "zh": "重点热腿，上衣脱了会碍事。",
+        "ja": "脚を中心に。トップス脱いで、邪魔だから。",
+        "fr": "Concentre-toi sur les jambes – enlève le haut, ça gêne.",
+        "es": "Céntrate en las piernas – quítate la camiseta, estorba.",
+        "pt": "Foca nas pernas – tira a parte de cima, só atrapalha.",
+        "it": "Concentrati sulle gambe – togli la maglietta, dà fastidio.",
+        "hi": ""
+      },
+      "respect": 2
+    },
+    {
+      "answer": {
+        "ru": "Разминка, это важный этап перед началом спортивных занятий. Желательно начать с попки.",
+        "en": "Warm-up is crucial. I recommend starting with the glutes.",
+        "de": "Aufwärmen ist wichtig. Ich empfehle, mit dem Hintern zu beginnen.",
+        "zh": "热身很重要，我建议从屁股开始。",
+        "ja": "ウォーミングアップ大事。尻からがおすすめ。",
+        "fr": "L’échauffement est crucial. Je recommande de commencer par les fesses.",
+        "es": "El calentamiento es clave. Recomiendo empezar por el culo.",
+        "pt": "O aquecimento é importante. Recomendo começar pela bunda.",
+        "it": "Il riscaldamento è fondamentale. Consiglio di iniziare dal culo.",
+        "hi": ""
+      },
+      "respect": 0
+    }
+  ]
+}

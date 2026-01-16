@@ -9,9 +9,7 @@ public class UIAnimationSettings : MonoBehaviour
     [SerializeField] private float expandDuration = 0.6f;   // Длительность анимации расширения
 
     public void SettingsOpen()    // Открытие настроек
-    {
-        rectTransformMenu.DOSizeDelta(finalSize, expandDuration).SetEase(Ease.OutBounce).OnComplete(() => { settings.SetActive(true); });
-    }
+    { rectTransformMenu.DOSizeDelta(finalSize, expandDuration).SetEase(Ease.OutBounce).OnComplete(() => { settings.SetActive(true); }); }
 
     public void SettingsClose()  // Закрытие настроек
     {

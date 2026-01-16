@@ -10,10 +10,12 @@ namespace MyGame.Bundles
         private MainResourcesBundle _mainResourcesBundle;
         private ExtraImagesBundle _extraImagesBundle;
         private OnlyGameplayBundle _onlyGameplayBundle;
+        private ForCollectBundle _forCollectBundle;
         private LevelDownloader _levelDownloader;
         private readonly string _url = "https://storage.yandexcloud.net/digitalmountains.coloring/puzzles/";
 
         public static BundlesController Instance { get; private set; }
+        public LevelsInfo LevelsInfo => _levelsInfo;
         public int LevelsCount => _levelsInfo.LevelsCount;
         public int NotDownloadedCount => _levelsInfo.NotDownloadedCount;
         public int DownloadedCount => _levelDownloader.DownloadedCount;
@@ -23,6 +25,7 @@ namespace MyGame.Bundles
         public MainResourcesBundle MainResourcesBundle => _mainResourcesBundle;
         public ExtraImagesBundle ExtraImagesBundle => _extraImagesBundle;
         public OnlyGameplayBundle OnlyGameplayBundle => _onlyGameplayBundle;
+        public ForCollectBundle ForCollectBundle => _forCollectBundle;
 
         public UnityAction<float> OnChangeLevelProgress { get; set; }
         public UnityAction<float> OnChangeAllProgress { get; set; }
@@ -41,9 +44,12 @@ namespace MyGame.Bundles
             _extraImagesBundle.Init(_levelsInfo);
             _onlyGameplayBundle = new();
             _onlyGameplayBundle.Init(_levelsInfo);
+            _forCollectBundle = new();
+            _forCollectBundle.Init(_levelsInfo);
             _levelDownloader = new(this, _levelsInfo, _url);
             await _levelsInfo.Init(onEndInit);
             await _levelDownloader.DownloadAllLevels();
+            await _forCollectBundle.TryLoadLast(null);
         }
 
         public TypeLevelStatus TypeLevelStatus(int id) => _levelsInfo.Level(id).typeLevelStatus;

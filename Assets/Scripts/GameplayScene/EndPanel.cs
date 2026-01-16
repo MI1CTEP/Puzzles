@@ -59,7 +59,7 @@ namespace MyGame.Gameplay
             {
                 int addedRespect = _dialogueController.CurrentSympathy - oldSympathy;
                 _respectController.ShowEnd(transform, _anchoredPosY, _canvas.sizeDelta.y, addedRespect, _timeRespectAnim, ref waitTimeAnim);
-                GameData.Score.Add(addedRespect);
+                GameData.Respect.Add(addedRespect);
                 _anchoredPosY -= 160;
             }
             if (_achievements.IsHaveAchievements())
@@ -122,6 +122,7 @@ namespace MyGame.Gameplay
         private void Exit()
         {
             BundlesController.Instance.OnlyGameplayBundle.TryUnload();
+            SceneLoader.LoadMenu();
         }
 
         private void TryStopAnim()

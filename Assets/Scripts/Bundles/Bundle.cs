@@ -7,7 +7,7 @@ namespace MyGame.Bundles
 {
     public abstract class Bundle
     {
-        private LevelsInfo _levelsInfo;
+        protected LevelsInfo _levelsInfo;
         protected AssetBundle _bundle;
 
         public void Init(LevelsInfo levelsInfo)
@@ -25,7 +25,8 @@ namespace MyGame.Bundles
             await uWR.SendWebRequest();
             _bundle = DownloadHandlerAssetBundle.GetContent(uWR);
             LoadResources();
-            onEnd?.Invoke();
+            if (onEnd != null)
+                onEnd.Invoke();
         }
 
         public void TryUnload()

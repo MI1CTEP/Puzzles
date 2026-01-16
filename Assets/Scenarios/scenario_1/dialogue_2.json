@@ -1,90 +1,61 @@
-﻿{
+{
   "firstPhrase": {
-    "ru": "Фраза 2",
-    "en": "",
-    "de": "",
-    "zh": "",
-    "fr": "",
-    "hi": "",
-    "it": "",
-    "ja": "",
-    "pt": ""
+    "ru": "Чувствую себя свободно без одежды, тебе нравится моя фигура?",
+    "en": "I feel so free without clothes — do you like my body?",
+    "de": "Ohne Kleidung fühle ich mich so frei – gefällt dir mein Körper?",
+    "zh": "不穿衣服感觉好自由，你喜欢我的身材吗？",
+    "ja": "服を着てないとすごく解放感があるよ。私の体、好き？",
+    "fr": "Je me sens si libre sans vêtements, tu aimes mon corps ?",
+    "es": "Me siento tan libre sin ropa, ¿te gusta mi cuerpo?",
+    "pt": "Me sinto tão livre sem roupa — gostas do meu corpo?",
+    "it": "Mi sento così libera senza vestiti, ti piace il mio corpo?",
+    "hi": "बिना कपड़ों के मुझे बहुत आज़ादी महसूस होती है, मेरी बॉडी पसंद है?"
   },
   "phraseVariants": [
     {
       "answer": {
-        "ru": "Ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Да, хочу удовлетворить тебя!",
+        "en": "Yes — I want to satisfy you!",
+        "de": "Ja, ich will dich befriedigen!",
+        "zh": "是的，我想让你爽翻！",
+        "ja": "うん、君をイカせたい！",
+        "fr": "Oui, je veux te faire jouir !",
+        "es": "Sí, quiero satisfacerte completamente.",
+        "pt": "Sim, quero te satisfazer!",
+        "it": "Sì, voglio farti venire!",
+        "hi": "हाँ, मुझे तुझे चोदकर संतुष्ट करना है!"
       },
-      "respect": 1,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 4
     },
     {
       "answer": {
-        "ru": "Ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Твоя фигура очень сексуальная.",
+        "en": "Your body is incredibly sexy.",
+        "de": "Dein Körper ist unglaublich sexy.",
+        "zh": "你的身材超级性感。",
+        "ja": "その体、めっちゃセクシーだよ。",
+        "fr": "Ton corps est incroyablement sexy.",
+        "es": "Tu cuerpo es increíblemente sexy.",
+        "pt": "O teu corpo é incrivelmente sexy.",
+        "it": "Il tuo corpo è incredibilmente sexy.",
+        "hi": "तेरी बॉडी कमाल की सेक्सी है।"
       },
-      "respect": 0,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 2
     },
     {
       "answer": {
-        "ru": "Ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Боюсь показаться пошлым, но ты меня возбуждаешь.",
+        "en": "I’m afraid I’ll sound crude, but you turn me on so much.",
+        "de": "Ich will nicht vulgär wirken, aber du machst mich wahnsinnig an.",
+        "zh": "怕显得太下流，但你真的让我好兴奋。",
+        "ja": "下品だと思われたくないけど、君にメッチャ興奮してる。",
+        "fr": "J’ai peur de paraître vulgaire, mais tu m’excites tellement.",
+        "es": "Me da miedo sonar grosero, pero me pones muchísimo.",
+        "pt": "Tenho medo de parecer vulgar, mas tu me deixas louco.",
+        "it": "Temo di sembrare volgare, ma mi ecciti da morire.",
+        "hi": "मुझे डर है कि फूहड़ लगूँगा, पर तू मुझे बहुत उत्तेजित कर रही है।"
       },
-      "respect": 5,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 0
     }
   ]
 }

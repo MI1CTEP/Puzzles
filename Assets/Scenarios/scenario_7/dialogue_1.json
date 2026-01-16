@@ -1,0 +1,61 @@
+{
+  "firstPhrase": {
+    "ru": "Добро пожаловать в наше уютное кафе! Что вы желаете?",
+    "en": "Welcome to our cozy café! What would you like?",
+    "de": "Willkommen in unserem gemütlichen Café! Was möchtest du bestellen?",
+    "zh": "欢迎光临我们温馨的小咖啡馆！您想点什么？",
+    "ja": "いらっしゃいませ♪ 居心地のいいカフェへようこそ。何のご注文？",
+    "fr": "Bienvenue dans notre petit café cosy ! Que désires-tu ?",
+    "es": "¡Bienvenido a nuestro acogedor café! ¿Qué te gustaría?",
+    "pt": "Bem-vindo ao nosso cafézinho acolhedor! O que desejas pedir?",
+    "it": "Benvenuto nel nostro accogliente caffè! Cosa desideri?",
+    "hi": "हमारे आरामदायक कैफ़े में आपका स्वागत है! क्या ऑर्डर करेंगे?"
+  },
+  "phraseVariants": [
+    {
+      "answer": {
+        "ru": "Я хотел бы выпить чашку кофе и побеседовать с юной официанткой.",
+        "en": "I’d love a cup of coffee and a chat with the cute waitress.",
+        "de": "Ich hätte gern einen Kaffee… und ein bisschen mit der süßen Kellnerin plaudern.",
+        "zh": "我想喝杯咖啡，然后和可爱的小服务生聊聊天。",
+        "ja": "コーヒーと、可愛いウェイトレスさんとおしゃべりしたいな。",
+        "fr": "J’aimerais un café et discuter un peu avec la jolie serveuse.",
+        "es": "Quisiera un café y charlar un rato con la camarera tan mona.",
+        "pt": "Gostaria de um café e conversar um pouco com a empregada gira.",
+        "it": "Vorrei un caffè e fare due chiacchiere con la cameriera carina.",
+        "hi": "मैं एक कॉफ़ी लूँगा… और इस प्यारी वेट्रेस से थोड़ी बात करूँ।"
+      },
+      "respect": 4
+    },
+    {
+      "answer": {
+        "ru": "При виде ваших чулок, начинают путаться мысли.",
+        "en": "Your stockings are making it impossible to think straight.",
+        "de": "Beim Anblick deiner Strümpfe kann ich kaum noch klar denken.",
+        "zh": "一看到你的丝袜，我脑子就乱了。",
+        "ja": "君のストッキング見てたら頭がぼーっとしちゃう。",
+        "fr": "En voyant tes bas, mes idées se brouillent complètement.",
+        "es": "Al ver tus medias me pongo a mil y no pienso claro.",
+        "pt": "Ao ver as tuas meias fico com a cabeça à roda.",
+        "it": "Quando vedo le tue calze non riesco più a pensare lucidamente.",
+        "hi": "तेरी स्टॉकिंग्स देखकर दिमाग़ काम करना बंद कर देता है।"
+      },
+      "respect": 2
+    },
+    {
+      "answer": {
+        "ru": "Когда увидел тебя, пропало желание перекусить, ты возбуждаешь.",
+        "en": "When I saw you, I completely lost my appetite for food — you’re way more tempting.",
+        "de": "Als ich dich sah, hatte ich plötzlich keinen Hunger mehr – nur noch Lust auf dich.",
+        "zh": "一看到你就完全没了食欲，只想吃你。",
+        "ja": "君を見た瞬間、食欲なくなっちゃった。君が欲しいだけ。",
+        "fr": "Quand je t’ai vue, plus du tout faim de nourriture… juste envie de toi.",
+        "es": "Cuando te vi se me quitó el hambre de comida… sólo ganas de ti.",
+        "pt": "Quando te vi perdi logo a fome de comida… só apetite por ti.",
+        "it": "Appena ti ho vista mi è passata la fame… ho solo voglia di te.",
+        "hi": "तुझे देखते ही खाने की भूख चली गई – सिर्फ़ तुझ पर भूख लगी है।"
+      },
+      "respect": 0
+    }
+  ]
+}

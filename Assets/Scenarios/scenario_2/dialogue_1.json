@@ -1,90 +1,61 @@
-﻿{
+{
   "firstPhrase": {
-    "ru": "Фраза 1",
-    "en": "",
-    "de": "",
-    "zh": "",
-    "fr": "",
-    "hi": "",
-    "it": "",
-    "ja": "",
-    "pt": ""
+    "ru": "Добрый день! Я ваша медсестра, добро пожаловать в нашу клинику! Вам здесь нравится?",
+    "en": "Good afternoon! I'm your nurse — welcome to our clinic. Do you like it here?",
+    "de": "Guten Tag! Ich bin Ihre Krankenschwester – willkommen in unserer Klinik. Gefällt es Ihnen hier?",
+    "zh": "下午好！我是您的护士，欢迎来到我们的诊所。您喜欢这里吗？",
+    "ja": "こんにちは！あなたの看護師よ。このクリニックへようこそ。ここ、気に入った？",
+    "fr": "Bon après-midi ! Je suis votre infirmière — bienvenue dans notre clinique. Ça vous plaît ici ?",
+    "es": "¡Buenas tardes! Soy tu enfermera — bienvenido a nuestra clínica. ¿Te gusta aquí?",
+    "pt": "Boa tarde! Sou a tua enfermeira — bem-vindo à nossa clínica. Gostas daqui?",
+    "it": "Buongiorno! Sono la tua infermiera — benvenuto nella nostra clinica. Ti piace qui?",
+    "hi": "नमस्कार! मैं आपकी नर्स हूँ — हमारी क्लिनिक में स्वागत है। आपको यहाँ अच्छा लग रहा है?"
   },
   "phraseVariants": [
     {
       "answer": {
-        "ru": "Ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Добрый день! Ты прекрасно выглядишь!",
+        "en": "Good day! You look wonderful!",
+        "de": "Guten Tag! Du siehst wundervoll aus!",
+        "zh": "下午好！你看起来棒极了！",
+        "ja": "こんにちは！君、めっちゃ綺麗だよ！",
+        "fr": "Bonjour ! Tu es magnifique !",
+        "es": "¡Buen día! ¡Te ves preciosa!",
+        "pt": "Bom dia! Estás linda demais!",
+        "it": "Buongiorno! Sembri stupenda!",
+        "hi": "शुभ दिन! तुम कमाल की लग रही हो!"
       },
-      "respect": 1,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 4
     },
     {
       "answer": {
-        "ru": "Ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Привет! Кажется, твой халат немного расстегнулся..",
+        "en": "Hi! It seems your robe is a little undone…",
+        "de": "Hallo! Dein Bademantel scheint ein bisschen offen zu sein…",
+        "zh": "嗨！你的袍子好像有点松开了…",
+        "ja": "やあ！君のガウンが少し開いてるよ…",
+        "fr": "Salut ! Ton peignoir est un peu entrouvert…",
+        "es": "Hola! Parece que tu bata está un poco desabrochada…",
+        "pt": "Oi! Parece que o teu roupão está um pouco aberto…",
+        "it": "Ciao! Sembra che la tua vestaglia sia un po' slacciata…",
+        "hi": "हाय! लगता है तेरा गाउन थोड़ा खुल गया है…"
       },
-      "respect": 0,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 2
     },
     {
       "answer": {
-        "ru": "Ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Может перейдем сразу к более близкому знакомству?",
+        "en": "Maybe we should move straight to something more intimate?",
+        "de": "Sollen wir direkt zu etwas Intimerem übergehen?",
+        "zh": "要不我们直接来点更亲密的接触？",
+        "ja": "もっと親密になろうか？直接どう？",
+        "fr": "Et si on passait directement à quelque chose de plus intime ?",
+        "es": "¿Y si pasamos directo a algo más íntimo?",
+        "pt": "Que tal irmos direto para algo mais íntimo?",
+        "it": "Magari passiamo subito a qualcosa di più intimo?",
+        "hi": "क्या हम सीधे ज्यादा अंतरंग जान-पहचान करें?"
       },
-      "respect": 5,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 0
     }
   ]
 }

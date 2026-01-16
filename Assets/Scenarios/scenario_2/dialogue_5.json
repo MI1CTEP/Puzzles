@@ -1,90 +1,61 @@
-﻿{
+{
   "firstPhrase": {
-    "ru": "Фраза 5",
-    "en": "",
-    "de": "",
-    "zh": "",
-    "fr": "",
-    "hi": "",
-    "it": "",
-    "ja": "",
-    "pt": ""
+    "ru": "А теперь пора заняться страстным сексом, доведешь меня до оргазма?",
+    "en": "Now it’s time for passionate sex — will you make me cum?",
+    "de": "Und jetzt ist es Zeit für leidenschaftlichen Sex – bringst du mich zum Orgasmus?",
+    "zh": "现在该来场激情性爱了，你能让我高潮吗？",
+    "ja": "今度は情熱的なセックスよ。私をイカせて？",
+    "fr": "Et maintenant, place au sexe passionné — vas-tu me faire jouir ?",
+    "es": "Ahora es hora de sexo apasionado — ¿me harás correrte?",
+    "pt": "Agora é hora de sexo apaixonado — vais fazer-me gozar?",
+    "it": "Ora è tempo di sesso appassionato — mi farai venire?",
+    "hi": "अब पैशनेट सेक्स का समय है, मुझे ऑर्गेज्म तक ले जाओगे?"
   },
   "phraseVariants": [
     {
       "answer": {
-        "ru": "Ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Конечно, и хочу это начать прямо сейчас.",
+        "en": "Of course — and I want to start right now.",
+        "de": "Natürlich – und ich will jetzt anfangen!",
+        "zh": "当然，我想马上开始。",
+        "ja": "もちろん、今すぐ始めたい！",
+        "fr": "Bien sûr — et je veux commencer tout de suite !",
+        "es": "¡Por supuesto — y quiero empezar ahora mismo!",
+        "pt": "Claro — e quero começar já!",
+        "it": "Certo — e voglio iniziare subito!",
+        "hi": "बेशक, और अभी शुरू करना चाहता हूँ!"
       },
-      "respect": 1,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 4
     },
     {
       "answer": {
-        "ru": "Ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Надеюсь максимально удовлетворю тебя.",
+        "en": "I hope I can fully satisfy you.",
+        "de": "Ich hoffe, ich kann dich voll befriedigen.",
+        "zh": "希望能让你完全满足。",
+        "ja": "君を最高にイカせられるといいな。",
+        "fr": "J’espère te satisfaire pleinement.",
+        "es": "Espero satisfacerte al máximo.",
+        "pt": "Espero satisfazer-te ao máximo.",
+        "it": "Spero di soddisfarti al massimo.",
+        "hi": "उम्मीद है तुझे पूरी तरह संतुष्ट कर दूँगा।"
       },
-      "respect": 0,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 2
     },
     {
       "answer": {
-        "ru": "Ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Секс мне нужен каждый день для полного выздоровления.",
+        "en": "I need sex every day for full recovery.",
+        "de": "Sex brauche ich täglich für die vollständige Genesung.",
+        "zh": "每天做爱才能完全康复。",
+        "ja": "完全回復のため毎日セックスが必要だよ。",
+        "fr": "J’ai besoin de sexe tous les jours pour guérir complètement.",
+        "es": "Necesito sexo todos los días para recuperarme del todo.",
+        "pt": "Preciso de sexo todos os dias para recuperar totalmente.",
+        "it": "Mi serve sesso ogni giorno per guarire del tutto.",
+        "hi": "पूर्ण रिकवरी के लिए रोज़ सेक्स चाहिए।"
       },
-      "respect": 5,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 0
     }
   ]
 }

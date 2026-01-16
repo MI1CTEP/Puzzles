@@ -1,90 +1,61 @@
-﻿{
+{
   "firstPhrase": {
-    "ru": "Фраза 3",
-    "en": "",
-    "de": "",
-    "zh": "",
-    "fr": "",
-    "hi": "",
-    "it": "",
-    "ja": "",
-    "pt": ""
+    "ru": "Готов увидеть, как я себя удовлетворяю?",
+    "en": "Ready to watch me pleasure myself?",
+    "de": "Bereit zuzusehen, wie ich mich selbst befriedige?",
+    "zh": "准备好看我自慰了吗？",
+    "ja": "私がオナニーするの見たい？",
+    "fr": "Prêt à me regarder me faire plaisir ?",
+    "es": "¿Listo para verme darme placer?",
+    "pt": "Pronta para eu me masturbar para ti?",
+    "it": "Pronto a guardarmi mentre mi do piacere?",
+    "hi": "तैयार हो मुझे खुद को संतुष्ट करते देखने के लिए?"
   },
   "phraseVariants": [
     {
       "answer": {
-        "ru": "Ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Готов посмотреть, если потом ты удовлетворишь меня!",
+        "en": "I’ll watch if you satisfy me afterwards!",
+        "de": "Ich schaue zu, aber danach musst du mich befriedigen!",
+        "zh": "可以看，但之后你要让我高潮！",
+        "ja": "見るよ。でもその後で君がイカせてね！",
+        "fr": "Je regarde si ensuite tu me fais jouir !",
+        "es": "Lo veo si después me satisfaces tú a mí.",
+        "pt": "Assisto se depois me fazes gozar!",
+        "it": "Guardo se dopo mi soddisfi tu!",
+        "hi": "देखूँगा, बशर्ते बाद में तू मुझे चोदे।"
       },
-      "respect": 1,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 4
     },
     {
       "answer": {
-        "ru": "Ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Да, меня это возбуждает!",
+        "en": "Yes — that really turns me on!",
+        "de": "Ja, das macht mich total an!",
+        "zh": "是的，这让我超级兴奋！",
+        "ja": "うん、それ見て興奮する！",
+        "fr": "Oui, ça m’excite énormément !",
+        "es": "Sí, eso me excita muchísimo.",
+        "pt": "Sim, isso me deixa louco!",
+        "it": "Sì, mi eccita da morire!",
+        "hi": "हाँ, ये मुझे बहुत उत्तेजित करता है!"
       },
-      "respect": 0,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 2
     },
     {
       "answer": {
-        "ru": "Ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Конечно, ты очень сексуальная.",
+        "en": "Of course — you’re incredibly sexy.",
+        "de": "Klar, du bist unglaublich sexy.",
+        "zh": "当然，你超级性感。",
+        "ja": "もちろん、君めっちゃセクシーだよ。",
+        "fr": "Bien sûr, tu es hyper sexy.",
+        "es": "Claro, eres increíblemente sexy.",
+        "pt": "Claro, tu és incrivelmente sexy.",
+        "it": "Certo, sei incredibilmente sexy.",
+        "hi": "बेशक, तू बहुत सेक्सी है।"
       },
-      "respect": 5,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 0
     }
   ]
 }

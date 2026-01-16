@@ -1,0 +1,61 @@
+{
+  "firstPhrase": {
+    "ru": "Ты хорошо понимаешь предмет, хочу тебя похвалить, начнем?",
+    "en": "You understand the subject so well — I want to reward you. Shall we start?",
+    "de": "Du verstehst das Fach perfekt, ich möchte dich belohnen. Los geht’s?",
+    "zh": "你对这门课掌握得太好了，我想奖励你，开始吧？",
+    "ja": "授業完璧に理解してるね、ご褒美あげる。始めようか？",
+    "fr": "Tu maîtrises parfaitement la matière, je veux te récompenser. On y va ?",
+    "es": "Dominas la asignatura a la perfección, quiero recompensarte. ¿Empezamos?",
+    "pt": "Dominas perfeitamente a disciplina, quero recompensar-te. Vamos lá?",
+    "it": "Padroneggi perfettamente la materia, voglio premiarti. Cominciamo?",
+    "hi": "तुम सब्जेक्ट को परफेक्ट समझते हो, मैं तुम्हें रिवार्ड देना चाहती हूँ। शुरू करें?"
+  },
+  "phraseVariants": [
+    {
+      "answer": {
+        "ru": "Я влюблен в вас, постараюсь радовать вас постоянно.",
+        "en": "I’m in love with you — I’ll do my best to please you all the time.",
+        "de": "Ich bin in Sie verliebt – ich werde Sie ständig verwöhnen.",
+        "zh": "我爱上您了，我会一直取悦您。",
+        "ja": "先生に恋してる、ずっと気持ちよくしてあげる。",
+        "fr": "Je suis amoureux de vous – je vais vous faire plaisir tout le temps.",
+        "es": "Estoy enamorado de ti – voy a complacerte constantemente.",
+        "pt": "Estou apaixonado por ti — vou dar-te prazer o tempo todo.",
+        "it": "Sono innamorato di te — ti vizierò continuamente.",
+        "hi": "मैं आपसे प्यार करता हूँ – मैं आपको हमेशा खुश रखूँगा।"
+      },
+      "respect": 4
+    },
+    {
+      "answer": {
+        "ru": "Хотел давно это предложить, я максимально возбужден.",
+        "en": "I’ve wanted to offer this for so long — I’m so hard.",
+        "de": "Das wollte ich schon lange vorschlagen – ich bin schon total steinhart.",
+        "zh": "我早就想提议了，我已经硬到不行。",
+        "ja": "ずっと前から言いたかった、俺もうガチガチだよ。",
+        "fr": "Je voulais vous le proposer depuis longtemps – je suis déjà dur comme fer.",
+        "es": "Hace tiempo que quería proponértelo – ya estoy durísimo.",
+        "pt": "Já queria propor isto há muito tempo — já estou duríssimo.",
+        "it": "Lo volevo proporre da tempo — sono già durissimo.",
+        "hi": "मैं बहुत पहले से कहना चाह रहा था – मैं तो पहले से पूरी तरह टाइट हो चुका हूँ।"
+      },
+      "respect": 2
+    },
+    {
+      "answer": {
+        "ru": "С первого занятия, хочу ощутить вашу попку на лице.",
+        "en": "From the very first lesson I wanted your ass on my face.",
+        "de": "Von der ersten Stunde an wollte ich Ihren Arsch auf meinem Gesicht spüren.",
+        "zh": "从第一节课开始我就想感受您的屁股坐在我脸上。",
+        "ja": "初回の授業から先生の尻を顔に感じたかった。",
+        "fr": "Dès le premier cours je voulais sentir votre cul sur mon visage.",
+        "es": "Desde la primera clase quería sentir tu culo en mi cara.",
+        "pt": "Desde a primeira aula queria sentir a tua bunda na minha cara.",
+        "it": "Dalla prima lezione volevo sentire il tuo culo sulla mia faccia.",
+        "hi": "पहले लेक्चर से ही मैं तुम्हारी गांड अपने मुँह पर महसूस करना चाहता था।"
+      },
+      "respect": 0
+    }
+  ]
+}

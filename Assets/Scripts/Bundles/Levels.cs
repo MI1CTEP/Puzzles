@@ -11,7 +11,7 @@ namespace MyGame.Bundles
     {
         public int id;
         public string type;
-        public float price;
+        public int price;
         public int version;
         public TypeLevelStatus typeLevelStatus;
     }

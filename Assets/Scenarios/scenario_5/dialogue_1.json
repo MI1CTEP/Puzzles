@@ -1,0 +1,61 @@
+{
+  "firstPhrase": {
+    "ru": "Ты мой новый студент! Что ты хочешь узнать обо мне?",
+    "en": "You’re my new student! What do you want to know about me?",
+    "de": "Guten Tag! Du bist mein neuer Student! Was möchtest du über mich erfahren?",
+    "zh": "下午好！你是我的新学生！想了解我什么？",
+    "ja": "こんにちは！君は私の新しい生徒よ！私のこと、何を知りたい？",
+    "fr": "Bonjour ! Tu es mon nouvel étudiant ! Que veux-tu savoir sur moi ?",
+    "es": "¡Buenas tardes! Eres mi nuevo estudiante. ¿Qué quieres saber de mí?",
+    "pt": "Boa tarde! És o meu novo aluno! O que queres saber sobre mim?",
+    "it": "Buongiorno! Sei il mio nuovo studente! Cosa vuoi sapere di me?",
+    "hi": "नमस्ते! तुम मेरे नए स्टूडेंट हो! मेरे बारे में क्या जानना चाहते हो?"
+  },
+  "phraseVariants": [
+    {
+      "answer": {
+        "ru": "Чтобы узнать вас больше, хочу записаться на дополнительные занятия.",
+        "en": "I want to sign up for extra classes to get to know you better.",
+        "de": "Um mich besser kennenzulernen, möchte ich mich für zusätzliche Stunden anmelden.",
+        "zh": "为了更了解您，我想报名额外课程。",
+        "ja": "もっと知りたくて、補習に申し込むよ。",
+        "fr": "Pour mieux vous connaître, je veux m’inscrire à des cours supplémentaires.",
+        "es": "Para conocerte mejor quiero apuntarme a clases extra.",
+        "pt": "Para te conhecer melhor, quero inscrever-me em aulas extras.",
+        "it": "Per conoscerti meglio voglio iscrivermi a lezioni private.",
+        "hi": "आपको और अच्छे से जानने के लिए मैं एक्स्ट्रा क्लासेस लेना चाहता हूँ।"
+      },
+      "respect": 4
+    },
+    {
+      "answer": {
+        "ru": "Учеба меня не интересует, я люблю девушек в чулках.",
+        "en": "Studying doesn’t interest me — I love girls in stockings.",
+        "de": "Studieren interessiert mich nicht, ich liebe Mädchen in Strümpfen.",
+        "zh": "学习不感兴趣，我喜欢穿丝袜的女生。",
+        "ja": "勉強なんて興味ない、ストッキングの女の子が大好き。",
+        "fr": "L’étude ne m’intéresse pas, j’adore les filles en bas.",
+        "es": "Estudiar no me interesa, me encantan las chicas con medias.",
+        "pt": "Estudar não me interessa, adoro raparigas de meias.",
+        "it": "Studiare non mi interessa, adoro le ragazze con le calze.",
+        "hi": "पढ़ाई में इंटरेस्ट नहीं, मुझे स्टॉकिंग्स वाली लड़कियाँ बहुत पसंद हैं।"
+      },
+      "respect": 2
+    },
+    {
+      "answer": {
+        "ru": "Хочу узнать какой цвет нижнего белья вы любите.",
+        "en": "I want to know what color lingerie you prefer.",
+        "de": "Ich will wissen, welche Farbe Unterwäsche Sie bevorzugen.",
+        "zh": "我想知道您喜欢什么颜色的内衣。",
+        "ja": "どんな色の下着がお好みか知りたいな。",
+        "fr": "Je veux savoir quelle couleur de lingerie vous préférez.",
+        "es": "Quiero saber qué color de ropa interior prefieres.",
+        "pt": "Quero saber que cor de lingerie preferes.",
+        "it": "Voglio sapere di che colore preferisci la biancheria intima.",
+        "hi": "मुझे जानना है आप किस कलर की पैंटी पसंद करती हैं।"
+      },
+      "respect": 0
+    }
+  ]
+}

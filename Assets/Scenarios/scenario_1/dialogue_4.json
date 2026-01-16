@@ -1,90 +1,61 @@
-﻿{
+{
   "firstPhrase": {
-    "ru": "Фраза 4",
-    "en": "",
-    "de": "",
-    "zh": "",
-    "fr": "",
-    "hi": "",
-    "it": "",
-    "ja": "",
-    "pt": ""
+    "ru": "Как тебе моя попка?",
+    "en": "How do you like my ass?",
+    "de": "Wie findest du meinen Arsch?",
+    "zh": "觉得我的屁股怎么样？",
+    "ja": "私のお尻、どう？",
+    "fr": "Tu aimes mon cul ?",
+    "es": "¿Qué tal mi culo?",
+    "pt": "Gostas da minha bunda?",
+    "it": "Ti piace il mio culo?",
+    "hi": "मेरी गांड कैसी लग रही है?"
   },
   "phraseVariants": [
     {
       "answer": {
-        "ru": "Ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Уже хочу в неё войти!",
+        "en": "I already want to slide inside!",
+        "de": "Ich will sofort in dich rein!",
+        "zh": "已经想插进去了！",
+        "ja": "もう入れたい！",
+        "fr": "Je veux déjà te pénétrer !",
+        "es": "¡Ya quiero metértela!",
+        "pt": "Já quero meter em ti!",
+        "it": "Voglio già entrarti dentro!",
+        "hi": "अभी से तेरी गांड में घुसना चाहता हूँ!"
       },
-      "respect": 1,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 4
     },
     {
       "answer": {
-        "ru": "Ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Эти формы возбуждают!",
+        "en": "These curves drive me crazy!",
+        "de": "Diese Kurven machen mich verrückt!",
+        "zh": "这曲线太刺激了！",
+        "ja": "そのカーブに狂いそう！",
+        "fr": "Ces formes me rendent fou !",
+        "es": "¡Estas curvas me vuelven loco!",
+        "pt": "Essas curvas me deixam louco!",
+        "it": "Queste curve mi fanno impazzire!",
+        "hi": "ये शेप्स देखकर पागल हो रहा हूँ!"
       },
-      "respect": 0,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 2
     },
     {
       "answer": {
-        "ru": "Ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Готов смотреть на неё вечно!",
+        "en": "I could stare at it forever!",
+        "de": "Ich könnte ewig drauf starren!",
+        "zh": "可以一直盯着看！",
+        "ja": "ずっと見てられる！",
+        "fr": "Je pourrais la regarder pour toujours !",
+        "es": "¡Podría mirarla eternamente!",
+        "pt": "Poderia olhar para sempre!",
+        "it": "La guarderei per sempre!",
+        "hi": "इसे हमेशा निहार सकता हूँ!"
       },
-      "respect": 5,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 0
     }
   ]
 }

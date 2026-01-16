@@ -4,7 +4,7 @@ namespace MyGame
 {
     public static class SceneLoader
     {
-        public static void LoadMenu() => Load("MenuTempScene");
+        public static void LoadMenu() => Load("MenuScene");
 
         public static void LoadGameplay() => Load("GameplayScene");
 

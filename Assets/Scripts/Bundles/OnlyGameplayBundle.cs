@@ -9,9 +9,10 @@ namespace MyGame.Bundles
 {
     public sealed class OnlyGameplayBundle : Bundle
     {
-        public Scenario Scenario { get; set; }
-        public List<SimpleDialogue> SimpleDialogues { get; set; } = new();
-        public List<VideoClip> Videos { get; set; } = new();
+        public Scenario Scenario { get; private set; }
+        public List<SimpleDialogue> SimpleDialogues { get; private set; } = new();
+        public List<VideoClip> Videos { get; private set; } = new();
+        public AudioClip BackgroundAudio { get; private set; }
 
         public override string GetFileName(int id) => $"scenario_{id + 1}.only_gameplay";
 
@@ -29,6 +30,7 @@ namespace MyGame.Bundles
                 if (infoTextAsset != null)
                 {
                     SimpleDialogue simpleDialogue = JsonConvert.DeserializeObject<SimpleDialogue>(infoTextAsset.text);
+                    simpleDialogue.id = id;
                     SimpleDialogues.Add(simpleDialogue);
                     id++;
                 }
@@ -48,6 +50,8 @@ namespace MyGame.Bundles
                 }
                 else isHaveResource = false;
             }
+
+            BackgroundAudio = _bundle.LoadAsset<AudioClip>($"gameplay_audio");
         }
     }
 }

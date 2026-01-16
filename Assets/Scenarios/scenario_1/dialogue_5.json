@@ -1,90 +1,61 @@
-﻿{
+{
   "firstPhrase": {
-    "ru": "Фраза 5",
-    "en": "",
-    "de": "",
-    "zh": "",
-    "fr": "",
-    "hi": "",
-    "it": "",
-    "ja": "",
-    "pt": ""
+    "ru": "Теперь, хочу удовлетворить тебя, ты готов?",
+    "en": "Now I want to satisfy you — are you ready?",
+    "de": "Jetzt will ich dich befriedigen – bist du bereit?",
+    "zh": "现在我想让你爽，你准备好了吗？",
+    "ja": "今度は君をイカせたい。準備できてる？",
+    "fr": "Maintenant je veux te faire jouir, tu es prêt ?",
+    "es": "Ahora quiero satisfacerte, ¿estás listo?",
+    "pt": "Agora quero te satisfazer, estás pronto?",
+    "it": "Ora voglio farti venire, sei pronto?",
+    "hi": "अब मैं तुझे संतुष्ट करना चाहती हूँ, तैयार हो?"
   },
   "phraseVariants": [
     {
       "answer": {
-        "ru": "Ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "С этого и надо было начинать наше знакомство!",
+        "en": "This is exactly how our acquaintance should’ve started!",
+        "de": "Genau damit hätten wir anfangen sollen!",
+        "zh": "我们一开始就该这样认识的！",
+        "ja": "最初からこうするべきだった！",
+        "fr": "C’est exactement comme ça qu’on aurait dû commencer !",
+        "es": "¡Así es exactamente como deberíamos haber empezado!",
+        "pt": "Era exatamente assim que devíamos ter começado!",
+        "it": "Era proprio così che dovevamo iniziare!",
+        "hi": "हमारी जान-पहचान यहीं से शुरू होनी चाहिए थी!"
       },
-      "respect": 1,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 1",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 4
     },
     {
       "answer": {
-        "ru": "Ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Я уже максимально возбужден!",
+        "en": "I’m already at peak arousal!",
+        "de": "Ich bin schon total geil!",
+        "zh": "我已经硬到不行了！",
+        "ja": "もうMAXに興奮してる！",
+        "fr": "Je suis déjà au maximum de l’excitation !",
+        "es": "¡Ya estoy al máximo de excitación!",
+        "pt": "Já estou no máximo do tesão!",
+        "it": "Sono già al massimo dell’eccitazione!",
+        "hi": "मैं तो पूरी तरह से उत्तेजित हो चुका हूँ!"
       },
-      "respect": 0,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 2",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 2
     },
     {
       "answer": {
-        "ru": "Ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
+        "ru": "Пытаюсь сейчас совладать с собой.",
+        "en": "I’m trying so hard to control myself right now.",
+        "de": "Ich versuche gerade, mich zu beherrschen.",
+        "zh": "现在正拼命忍着呢。",
+        "ja": "今めっちゃ我慢してる。",
+        "fr": "J’essaie de me contrôler là tout de suite.",
+        "es": "Estoy intentando controlarme ahora mismo.",
+        "pt": "Estou tentando me controlar agora.",
+        "it": "Sto cercando di controllarmi adesso.",
+        "hi": "अभी खुद को कंट्रोल करने की कोशिश कर रहा हूँ।"
       },
-      "respect": 5,
-      "secondPhrase": {
-        "ru": "Ответ на ответ 3",
-        "en": "",
-        "de": "",
-        "zh": "",
-        "fr": "",
-        "hi": "",
-        "it": "",
-        "ja": "",
-        "pt": ""
-      }
+      "respect": 0
     }
   ]
 }
