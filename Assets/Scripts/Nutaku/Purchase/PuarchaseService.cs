@@ -639,23 +639,23 @@ public class PuarchaseService : MonoBehaviour
     // Управление достижениями
 
     // Добавить предмет (если его нет) или увеличить количество
-    public void AddItemToInventory(string sku, int quantity = 1)
-    {
-        StartCoroutine(MakeInventoryRequest(sku, quantity));
-    }
+    //public void AddItemToInventory(string sku, int quantity = 1)
+    //{
+    //    StartCoroutine(MakeInventoryRequest(sku, quantity));
+    //}
 
-    // Удалить предмет из инвентаря
-    public void RemoveItemFromInventory(string sku)
-    {
-        // quantity_change = -9999 удалит предмет полностью
-        StartCoroutine(MakeInventoryRequest(sku, -9999));
-    }
+    //// Удалить предмет из инвентаря
+    //public void RemoveItemFromInventory(string sku)
+    //{
+    //    // quantity_change = -9999 удалит предмет полностью
+    //    StartCoroutine(MakeInventoryRequest(sku, -9999));
+    //}
 
-    // Уменьшить количество предмета (например, использовать предмет)
-    public void UseItem(string sku, int amount = 1)
-    {
-        StartCoroutine(MakeInventoryRequest(sku, -amount));
-    }
+    //// Уменьшить количество предмета (например, использовать предмет)
+    //public void UseItem(string sku, int amount = 1)
+    //{
+    //    StartCoroutine(MakeInventoryRequest(sku, -amount));
+    //}
 
     // Установить точное количество
     //public void SetItemQuantity(string sku, int exactQuantity)
@@ -732,6 +732,11 @@ public class PuarchaseService : MonoBehaviour
                 failCallback?.Invoke();
             }
         }
+    }
+
+    public void StartMakeInventoryRequest(string sku, int quantityChange, UnityAction succesCallback = null, UnityAction failCallback = null)
+    {
+        StartCoroutine(MakeInventoryRequest(sku, quantityChange, succesCallback, failCallback));
     }
 
     //Обновление количества

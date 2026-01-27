@@ -13,8 +13,8 @@ namespace MyGame
             private static readonly string _key = "Respect";
 
             public static void Add(int value)
-            {
-                NutakuAPIInitializator.instance.PuarchaseService.MakeInventoryRequest(_key, value);
+            {              
+                NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(_key, value);
 
                 //int currentValue = Load();
                 //PlayerPrefs.SetInt(_key, currentValue + value);
@@ -41,7 +41,7 @@ namespace MyGame
                 float currentValue = Load(id);
                 if (currentValue < value)
                 {
-                    NutakuAPIInitializator.instance.PuarchaseService.MakeInventoryRequest(key, value);
+                    NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(key, value);
                 }
 
 
@@ -67,7 +67,7 @@ namespace MyGame
             public static void AddValue(int groupId, int id, int value)
             {
                 //int currentValue = LoadValue(groupId, id);
-                NutakuAPIInitializator.instance.PuarchaseService.MakeInventoryRequest(GetKey(groupId, id), value);
+                NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(GetKey(groupId, id), value);
 
                 //int currentValue = LoadValue(groupId, id);
                 //PlayerPrefs.SetInt(GetKey(groupId, id), currentValue + value);
@@ -93,7 +93,7 @@ namespace MyGame
             public static void Unlock(int levelId, int dialogueId, int positionId)
             {
                 string key = $"{_key}_{levelId}_{dialogueId}_{positionId}";
-                NutakuAPIInitializator.instance.PuarchaseService.MakeInventoryRequest(key, 1);
+                NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(key, 1);
 
                 //PlayerPrefs.SetInt($"{_key}_{levelId}_{dialogueId}_{positionId}", 1);
             }
@@ -124,9 +124,9 @@ namespace MyGame
             public static void UnlockPart(int partId)
             {
                 string keyPart = $"{_keyPart}_{partId}";
-                NutakuAPIInitializator.instance.PuarchaseService.MakeInventoryRequest(keyPart, 1);
+                NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(keyPart, 1);
                 int openedParts = GetOpenedPartsValue();
-                NutakuAPIInitializator.instance.PuarchaseService.MakeInventoryRequest(_keyOpenedParts, openedParts + 1);
+                NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(_keyOpenedParts, openedParts + 1);
 
                 //PlayerPrefs.SetInt($"{_keyPart}_{partId}", 1);
                 //int openedParts = GetOpenedPartsValue();
@@ -151,8 +151,8 @@ namespace MyGame
             public static void UnlockLevel()
             {
                 int unlockedLevel = UnlockedLevels();
-                NutakuAPIInitializator.instance.PuarchaseService.MakeInventoryRequest(_keyLevel, unlockedLevel + 1);
-                
+                NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(_keyLevel, unlockedLevel + 1);
+
 
                 //int unlockedLevel = UnlockedLevels();
                 //PlayerPrefs.SetInt(_keyLevel, unlockedLevel + 1);
@@ -181,7 +181,7 @@ namespace MyGame
             public static void Save(int levelId, int id)
             {
                 string key = $"{_key}_{levelId}_{id}";
-                NutakuAPIInitializator.instance.PuarchaseService.MakeInventoryRequest(key, 1);
+                NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(key, 1);
                 //PlayerPrefs.SetInt($"{_key}_{levelId}_{id}", 1);
             }
 
@@ -229,7 +229,7 @@ namespace MyGame
                 //метод открытия девушки
 
                 string key = $"{_keyLevelOnRespect}_{id}";
-                NutakuAPIInitializator.instance.PuarchaseService.MakeInventoryRequest(key, 1);
+                NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(key, 1);
             }
 
             public static bool IsOpened(int id)
