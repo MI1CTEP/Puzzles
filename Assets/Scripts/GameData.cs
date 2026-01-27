@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace MyGame
@@ -11,10 +12,18 @@ namespace MyGame
         public static class Respect
         {
             private static readonly string _key = "Respect";
+            private static int _loadedValue;
+            private static bool _isSaved;
 
             public static void Add(int value)
-            {              
+            {
+                if (!_isSaved)
+                {
+                    _loadedValue = Load();
+                    _isSaved = true;
+                }
                 NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(_key, value);
+                _loadedValue += value;
 
                 //int currentValue = Load();
                 //PlayerPrefs.SetInt(_key, currentValue + value);
@@ -22,7 +31,10 @@ namespace MyGame
 
             public static int Load()
             {
-                return NutakuAPIInitializator.instance.PuarchaseService.GetOpenedPartsValue(_key);
+                if (_isSaved)
+                    return _loadedValue;
+                else
+                    return NutakuAPIInitializator.instance.PuarchaseService.GetOpenedPartsValue(_key);
 
                 //return PlayerPrefs.GetInt(_key);
             }
@@ -34,14 +46,30 @@ namespace MyGame
         public static class Sympathy
         {
             private static readonly string _key = "Sympathy_";
+            private static List<int> _loadedValue = new();
+            private static List<bool> _isSaved = new();
 
             public static void Save(int id, int value)
             {
+                if(_loadedValue.Count <= id)
+                {
+                    for (int i = _loadedValue.Count; i <= id; i++)
+                    {
+                        _loadedValue.Add(0);
+                        _isSaved.Add(false);
+                    }
+                }
+
                 string key = _key + id.ToString();
                 float currentValue = Load(id);
                 if (currentValue < value)
                 {
+                    if (!_isSaved[id])
+                    {
+                        _isSaved[id] = true;
+                    }
                     NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(key, value);
+                    _loadedValue[id] = value;
                 }
 
 
@@ -52,8 +80,15 @@ namespace MyGame
 
             public static int Load(int id)
             {
-                string key = _key + id.ToString();
-                return NutakuAPIInitializator.instance.PuarchaseService.GetOpenedPartsValue(key);
+                if (_isSaved[id]) 
+                {
+                    return _loadedValue[id];
+                }
+                else
+                {
+                    string key = _key + id.ToString();
+                    return NutakuAPIInitializator.instance.PuarchaseService.GetOpenedPartsValue(key);
+                }
                 //return PlayerPrefs.GetInt(_key + id.ToString());
             }
 
@@ -63,11 +98,39 @@ namespace MyGame
         //Это подарки
         public static class Gifts
         {
+            private static List<List<int>> _loadedValue = new();
+            private static List<List<bool>> _isSaved = new();
+
             //Оставить вызов где он как подарок. Убрать/Переделать где как покупка. Что за groupId?
             public static void AddValue(int groupId, int id, int value)
             {
                 //int currentValue = LoadValue(groupId, id);
+
+                if (_loadedValue.Count <= groupId)
+                {
+                    for (int i = _loadedValue.Count; i <= groupId; i++)
+                    {
+                        _loadedValue.Add(new());
+                        _isSaved.Add(new());
+                    }
+                }
+                if (_loadedValue[groupId].Count <= id)
+                {
+                    for (int i = _loadedValue[groupId].Count; i <= id; i++)
+                    {
+                        _loadedValue[groupId].Add(0);
+                        _isSaved[groupId].Add(false);
+                    }
+                }
+
+                if (!_isSaved[groupId][id])
+                {
+                    _loadedValue[groupId][id] = LoadValue(groupId, id);
+                    _isSaved[groupId][id] = true;
+                }
+
                 NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(GetKey(groupId, id), value);
+                _loadedValue[groupId][id] += value;
 
                 //int currentValue = LoadValue(groupId, id);
                 //PlayerPrefs.SetInt(GetKey(groupId, id), currentValue + value);
@@ -76,8 +139,15 @@ namespace MyGame
 
             public static int LoadValue(int groupId, int id)
             {
-                string key = GetKey(groupId, id);
-                return NutakuAPIInitializator.instance.PuarchaseService.GetOpenedPartsValue(key);
+                if (_isSaved[groupId][id])
+                {
+                    return _loadedValue[groupId][id];
+                }
+                else
+                {
+                    string key = GetKey(groupId, id);
+                    return NutakuAPIInitializator.instance.PuarchaseService.GetOpenedPartsValue(key);
+                }
                 //return PlayerPrefs.GetInt(GetKey(groupId, id));
             }
 
@@ -85,7 +155,7 @@ namespace MyGame
             private static string GetKey(int groupId, int id) => $"QuantityGift_{groupId}_{id}";
         }
 
-
+        //В диалогах можно не дублировать сохранения в локальные переменные, так как данные будут нужны только после перезапуска уровня
         public static class Dialogues
         {
             private static readonly string _key = "Dialogue";
@@ -113,9 +183,9 @@ namespace MyGame
         public static class ExtraLevel
         {
             public static Vector2Int PartSize { get; } = new(7, 9);
-            public static float ChanceEasy { get; } = 1f;
-            public static float ChanceMedium { get; } = 1f;
-            public static float ChanceHard { get; } = 1f;
+            public static float ChanceEasy { get; } = 0.1f;
+            public static float ChanceMedium { get; } = 0.15f;
+            public static float ChanceHard { get; } = 0.2f;
 
             private static readonly string _keyOpenedParts = "ExtraLevelOpenedParts";
             private static readonly string _keyPart = "ExtraLevelPart";
@@ -216,6 +286,8 @@ namespace MyGame
         //Девушки
         public static class Levels
         {
+            private static List<bool> _loadedValue = new();
+            private static List<bool> _isSaved = new();
             private static readonly string _key = "Level";
             private static readonly string _keyAll = "LevelsAll";
 
@@ -223,19 +295,37 @@ namespace MyGame
 
             public static void SetOpened(int id)
             {
+                if (_loadedValue.Count <= id)
+                {
+                    for (int i = _loadedValue.Count; i <= id; i++)
+                    {
+                        _loadedValue.Add(false);
+                        _isSaved.Add(false);
+                    }
+                }
                 //Спросить Вову в каком это моменте?
                 //Это эксернал открытие? Нет ЭТО ОТКРЫТИЕ ВЫЗЫВАЕТСЯ ПО ДОСТИЖЕНИИ ОПРЕДЕЛЕННОГО КОЛИЧЕСТВА РЕСПЕКТА
                 PlayerPrefs.SetInt($"{_key}_{id}", 1);
                 //метод открытия девушки
 
+                if (!_isSaved[id])
+                {
+                    _loadedValue[id] = IsOpened(id);
+                    _isSaved[id] = true;
+                }
+
                 string key = $"{_keyLevelOnRespect}_{id}";
                 NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(key, 1);
+                _loadedValue[id] = true;
             }
 
             public static bool IsOpened(int id)
             {
                 //вот тут проверяем открыта ли девушка по индексу
-                return NutakuAPIInitializator.instance.PuarchaseService.IsAvaliableShowGirl(id);
+                if (_isSaved[id])
+                    return _loadedValue[id];
+                else
+                    return NutakuAPIInitializator.instance.PuarchaseService.IsAvaliableShowGirl(id);
 
                 //return PlayerPrefs.GetInt($"{_key}_{id}") == 1;
             }
