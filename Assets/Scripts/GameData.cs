@@ -6,45 +6,85 @@ namespace MyGame
     {
         public static int CurrentLevel { get; set; }
 
+
+        //Это валюта, за которую открываются уровни. Зарабатывается при прохождении.
         public static class Respect
         {
             private static readonly string _key = "Respect";
 
             public static void Add(int value)
             {
-                int currentValue = Load();
-                PlayerPrefs.SetInt(_key, currentValue + value);
+                NutakuAPIInitializator.instance.PuarchaseService.MakeInventoryRequest(_key, value);
+
+                //int currentValue = Load();
+                //PlayerPrefs.SetInt(_key, currentValue + value);
             }
 
-            public static int Load() => PlayerPrefs.GetInt(_key);
+            public static int Load()
+            {
+                return NutakuAPIInitializator.instance.PuarchaseService.GetOpenedPartsValue(_key);
+
+                //return PlayerPrefs.GetInt(_key);
+            }
+
         }
 
+
+        // Уровень симпатии девушек. id - это девушка.
         public static class Sympathy
         {
             private static readonly string _key = "Sympathy_";
 
             public static void Save(int id, int value)
             {
+                string key = _key + id.ToString();
                 float currentValue = Load(id);
                 if (currentValue < value)
-                    PlayerPrefs.SetInt(_key + id.ToString(), value);
+                {
+                    NutakuAPIInitializator.instance.PuarchaseService.MakeInventoryRequest(key, value);
+                }
+
+
+                //float currentValue = Load(id);
+                //if (currentValue < value)
+                //    PlayerPrefs.SetInt(_key + id.ToString(), value);
             }
 
-            public static int Load(int id) => PlayerPrefs.GetInt(_key + id.ToString());
+            public static int Load(int id)
+            {
+                string key = _key + id.ToString();
+                return NutakuAPIInitializator.instance.PuarchaseService.GetOpenedPartsValue(key);
+                //return PlayerPrefs.GetInt(_key + id.ToString());
+            }
+
         }
 
+
+        //Это подарки
         public static class Gifts
         {
+            //Оставить вызов где он как подарок. Убрать/Переделать где как покупка. Что за groupId?
             public static void AddValue(int groupId, int id, int value)
             {
-                int currentValue = LoadValue(groupId, id);
-                PlayerPrefs.SetInt(GetKey(groupId, id), currentValue + value);
+                //int currentValue = LoadValue(groupId, id);
+                NutakuAPIInitializator.instance.PuarchaseService.MakeInventoryRequest(GetKey(groupId, id), value);
+
+                //int currentValue = LoadValue(groupId, id);
+                //PlayerPrefs.SetInt(GetKey(groupId, id), currentValue + value);
             }
 
-            public static int LoadValue(int groupId, int id) => PlayerPrefs.GetInt(GetKey(groupId, id));
+
+            public static int LoadValue(int groupId, int id)
+            {
+                string key = GetKey(groupId, id);
+                return NutakuAPIInitializator.instance.PuarchaseService.GetOpenedPartsValue(key);
+                //return PlayerPrefs.GetInt(GetKey(groupId, id));
+            }
+
 
             private static string GetKey(int groupId, int id) => $"QuantityGift_{groupId}_{id}";
         }
+
 
         public static class Dialogues
         {
@@ -52,15 +92,24 @@ namespace MyGame
 
             public static void Unlock(int levelId, int dialogueId, int positionId)
             {
-                PlayerPrefs.SetInt($"{_key}_{levelId}_{dialogueId}_{positionId}", 1);
+                string key = $"{_key}_{levelId}_{dialogueId}_{positionId}";
+                NutakuAPIInitializator.instance.PuarchaseService.MakeInventoryRequest(key, 1);
+
+                //PlayerPrefs.SetInt($"{_key}_{levelId}_{dialogueId}_{positionId}", 1);
             }
 
             public static bool IsUnlock(int levelId, int dialogueId, int positionId)
             {
-                return PlayerPrefs.GetInt($"{_key}_{levelId}_{dialogueId}_{positionId}") == 1;
+
+                string key = $"{_key}_{levelId}_{dialogueId}_{positionId}";
+                return NutakuAPIInitializator.instance.PuarchaseService.IsHasDialogues(key);
+
+                //return PlayerPrefs.GetInt($"{_key}_{levelId}_{dialogueId}_{positionId}") == 1;
             }
         }
 
+
+        //Это последняя картинка/уровень, глабальная цель игры. ЕЕ купить нельзя.
         public static class ExtraLevel
         {
             public static Vector2Int PartSize { get; } = new(7, 9);
@@ -74,48 +123,79 @@ namespace MyGame
 
             public static void UnlockPart(int partId)
             {
-                PlayerPrefs.SetInt($"{_keyPart}_{partId}", 1);
+                string keyPart = $"{_keyPart}_{partId}";
+                NutakuAPIInitializator.instance.PuarchaseService.MakeInventoryRequest(keyPart, 1);
                 int openedParts = GetOpenedPartsValue();
-                PlayerPrefs.SetInt(_keyOpenedParts, openedParts + 1);
+                NutakuAPIInitializator.instance.PuarchaseService.MakeInventoryRequest(_keyOpenedParts, openedParts + 1);
+
+                //PlayerPrefs.SetInt($"{_keyPart}_{partId}", 1);
+                //int openedParts = GetOpenedPartsValue();
+                //PlayerPrefs.SetInt(_keyOpenedParts, openedParts + 1);
             }
 
             public static bool IsUnlockPart(int partId)
             {
-                return PlayerPrefs.GetInt($"{_keyPart}_{partId}") == 1;
+                string key = $"{_keyPart}_{partId}";
+                return NutakuAPIInitializator.instance.PuarchaseService.IsUnlockPartExtraLevel(key);
+                //return PlayerPrefs.GetInt($"{_keyPart}_{partId}") == 1;
             }
 
-            public static int GetOpenedPartsValue() => PlayerPrefs.GetInt(_keyOpenedParts);
+            public static int GetOpenedPartsValue()
+            {
+                return NutakuAPIInitializator.instance.PuarchaseService.GetOpenedPartsValue(_keyOpenedParts);
+                //return PlayerPrefs.GetInt(_keyOpenedParts);
+            }
 
+
+            // !!!!!!!!!!!!!  Если этот сброс вобще нужен. Вот тут цикл надо переделать. Слишком долгая логика, переберает и запрашивает все данные и еще и записывает. Например узнать есть ли максимальное количество. Или завсести отдельный ключ, если все открыто!!!!!!
             public static void UnlockLevel()
             {
                 int unlockedLevel = UnlockedLevels();
-                PlayerPrefs.SetInt(_keyLevel, unlockedLevel + 1);
-                for (int i = 0; ; i++)
-                {
-                    if (PlayerPrefs.HasKey($"{_keyPart}_{i}"))
-                        PlayerPrefs.SetInt($"{_keyPart}_{i}", 0);
-                    else break;
-                }
+                NutakuAPIInitializator.instance.PuarchaseService.MakeInventoryRequest(_keyLevel, unlockedLevel + 1);
+                
+
+                //int unlockedLevel = UnlockedLevels();
+                //PlayerPrefs.SetInt(_keyLevel, unlockedLevel + 1);
+                //for (int i = 0; ; i++)
+                //{
+                //    if (PlayerPrefs.HasKey($"{_keyPart}_{i}"))
+                //        PlayerPrefs.SetInt($"{_keyPart}_{i}", 0);
+                //    else break;
+                //}
             }
 
-            public static int UnlockedLevels() => PlayerPrefs.GetInt(_keyLevel);
+            public static int UnlockedLevels()
+            {
+                return NutakuAPIInitializator.instance.PuarchaseService.GetOpenedPartsValue(_keyLevel);
+                //return PlayerPrefs.GetInt(_keyLevel);
+            }
+
         }
 
+        //Это достижения за которые открываются элементы секретного альбома. levelId - это номер девки, id - это номер достижения.
+        //В инвентаре у пользователя должен оказатся данный элемент
         public static class Achievements
         {
             private static readonly string _key = "Achievement";
 
             public static void Save(int levelId, int id)
             {
-                PlayerPrefs.SetInt($"{_key}_{levelId}_{id}", 1);
+                string key = $"{_key}_{levelId}_{id}";
+                NutakuAPIInitializator.instance.PuarchaseService.MakeInventoryRequest(key, 1);
+                //PlayerPrefs.SetInt($"{_key}_{levelId}_{id}", 1);
             }
 
             public static bool IsUnlock(int levelId, int id)
             {
-                return PlayerPrefs.GetInt($"{_key}_{levelId}_{id}") == 1;
+                string key = $"{_key}_{levelId}_{id}";
+
+                return NutakuAPIInitializator.instance.PuarchaseService.IsHasAchievements(key);
+               // return PlayerPrefs.GetInt($"{_key}_{levelId}_{id}") == 1;
             }
         }
 
+
+        //Дополнительные уровни у каждой девушки
         public static class PaidContent
         {
             private static readonly string _key = "PaidContent";
@@ -127,33 +207,50 @@ namespace MyGame
 
             public static bool IsUnlock(int id)
             {
-                return PlayerPrefs.GetInt($"{_key}_{id}") == 1;
+               // return PlayerPrefs.GetInt($"{_key}_{id}") == 1;
+                return NutakuAPIInitializator.instance.PuarchaseService.IsAvaliableBonusStage(id);
             }
         }
 
+
+        //Девушки
         public static class Levels
         {
             private static readonly string _key = "Level";
             private static readonly string _keyAll = "LevelsAll";
 
+            private static readonly string _keyLevelOnRespect = "keyLevelOnRespect";
+
             public static void SetOpened(int id)
             {
+                //Спросить Вову в каком это моменте?
+                //Это эксернал открытие? Нет ЭТО ОТКРЫТИЕ ВЫЗЫВАЕТСЯ ПО ДОСТИЖЕНИИ ОПРЕДЕЛЕННОГО КОЛИЧЕСТВА РЕСПЕКТА
                 PlayerPrefs.SetInt($"{_key}_{id}", 1);
+                //метод открытия девушки
+
+                string key = $"{_keyLevelOnRespect}_{id}";
+                NutakuAPIInitializator.instance.PuarchaseService.MakeInventoryRequest(key, 1);
             }
 
             public static bool IsOpened(int id)
             {
-                return PlayerPrefs.GetInt($"{_key}_{id}") == 1;
+                //вот тут проверяем открыта ли девушка по индексу
+                return NutakuAPIInitializator.instance.PuarchaseService.IsAvaliableShowGirl(id);
+
+                //return PlayerPrefs.GetInt($"{_key}_{id}") == 1;
             }
 
             public static void OpenAll()
             {
                 PlayerPrefs.SetInt(_keyAll, 1);
+                //метод открытия всех девушек
             }
 
             public static bool IsOpenedAll()
             {
-                return PlayerPrefs.GetInt(_keyAll) == 1;
+                //вот тут проверяем открыта ли все девушки
+                //return PlayerPrefs.GetInt(_keyAll) == 1;
+                return NutakuAPIInitializator.instance.PuarchaseService.IsAvaliableAllShowGirls();
             }
         }
     }

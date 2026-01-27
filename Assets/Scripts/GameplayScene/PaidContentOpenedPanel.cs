@@ -33,9 +33,14 @@ namespace MyGame.Gameplay
 
         private void Buy()
         {
-            
-            GameData.PaidContent.Save(GameData.CurrentLevel);
-            Close();
+
+            //GameData.PaidContent.Save(GameData.CurrentLevel);
+
+            var itemShop = NutakuAPIInitializator.instance.PuarchaseService.GetShopItemBonusStage(GameData.CurrentLevel);
+            NutakuAPIInitializator.instance.PuarchaseService.PurchaseItem(itemShop);
+
+
+           // Close();
         }
 
         private void Close()

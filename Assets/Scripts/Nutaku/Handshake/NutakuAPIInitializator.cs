@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NutakuAPIInitializator : MonoBehaviour
 {
@@ -54,7 +55,22 @@ public class NutakuAPIInitializator : MonoBehaviour
 
 
 
-        StartCoroutine(Test());
+       // StartCoroutine(Test());
+
+    }
+
+
+    private IEnumerator LoadGame()
+    {
+        PuarchaseService.LoadShopItems();
+
+       // yield return StartCoroutine(PuarchaseService.MakeInventoryRequest("sku_testing", 5));
+       // yield return StartCoroutine(PuarchaseService.GetCurrentQuantityAndUpdate("sku_testing", 2));
+
+        PuarchaseService.LoadInventory();
+
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("InitScene");
 
     }
 
@@ -62,10 +78,22 @@ public class NutakuAPIInitializator : MonoBehaviour
     {
 
         yield return new WaitForSeconds(4);
-        PuarchaseService.LoadShopItems();
-        yield return new WaitForSeconds(2);
-        _uIShopController.CreateItems(PuarchaseService.GetShopItemsFromCategory("bonus_stage"), PuarchaseService.PurchaseItem);
+        //PuarchaseService.LoadShopItems();
+        //yield return new WaitForSeconds(2);
+        //_uIShopController.CreateItems(PuarchaseService.GetShopItemsFromCategory("show_girl"), PuarchaseService.PurchaseItem);
+        //yield return new WaitForSeconds(2);
+        //_uIShopController.gameObject.SetActive(true);
 
+        PuarchaseService.LoadInventory();
+
+        yield return new WaitForSeconds(2);
+
+        PuarchaseService.GetAllAvailableShowGirls();
+
+        var res2 = PuarchaseService.IsAvaliableShowGirl(2);
+        var res3 = PuarchaseService.IsAvaliableShowGirl(3);
+        Debug.Log($" 2 -  {res2}");
+        Debug.Log($" 3 -  {res3}");
     }
 
 
@@ -133,9 +161,12 @@ public class NutakuAPIInitializator : MonoBehaviour
                             if (handshakeResponse != null && handshakeResponse.status == "success")
                             {
                                 _sessionToken = handshakeResponse.session_token;
-                                Debug.Log("Game Handshake successful!");                             
+                                Debug.Log("Game Handshake successful!");
 
                                 // Загружаем сцену с игрой или даем досмтуп к игре
+
+
+                                StartCoroutine(LoadGame());
                             }
                             else //Ошибка в сверке сессии
                             {
