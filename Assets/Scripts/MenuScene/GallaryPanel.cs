@@ -9,7 +9,6 @@ namespace MyGame.Menu
 {
     public sealed class GallaryPanel : MenuPanel
     {
-        [SerializeField] private UIEnergyTimer _uIEnergyTimer;
         [SerializeField] private UpInfoPanel _upInfoPanel;
         [SerializeField] private Image _contentImage;
         [SerializeField] private SympathyPanel _sympathyPanel;
@@ -58,7 +57,6 @@ namespace MyGame.Menu
 
         protected override void OnStartShow() 
         {
-            _uIEnergyTimer.AnimateShow();
             SetStartColor();
         }
 
@@ -77,7 +75,6 @@ namespace MyGame.Menu
 
         protected override void OnHide()
         {
-            _uIEnergyTimer.AnimateHide();
             _upInfoPanel.SetActive(false);
             _buttonPrevious.Hide();
             _buttonNext.Hide();
