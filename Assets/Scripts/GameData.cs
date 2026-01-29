@@ -80,7 +80,7 @@ namespace MyGame
 
             public static int Load(int id)
             {
-                if (_isSaved[id]) 
+                if (_isSaved.Count > id && _isSaved[id]) 
                 {
                     return _loadedValue[id];
                 }
@@ -139,7 +139,7 @@ namespace MyGame
 
             public static int LoadValue(int groupId, int id)
             {
-                if (_isSaved[groupId][id])
+                if (_isSaved.Count > groupId && _isSaved[groupId].Count > id && _isSaved[groupId][id])
                 {
                     return _loadedValue[groupId][id];
                 }
@@ -322,7 +322,7 @@ namespace MyGame
             public static bool IsOpened(int id)
             {
                 //вот тут проверяем открыта ли девушка по индексу
-                if (_isSaved[id])
+                if (_isSaved.Count > id && _isSaved[id])
                     return _loadedValue[id];
                 else
                     return NutakuAPIInitializator.instance.PuarchaseService.IsAvaliableShowGirl(id);
