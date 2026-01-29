@@ -1342,7 +1342,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 269.9975}
+  m_AnchoredPosition: {x: 0, y: 200}
   m_SizeDelta: {x: 600, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &318882396
@@ -4915,7 +4915,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -270.0025}
+  m_AnchoredPosition: {x: 0, y: -200}
   m_SizeDelta: {x: 600, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &970330650
@@ -6600,169 +6600,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1347542156}
   m_CullTransparentMesh: 1
---- !u!114 &1349046835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 481ab606793a67349be805c13febeba0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mTarget: {fileID: 1525471163}
-  mAlignment_RTL: 514
-  mAlignment_LTR: 514
-  mAlignmentWasRTL: 0
-  mInitializeAlignment: 0
---- !u!1 &1359686021
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1359686022}
-  - component: {fileID: 1359686025}
-  - component: {fileID: 1359686024}
-  - component: {fileID: 1359686023}
-  - component: {fileID: 1359686026}
-  m_Layer: 5
-  m_Name: ButtonMenuStore
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1359686022
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1359686021}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1525471162}
-  m_Father: {fileID: 1606820561}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 89.9975}
-  m_SizeDelta: {x: 600, y: 140}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1359686023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1359686021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1359686024}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 194005990}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: PlayButtonClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1359686024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1359686021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8cc9538a229cadc45aaf7d6208baa33b, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1.2
---- !u!222 &1359686025
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1359686021}
-  m_CullTransparentMesh: 1
---- !u!114 &1359686026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1359686021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6512ed3be91ba02459d08dbdca16e743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1386870362
 GameObject:
   m_ObjectHideFlags: 0
@@ -6839,6 +6676,7 @@ MonoBehaviour:
     it: Per sbloccare la carta, completa un livello!
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u30B9\u30C6\u30FC\u30B8\u3092\u30AF\u30EA\u30A2\u3057\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, complete um n\xEDvel!"
+    es: 
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u0440\u043E\u0439\u0434\u0438\u0442\u0435 \u0432\u0441\u0435 \u044D\u0442\u0430\u043F\u044B
       \u043F\u0430\u0437\u043B\u0430 \u043D\u0430 \u043B\u0435\u0433\u043A\u043E\u043C
@@ -6858,6 +6696,7 @@ MonoBehaviour:
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u7C21\u5358\u96E3\u6613\u5EA6\u306E\u30D1\u30BA\u30EB\u306E\u3059\u3079\u3066\u306E\u30B9\u30C6\u30C3\u30D7\u3092\u30AF\u30EA\u30A2\u3057\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, complete todas as fases do quebra\u2011cabe\xE7a
       em dificuldade f\xE1cil!"
+    es: 
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u043E\u0434\u0430\u0440\u0438\u0442\u0435 \u043F\u0440\u043E\u0441\u0442\u043E\u0439
       \u043F\u043E\u0434\u0430\u0440\u043E\u043A!"
@@ -6871,6 +6710,7 @@ MonoBehaviour:
     it: Per sbloccare la carta, regala un dono semplice!
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u30B7\u30F3\u30D7\u30EB\u306A\u30D7\u30EC\u30BC\u30F3\u30C8\u3092\u8D08\u3063\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, ofere\xE7a um presente simples!"
+    es: 
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u043E\u0434\u0430\u0440\u0438\u0442\u0435 \u0445\u043E\u0440\u043E\u0448\u0438\u0439
       \u043F\u043E\u0434\u0430\u0440\u043E\u043A!"
@@ -6884,6 +6724,7 @@ MonoBehaviour:
     it: Per sbloccare la carta, regala un dono buono!
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u826F\u3044\u30D7\u30EC\u30BC\u30F3\u30C8\u3092\u8D08\u3063\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, ofere\xE7a um bom presente!"
+    es: 
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u0440\u043E\u0439\u0434\u0438\u0442\u0435 \u0432\u0441\u0435 \u044D\u0442\u0430\u043F\u044B
       \u043F\u0430\u0437\u043B\u0430 \u043D\u0430 \u0441\u0440\u0435\u0434\u043D\u0435\u043C
@@ -6903,6 +6744,7 @@ MonoBehaviour:
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u666E\u901A\u96E3\u6613\u5EA6\u306E\u30D1\u30BA\u30EB\u306E\u3059\u3079\u3066\u306E\u30B9\u30C6\u30C3\u30D7\u3092\u30AF\u30EA\u30A2\u3057\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, complete todas as fases do quebra\u2011cabe\xE7a
       em dificuldade m\xE9dia!"
+    es: 
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u043E\u0434\u0430\u0440\u0438\u0442\u0435 \u0446\u0435\u043D\u043D\u044B\u0439
       \u043F\u043E\u0434\u0430\u0440\u043E\u043A!"
@@ -6916,6 +6758,7 @@ MonoBehaviour:
     it: Per sbloccare la carta, regala un dono prezioso!
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u4FA1\u5024\u306E\u3042\u308B\u30D7\u30EC\u30BC\u30F3\u30C8\u3092\u8D08\u3063\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, ofere\xE7a um presente valioso!"
+    es: 
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u0440\u043E\u0439\u0434\u0438\u0442\u0435 \u0443\u0440\u043E\u0432\u0435\u043D\u044C
       \u043D\u0430 \u043C\u0438\u043D\u0438\u043C\u0430\u043B\u044C\u043D\u044B\u0439
@@ -6935,6 +6778,7 @@ MonoBehaviour:
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u597D\u611F\u5EA6\u304C\u6700\u3082\u4F4E\u3044\u30B9\u30C6\u30FC\u30B8\u3092\u30AF\u30EA\u30A2\u3057\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, complete um n\xEDvel com o n\xEDvel de simpatia
       mais baixo!"
+    es: 
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u0440\u043E\u0439\u0434\u0438\u0442\u0435 \u0432\u0441\u0435 \u044D\u0442\u0430\u043F\u044B
       \u043F\u0430\u0437\u043B\u0430 \u043D\u0430 \u0432\u044B\u0441\u043E\u043A\u043E\u043C
@@ -6954,6 +6798,7 @@ MonoBehaviour:
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u96E3\u3057\u3044\u96E3\u6613\u5EA6\u306E\u30D1\u30BA\u30EB\u306E\u3059\u3079\u3066\u306E\u30B9\u30C6\u30C3\u30D7\u3092\u30AF\u30EA\u30A2\u3057\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, complete todas as fases do quebra\u2011cabe\xE7a
       em dificuldade alta!"
+    es: 
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u0440\u043E\u0439\u0434\u0438\u0442\u0435 \u0443\u0440\u043E\u0432\u0435\u043D\u044C
       \u043D\u0430 \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u044B\u0439
@@ -6973,6 +6818,7 @@ MonoBehaviour:
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u597D\u611F\u5EA6\u304C\u6700\u3082\u9AD8\u3044\u30B9\u30C6\u30FC\u30B8\u3092\u30AF\u30EA\u30A2\u3057\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, complete um n\xEDvel com o n\xEDvel de simpatia
       mais alto!"
+    es: 
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u043E\u0434\u0430\u0440\u0438\u0442\u0435 \u0434\u043E\u0440\u043E\u0433\u043E\u0439
       \u043F\u043E\u0434\u0430\u0440\u043E\u043A!"
@@ -6986,6 +6832,7 @@ MonoBehaviour:
     it: Per sbloccare la carta, regala un dono costoso!
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u9AD8\u4FA1\u306A\u30D7\u30EC\u30BC\u30F3\u30C8\u3092\u8D08\u3063\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, ofere\xE7a um presente caro!"
+    es: 
 --- !u!1 &1406144748
 GameObject:
   m_ObjectHideFlags: 0
@@ -8378,180 +8225,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1518429868}
   m_CullTransparentMesh: 1
---- !u!1 &1525471161
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1525471162}
-  - component: {fileID: 1525471164}
-  - component: {fileID: 1525471163}
-  - component: {fileID: 1525471165}
-  m_Layer: 5
-  m_Name: Text (TMP)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1525471162
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1525471161}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1359686022}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0}
-  m_SizeDelta: {x: -0.000061035, y: 0.000030518}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1525471163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1525471161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 0
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: "\u041C\u0430\u0433\u0430\u0437\u0438\u043D"
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d4746cb56423d4b5585dae5316474213, type: 2}
-  m_sharedMaterial: {fileID: -3574791938638594096, guid: d4746cb56423d4b5585dae5316474213, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 0
-  m_fontSizeMax: 300
-  m_fontStyle: 17
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 0
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1525471164
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1525471161}
-  m_CullTransparentMesh: 1
---- !u!114 &1525471165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1525471161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mTerm: "\u041C\u0430\u0433\u0430\u0437\u0438\u043D"
-  mTermSecondary: 
-  PrimaryTermModifier: 0
-  SecondaryTermModifier: 0
-  TermPrefix: 
-  TermSuffix: 
-  LocalizeOnAwake: 1
-  IgnoreRTL: 0
-  MaxCharactersInRTL: 0
-  IgnoreNumbersInRTL: 1
-  CorrectAlignmentForRTL: 1
-  AddSpacesToJoinedLanguages: 0
-  AllowLocalizedParameters: 1
-  AllowParameters: 1
-  TranslatedObjects: []
-  LocalizeEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  AlwaysForceLocalize: 0
-  LocalizeCallBack:
-    Target: {fileID: 0}
-    MethodName: 
-  mGUI_ShowReferences: 0
-  mGUI_ShowTems: 1
-  mGUI_ShowCallback: 0
-  mLocalizeTarget: {fileID: 1349046835}
-  mLocalizeTargetName: I2.Loc.LocalizeTarget_TextMeshPro_UGUI
 --- !u!1 &1543093328
 GameObject:
   m_ObjectHideFlags: 0
@@ -9059,15 +8732,14 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 318882395}
-  - {fileID: 1359686022}
   - {fileID: 1891918934}
   - {fileID: 970330649}
   m_Father: {fileID: 1835602263}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.21, y: 0.0000019073}
-  m_SizeDelta: {x: 800, y: 900}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 800, y: 750}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1606820563
 MonoBehaviour:
@@ -9121,7 +8793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rectTransformBackground: {fileID: 1606820561}
   _buttonGallary: {fileID: 318882399}
-  _buttonStore: {fileID: 1359686026}
+  _buttonStore: {fileID: 0}
   _buttonSettings: {fileID: 1891918938}
   _buttonExit: {fileID: 970330653}
 --- !u!114 &1608961338
@@ -10615,7 +10287,7 @@ MonoBehaviour:
   shrinkDuration: 0.3
   menuGroup:
     buttons:
-    - {fileID: 1359686023}
+    - {fileID: 0}
     - {fileID: 318882396}
     - {fileID: 1891918935}
     - {fileID: 970330650}
@@ -10806,7 +10478,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -90.0025}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 600, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1891918935

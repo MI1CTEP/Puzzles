@@ -140,6 +140,11 @@ namespace MyGame.Gameplay
             }
         }
 
+        public void LoadMenu()
+        {
+            SceneLoader.LoadMenu();
+        }
+
         private void OnDestroy()
         {
             TryStopLastStage();

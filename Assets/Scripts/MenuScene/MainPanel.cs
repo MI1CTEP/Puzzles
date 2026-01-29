@@ -7,7 +7,6 @@ namespace MyGame.Menu
     public sealed class MainPanel : MenuPanel
     {
         [SerializeField] private MenuButton _buttonGallary;
-        [SerializeField] private MenuButton _buttonStore;
         [SerializeField] private MenuButton _buttonSettings;
         [SerializeField] private MenuButton _buttonExit;
 
@@ -21,7 +20,6 @@ namespace MyGame.Menu
             _rectTransform.sizeDelta = Vector2.zero;
 
             _buttonGallary.Init(onShowGallaryPanel);
-            _buttonStore.Init(null);
             _buttonSettings.Init(onShowSettingsPanel);
             _buttonExit.Init(null);
 
@@ -34,7 +32,6 @@ namespace MyGame.Menu
         {
             _seq = DOTween.Sequence();
             _seq.InsertCallback(0, _buttonGallary.Show);
-            _seq.InsertCallback(0.1f, _buttonStore.Show);
             _seq.InsertCallback(0.2f, _buttonSettings.Show);
             _seq.InsertCallback(0.3f, _buttonExit.Show);
         }
@@ -43,7 +40,6 @@ namespace MyGame.Menu
         {
             _seq.InsertCallback(0, _buttonExit.Hide);
             _seq.InsertCallback(0.1f, _buttonSettings.Hide);
-            _seq.InsertCallback(0.2f, _buttonStore.Hide);
             _seq.InsertCallback(0.3f, _buttonGallary.Hide);
         }
     }
