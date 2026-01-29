@@ -46,14 +46,21 @@ namespace MyGame.Menu
 
         private void OpenLevel()
         {
-            GameData.Levels.SetOpened(GameData.CurrentLevel);
-            _onShowGallaryPanel?.Invoke();
+            //Debug.Log(GameData.CurrentLevel);
+            var itemShop = NutakuAPIInitializator.instance.PuarchaseService.GetShopItemShowGirl(GameData.CurrentLevel);
+            NutakuAPIInitializator.instance.PuarchaseService.PurchaseItem(itemShop);
+
+            //GameData.Levels.SetOpened(GameData.CurrentLevel);
+            //_onShowGallaryPanel?.Invoke();
         }
 
         private void OpenAll()
         {
-            GameData.Levels.OpenAll();
-            _onShowGallaryPanel?.Invoke();
+            var itemShop = NutakuAPIInitializator.instance.PuarchaseService.GetShopItemShowGirls();
+            NutakuAPIInitializator.instance.PuarchaseService.PurchaseItem(itemShop);
+
+            //GameData.Levels.OpenAll();
+            //_onShowGallaryPanel?.Invoke();
         }
     }
 }

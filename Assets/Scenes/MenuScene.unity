@@ -1401,7 +1401,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1797205554}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIEnergyTimer, Assembly-CSharp
         m_MethodName: AnimateShow
         m_Mode: 1
@@ -3685,7 +3685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481ab606793a67349be805c13febeba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTarget: {fileID: 1797011311}
+  mTarget: {fileID: 174699860}
   mAlignment_RTL: 514
   mAlignment_LTR: 514
   mAlignmentWasRTL: 0
@@ -6839,7 +6839,6 @@ MonoBehaviour:
     it: Per sbloccare la carta, completa un livello!
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u30B9\u30C6\u30FC\u30B8\u3092\u30AF\u30EA\u30A2\u3057\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, complete um n\xEDvel!"
-    es: "\xA1Para abrir la tarjeta, completa el nivel!"
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u0440\u043E\u0439\u0434\u0438\u0442\u0435 \u0432\u0441\u0435 \u044D\u0442\u0430\u043F\u044B
       \u043F\u0430\u0437\u043B\u0430 \u043D\u0430 \u043B\u0435\u0433\u043A\u043E\u043C
@@ -6859,8 +6858,6 @@ MonoBehaviour:
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u7C21\u5358\u96E3\u6613\u5EA6\u306E\u30D1\u30BA\u30EB\u306E\u3059\u3079\u3066\u306E\u30B9\u30C6\u30C3\u30D7\u3092\u30AF\u30EA\u30A2\u3057\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, complete todas as fases do quebra\u2011cabe\xE7a
       em dificuldade f\xE1cil!"
-    es: "\xA1Para abrir la tarjeta, completa todas las etapas del rompecabezas en
-      un nivel de dificultad f\xE1cil!"
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u043E\u0434\u0430\u0440\u0438\u0442\u0435 \u043F\u0440\u043E\u0441\u0442\u043E\u0439
       \u043F\u043E\u0434\u0430\u0440\u043E\u043A!"
@@ -6874,7 +6871,6 @@ MonoBehaviour:
     it: Per sbloccare la carta, regala un dono semplice!
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u30B7\u30F3\u30D7\u30EB\u306A\u30D7\u30EC\u30BC\u30F3\u30C8\u3092\u8D08\u3063\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, ofere\xE7a um presente simples!"
-    es: Para abrir la tarjeta, dar un simple regalo!
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u043E\u0434\u0430\u0440\u0438\u0442\u0435 \u0445\u043E\u0440\u043E\u0448\u0438\u0439
       \u043F\u043E\u0434\u0430\u0440\u043E\u043A!"
@@ -6888,7 +6884,6 @@ MonoBehaviour:
     it: Per sbloccare la carta, regala un dono buono!
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u826F\u3044\u30D7\u30EC\u30BC\u30F3\u30C8\u3092\u8D08\u3063\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, ofere\xE7a um bom presente!"
-    es: Para abrir la tarjeta, dar un buen regalo!
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u0440\u043E\u0439\u0434\u0438\u0442\u0435 \u0432\u0441\u0435 \u044D\u0442\u0430\u043F\u044B
       \u043F\u0430\u0437\u043B\u0430 \u043D\u0430 \u0441\u0440\u0435\u0434\u043D\u0435\u043C
@@ -6908,8 +6903,6 @@ MonoBehaviour:
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u666E\u901A\u96E3\u6613\u5EA6\u306E\u30D1\u30BA\u30EB\u306E\u3059\u3079\u3066\u306E\u30B9\u30C6\u30C3\u30D7\u3092\u30AF\u30EA\u30A2\u3057\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, complete todas as fases do quebra\u2011cabe\xE7a
       em dificuldade m\xE9dia!"
-    es: "\xA1Para abrir la tarjeta, completa todas las etapas del rompecabezas en
-      un nivel de dificultad promedio!"
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u043E\u0434\u0430\u0440\u0438\u0442\u0435 \u0446\u0435\u043D\u043D\u044B\u0439
       \u043F\u043E\u0434\u0430\u0440\u043E\u043A!"
@@ -6923,7 +6916,6 @@ MonoBehaviour:
     it: Per sbloccare la carta, regala un dono prezioso!
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u4FA1\u5024\u306E\u3042\u308B\u30D7\u30EC\u30BC\u30F3\u30C8\u3092\u8D08\u3063\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, ofere\xE7a um presente valioso!"
-    es: Para abrir la tarjeta, dar un regalo valioso!
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u0440\u043E\u0439\u0434\u0438\u0442\u0435 \u0443\u0440\u043E\u0432\u0435\u043D\u044C
       \u043D\u0430 \u043C\u0438\u043D\u0438\u043C\u0430\u043B\u044C\u043D\u044B\u0439
@@ -6943,7 +6935,6 @@ MonoBehaviour:
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u597D\u611F\u5EA6\u304C\u6700\u3082\u4F4E\u3044\u30B9\u30C6\u30FC\u30B8\u3092\u30AF\u30EA\u30A2\u3057\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, complete um n\xEDvel com o n\xEDvel de simpatia
       mais baixo!"
-    es: "\xA1Para abrir la tarjeta, completa el nivel al nivel m\xEDnimo de simpat\xEDa!"
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u0440\u043E\u0439\u0434\u0438\u0442\u0435 \u0432\u0441\u0435 \u044D\u0442\u0430\u043F\u044B
       \u043F\u0430\u0437\u043B\u0430 \u043D\u0430 \u0432\u044B\u0441\u043E\u043A\u043E\u043C
@@ -6963,8 +6954,6 @@ MonoBehaviour:
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u96E3\u3057\u3044\u96E3\u6613\u5EA6\u306E\u30D1\u30BA\u30EB\u306E\u3059\u3079\u3066\u306E\u30B9\u30C6\u30C3\u30D7\u3092\u30AF\u30EA\u30A2\u3057\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, complete todas as fases do quebra\u2011cabe\xE7a
       em dificuldade alta!"
-    es: "\xA1Para abrir la tarjeta, completa todas las etapas del rompecabezas en
-      un alto nivel de dificultad!"
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u0440\u043E\u0439\u0434\u0438\u0442\u0435 \u0443\u0440\u043E\u0432\u0435\u043D\u044C
       \u043D\u0430 \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u044B\u0439
@@ -6984,7 +6973,6 @@ MonoBehaviour:
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u597D\u611F\u5EA6\u304C\u6700\u3082\u9AD8\u3044\u30B9\u30C6\u30FC\u30B8\u3092\u30AF\u30EA\u30A2\u3057\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, complete um n\xEDvel com o n\xEDvel de simpatia
       mais alto!"
-    es: "\xA1Para abrir la tarjeta, completa el nivel al m\xE1ximo nivel de simpat\xEDa!"
   - ru: "\u0414\u043B\u044F \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u044F \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438
       \u043F\u043E\u0434\u0430\u0440\u0438\u0442\u0435 \u0434\u043E\u0440\u043E\u0433\u043E\u0439
       \u043F\u043E\u0434\u0430\u0440\u043E\u043A!"
@@ -6998,10 +6986,6 @@ MonoBehaviour:
     it: Per sbloccare la carta, regala un dono costoso!
     ja: "\u30AB\u30FC\u30C9\u3092\u89E3\u9664\u3059\u308B\u306B\u306F\u3001\u9AD8\u4FA1\u306A\u30D7\u30EC\u30BC\u30F3\u30C8\u3092\u8D08\u3063\u3066\u304F\u3060\u3055\u3044\uFF01"
     pt: "Para desbloquear o cart\xE3o, ofere\xE7a um presente caro!"
-    es: "\u0427\u0442\u043E\u0431\u044B \u043E\u0442\u043A\u0440\u044B\u0442\u044C
-      \u043A\u0430\u0440\u0442\u0443, \u043F\u0440\u043E\u0439\u0434\u0438\u0442\u0435
-      \u0443\u0440\u043E\u0432\u0435\u043D\u044C \u0434\u043E \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0433\u043E
-      \u0443\u0440\u043E\u0432\u043D\u044F \u0441\u0438\u043C\u043F\u0430\u0442\u0438\u0438!"
 --- !u!1 &1406144748
 GameObject:
   m_ObjectHideFlags: 0
@@ -8281,7 +8265,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -10, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1518429870
 MonoBehaviour:
@@ -8351,7 +8335,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -8631,23 +8615,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _valueImage: {fileID: 34090638}
   _valueText: {fileID: 1443305184}
---- !u!114 &1552635707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 481ab606793a67349be805c13febeba0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mTarget: {fileID: 1597172919}
-  mAlignment_RTL: 516
-  mAlignment_LTR: 513
-  mAlignmentWasRTL: 0
-  mInitializeAlignment: 1
 --- !u!1 &1555424225
 GameObject:
   m_ObjectHideFlags: 0
@@ -9060,132 +9027,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585105524}
   m_CullTransparentMesh: 1
---- !u!1001 &1597172915
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1835602263}
-    m_Modifications:
-    - target: {fileID: 1898933127788544197, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: mLocalizeTarget
-      value: 
-      objectReference: {fileID: 1552635707}
-    - target: {fileID: 2477983963998414065, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_Name
-      value: PopupEnergy
-      objectReference: {fileID: 0}
-    - target: {fileID: 2477983963998414065, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
---- !u!224 &1597172916 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3983504741887785195, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-  m_PrefabInstance: {fileID: 1597172915}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1597172917 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2477983963998414065, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-  m_PrefabInstance: {fileID: 1597172915}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1597172919 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8689497995092275594, guid: c04a1255ab4c146f19302b9e54945019, type: 3}
-  m_PrefabInstance: {fileID: 1597172915}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1606820560
 GameObject:
   m_ObjectHideFlags: 0
@@ -9356,7 +9197,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rectTransformBackground: {fileID: 1834700244}
-  _uIEnergyTimer: {fileID: 1797205554}
   _upInfoPanel: {fileID: 1326383839}
   _contentImage: {fileID: 1585105527}
   _sympathyPanel: {fileID: 1543093331}
@@ -10366,22 +10206,6 @@ MonoBehaviour:
   mGUI_ShowCallback: 0
   mLocalizeTarget: {fileID: 723312175}
   mLocalizeTargetName: I2.Loc.LocalizeTarget_TextMeshPro_UGUI
---- !u!224 &1797205553 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-  m_PrefabInstance: {fileID: 4057796905542532977}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1797205554 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2485334540919256094, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-  m_PrefabInstance: {fileID: 4057796905542532977}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9c488fab5c51416e80101b76a75e0bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1806395876
 GameObject:
   m_ObjectHideFlags: 0
@@ -10708,8 +10532,6 @@ RectTransform:
   - {fileID: 941985534}
   - {fileID: 1829816249}
   - {fileID: 1862443601}
-  - {fileID: 1797205553}
-  - {fileID: 1597172916}
   - {fileID: 1806395877}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13007,7 +12829,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1797205554}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIEnergyTimer, Assembly-CSharp
         m_MethodName: AnimateHide
         m_Mode: 1
@@ -13149,107 +12971,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1001 &4057796905542532977
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1835602263}
-    m_Modifications:
-    - target: {fileID: 613766688394046882, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_Name
-      value: EnergyBar
-      objectReference: {fileID: 0}
-    - target: {fileID: 2485334540919256094, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: popup
-      value: 
-      objectReference: {fileID: 1597172917}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728689366987641464, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d90bda2545e1540d194c5a6d6ad1489c, type: 3}
 --- !u!224 &4328601158784407104
 RectTransform:
   m_ObjectHideFlags: 0

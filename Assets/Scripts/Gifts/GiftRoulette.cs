@@ -100,6 +100,8 @@ namespace MyGame.Gifts
             TryStopAnim();
             _seq = DOTween.Sequence();
             Gift winnerGift = _gifts[(_positionWinner + _startGiftsOnLeft) % _gifts.Length];
+
+            //бесплатное добавление
             GameData.Gifts.AddValue(winnerGift.GroupId, winnerGift.Id, 1);
             winnerGift.transform.SetParent(transform);
             _seq.Insert(0, winnerGift.transform.DOScale(Vector3.one * 1.2f, _timeShowWinnerAnim));
