@@ -74,12 +74,22 @@ namespace MyGame.Gameplay.Dialogue
             _phraseButtons = new PhraseButton[_simpleDialogue.phraseVariants.Count];
 
             float anchorPositionY = _offsetAnswers;
+            
+            int[] ids = new int[_simpleDialogue.phraseVariants.Count];
+            for (int i = 0; i < ids.Length; i++)
+                ids[i] = i;
+            for (int i = 0; i < ids.Length; i++)
+            {
+                int r = Random.Range(0, ids.Length);
+                (ids[i], ids[r]) = (ids[r], ids[i]);
+            }
+
             for (int i = 0; i < _simpleDialogue.phraseVariants.Count; i++)
             {
-                int id = i;
-                _phraseButtons[i] = Instantiate(_phraseButtonPrefab, transform);
-                _phraseButtons[i].Init(_simpleDialogue.phraseVariants[i].answer, ref anchorPositionY, () => SetAnswer(id));
-                _phraseButtons[i].TryShowValue(_simpleDialogue.id, i, _simpleDialogue.phraseVariants[i].respect);
+                int id = ids[i];
+                _phraseButtons[id] = Instantiate(_phraseButtonPrefab, transform);
+                _phraseButtons[id].Init(_simpleDialogue.phraseVariants[id].answer, ref anchorPositionY, () => SetAnswer(id));
+                _phraseButtons[id].TryShowValue(_simpleDialogue.id, id, _simpleDialogue.phraseVariants[id].respect);
                 anchorPositionY += _offsetAnswers;
             }
             _anim.MoveMessageHistory(anchorPositionY);
