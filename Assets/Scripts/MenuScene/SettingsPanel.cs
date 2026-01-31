@@ -9,13 +9,13 @@ namespace MyGame.Menu
         [SerializeField] private GameObject _languages;
         [SerializeField] private MenuButton _closeButton;
 
-        public void Init(UnityAction onShowGallaryPanel)
+        public void Init(UnityAction onShowMainPanel)
         {
             MenuPanelInit();
             gameObject.SetActive(false);
             _audio.SetActive(false);
             _languages.SetActive(false);
-            _closeButton.Init(onShowGallaryPanel);
+            _closeButton.Init(onShowMainPanel);
         }
 
         protected override void OnStartShow() { }

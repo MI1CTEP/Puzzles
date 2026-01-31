@@ -1,8 +1,9 @@
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace MyGame
 {
-    public static class SceneLoader
+    public sealed class SceneLoader : MonoBehaviour
     {
         public static void LoadMenu() => Load("MenuScene");
 
@@ -12,5 +13,7 @@ namespace MyGame
         {
             SceneManager.LoadScene(nameScene);
         }
+
+        public static void Exit() => Application.Quit();
     }
 }
