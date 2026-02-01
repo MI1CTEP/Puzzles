@@ -8,6 +8,10 @@ namespace MyGame
 
         public static void LoadGameplay() => Load("GameplayScene");
 
+        public static void LoadInitScene() => Load("InitScene");
+
+        public static void LoadMenuScenarioScene() => Load("MenuScenario");
+
         private static void Load(string nameScene)
         {
             SceneManager.LoadScene(nameScene);

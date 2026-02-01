@@ -17,13 +17,26 @@ namespace MyGame.Gameplay.Puzzle
             _puzzleController = puzzleController;
         }
 
-        public void Open(ScenarioStage scenarioStage)
+        public void Open(ScenarioStage scenarioStage, bool isIntoScenarioMenu = false)
         {
             gameObject.SetActive(true);
-            _panelEasy.Activate(this, scenarioStage, _grids, TypeDifficulty.Easy);
-            _panelMedium.Activate(this, scenarioStage, _grids, TypeDifficulty.Medium);
-            _panelHard.Activate(this, scenarioStage, _grids, TypeDifficulty.Hard);
+
+            if (isIntoScenarioMenu) 
+            {
+                _panelEasy.ActivateIntoScenarioMenu(this, scenarioStage, _grids, TypeDifficulty.Easy);
+                _panelMedium.ActivateIntoScenarioMenu(this, scenarioStage, _grids, TypeDifficulty.Medium);
+                _panelHard.ActivateIntoScenarioMenu(this, scenarioStage, _grids, TypeDifficulty.Hard);
+            }
+            else
+            {
+                _panelEasy.Activate(this, scenarioStage, _grids, TypeDifficulty.Easy);
+                _panelMedium.Activate(this, scenarioStage, _grids, TypeDifficulty.Medium);
+                _panelHard.Activate(this, scenarioStage, _grids, TypeDifficulty.Hard);
+            }
+
         }
+
+
 
         public void StartGameplay(TypeDifficulty typeDifficulty, int puzzleValueX, float chanceGetDetail)
         {
@@ -34,6 +47,21 @@ namespace MyGame.Gameplay.Puzzle
                 _puzzleController.TypeDifficulty = typeDifficulty;
             else
                 _puzzleController.TypeDifficulty = TypeDifficulty.Mixed;
+        }
+
+        public void StartGameplayIntoScenarioMenu(TypeDifficulty typeDifficulty, int puzzleValueX, float chanceGetDetail)
+        {
+            //gameObject.SetActive(false);
+
+            NutakuAPIInitializator.instance.IsOpenGameplayIntoScenarioMenu = true;
+            SceneLoader.LoadGameplay();
+
+            //_puzzleController.StartGameplay(puzzleValueX, chanceGetDetail);
+
+            //if (_puzzleController.TypeDifficulty == TypeDifficulty.None || _puzzleController.TypeDifficulty == typeDifficulty)
+            //    _puzzleController.TypeDifficulty = typeDifficulty;
+            //else
+            //    _puzzleController.TypeDifficulty = TypeDifficulty.Mixed;
         }
     }
 

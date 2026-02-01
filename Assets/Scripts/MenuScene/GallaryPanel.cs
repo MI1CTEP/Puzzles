@@ -20,6 +20,7 @@ namespace MyGame.Menu
         [SerializeField] private MenuButton _buttonAlbum;
         [SerializeField] private MenuButton _buttonHistory;
         [SerializeField] private MenuButton _buttonOpenLevel;
+        [SerializeField] private MenuButton _buttonScenarioMenu;
         [SerializeField] private TextMeshProUGUI _priceText;
         [SerializeField] private GameObject _extraLevelInfo;
         [SerializeField] private GameObject _lock;
@@ -48,7 +49,11 @@ namespace MyGame.Menu
             _buttonPrevious.Init(() => SwitchLevel(-1));
             _buttonNext.Init(() => SwitchLevel(1));
             _buttonClose.Init(onShowMainPanel);
+
             _buttonPlay.Init(SceneLoader.LoadGameplay);
+            //_buttonPlay.Init(SceneLoader.LoadMenuScenarioScene);
+            _buttonScenarioMenu.Init(SceneLoader.LoadMenuScenarioScene);
+
             _buttonAlbum.Init(onShowAnbumPanel);
             _buttonHistory.Init(onShowStoryPanel);
             _buttonOpenLevel.Init(OpenLevel);
@@ -80,6 +85,7 @@ namespace MyGame.Menu
             _buttonNext.Hide();
             _buttonClose.Hide();
             _buttonPlay.Hide();
+            _buttonScenarioMenu.Hide();
             _buttonAlbum.Hide();
             _buttonHistory.Hide();
             _buttonOpenLevel.Hide();
@@ -123,6 +129,7 @@ namespace MyGame.Menu
             _contentImage.sprite = _downloadBackground;
             _contentDownloadingPanel.Show(false);
             _buttonPlay.Hide();
+            _buttonScenarioMenu.Hide();
             _buttonAlbum.Hide();
             _buttonHistory.Hide();
             _buttonOpenLevel.Hide();
@@ -139,6 +146,7 @@ namespace MyGame.Menu
             _contentImage.sprite = _downloadBackground;
             _contentDownloadingPanel.Show(true);
             _buttonPlay.Hide();
+            _buttonScenarioMenu.Hide();
             _buttonAlbum.Hide();
             _buttonHistory.Hide();
             _buttonOpenLevel.Hide();
@@ -176,6 +184,7 @@ namespace MyGame.Menu
         private void SetOpened()
         {
             _buttonPlay.Show();
+            _buttonScenarioMenu.Hide();
             _buttonAlbum.Show();
             _buttonHistory.Show();
             _sympathyPanel.UpdateValue(GameData.Sympathy.Load(GameData.CurrentLevel));
@@ -190,6 +199,7 @@ namespace MyGame.Menu
         private void SetClosed()
         {
             _buttonPlay.Hide();
+            _buttonScenarioMenu.Hide();
             _buttonAlbum.Hide();
             _buttonHistory.Hide();
             _sympathyPanel.Hide();

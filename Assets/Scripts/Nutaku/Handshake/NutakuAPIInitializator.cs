@@ -24,6 +24,12 @@ public class NutakuAPIInitializator : MonoBehaviour
     private PuarchaseService _puarchaseService;
     public PuarchaseService PuarchaseService => _puarchaseService;
 
+
+    //По сути свойства ниже логично убрать в другие скрипты
+    public bool IsOpenAllContent {  get; private set; } = true;
+    public bool IsOpenGameplayIntoScenarioMenu { get; set; } = false;
+    public int IdStageScenario { get; set; } = 0;
+
     private void Awake()
     {
         if (instance != null)
@@ -70,7 +76,8 @@ public class NutakuAPIInitializator : MonoBehaviour
         PuarchaseService.LoadInventory();
 
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("InitScene");
+        //SceneManager.LoadScene("InitScene");
+        SceneLoader.LoadInitScene();
 
     }
 

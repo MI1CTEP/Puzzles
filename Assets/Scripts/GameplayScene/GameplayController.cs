@@ -33,7 +33,23 @@ namespace MyGame.Gameplay
 
         private void Start()
         {
-            Init();
+            //если заходим в сцену из MenuScenario
+            if (NutakuAPIInitializator.instance.IsOpenGameplayIntoScenarioMenu)
+            {
+                _currentGameStageId = NutakuAPIInitializator.instance.IdStageScenario;
+                Init();
+            }
+            else
+            {
+                _currentGameStageId = 0;
+                NutakuAPIInitializator.instance.IdStageScenario = 0;
+                Init();
+
+            }
+
+
+
+            NutakuAPIInitializator.instance.IsOpenGameplayIntoScenarioMenu = false;
         }
 
         private async UniTask Init()

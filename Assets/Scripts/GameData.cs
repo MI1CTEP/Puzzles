@@ -171,6 +171,10 @@ namespace MyGame
             public static bool IsUnlock(int levelId, int dialogueId, int positionId)
             {
 
+                if (NutakuAPIInitializator.instance.IsOpenAllContent)
+                    return true;
+
+
                 string key = $"{_key}_{levelId}_{dialogueId}_{positionId}";
                 return NutakuAPIInitializator.instance.PuarchaseService.IsHasDialogues(key);
 
@@ -257,6 +261,9 @@ namespace MyGame
 
             public static bool IsUnlock(int levelId, int id)
             {
+                if (NutakuAPIInitializator.instance.IsOpenAllContent)
+                    return true;
+
                 string key = $"{_key}_{levelId}_{id}";
 
                 return NutakuAPIInitializator.instance.PuarchaseService.IsHasAchievements(key);
@@ -277,7 +284,10 @@ namespace MyGame
 
             public static bool IsUnlock(int id)
             {
-               // return PlayerPrefs.GetInt($"{_key}_{id}") == 1;
+                //if (NutakuAPIInitializator.instance.IsOpenAllContent)
+                //    return true;
+
+                // return PlayerPrefs.GetInt($"{_key}_{id}") == 1;
                 return NutakuAPIInitializator.instance.PuarchaseService.IsAvaliableBonusStage(id);
             }
         }
@@ -305,7 +315,7 @@ namespace MyGame
                 }
                 //Спросить Вову в каком это моменте?
                 //Это эксернал открытие? Нет ЭТО ОТКРЫТИЕ ВЫЗЫВАЕТСЯ ПО ДОСТИЖЕНИИ ОПРЕДЕЛЕННОГО КОЛИЧЕСТВА РЕСПЕКТА
-                PlayerPrefs.SetInt($"{_key}_{id}", 1);
+                //PlayerPrefs.SetInt($"{_key}_{id}", 1);
                 //метод открытия девушки
 
                 if (!_isSaved[id])
@@ -321,6 +331,9 @@ namespace MyGame
 
             public static bool IsOpened(int id)
             {
+                if (NutakuAPIInitializator.instance.IsOpenAllContent)
+                    return true;
+
                 //вот тут проверяем открыта ли девушка по индексу
                 if (_isSaved.Count > id && _isSaved[id])
                     return _loadedValue[id];
@@ -332,12 +345,16 @@ namespace MyGame
 
             public static void OpenAll()
             {
+
                 PlayerPrefs.SetInt(_keyAll, 1);
                 //метод открытия всех девушек
             }
 
             public static bool IsOpenedAll()
             {
+                if (NutakuAPIInitializator.instance.IsOpenAllContent)
+                    return true;
+
                 //вот тут проверяем открыта ли все девушки
                 //return PlayerPrefs.GetInt(_keyAll) == 1;
                 return NutakuAPIInitializator.instance.PuarchaseService.IsAvaliableAllShowGirls();
