@@ -33,29 +33,30 @@ namespace MyGame.Gameplay
 
         private void Start()
         {
-            //если заходим в сцену из MenuScenario
-            if (NutakuAPIInitializator.instance.IsOpenGameplayIntoScenarioMenu)
-            {
-                _currentGameStageId = NutakuAPIInitializator.instance.IdStageScenario;
-                Init();
-            }
-            else
-            {
-                _currentGameStageId = 0;
-                NutakuAPIInitializator.instance.IdStageScenario = 0;
-                Init();
-
-            }
-
-
-
-            NutakuAPIInitializator.instance.IsOpenGameplayIntoScenarioMenu = false;
+            Init();
         }
 
         private async UniTask Init()
         {
             _scenarioLoader = new();
             _scenario = await _scenarioLoader.GetScenario();
+
+            if (GameData.CurrentStep > 0)
+            {
+                int currentStage = 0;
+                for (int i = 0; ; i++)
+                {
+                    _currentScenarioStage = _scenario.TryGetScenarioStage(i);
+                    if (_currentScenarioStage.typeStage == "Puzzle")
+                        currentStage++;
+                    if (currentStage == GameData.CurrentStep)
+                    {
+                        _currentGameStageId = i;
+                        break;
+                    }
+                }
+            }
+
             _progressPanel.Init();
             _videoController.Init();
             _extraLevelUnlocker.Init();

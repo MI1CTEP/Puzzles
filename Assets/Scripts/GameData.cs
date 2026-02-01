@@ -6,6 +6,7 @@ namespace MyGame
     public static class GameData
     {
         public static int CurrentLevel { get; set; }
+        public static int CurrentStep { get; set; }
 
 
         //Это валюта, за которую открываются уровни. Зарабатывается при прохождении.

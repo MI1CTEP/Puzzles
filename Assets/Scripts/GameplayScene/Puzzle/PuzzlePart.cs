@@ -47,7 +47,7 @@ namespace MyGame.Gameplay.Puzzle
             {
                 IsTruePosition = true;
                 _board.AddProgress();
-                SoundManager.Instance.PlayRandomGemido();
+                //SoundManager.Instance.PlayRandomGemido();
                 PlayParticles();
             }
         }

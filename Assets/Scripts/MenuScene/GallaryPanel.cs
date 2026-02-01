@@ -20,7 +20,6 @@ namespace MyGame.Menu
         [SerializeField] private MenuButton _buttonAlbum;
         [SerializeField] private MenuButton _buttonHistory;
         [SerializeField] private MenuButton _buttonOpenLevel;
-        [SerializeField] private MenuButton _buttonScenarioMenu;
         [SerializeField] private TextMeshProUGUI _priceText;
         [SerializeField] private GameObject _extraLevelInfo;
         [SerializeField] private GameObject _lock;
@@ -42,7 +41,7 @@ namespace MyGame.Menu
             _bundlesController.OnStartDownloadLevel += TrySetDownloading;
             _bundlesController.OnEndDownloadLevel += TryActivateLevel;
             MenuPanelInit();
-            _upInfoPanel.Init(_bundlesController.LevelsCount);
+            _upInfoPanel.Init(_contentImage, _bundlesController.LevelsCount);
             _sympathyPanel.Init();
             _achievemetnsPanel.Init();
             gameObject.SetActive(false);
@@ -52,7 +51,6 @@ namespace MyGame.Menu
 
             _buttonPlay.Init(SceneLoader.LoadGameplay);
             //_buttonPlay.Init(SceneLoader.LoadMenuScenarioScene);
-            _buttonScenarioMenu.Init(SceneLoader.LoadMenuScenarioScene);
 
             _buttonAlbum.Init(onShowAnbumPanel);
             _buttonHistory.Init(onShowStoryPanel);
@@ -85,7 +83,6 @@ namespace MyGame.Menu
             _buttonNext.Hide();
             _buttonClose.Hide();
             _buttonPlay.Hide();
-            _buttonScenarioMenu.Hide();
             _buttonAlbum.Hide();
             _buttonHistory.Hide();
             _buttonOpenLevel.Hide();
@@ -125,11 +122,10 @@ namespace MyGame.Menu
 
         private void SetNotDownloaded()
         {
-            _upInfoPanel.UpdateText(GameData.CurrentLevel + 1, "not downloaded");
+            _upInfoPanel.UpdateTextName(GameData.CurrentLevel + 1, "not downloaded");
             _contentImage.sprite = _downloadBackground;
             _contentDownloadingPanel.Show(false);
             _buttonPlay.Hide();
-            _buttonScenarioMenu.Hide();
             _buttonAlbum.Hide();
             _buttonHistory.Hide();
             _buttonOpenLevel.Hide();
@@ -142,11 +138,10 @@ namespace MyGame.Menu
 
         private void SetDownloading()
         {
-            _upInfoPanel.UpdateText(GameData.CurrentLevel + 1, "downloading");
+            _upInfoPanel.UpdateTextName(GameData.CurrentLevel + 1, "downloading");
             _contentImage.sprite = _downloadBackground;
             _contentDownloadingPanel.Show(true);
             _buttonPlay.Hide();
-            _buttonScenarioMenu.Hide();
             _buttonAlbum.Hide();
             _buttonHistory.Hide();
             _buttonOpenLevel.Hide();
@@ -160,6 +155,7 @@ namespace MyGame.Menu
         private void SetDownloaded()
         {
             _contentDownloadingPanel.Hide();
+            _upInfoPanel.OnStartLoad();
             if (IsOpenedLevel())
             {
                 SetOpened();
@@ -184,7 +180,6 @@ namespace MyGame.Menu
         private void SetOpened()
         {
             _buttonPlay.Show();
-            _buttonScenarioMenu.Hide();
             _buttonAlbum.Show();
             _buttonHistory.Show();
             _sympathyPanel.UpdateValue(GameData.Sympathy.Load(GameData.CurrentLevel));
@@ -199,7 +194,6 @@ namespace MyGame.Menu
         private void SetClosed()
         {
             _buttonPlay.Hide();
-            _buttonScenarioMenu.Hide();
             _buttonAlbum.Hide();
             _buttonHistory.Hide();
             _sympathyPanel.Hide();
@@ -236,7 +230,8 @@ namespace MyGame.Menu
 
         private void EndLoad(bool isOpened)
         {
-            _upInfoPanel.UpdateText(GameData.CurrentLevel + 1, _bundlesController.MainResourcesBundle.GetName);
+            _upInfoPanel.OnEndLoad();
+            _upInfoPanel.UpdateTextName(GameData.CurrentLevel + 1, _bundlesController.MainResourcesBundle.GetName);
             SetStartColor();
             _contentImage.sprite = _bundlesController.MainResourcesBundle.Sprites[0];
             TryStopAnim();
