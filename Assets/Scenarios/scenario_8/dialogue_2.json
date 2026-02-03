@@ -1,59 +1,59 @@
 {
   "firstPhrase": {
-    "ru": "Мне нравятся умные мужчины. Вы достойны увидеть меня без юбки, нравится?",
-    "en": "I like smart men. You deserve to see me without my skirt — like it?",
-    "de": "Mir gefallen intelligente Männer. Sie haben es verdient, mich ohne Rock zu sehen – gefällt es Ihnen?",
-    "zh": "我喜欢聪明男人。你值得看到我不穿裙子的样子，喜欢吗？",
-    "ja": "頭のいい男の人が好き。スカート無し見てもいいよ。気に入った？",
-    "fr": "J’aime les hommes intelligents. Vous méritez de me voir sans jupe – ça vous plaît ?",
-    "es": "Me gustan los hombres inteligentes. Te mereces verme sin falda – ¿te gusta?",
-    "pt": "Gosto de homens inteligentes. Mereces ver-me sem saia – gostas?",
-    "it": "Amo gli uomini intelligenti. Meriti di vedermi senza gonna – ti piace?",
-    "hi": "मुझे समझदार मर्द पसंद हैं। तुम डिज़र्व करते हो मुझे बिना स्कर्ट के देखने के लिए – पसंद आया?"
+    "ru": "Обожаю душ в джунглях! Почему ты застыл на месте?",
+    "en": "I love jungle showers! Why are you frozen like that?",
+    "de": "Ich liebe Duschen im Dschungel! Warum bist du plötzlich erstarrt?",
+    "zh": "我超爱在丛林里冲澡！你怎么突然僵住了？",
+    "ja": "ジャングルでシャワー最高！どうした、固まっちゃった？",
+    "fr": "J’adore les douches dans la jungle ! Pourquoi tu t’es figé d’un coup ?",
+    "es": "Me encanta ducharme en la selva – ¿por qué te quedaste paralizado?",
+    "pt": "Adoro tomar banho na selva! Porque ficaste paralisado de repente?",
+    "it": "Adoro fare la doccia nella giungla! Perché ti sei bloccato all’improvviso?",
+    "hi": "जंगल में नहाना मुझे बहुत पसंद है! तू अचानक पत्थर क्यों हो गया?"
   },
   "phraseVariants": [
     {
       "answer": {
-        "ru": "Ваша фигура великолепна, вы похожи на главную героиню романтической повести.",
-        "en": "Your body is stunning — you look like the heroine of a steamy romance novel.",
-        "de": "Ihr Körper ist großartig – Sie sehen aus wie die Heldin eines heißen Romans.",
-        "zh": "你的身材太棒了，你就像言情小说里的女主角。",
-        "ja": "その体、最高。まるでエロ小説のヒロインみたい。",
-        "fr": "Votre corps est magnifique – vous ressemblez à l’héroïne d’un roman torride.",
-        "es": "Tu cuerpo es espectacular – pareces la protagonista de una novela erótica.",
-        "pt": "O teu corpo é fantástico – pareces a heroína de um romance quente.",
-        "it": "Il tuo corpo è fantastico – sembri l’eroina di un romanzo erotico.",
-        "hi": "तेरी बॉडी कमाल की है – तू किसी स्टीमी नॉवेल की हीरोइन जैसी लग रही है।"
+        "ru": "Не знал, что амазонки настолько красивы без своей одежды.",
+        "en": "I had no idea Amazons could be this gorgeous naked.",
+        "de": "Ich wusste nicht, dass Amazonen nackt so wunderschön sein können.",
+        "zh": "没想到亚马逊女战士裸体这么美。",
+        "ja": "アマゾネスって裸だとこんなに綺麗なんだ…",
+        "fr": "Je ne savais pas que les Amazones pouvaient être aussi magnifiques nues.",
+        "es": "No sabía que las amazonas desnudas podían ser tan hermosas.",
+        "pt": "Não sabia que as amazonas nuas podiam ser tão lindas.",
+        "it": "Non sapevo che le amazzoni nude potessero essere così splendide.",
+        "hi": "मुझे नहीं पता था कि अमेज़न औरतें नंगी इतनी ख़ूबसूरत हो सकती हैं।"
       },
       "respect": 4
     },
     {
       "answer": {
-        "ru": "Умные женщины, без намеков понимают желания мужчин.",
-        "en": "Smart women know exactly what a man wants without hints.",
-        "de": "Intelligente Frauen verstehen sofort, was ein Mann will.",
-        "zh": "聪明女人不用暗示就知道男人想要什么。",
-        "ja": "賢い女は男の欲しがってるものすぐ分かるよね。",
-        "fr": "Les femmes intelligentes comprennent immédiatement ce qu’un homme veut.",
-        "es": "Las mujeres inteligentes entienden sin pistas lo que quiere un hombre.",
-        "pt": "Mulheres inteligentes percebem logo o que um homem quer.",
-        "it": "Le donne intelligenti capiscono subito cosa vuole un uomo.",
-        "hi": "स्मार्ट औरतें बिना हिन्ट के ही समझ जाती हैं कि मर्द क्या चाहता है।"
+        "ru": "Увидел тебя без одежды и теперь обездвижен.",
+        "en": "One look at you naked and I’m completely paralyzed.",
+        "de": "Dein Anblick nackt hat mich komplett gelähmt.",
+        "zh": "看到你裸体我直接僵住了。",
+        "ja": "裸の君見て完全に動けなくなった。",
+        "fr": "Te voir nue m’a complètement paralysé.",
+        "es": "Verte desnuda me dejó completamente paralizado.",
+        "pt": "Ver-te nua deixou-me completamente paralisado.",
+        "it": "Vederti nuda mi ha paralizzato del tutto.",
+        "hi": "तेरा नंगा बदन देखकर मैं पूरी तरह से फ़्रीज़ हो गया।"
       },
       "respect": 2
     },
     {
       "answer": {
-        "ru": "Обожаю рыжих девушек, а с такой попкой тем более.",
-        "en": "I love redheads, especially with an ass like that.",
-        "de": "Ich liebe Rothaarige – und mit so einem Arsch erst recht.",
-        "zh": "我超爱红发女生，有这样的屁股就更爱了。",
-        "ja": "赤毛大好き。この尻ならなおさら。",
-        "fr": "J’adore les rousses – et avec un cul pareil encore plus.",
-        "es": "Me flipan las pelirrojas – y con un culo así todavía más.",
-        "pt": "Adoro ruivas – e com uma bunda dessas ainda mais.",
-        "it": "Adoro le rosse – e con un culo così ancora di più.",
-        "hi": "मुझे रेडहेड लड़कियाँ बहुत पसंद हैं – और ऐसी गांड हो तो और भी।"
+        "ru": "Думаю о том, что мне надо присоединиться к тебе.",
+        "en": "I’m thinking I need to join you right now.",
+        "de": "Ich denke gerade daran, dass ich sofort zu dir unter die Dusche steigen sollte.",
+        "zh": "我在想我现在就该跟你一起冲澡。",
+        "ja": "今すぐ一緒にシャワー入りたいって考えてる。",
+        "fr": "Je pense que je devrais te rejoindre sous cette douche tout de suite.",
+        "es": "Estoy pensando que debería meterme contigo en la ducha ahora mismo.",
+        "pt": "Estou a pensar que devia juntar-me a ti no duche já.",
+        "it": "Sto pensando che dovrei raggiungerti subito sotto la doccia.",
+        "hi": "मैं सोच रहा हूँ कि अभी तेरे साथ नहाने चला जाऊँ।"
       },
       "respect": 0
     }

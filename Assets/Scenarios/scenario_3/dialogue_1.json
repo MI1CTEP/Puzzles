@@ -1,59 +1,59 @@
 {
   "firstPhrase": {
-    "ru": "Привет!Мы с тобой учимся в одном колледже, видела тебя на семинаре и ты мне понравился!",
-    "en": "Hi! We study at the same college. I saw you at the seminar, and I liked you!",
-    "de": "Hey! Wir studieren am selben College. Ich hab dich im Seminar gesehen und fand dich süß!",
-    "zh": "嗨！我们在一个大学，我在研讨会上看到你了，我喜欢上你了！",
-    "ja": "ねえ！同じ大学だよね。セミナーで君を見かけて、好きになっちゃった！",
-    "fr": "Salut ! On est dans la même fac, je t’ai vu au séminaire et tu m’as plu !",
-    "es": "¡Hola! Estudiamos en la misma universidad, te vi en el seminario y me gustaste.",
-    "pt": "Oi! A gente estuda na mesma faculdade, te vi no seminário e gostei de ti!",
-    "it": "Ciao! Frequento lo stesso college, ti ho visto al seminario e mi sei piaciuto!",
-    "hi": "हाय! हम एक ही कॉलेज में पढ़ते हैं, सेमिनार में तुम्हें देखा और पसंद आ गए!"
+    "ru": "Я только что спасла тебя, ты чуть не утонул в океане, чем я могу помочь тебе?",
+    "en": "I just saved your life — you almost drowned. How can I help you now?",
+    "de": "Ich hab dich gerade aus dem Ozean gerettet – du wärst fast ertrunken. Wie kann ich dir jetzt helfen?",
+    "zh": "刚刚把你从海里救上来，你差点就淹死了，我还能怎么帮你？",
+    "ja": "今、君を海から救ったよ。溺れそうだったね。今、どうしてほしい？",
+    "fr": "Je viens de te sauver la vie — tu as failli te noyer. Comment puis-je t’aider maintenant ?",
+    "es": "Acabo de salvarte — casi te ahogas. ¿En qué más puedo ayudarte?",
+    "pt": "Acabei de te salvar — quase te afogaste. Como posso ajudar-te agora?",
+    "it": "Ti ho appena salvato la vita — stavi per annegare. Come posso aiutarti adesso?",
+    "hi": "मैंने अभी-अभी तुम्हें समुद्र से बचाया — तुम लगभग डूब ही गए थे। अब मैं तुम्हारी और कैसे मदद करूँ?"
   },
   "phraseVariants": [
     {
       "answer": {
-        "ru": "Вау, я помню тебя, у тебя необычный цвет волос и звонкий смех.",
-        "en": "Wow, I remember you — you’ve got unique hair color and a bright, ringing laugh.",
-        "de": "Wow, ich erinnere mich an dich – du hast eine coole Haarfarbe und ein megasüßes Lachen.",
-        "zh": "哇，我记得你，你的头发颜色好特别，笑声也超清脆。",
-        "ja": "わぁ、覚えてる！髪の色が個性的で、笑い声がめっちゃ可愛いんだよね。",
-        "fr": "Waouh, je me souviens de toi — tu as une couleur de cheveux originale et un rire super cristallin.",
-        "es": "¡Guau, te recuerdo! Tienes un color de pelo único y una risa súper sonora y alegre.",
-        "pt": "Uau, lembro-me de ti — tens uma cor de cabelo única e uma risada super alegre.",
-        "it": "Wow, ti ricordo — hai un colore di capelli unico e una risata allegra e squillante.",
-        "hi": "वाह, मुझे तुम याद हो — बालों का अनोखा कलर और ज़ोरदार हँसी।"
+        "ru": "Ты спасла мне жизнь, хочу пригласить тебя на свидание.",
+        "en": "You saved my life — let me take you on a date.",
+        "de": "Du hast mir das Leben gerettet – ich will dich zum Date einladen.",
+        "zh": "你救了我的命，我想约你出去。",
+        "ja": "命を救ってくれた。お礼にデートに誘わせて。",
+        "fr": "Tu m’as sauvé la vie — laisse-moi t’inviter à un rendez-vous.",
+        "es": "Me salvaste la vida — quiero invitarte a una cita.",
+        "pt": "Salvaste-me a vida — quero convidar-te para um encontro.",
+        "it": "Mi hai salvato la vita — voglio invitarti a un appuntamento.",
+        "hi": "तूने मेरी जान बचाई — मैं तुझे डेट पर ले जाना चाहता हूँ।"
       },
       "respect": 4
     },
     {
       "answer": {
-        "ru": "Запомнил тебя по сексуальным чулкам, давай знакомится ближе.",
-        "en": "I remembered you for those sexy stockings. Let's get closer.",
-        "de": "Ich hab dich wegen der sexy Strümpfe im Kopf. Lass uns näher kennenlernen.",
-        "zh": "我是因为你那性感的丝袜才记住你的，我们来更亲密点吧。",
-        "ja": "セクシーなストッキングで覚えてた。もっと仲良くなろうよ。",
-        "fr": "Je t’ai remarquée grâce à tes bas ultra-sexy. On se rapproche ?",
-        "es": "Te recordé por esas medias sexys. Acerquémonos más.",
-        "pt": "Lembrei-me de ti por causa daquelas meias super sexy. Vamos nos aproximar mais?",
-        "it": "Ti ho notato per quelle calze sexy. Avviciniamoci.",
-        "hi": "तेरे सेक्सी स्टॉकिंग्स की वजह से याद रहा, चल और करीब से जान-पहचान करते हैं।"
+        "ru": "Сними свои трусики и помоги мне наполнится энергией.",
+        "en": "Take off your panties and help me recharge my energy.",
+        "de": "Zieh dein Höschen aus und hilf mir, wieder Energie zu tanken.",
+        "zh": "把内裤脱了，帮我补充能量吧。",
+        "ja": "パンツ脱いで、エネルギー補給手伝って。",
+        "fr": "Enlève ta culotte et aide-moi à recharger mes batteries.",
+        "es": "Quítate las bragas y ayúdame a recargar energía.",
+        "pt": "Tira as cuequinhas e ajuda-me a recarregar energia.",
+        "it": "Togliti le mutandine e aiutami a ricaricarmi.",
+        "hi": "अपनी पैंटी उतार और मुझे एनर्जी भरने में मदद कर।"
       },
       "respect": 2
     },
     {
       "answer": {
-        "ru": "Обожаю миниатюрных девушек, они всегда в моих фантазиях.",
-        "en": "I love petite girls — they’re always in my fantasies.",
-        "de": "Ich steh total auf zierliche Mädchen – die sind immer in meinen Fantasien.",
-        "zh": "我超爱娇小型女生，她们一直在我的幻想里。",
-        "ja": "小柄な子が大好き。いつもエッチな妄想の主役だよ。",
-        "fr": "J’adore les petites nanas, elles peuplent toujours mes fantasmes.",
-        "es": "Me encantan las chicas menuditas, siempre están en mis fantasías.",
-        "pt": "Adoro meninas pequenas — elas vivem nas minhas fantasias.",
-        "it": "Adoro le ragazze minute, sono sempre nelle mie fantasie.",
-        "hi": "मुझे छोटी-छोटी लड़कियाँ बहुत पसंद हैं, मेरी हर फैंटसी में होती हैं।"
+        "ru": "Устрой мне релакс, но твой купальник нам помешает.",
+        "en": "Give me some relaxation… but that swimsuit has to go.",
+        "de": "Mach mir Entspannung… aber dein Bikini muss weg.",
+        "zh": "给我放松一下吧……不过你的比基尼得脱掉。",
+        "ja": "リラックスさせて。でもそのビキニ、邪魔だよ。",
+        "fr": "Offre-moi de la détente… mais ton maillot doit disparaître.",
+        "es": "Relájame… pero ese bikini tiene que irse.",
+        "pt": "Dá-me relaxamento… mas esse biquíni tem de sair.",
+        "it": "Rilassami… ma quel bikini deve sparire.",
+        "hi": "मुझे रिलैक्स कर… पर तेरी बिकिनी निकालनी पड़ेगी।"
       },
       "respect": 0
     }

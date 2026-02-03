@@ -7,12 +7,21 @@ VideoClipImporter:
   startFrame: -1
   endFrame: -1
   colorSpace: 0
-  deinterlace: 0
+  deinterlace: 2
   encodeAlpha: 0
   flipVertical: 0
   flipHorizontal: 0
   importAudio: 1
-  targetSettings: {}
+  targetSettings:
+    0:
+      enableTranscoding: 1
+      codec: 2
+      resizeFormat: 0
+      aspectRatio: 0
+      customWidth: 544
+      customHeight: 960
+      bitrateMode: 2
+      spatialQuality: 2
   userData: 
   assetBundleName: scenario_1.only_gameplay
   assetBundleVariant: 
