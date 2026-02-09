@@ -1,59 +1,59 @@
 {
   "firstPhrase": {
-    "ru": "Добро пожаловать в наше уютное кафе! Что вы желаете?",
-    "en": "Welcome to our cozy café! What would you like?",
-    "de": "Willkommen in unserem gemütlichen Café! Was möchtest du bestellen?",
-    "zh": "欢迎光临我们温馨的小咖啡馆！您想点什么？",
-    "ja": "いらっしゃいませ♪ 居心地のいいカフェへようこそ。何のご注文？",
-    "fr": "Bienvenue dans notre petit café cosy ! Que désires-tu ?",
-    "es": "¡Bienvenido a nuestro acogedor café! ¿Qué te gustaría?",
-    "pt": "Bem-vindo ao nosso cafézinho acolhedor! O que desejas pedir?",
-    "it": "Benvenuto nel nostro accogliente caffè! Cosa desideri?",
-    "hi": "हमारे आरामदायक कैफ़े में आपका स्वागत है! क्या ऑर्डर करेंगे?"
+    "ru": "Добрый день! Вы первый раз в нашей библиотеке? Какую литературу предпочитаете?",
+    "en": "Good afternoon! First time in our library? What kind of books do you prefer?",
+    "de": "Guten Tag! Erstes Mal in unserer Bibliothek? Welche Literatur bevorzugen Sie?",
+    "zh": "下午好！第一次来我们图书馆吗？您喜欢哪类书？",
+    "ja": "こんにちは！初めての図書館？どんな本がお好き？",
+    "fr": "Bonjour ! Première fois dans notre bibliothèque ? Quel genre de littérature préférez-vous ?",
+    "es": "¡Buenas tardes! ¿Es tu primera vez en nuestra biblioteca? ¿Qué tipo de literatura prefieres?",
+    "pt": "Boa tarde! Primeira vez na nossa biblioteca? Que tipo de literatura preferes?",
+    "it": "Buongiorno! Prima volta nella nostra biblioteca? Che genere di letteratura preferisci?",
+    "hi": "शुभ दोपहर! हमारी लाइब्रेरी में पहली बार आए हो? किस तरह की किताबें पसंद हैं?"
   },
   "phraseVariants": [
     {
       "answer": {
-        "ru": "Я хотел бы выпить чашку кофе и побеседовать с юной официанткой.",
-        "en": "I’d love a cup of coffee and a chat with the cute waitress.",
-        "de": "Ich hätte gern einen Kaffee… und ein bisschen mit der süßen Kellnerin plaudern.",
-        "zh": "我想喝杯咖啡，然后和可爱的小服务生聊聊天。",
-        "ja": "コーヒーと、可愛いウェイトレスさんとおしゃべりしたいな。",
-        "fr": "J’aimerais un café et discuter un peu avec la jolie serveuse.",
-        "es": "Quisiera un café y charlar un rato con la camarera tan mona.",
-        "pt": "Gostaria de um café e conversar um pouco com a empregada gira.",
-        "it": "Vorrei un caffè e fare due chiacchiere con la cameriera carina.",
-        "hi": "मैं एक कॉफ़ी लूँगा… और इस प्यारी वेट्रेस से थोड़ी बात करूँ।"
+        "ru": "Добрый день! Да, поможете мне? Обожаю читать классическую литературу.",
+        "en": "Good afternoon! Yes, please help. I adore classic literature.",
+        "de": "Guten Tag! Ja, bitte helfen Sie mir. Ich liebe klassische Literatur.",
+        "zh": "下午好！是的，请帮帮我。我超爱经典文学。",
+        "ja": "こんにちは！うん、助けて。古典文学が大好き。",
+        "fr": "Bonjour ! Oui, aidez-moi s’il vous plaît. J’adore la littérature classique.",
+        "es": "¡Buen día! Sí, ayúdame por favor. Me encanta la literatura clásica.",
+        "pt": "Bom dia! Sim, ajuda-me por favor. Adoro literatura clássica.",
+        "it": "Buongiorno! Sì, mi aiuti per favore. Adoro la letteratura classica.",
+        "hi": "नमस्ते! हाँ, मदद करो। मुझे क्लासिक लिटरेचर बहुत पसंद है।"
       },
       "respect": 4
     },
     {
       "answer": {
-        "ru": "При виде ваших чулок, начинают путаться мысли.",
-        "en": "Your stockings are making it impossible to think straight.",
-        "de": "Beim Anblick deiner Strümpfe kann ich kaum noch klar denken.",
-        "zh": "一看到你的丝袜，我脑子就乱了。",
-        "ja": "君のストッキング見てたら頭がぼーっとしちゃう。",
-        "fr": "En voyant tes bas, mes idées se brouillent complètement.",
-        "es": "Al ver tus medias me pongo a mil y no pienso claro.",
-        "pt": "Ao ver as tuas meias fico com a cabeça à roda.",
-        "it": "Quando vedo le tue calze non riesco più a pensare lucidamente.",
-        "hi": "तेरी स्टॉकिंग्स देखकर दिमाग़ काम करना बंद कर देता है।"
+        "ru": "Здравствуйте! Именно так. Мне нравится читать романы, хотя сейчас, хочу быть увлечен вами.",
+        "en": "Hello! Exactly. I love novels, but right now I’d rather be captivated by you.",
+        "de": "Hallo! Genau deswegen. Ich mag Romane… obwohl ich jetzt lieber von Ihnen fasziniert wäre.",
+        "zh": "你好！正是为此。我喜欢小说……不过现在更想被你迷倒。",
+        "ja": "こんにちは！そうそう。小説が好きだけど、今は君に夢中になりたい。",
+        "fr": "Salut ! Exactement. J’aime les romans… mais là je préférerais être captivé par vous.",
+        "es": "¡Hola! Exacto. Me gustan las novelas… aunque ahora preferiría estar cautivado por ti.",
+        "pt": "Oi! Exatamente. Gosto de romances… mas agora preferia estar fascinado por ti.",
+        "it": "Ciao! Esatto. Amo i romanzi… ma ora preferirei essere rapito da te.",
+        "hi": "हाय! बिल्कुल। मुझे नॉवेल्स पसंद हैं… पर अभी तो तुझसे ही फिदा होना चाहता हूँ।"
       },
       "respect": 2
     },
     {
       "answer": {
-        "ru": "Когда увидел тебя, пропало желание перекусить, ты возбуждаешь.",
-        "en": "When I saw you, I completely lost my appetite for food — you’re way more tempting.",
-        "de": "Als ich dich sah, hatte ich plötzlich keinen Hunger mehr – nur noch Lust auf dich.",
-        "zh": "一看到你就完全没了食欲，只想吃你。",
-        "ja": "君を見た瞬間、食欲なくなっちゃった。君が欲しいだけ。",
-        "fr": "Quand je t’ai vue, plus du tout faim de nourriture… juste envie de toi.",
-        "es": "Cuando te vi se me quitó el hambre de comida… sólo ganas de ti.",
-        "pt": "Quando te vi perdi logo a fome de comida… só apetite por ti.",
-        "it": "Appena ti ho vista mi è passata la fame… ho solo voglia di te.",
-        "hi": "तुझे देखते ही खाने की भूख चली गई – सिर्फ़ तुझ पर भूख लगी है।"
+        "ru": "Да, здесь первый раз! Какая литература? Передо мной секусуальная девушка!",
+        "en": "Yes, first time! Books? There’s a sexy girl right in front of me!",
+        "de": "Ja, hier zum ersten Mal! Bücher? Vor mir steht ein megasexy Mädchen!",
+        "zh": "是的，第一次来！书？眼前就站着一个超级性感的美女！",
+        "ja": "うん、初めて！本？目の前にエロい子がいるじゃん！",
+        "fr": "Oui, première fois ici ! Des livres ? Il y a une fille hyper sexy devant moi !",
+        "es": "¡Sí, primera vez! ¿Libros? ¡Delante de mí hay una chica súper sexy!",
+        "pt": "Sim, primeira vez aqui! Livros? Tenho uma miúda super sexy à minha frente!",
+        "it": "Sì, prima volta qui! Libri? C’è una ragazza super sexy davanti a me!",
+        "hi": "हाँ, पहली बार आया हूँ! किताबें? मेरे सामने तो एक सेक्सी लड़की खड़ी है!"
       },
       "respect": 0
     }

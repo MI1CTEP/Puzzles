@@ -1,59 +1,59 @@
 {
   "firstPhrase": {
-    "ru": "Добрый день! Вы первый раз в нашей библиотеке? Какую литературу предпочитаете?",
-    "en": "Good afternoon! First time in our library? What kind of books do you prefer?",
-    "de": "Guten Tag! Erstes Mal in unserer Bibliothek? Welche Literatur bevorzugen Sie?",
-    "zh": "下午好！第一次来我们图书馆吗？您喜欢哪类书？",
-    "ja": "こんにちは！初めての図書館？どんな本がお好き？",
-    "fr": "Bonjour ! Première fois dans notre bibliothèque ? Quel genre de littérature préférez-vous ?",
-    "es": "¡Buenas tardes! ¿Es tu primera vez en nuestra biblioteca? ¿Qué tipo de literatura prefieres?",
-    "pt": "Boa tarde! Primeira vez na nossa biblioteca? Que tipo de literatura preferes?",
-    "it": "Buongiorno! Prima volta nella nostra biblioteca? Che genere di letteratura preferisci?",
-    "hi": "शुभ दोपहर! हमारी लाइब्रेरी में पहली बार आए हो? किस तरह की किताबें पसंद हैं?"
+    "ru": "Ты выживешь в диких джунглях, если будешь подчиняться мне! Согласен?",
+    "en": "You’ll only survive these wild jungles if you obey me. Deal?",
+    "de": "Du überlebst die wilden Dschungel nur, wenn du mir gehorchst! Einverstanden?",
+    "zh": "你只有听我的才能在野性丛林里活下来！同意吗？",
+    "ja": "このワイルドなジャングルで生き残りたければ、私に従え！いいね？",
+    "fr": "Tu ne survivras dans cette jungle sauvage que si tu m’obéis ! Marché conclu ?",
+    "es": "Sólo sobrevivirás en esta selva salvaje si me obedeces. ¿Trato hecho?",
+    "pt": "Sobrevives nesta selva selvagem só se me obedeceres! Combinado?",
+    "it": "Sopravviverai in questa giungla selvaggia solo se mi obbedisci! Affare fatto?",
+    "hi": "इस जंगली जंगल में तू सिर्फ़ मेरी बात मानेगा तभी जिंदा रहेगा! डील?"
   },
   "phraseVariants": [
     {
       "answer": {
-        "ru": "Добрый день! Да, поможете мне? Обожаю читать классическую литературу.",
-        "en": "Good afternoon! Yes, please help. I adore classic literature.",
-        "de": "Guten Tag! Ja, bitte helfen Sie mir. Ich liebe klassische Literatur.",
-        "zh": "下午好！是的，请帮帮我。我超爱经典文学。",
-        "ja": "こんにちは！うん、助けて。古典文学が大好き。",
-        "fr": "Bonjour ! Oui, aidez-moi s’il vous plaît. J’adore la littérature classique.",
-        "es": "¡Buen día! Sí, ayúdame por favor. Me encanta la literatura clásica.",
-        "pt": "Bom dia! Sim, ajuda-me por favor. Adoro literatura clássica.",
-        "it": "Buongiorno! Sì, mi aiuti per favore. Adoro la letteratura classica.",
-        "hi": "नमस्ते! हाँ, मदद करो। मुझे क्लासिक लिटरेचर बहुत पसंद है।"
+        "ru": "Я полностью в твоих руках, только скажи, что мне надо сделать.",
+        "en": "I’m completely in your hands — just tell me what to do.",
+        "de": "Ich bin völlig in deinen Händen – sag mir einfach, was ich tun soll.",
+        "zh": "我完全在你手里，你说怎么做就怎么做。",
+        "ja": "完全に君のものだよ。どうすればいい？",
+        "fr": "Je suis totalement entre tes mains – dis-moi juste quoi faire.",
+        "es": "Estoy completamente en tus manos – sólo dime qué hacer.",
+        "pt": "Estou completamente nas tuas mãos – diz-me o que fazer.",
+        "it": "Sono totalmente nelle tue mani – dimmi cosa devo fare.",
+        "hi": "मैं पूरी तरह तेरे हाथ में हूँ – बस बता क्या करना है।"
       },
       "respect": 4
     },
     {
       "answer": {
-        "ru": "Здравствуйте! Именно так. Мне нравится читать романы, хотя сейчас, хочу быть увлечен вами.",
-        "en": "Hello! Exactly. I love novels, but right now I’d rather be captivated by you.",
-        "de": "Hallo! Genau deswegen. Ich mag Romane… obwohl ich jetzt lieber von Ihnen fasziniert wäre.",
-        "zh": "你好！正是为此。我喜欢小说……不过现在更想被你迷倒。",
-        "ja": "こんにちは！そうそう。小説が好きだけど、今は君に夢中になりたい。",
-        "fr": "Salut ! Exactement. J’aime les romans… mais là je préférerais être captivé par vous.",
-        "es": "¡Hola! Exacto. Me gustan las novelas… aunque ahora preferiría estar cautivado por ti.",
-        "pt": "Oi! Exatamente. Gosto de romances… mas agora preferia estar fascinado por ti.",
-        "it": "Ciao! Esatto. Amo i romanzi… ma ora preferirei essere rapito da te.",
-        "hi": "हाय! बिल्कुल। मुझे नॉवेल्स पसंद हैं… पर अभी तो तुझसे ही फिदा होना चाहता हूँ।"
+        "ru": "Давай попробуем, но у меня тоже есть свое мнение.",
+        "en": "Let’s try, but I have my own opinions too.",
+        "de": "Lass es uns versuchen – aber ich hab auch meine eigene Meinung.",
+        "zh": "我们可以试试，但我也有自己的想法。",
+        "ja": "やってみるけど、俺にも意見はあるよ。",
+        "fr": "On peut essayer – mais j’ai aussi mon propre avis.",
+        "es": "Podemos probar – pero yo también tengo mi opinión.",
+        "pt": "Podemos tentar – mas eu também tenho a minha opinião.",
+        "it": "Proviamo – ma anch’io ho la mia opinione.",
+        "hi": "चल ट्राई करते हैं – पर मेरी भी अपनी राय है।"
       },
       "respect": 2
     },
     {
       "answer": {
-        "ru": "Да, здесь первый раз! Какая литература? Передо мной секусуальная девушка!",
-        "en": "Yes, first time! Books? There’s a sexy girl right in front of me!",
-        "de": "Ja, hier zum ersten Mal! Bücher? Vor mir steht ein megasexy Mädchen!",
-        "zh": "是的，第一次来！书？眼前就站着一个超级性感的美女！",
-        "ja": "うん、初めて！本？目の前にエロい子がいるじゃん！",
-        "fr": "Oui, première fois ici ! Des livres ? Il y a une fille hyper sexy devant moi !",
-        "es": "¡Sí, primera vez! ¿Libros? ¡Delante de mí hay una chica súper sexy!",
-        "pt": "Sim, primeira vez aqui! Livros? Tenho uma miúda super sexy à minha frente!",
-        "it": "Sì, prima volta qui! Libri? C’è una ragazza super sexy davanti a me!",
-        "hi": "हाँ, पहली बार आया हूँ! किताबें? मेरे सामने तो एक सेक्सी लड़की खड़ी है!"
+        "ru": "Лучше выживать самому, хотя если знаешь местность, помоги мне.",
+        "en": "I’d rather survive on my own… unless you know the terrain well.",
+        "de": "Besser allein überleben… es sei denn, du kennst dich hier wirklich aus.",
+        "zh": "最好自己生存，除非你真的很了解这片丛林。",
+        "ja": "一人で生き残る方がいい…よっぽど君が土地勘あるなら別だけど。",
+        "fr": "Mieux vaut survivre seul… sauf si tu connais vraiment le terrain.",
+        "es": "Mejor sobrevivir solo… a menos que realmente conozcas la zona.",
+        "pt": "Melhor sobreviver sozinho… a não ser que conheças mesmo o terreno.",
+        "it": "Meglio cavarmela da solo… a meno che tu non conosca davvero la zona.",
+        "hi": "अकेले ही सर्वाइव कर लूँगा… जब तक तू सच में इलाक़ा नहीं जानती।"
       },
       "respect": 0
     }

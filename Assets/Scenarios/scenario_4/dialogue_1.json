@@ -1,59 +1,59 @@
 {
   "firstPhrase": {
-    "ru": "Я только что спасла тебя, ты чуть не утонул в океане, чем я могу помочь тебе?",
-    "en": "I just saved your life — you almost drowned. How can I help you now?",
-    "de": "Ich hab dich gerade aus dem Ozean gerettet – du wärst fast ertrunken. Wie kann ich dir jetzt helfen?",
-    "zh": "刚刚把你从海里救上来，你差点就淹死了，我还能怎么帮你？",
-    "ja": "今、君を海から救ったよ。溺れそうだったね。今、どうしてほしい？",
-    "fr": "Je viens de te sauver la vie — tu as failli te noyer. Comment puis-je t’aider maintenant ?",
-    "es": "Acabo de salvarte — casi te ahogas. ¿En qué más puedo ayudarte?",
-    "pt": "Acabei de te salvar — quase te afogaste. Como posso ajudar-te agora?",
-    "it": "Ti ho appena salvato la vita — stavi per annegare. Come posso aiutarti adesso?",
-    "hi": "मैंने अभी-अभी तुम्हें समुद्र से बचाया — तुम लगभग डूब ही गए थे। अब मैं तुम्हारी और कैसे मदद करूँ?"
+    "ru": "Ты мой новый студент! Что ты хочешь узнать обо мне?",
+    "en": "You’re my new student! What do you want to know about me?",
+    "de": "Guten Tag! Du bist mein neuer Student! Was möchtest du über mich erfahren?",
+    "zh": "下午好！你是我的新学生！想了解我什么？",
+    "ja": "こんにちは！君は私の新しい生徒よ！私のこと、何を知りたい？",
+    "fr": "Bonjour ! Tu es mon nouvel étudiant ! Que veux-tu savoir sur moi ?",
+    "es": "¡Buenas tardes! Eres mi nuevo estudiante. ¿Qué quieres saber de mí?",
+    "pt": "Boa tarde! És o meu novo aluno! O que queres saber sobre mim?",
+    "it": "Buongiorno! Sei il mio nuovo studente! Cosa vuoi sapere di me?",
+    "hi": "नमस्ते! तुम मेरे नए स्टूडेंट हो! मेरे बारे में क्या जानना चाहते हो?"
   },
   "phraseVariants": [
     {
       "answer": {
-        "ru": "Ты спасла мне жизнь, хочу пригласить тебя на свидание.",
-        "en": "You saved my life — let me take you on a date.",
-        "de": "Du hast mir das Leben gerettet – ich will dich zum Date einladen.",
-        "zh": "你救了我的命，我想约你出去。",
-        "ja": "命を救ってくれた。お礼にデートに誘わせて。",
-        "fr": "Tu m’as sauvé la vie — laisse-moi t’inviter à un rendez-vous.",
-        "es": "Me salvaste la vida — quiero invitarte a una cita.",
-        "pt": "Salvaste-me a vida — quero convidar-te para um encontro.",
-        "it": "Mi hai salvato la vita — voglio invitarti a un appuntamento.",
-        "hi": "तूने मेरी जान बचाई — मैं तुझे डेट पर ले जाना चाहता हूँ।"
+        "ru": "Чтобы узнать вас больше, хочу записаться на дополнительные занятия.",
+        "en": "I want to sign up for extra classes to get to know you better.",
+        "de": "Um mich besser kennenzulernen, möchte ich mich für zusätzliche Stunden anmelden.",
+        "zh": "为了更了解您，我想报名额外课程。",
+        "ja": "もっと知りたくて、補習に申し込むよ。",
+        "fr": "Pour mieux vous connaître, je veux m’inscrire à des cours supplémentaires.",
+        "es": "Para conocerte mejor quiero apuntarme a clases extra.",
+        "pt": "Para te conhecer melhor, quero inscrever-me em aulas extras.",
+        "it": "Per conoscerti meglio voglio iscrivermi a lezioni private.",
+        "hi": "आपको और अच्छे से जानने के लिए मैं एक्स्ट्रा क्लासेस लेना चाहता हूँ।"
       },
       "respect": 4
     },
     {
       "answer": {
-        "ru": "Сними свои трусики и помоги мне наполнится энергией.",
-        "en": "Take off your panties and help me recharge my energy.",
-        "de": "Zieh dein Höschen aus und hilf mir, wieder Energie zu tanken.",
-        "zh": "把内裤脱了，帮我补充能量吧。",
-        "ja": "パンツ脱いで、エネルギー補給手伝って。",
-        "fr": "Enlève ta culotte et aide-moi à recharger mes batteries.",
-        "es": "Quítate las bragas y ayúdame a recargar energía.",
-        "pt": "Tira as cuequinhas e ajuda-me a recarregar energia.",
-        "it": "Togliti le mutandine e aiutami a ricaricarmi.",
-        "hi": "अपनी पैंटी उतार और मुझे एनर्जी भरने में मदद कर।"
+        "ru": "Учеба меня не интересует, я люблю девушек в чулках.",
+        "en": "Studying doesn’t interest me — I love girls in stockings.",
+        "de": "Studieren interessiert mich nicht, ich liebe Mädchen in Strümpfen.",
+        "zh": "学习不感兴趣，我喜欢穿丝袜的女生。",
+        "ja": "勉強なんて興味ない、ストッキングの女の子が大好き。",
+        "fr": "L’étude ne m’intéresse pas, j’adore les filles en bas.",
+        "es": "Estudiar no me interesa, me encantan las chicas con medias.",
+        "pt": "Estudar não me interessa, adoro raparigas de meias.",
+        "it": "Studiare non mi interessa, adoro le ragazze con le calze.",
+        "hi": "पढ़ाई में इंटरेस्ट नहीं, मुझे स्टॉकिंग्स वाली लड़कियाँ बहुत पसंद हैं।"
       },
       "respect": 2
     },
     {
       "answer": {
-        "ru": "Устрой мне релакс, но твой купальник нам помешает.",
-        "en": "Give me some relaxation… but that swimsuit has to go.",
-        "de": "Mach mir Entspannung… aber dein Bikini muss weg.",
-        "zh": "给我放松一下吧……不过你的比基尼得脱掉。",
-        "ja": "リラックスさせて。でもそのビキニ、邪魔だよ。",
-        "fr": "Offre-moi de la détente… mais ton maillot doit disparaître.",
-        "es": "Relájame… pero ese bikini tiene que irse.",
-        "pt": "Dá-me relaxamento… mas esse biquíni tem de sair.",
-        "it": "Rilassami… ma quel bikini deve sparire.",
-        "hi": "मुझे रिलैक्स कर… पर तेरी बिकिनी निकालनी पड़ेगी।"
+        "ru": "Хочу узнать какой цвет нижнего белья вы любите.",
+        "en": "I want to know what color lingerie you prefer.",
+        "de": "Ich will wissen, welche Farbe Unterwäsche Sie bevorzugen.",
+        "zh": "我想知道您喜欢什么颜色的内衣。",
+        "ja": "どんな色の下着がお好みか知りたいな。",
+        "fr": "Je veux savoir quelle couleur de lingerie vous préférez.",
+        "es": "Quiero saber qué color de ropa interior prefieres.",
+        "pt": "Quero saber que cor de lingerie preferes.",
+        "it": "Voglio sapere di che colore preferisci la biancheria intima.",
+        "hi": "मुझे जानना है आप किस कलर की पैंटी पसंद करती हैं।"
       },
       "respect": 0
     }
