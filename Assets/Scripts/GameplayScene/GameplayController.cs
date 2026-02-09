@@ -121,6 +121,8 @@ namespace MyGame.Gameplay
                     StartNextStage();
                     break;
                 case "PaidContent":
+
+                    Debug.Log("PaidContent");
                     _currentGameStage = _paidContentOpenedPanel;
                     _progressPanel.Hide(true);
                     StartNextStage();

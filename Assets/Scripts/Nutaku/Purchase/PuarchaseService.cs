@@ -542,9 +542,11 @@ public class PuarchaseService : MonoBehaviour
         string category = "lootbox";
         foreach (var shopItem in _shopItems)
         {
+
             if (shopItem.category == category && shopItem.available)
             {
-                int curIndex = int.Parse(shopItem.id.Split('_')[^1]);
+                Debug.Log(shopItem.sku);
+                int curIndex = int.Parse(shopItem.sku.Split('_')[^1]);
                 if (curIndex == index)
                     return shopItem;
             }

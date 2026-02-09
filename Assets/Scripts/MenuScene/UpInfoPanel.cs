@@ -73,19 +73,18 @@ namespace MyGame.Menu
             UpdateTextStep();
 
 
+            //Если доступен
+            //if (GameData.StageGirlLevel.IsUnlockStage(GameData.CurrentLevel, _step))
+            //{
+            //    Debug.Log($"левел{GameData.CurrentLevel}   диалог {_step}  OPEN");
+            //    _imageBlur.gameObject.SetActive(false);
+            //}
+            //else
+            //{
+            //    Debug.Log($"левел{GameData.CurrentLevel}   диалог {_step}  CLOSE");
+            //    _imageBlur.gameObject.SetActive( true );
 
-            if (GameData.StageGirlLevel.IsUnlockStage(GameData.CurrentLevel, _step))
-            {
-                Debug.Log($"левел{GameData.CurrentLevel}   диалог {_step}  OPEN");
-                _imageBlur.gameObject.SetActive(false);
-                //_contentImage.material = null;
-            }
-            else
-            {
-                Debug.Log($"левел{GameData.CurrentLevel}   диалог {_step}  CLOSE");
-                _imageBlur.gameObject.SetActive( true );
-               // _contentImage.material = _matBlur;
-            }
+            //}
         }
 
         private void UpdateTextStep()
