@@ -26,7 +26,7 @@ public class NutakuAPIInitializator : MonoBehaviour
 
 
     //По сути свойства ниже логично убрать в другие скрипты
-    public bool IsOpenAllContent {  get; private set; } = true;
+    public bool IsOpenAllContent {  get; private set; } = false;
     public bool IsOpenGameplayIntoScenarioMenu { get; set; } = false;
     public int IdStageScenario { get; set; } = 0;
 

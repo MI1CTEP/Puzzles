@@ -87,6 +87,11 @@ namespace MyGame.Gameplay
             switch (_currentScenarioStage.typeStage)
             {
                 case "Puzzle":
+
+                    //Debug.Log($"Puzzle {_currentGameStageId} {GameData.CurrentStep}");
+                    //Debug.Log($"dialogueId  {_currentScenarioStage.dialogueId}");
+                    GameData.StageGirlLevel.UnlockStage(GameData.CurrentLevel, GameData.CurrentStep);
+
                     _videoController.Disable();
                     _currentGameStage = _puzzleController;
                     _progressPanel.Hide(true);

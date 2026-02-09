@@ -156,6 +156,58 @@ namespace MyGame
             private static string GetKey(int groupId, int id) => $"QuantityGift_{groupId}_{id}";
         }
 
+
+
+        //новый класс для работы со стадиями пазлов
+        public static class StageGirlLevel
+        {
+            private static readonly string _key = "StageGirlLevel";
+
+            
+
+            //2 метода внизу именно для для доступа к стадиям пазлов
+            public static void UnlockStage(int levelId, int IdPuzles)
+            {
+
+                string key = $"{_key}_{levelId}_{IdPuzles}";
+                NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(key, 1, CalbackSucces, CalbackFail);
+                Debug.Log($"сохранение {key}");
+
+
+
+            }
+
+            public static bool IsUnlockStage(int levelId, int IdPuzles)
+            {
+
+                if (NutakuAPIInitializator.instance.IsOpenAllContent)
+                    return true;
+
+
+                string key = $"{_key}_{levelId}_{IdPuzles}";
+                Debug.Log($"Проверка {key}");
+                return NutakuAPIInitializator.instance.PuarchaseService.IsHasDialogues(key);
+
+
+            }
+
+
+            public static void CalbackSucces()
+            {
+                Debug.Log($"сохранение успешно");
+            }
+
+            public static void CalbackFail()
+            {
+                Debug.Log($"сохранение провалилось");
+            }
+        }
+
+
+
+
+
+
         //В диалогах можно не дублировать сохранения в локальные переменные, так как данные будут нужны только после перезапуска уровня
         public static class Dialogues
         {
@@ -181,6 +233,50 @@ namespace MyGame
 
                 //return PlayerPrefs.GetInt($"{_key}_{levelId}_{dialogueId}_{positionId}") == 1;
             }
+
+
+
+            //2 метода внизу именно для для доступа к стадиям пазлов
+            //public static void UnlockStage(int levelId, int dialogueId)
+            //{
+
+            //    //string key = $"{_key}_{levelId}_{dialogueId}";
+            //    //NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(key, 1);
+            //    //Debug.Log($"сохранение {key}");
+
+
+
+            //}
+
+            //public static bool IsUnlockStage(int levelId, int dialogueId)
+            //{
+
+            //    //if (NutakuAPIInitializator.instance.IsOpenAllContent)
+            //    //    return true;
+
+
+
+
+
+            //    //string key = $"{_key}_{levelId}_{dialogueId}";
+            //    //Debug.Log($"Проверка {key}");
+            //    //return NutakuAPIInitializator.instance.PuarchaseService.IsHasDialogues(key);
+
+            //    return true;
+
+
+            //}
+
+
+            //public static void CalbackSucces()
+            //{
+            //    Debug.Log($"сохранение успешно");
+            //}
+
+            //public static void CalbackFail()
+            //{
+            //    Debug.Log($"сохранение провалилось");
+            //}
         }
 
 

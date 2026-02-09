@@ -12,6 +12,8 @@ namespace MyGame.Menu
         [SerializeField] private MenuButton _buttonPrevious;
         [SerializeField] private MenuButton _buttonNext;
 
+        [SerializeField] private Image _imageBlur;
+
         private Image _contentImage;
         private int _levelsCount;
         private int _step;
@@ -40,12 +42,16 @@ namespace MyGame.Menu
 
         public void OnEndLoad()
         {
-            if(GameData.Achievements.IsUnlock(GameData.CurrentLevel, 0))
-            {
-                _textStep.gameObject.SetActive(true);
-                _buttonPrevious.Show();
-                _buttonNext.Show();
-            }
+            _textStep.gameObject.SetActive(true);
+            _buttonPrevious.Show();
+            _buttonNext.Show();
+            //Почему ачивка и именно 0? Типа Откроется только прохождении всего уровня?
+            //if(GameData.Achievements.IsUnlock(GameData.CurrentLevel, 0))
+            //{
+            //    _textStep.gameObject.SetActive(true);
+            //    _buttonPrevious.Show();
+            //    _buttonNext.Show();
+            //}
         }
 
         public void UpdateTextName(int currentLevel, string mainInfo)
@@ -56,6 +62,7 @@ namespace MyGame.Menu
             UpdateTextStep();
         }
 
+        //Тут что за логика? Маг числа. Почему именно 4? Если будем добавлять контент, к этой-же девке, то все поламается.
         private void ChangeStep(int value)
         {
             _step += value;
@@ -64,6 +71,21 @@ namespace MyGame.Menu
             GameData.CurrentStep = _step;
             _contentImage.sprite = BundlesController.Instance.MainResourcesBundle.Sprites[_step];
             UpdateTextStep();
+
+
+
+            if (GameData.StageGirlLevel.IsUnlockStage(GameData.CurrentLevel, _step))
+            {
+                Debug.Log($"левел{GameData.CurrentLevel}   диалог {_step}  OPEN");
+                _imageBlur.gameObject.SetActive(false);
+                //_contentImage.material = null;
+            }
+            else
+            {
+                Debug.Log($"левел{GameData.CurrentLevel}   диалог {_step}  CLOSE");
+                _imageBlur.gameObject.SetActive( true );
+               // _contentImage.material = _matBlur;
+            }
         }
 
         private void UpdateTextStep()

@@ -100,7 +100,7 @@ namespace MyGame.Gameplay.Dialogue
             SetPhrase(_simpleDialogue.phraseVariants[id].answer, true, () => SetSecondPhrase(id));
             _currentSympathy += _simpleDialogue.phraseVariants[id].respect;
             _progressPanel.ChangeValue(_currentSympathy);
-            GameData.Dialogues.Unlock(GameData.CurrentLevel, _simpleDialogue.id, id);
+            GameData.Dialogues.Unlock(GameData.CurrentLevel, _simpleDialogue.id, id);           
             TryDestroyPhraseButtons();
         }
 
