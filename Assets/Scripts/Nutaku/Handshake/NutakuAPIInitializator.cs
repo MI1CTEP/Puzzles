@@ -44,6 +44,9 @@ public class NutakuAPIInitializator : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(Application.persistentDataPath);
+
+
         NutakuSdkConfig.loginResultToGameCallbackDelegate = LoginResultCallback;
 
 
