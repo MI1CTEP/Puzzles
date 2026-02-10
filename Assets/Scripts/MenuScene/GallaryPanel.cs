@@ -92,7 +92,7 @@ namespace MyGame.Menu
             _seq.Insert(0, _contentImage.DOFade(0, 0.2f));
         }
 
-        private void SwitchLevel(int value)
+        public void SwitchLevel(int value)
         {
             GameData.CurrentLevel += value;
             if (GameData.CurrentLevel >= _bundlesController.LevelsCount)
@@ -107,6 +107,21 @@ namespace MyGame.Menu
             else
                 SetDownloaded();
         }
+
+
+        public void SetLevel(int value)
+        {
+            GameData.CurrentLevel = 0;
+
+            if (_bundlesController.TypeLevelStatus(GameData.CurrentLevel) == TypeLevelStatus.NotDownloaded)
+                SetNotDownloaded();
+            else if (_bundlesController.TypeLevelStatus(GameData.CurrentLevel) == TypeLevelStatus.Downloading)
+                SetDownloading();
+            else
+                SetDownloaded();
+
+        }
+
 
         private void TrySetDownloading(int id)
         {

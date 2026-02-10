@@ -62,12 +62,14 @@ namespace MyGame.Menu
             UpdateTextStep();
         }
 
-        //Тут что за логика? Маг числа. Почему именно 4? Если будем добавлять контент, к этой-же девке, то все поламается.
+        //Тут что за логика? Маг числа. Почему именно 4? Если будем добавлять контент, к этой-же девке, то все поламается. Походу ломается на экстра левеле
         private void ChangeStep(int value)
         {
+
             _step += value;
-            if (_step < 0) _step = 4;
-            else if (_step > 4) _step = 0;
+            int maxCurentIndexStage = BundlesController.Instance.MainResourcesBundle.Sprites.Count - 1;
+            if (_step < 0) _step = maxCurentIndexStage;
+            else if (_step > maxCurentIndexStage) _step = 0;
             GameData.CurrentStep = _step;
             _contentImage.sprite = BundlesController.Instance.MainResourcesBundle.Sprites[_step];
             UpdateTextStep();

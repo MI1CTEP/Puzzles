@@ -14,10 +14,13 @@ namespace MyGame.Shop
 
         public UnityAction OnBuy { get; set; }
 
-        public void Init(GiftsSettings giftsSettings)
+        private UnityAction _onClosePanelShopGifts { get; set; }
+
+        public void Init(GiftsSettings giftsSettings, UnityAction onClosePanelShopGifts)
         {
             _giftsSettings = giftsSettings;
             _buyButton.onClick.AddListener(Buy);
+            _onClosePanelShopGifts = onClosePanelShopGifts;
         }
 
         public void Buy()
@@ -45,6 +48,11 @@ namespace MyGame.Shop
             {
                 GameData.Gifts.AddValue(_idGroup, i, 1);
             }
+
+
+            OnBuy?.Invoke();
+
+            _onClosePanelShopGifts?.Invoke();
         }
     }
 }

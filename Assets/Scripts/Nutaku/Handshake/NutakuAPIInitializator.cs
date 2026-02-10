@@ -60,7 +60,7 @@ public class NutakuAPIInitializator : MonoBehaviour
         _loginPanel.Initialize();
 
 
-        _uIShopController.gameObject.SetActive(false);
+       // _uIShopController.gameObject.SetActive(false);
 
 
 

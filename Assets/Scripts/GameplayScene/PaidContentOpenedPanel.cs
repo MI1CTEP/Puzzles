@@ -31,13 +31,16 @@ namespace MyGame.Gameplay
             //    gameObject.SetActive(true);
         }
 
+
+
+        //Покупка платного уровня. Подруги.
         private void Buy()
         {
 
             //GameData.PaidContent.Save(GameData.CurrentLevel);
 
             var itemShop = NutakuAPIInitializator.instance.PuarchaseService.GetShopItemBonusStage(GameData.CurrentLevel);
-            NutakuAPIInitializator.instance.PuarchaseService.PurchaseItem(itemShop);
+            NutakuAPIInitializator.instance.PuarchaseService.PurchaseItem(itemShop, ActionSuccessPurchase);
 
 
            // Close();
@@ -47,6 +50,13 @@ namespace MyGame.Gameplay
         {
             gameObject.SetActive(false);
             OnEnd?.Invoke();
+        }
+
+
+        public void ActionSuccessPurchase()
+        {
+            Close();
+            GameData.StageGirlLevel.UnlockStage(GameData.CurrentLevel, GameData.CurrentStep);
         }
     }
 }

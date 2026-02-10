@@ -25,7 +25,7 @@ namespace MyGame.Shop
             _closeButton = _background.GetComponent<Button>();
             for (int i = 0; i < _products.Length; i++)
             {
-                _products[i].Init(_giftsSettings);
+                _products[i].Init(_giftsSettings, Close);
                 _products[i].OnBuy += Buy;
             }
         }

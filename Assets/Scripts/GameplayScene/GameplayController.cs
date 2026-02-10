@@ -123,6 +123,9 @@ namespace MyGame.Gameplay
                 case "PaidContent":
 
                     Debug.Log("PaidContent");
+                    //GameData.StageGirlLevel.UnlockStage(GameData.CurrentLevel, GameData.CurrentStep);
+
+
                     _currentGameStage = _paidContentOpenedPanel;
                     _progressPanel.Hide(true);
                     StartNextStage();
