@@ -25,7 +25,7 @@ namespace MyGame.Menu
             _buttonPrevious.Init(() => ChangeStep(-1));
             _buttonNext.Init(() => ChangeStep(1));
             _textStep.gameObject.SetActive(false);
-            GameData.CurrentStep = _step;
+            GameData.CurrentPuzzleStep = _step;
         }
 
         public void SetActive(bool value)
@@ -54,12 +54,11 @@ namespace MyGame.Menu
             //}
         }
 
-        public void UpdateTextName(int currentLevel, string mainInfo)
+        public void UpdateAll(int currentLevel, string mainInfo)
         {
             _textName.text = $"{currentLevel}/{_levelsCount} {mainInfo}";
             _step = 0;
-            GameData.CurrentStep = _step;
-            UpdateTextStep();
+            ChangeStep(0);
         }
 
         //Тут что за логика? Маг числа. Почему именно 4? Если будем добавлять контент, к этой-же девке, то все поламается. Походу ломается на экстра левеле
@@ -70,23 +69,20 @@ namespace MyGame.Menu
             int maxCurentIndexStage = BundlesController.Instance.MainResourcesBundle.Sprites.Count - 1;
             if (_step < 0) _step = maxCurentIndexStage;
             else if (_step > maxCurentIndexStage) _step = 0;
-            GameData.CurrentStep = _step;
+            GameData.CurrentPuzzleStep = _step;
             _contentImage.sprite = BundlesController.Instance.MainResourcesBundle.Sprites[_step];
             UpdateTextStep();
 
 
             //Если доступен
-            //if (GameData.StageGirlLevel.IsUnlockStage(GameData.CurrentLevel, _step))
-            //{
-            //    Debug.Log($"левел{GameData.CurrentLevel}   диалог {_step}  OPEN");
-            //    _imageBlur.gameObject.SetActive(false);
-            //}
-            //else
-            //{
-            //    Debug.Log($"левел{GameData.CurrentLevel}   диалог {_step}  CLOSE");
-            //    _imageBlur.gameObject.SetActive( true );
-
-            //}
+            if (_step == 0 || GameData.StageGirlLevel.IsUnlockStage(GameData.CurrentLevel, _step))
+            {
+                _imageBlur.gameObject.SetActive(false);
+            }
+            else
+            {
+                _imageBlur.gameObject.SetActive(true);
+            }
         }
 
         private void UpdateTextStep()

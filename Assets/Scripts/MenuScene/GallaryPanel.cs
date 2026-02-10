@@ -137,7 +137,7 @@ namespace MyGame.Menu
 
         private void SetNotDownloaded()
         {
-            _upInfoPanel.UpdateTextName(GameData.CurrentLevel + 1, "not downloaded");
+            _upInfoPanel.UpdateAll(GameData.CurrentLevel + 1, "not downloaded");
             _contentImage.sprite = _downloadBackground;
             _contentDownloadingPanel.Show(false);
             _buttonPlay.Hide();
@@ -153,7 +153,7 @@ namespace MyGame.Menu
 
         private void SetDownloading()
         {
-            _upInfoPanel.UpdateTextName(GameData.CurrentLevel + 1, "downloading");
+            _upInfoPanel.UpdateAll(GameData.CurrentLevel + 1, "downloading");
             _contentImage.sprite = _downloadBackground;
             _contentDownloadingPanel.Show(true);
             _buttonPlay.Hide();
@@ -246,7 +246,7 @@ namespace MyGame.Menu
         private void EndLoad(bool isOpened)
         {
             _upInfoPanel.OnEndLoad();
-            _upInfoPanel.UpdateTextName(GameData.CurrentLevel + 1, _bundlesController.MainResourcesBundle.GetName);
+            _upInfoPanel.UpdateAll(GameData.CurrentLevel + 1, _bundlesController.MainResourcesBundle.GetName);
             SetStartColor();
             _contentImage.sprite = _bundlesController.MainResourcesBundle.Sprites[0];
             TryStopAnim();

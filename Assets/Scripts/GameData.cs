@@ -6,7 +6,7 @@ namespace MyGame
     public static class GameData
     {
         public static int CurrentLevel { get; set; }
-        public static int CurrentStep { get; set; }
+        public static int CurrentPuzzleStep { get; set; }
 
 
         //Ёто валюта, за которую открываютс€ уровни. «арабатываетс€ при прохождении.
@@ -172,23 +172,16 @@ namespace MyGame
                 string key = $"{_key}_{levelId}_{IdPuzles}";
                 NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(key, 1, CalbackSucces, CalbackFail);
                 Debug.Log($"сохранение {key}");
-
-
-
             }
 
             public static bool IsUnlockStage(int levelId, int IdPuzles)
             {
-
                 if (NutakuAPIInitializator.instance.IsOpenAllContent)
                     return true;
-
 
                 string key = $"{_key}_{levelId}_{IdPuzles}";
                 Debug.Log($"ѕроверка {key}");
                 return NutakuAPIInitializator.instance.PuarchaseService.IsHasDialogues(key);
-
-
             }
 
 

@@ -41,7 +41,7 @@ namespace MyGame.Gameplay
             _scenarioLoader = new();
             _scenario = await _scenarioLoader.GetScenario();
 
-            if (GameData.CurrentStep > 0)
+            if (GameData.CurrentPuzzleStep > 0)
             {
                 int currentStage = 0;
                 for (int i = 0; ; i++)
@@ -49,8 +49,9 @@ namespace MyGame.Gameplay
                     _currentScenarioStage = _scenario.TryGetScenarioStage(i);
                     if (_currentScenarioStage.typeStage == "Puzzle")
                         currentStage++;
-                    if (currentStage == GameData.CurrentStep)
+                    if (currentStage == GameData.CurrentPuzzleStep)
                     {
+                        GameData.CurrentPuzzleStep--;
                         _currentGameStageId = i;
                         break;
                     }
@@ -90,7 +91,8 @@ namespace MyGame.Gameplay
 
                     //Debug.Log($"Puzzle {_currentGameStageId} {GameData.CurrentStep}");
                     //Debug.Log($"dialogueId  {_currentScenarioStage.dialogueId}");
-                    GameData.StageGirlLevel.UnlockStage(GameData.CurrentLevel, GameData.CurrentStep);
+                    GameData.CurrentPuzzleStep++;
+                    GameData.StageGirlLevel.UnlockStage(GameData.CurrentLevel, GameData.CurrentPuzzleStep);
 
                     _videoController.Disable();
                     _currentGameStage = _puzzleController;

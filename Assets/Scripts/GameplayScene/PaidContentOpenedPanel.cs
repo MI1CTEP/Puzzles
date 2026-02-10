@@ -56,7 +56,7 @@ namespace MyGame.Gameplay
         public void ActionSuccessPurchase()
         {
             Close();
-            GameData.StageGirlLevel.UnlockStage(GameData.CurrentLevel, GameData.CurrentStep);
+            GameData.StageGirlLevel.UnlockStage(GameData.CurrentLevel, GameData.CurrentPuzzleStep);
         }
     }
 }
