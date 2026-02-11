@@ -75,7 +75,7 @@ namespace MyGame.Menu
 
 
             //Если доступен
-            if (_step == 0 || GameData.StageGirlLevel.IsUnlockStage(GameData.CurrentLevel, _step))
+            if (_step == 0 || GameData.StageGirlLevel.IsUnlockedStage(GameData.CurrentLevel, _step))
             {
                 _imageBlur.gameObject.SetActive(false);
             }

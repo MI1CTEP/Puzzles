@@ -77,7 +77,7 @@ public class MenuScenarioController : MonoBehaviour
         int dialogueId = 0;
         int positionId = 0; // это где меняется?
 
-        bool available = GameData.Dialogues.IsUnlock(GameData.CurrentLevel, dialogueId, positionId);
+        bool available = GameData.Dialogues.IsUnlocked(GameData.CurrentLevel, dialogueId, positionId);
 
 
         MenuScenarioItem item = Instantiate(_menuScenarioItemPrefab, _parentForItems);
