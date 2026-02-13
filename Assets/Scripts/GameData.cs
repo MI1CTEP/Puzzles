@@ -82,6 +82,10 @@ namespace MyGame
 
             public static void UnlockStage(int levelId, int puzleId)
             {
+                if(IsUnlockedStage(levelId, puzleId))
+                    return;
+
+
                 string key = GetKey(levelId, puzleId);
                 NewSaves.Save(key, true);
                 NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(key, 1);
@@ -106,6 +110,10 @@ namespace MyGame
 
             public static void Unlock(int levelId, int dialogueId, int positionId)
             {
+                if(IsUnlocked(levelId, dialogueId, positionId))
+                    return;
+
+
                 string key = GetKey(levelId, dialogueId, positionId);
                 NewSaves.Save(key, true);
                 NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(key, 1);
@@ -137,6 +145,7 @@ namespace MyGame
 
             public static void UnlockPart(int partId)
             {
+
                 string keyPart = GetKeyPart(partId);
                 NewSaves.Save(keyPart, true);
                 NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(keyPart, 1);
@@ -184,6 +193,10 @@ namespace MyGame
 
             public static void Save(int levelId, int id)
             {
+                if (IsUnlock(levelId, id))
+                    return;
+
+
                 string key = GetKey(levelId, id);
                 NewSaves.Save(key, true);
                 NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(key, 1);
@@ -217,6 +230,9 @@ namespace MyGame
 
             public static void SetOpened(int id)
             {
+                if (IsOpened(id) || IsOpenedAll())
+                    return;
+
                 string key = GetKey(id);
                 NewSaves.Save(key, true);
                 NutakuAPIInitializator.instance.PuarchaseService.StartMakeInventoryRequest(key, 1);
