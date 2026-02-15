@@ -14,12 +14,14 @@ namespace MyGame.Menu
 
         [SerializeField] private Image _imageBlur;
 
+        private MenuButton _buttonPlay;
         private Image _contentImage;
         private int _levelsCount;
         private int _step;
 
-        public void Init(Image contentImage, int levelsCount)
+        public void Init(MenuButton buttonPlay, Image contentImage, int levelsCount)
         {
+            _buttonPlay = buttonPlay;
             _contentImage = contentImage;
             _levelsCount = levelsCount;
             _buttonPrevious.Init(() => ChangeStep(-1));
@@ -31,6 +33,8 @@ namespace MyGame.Menu
         public void SetActive(bool value)
         {
             gameObject.SetActive(value);
+            if (!value)
+                _imageBlur.gameObject.SetActive(false);
         }
 
         public void OnStartLoad()
@@ -78,10 +82,12 @@ namespace MyGame.Menu
             if (_step == 0 || GameData.StageGirlLevel.IsUnlockedStage(GameData.CurrentLevel, _step))
             {
                 _imageBlur.gameObject.SetActive(false);
+                _buttonPlay.SetInteractable(true);
             }
             else
             {
                 _imageBlur.gameObject.SetActive(true);
+                _buttonPlay.SetInteractable(false);
             }
         }
 

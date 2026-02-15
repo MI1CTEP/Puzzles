@@ -27,7 +27,7 @@ namespace MyGame.Menu
             if (!_isHide)
                 return;
             _isHide = false;
-            _button.interactable = true;
+            SetInteractable(true);
             TryStopAnim();
             _seq = DOTween.Sequence();
             transform.localScale = Vector3.one * 0.8f;
@@ -41,10 +41,15 @@ namespace MyGame.Menu
                 return;
             _isHide = true;
             TryStopAnim();
-            _button.interactable = false;
+            SetInteractable(false);
             _seq = DOTween.Sequence();
             _seq.Insert(0, transform.DOScale(Vector3.one * 0.8f, _timeAnim));
             _seq.InsertCallback(_timeAnim, () => gameObject.SetActive(false));
+        }
+
+        public void SetInteractable(bool value)
+        {
+            _button.interactable = value;
         }
 
         public void OnPointerEnter(PointerEventData eventData)

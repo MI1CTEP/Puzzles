@@ -41,7 +41,7 @@ namespace MyGame.Menu
             _bundlesController.OnStartDownloadLevel += TrySetDownloading;
             _bundlesController.OnEndDownloadLevel += TryActivateLevel;
             MenuPanelInit();
-            _upInfoPanel.Init(_contentImage, _bundlesController.LevelsCount);
+            _upInfoPanel.Init(_buttonPlay, _contentImage, _bundlesController.LevelsCount);
             _sympathyPanel.Init();
             _achievemetnsPanel.Init();
             gameObject.SetActive(false);
@@ -89,7 +89,7 @@ namespace MyGame.Menu
             _sympathyPanel.Hide();
             _achievemetnsPanel.Hide();
             _lock.SetActive(false);
-            _seq.Insert(0, _contentImage.DOFade(0, 0.2f));
+            _contentImage.color = new Color(1, 1, 1, 0);
         }
 
         public void SwitchLevel(int value)
