@@ -10,9 +10,11 @@ namespace NutakuUnitySdk
         public static int RuntimeVersionCode = 1; // You MUST remember to update this field value everytime you prepare a new build for the platform!
         // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Must match what is in your manifest for Android, and what you specify in the CMS during upload for iOS, otherwise app update notification capability won't be successful and users will be stuck with an old build.
 
-        public static string Environment = "SANDBOX"; // Can use "SANDBOX" or "PRODUCTION"
+        public static string Environment = "PRODUCTION"; // Can use "SANDBOX" or "PRODUCTION"
 
-        public static string TitleId = "hot-stories-puzzles"; // the TITLE ID of your game from the CMS
+        public static string TitleId = "sweet-stories-puzzles"; // the TITLE ID of your game from the CMS
+        //hot-stories-puzzles - id для sandbox
+        //sweet-stories-puzzles - id для PRODUCTION
 
         public static string AppPackageName = "com.tetragon.sweetstories"; //"com.unitysdk.sample"; // For Android, must match the package name from your Manifest, For iOS must match your BundleIdentifier. Otherwise browser events like logins or payments won't be captured by the game
 

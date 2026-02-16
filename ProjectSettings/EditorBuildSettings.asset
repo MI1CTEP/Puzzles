@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuTempScene.unity
     guid: a8f65f0389d4eca488102a84848150b8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MenuScenario.unity
     guid: 52514f1c7fc526f4580688d370e9fd24
   m_configObjects:

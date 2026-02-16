@@ -44,7 +44,7 @@ public class NutakuAPIInitializator : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(Application.persistentDataPath);
+       // Debug.Log(Application.persistentDataPath);
 
 
         NutakuSdkConfig.loginResultToGameCallbackDelegate = LoginResultCallback;
@@ -57,7 +57,7 @@ public class NutakuAPIInitializator : MonoBehaviour
 
         NutakuSdk.Initialize(this);
 
-        _loginPanel.Initialize();
+        _loginPanel.Initialize(); //Кнопка авторизации
 
 
        // _uIShopController.gameObject.SetActive(false);
@@ -194,6 +194,7 @@ public class NutakuAPIInitializator : MonoBehaviour
                 else //Ошибка
                 {
                     Debug.Log($"Handshake failed with HTTP {rawResult.responseCode}");
+                    Debug.Log($"Handshake failed with HTTP {rawResult.body}");
                     ShowLoginScreen();
                 }
             }
