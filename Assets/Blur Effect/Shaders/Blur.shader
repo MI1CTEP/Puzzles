@@ -64,9 +64,12 @@
             half4 frag(v2f input) : SV_Target
             {
                 // Преобразуем UV координаты
-                float2 uv = input.screenPos.xy / input.screenPos.w;
-                uv.x = (uv.x + 1) * 0.5;
-                uv.y = 1.0 - (uv.y + 1) * 0.5;
+                #if UNITY_UV_STARTS_AT_TOP 
+                float2 uv = float2((input.screenPos.x / input.screenPos.w + 1) * 0.5, 1 - (input.screenPos.y / input.screenPos.w + 1) * 0.5);
+                #else 
+                float2 uv = (input.screenPos.xy / input.screenPos.w +1) *0.5;
+                #endif
+
                 
                 // Нормализуем UV в диапазон [-1, 1] с учетом aspect ratio
                 float2 centeredUV = (input.uv - 0.5) * 2.0;
@@ -92,7 +95,7 @@
                 for (int x = -2; x <= 2; x++) {
                     for (int y = -2; y <= 2; y++) {
                         float2 offset = float2(x, y) * _BlurAmount;
-                        half4 sampleColor = tex2D(_GrabTexture, uv + offset);
+                        half4 sampleColor = tex2Dlod(_GrabTexture, float4(uv + offset,0,0));
                         
                         // Вес в зависимости от расстояния от центра
                         float2 sampleCentered = centeredUV + offset;
