@@ -20,7 +20,7 @@ namespace MyGame.Menu
             _gallaryPanel.Init(_respectPanel, ShowMainPanel, ShowStoryPanel, ShowAlbumPanel, ShowUnlockPanel);
             _storyPanel.Init(ShowGallaryPanel);
             _albumPanel.Init(ShowGallaryPanel);
-            _settingsPanel.Init(ShowGallaryPanel);
+            _settingsPanel.Init(ShowMainPanel);
             _unlockPanel.Init(ShowGallaryPanel, _gallaryPanel.SetLevel);
         }
 
