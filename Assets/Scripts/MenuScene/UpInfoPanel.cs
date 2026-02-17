@@ -68,15 +68,14 @@ namespace MyGame.Menu
         //Тут что за логика? Маг числа. Почему именно 4? Если будем добавлять контент, к этой-же девке, то все поламается. Походу ломается на экстра левеле
         private void ChangeStep(int value)
         {
-
             _step += value;
             int maxCurentIndexStage = BundlesController.Instance.MainResourcesBundle.Sprites.Count - 1;
             if (_step < 0) _step = maxCurentIndexStage;
             else if (_step > maxCurentIndexStage) _step = 0;
             GameData.CurrentPuzzleStep = _step;
-            _contentImage.sprite = BundlesController.Instance.MainResourcesBundle.Sprites[_step];
+            if (BundlesController.Instance.MainResourcesBundle.Sprites.Count > _step)
+                _contentImage.sprite = BundlesController.Instance.MainResourcesBundle.Sprites[_step];
             UpdateTextStep();
-
 
             //Если доступен
             if (_step == 0 || GameData.StageGirlLevel.IsUnlockedStage(GameData.CurrentLevel, _step))
