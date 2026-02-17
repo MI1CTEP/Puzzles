@@ -68,11 +68,11 @@ namespace MyGame.Menu
             _seq = DOTween.Sequence();
             _seq.InsertCallback(0.2f, ()=> 
             {
-                SwitchLevel(0);
                 _upInfoPanel.SetActive(true);
                 _buttonPrevious.Show();
                 _buttonNext.Show();
                 _buttonClose.Show();
+                SwitchLevel(0);
             });
         }
 
