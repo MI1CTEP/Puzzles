@@ -137,7 +137,9 @@ namespace MyGame.Menu
 
         private void SetNotDownloaded()
         {
+            _upInfoPanel.OnStartLoad();
             _upInfoPanel.UpdateAll(GameData.CurrentLevel + 1, "not downloaded");
+            _contentImage.color = new Color(1, 1, 1, 1);
             _contentImage.sprite = _downloadBackground;
             _contentDownloadingPanel.Show(false);
             _buttonPlay.Hide();
@@ -153,7 +155,9 @@ namespace MyGame.Menu
 
         private void SetDownloading()
         {
+            _upInfoPanel.OnStartLoad();
             _upInfoPanel.UpdateAll(GameData.CurrentLevel + 1, "downloading");
+            _contentImage.color = new Color(1, 1, 1, 1);
             _contentImage.sprite = _downloadBackground;
             _contentDownloadingPanel.Show(true);
             _buttonPlay.Hide();

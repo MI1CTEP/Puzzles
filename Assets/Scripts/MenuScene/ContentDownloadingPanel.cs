@@ -21,6 +21,7 @@ namespace MyGame.Menu
 
             if (gameObject.activeSelf)
                 return;
+
             gameObject.SetActive(true);
             _seq = DOTween.Sequence();
             StartLoadingAnim();
@@ -39,8 +40,11 @@ namespace MyGame.Menu
             UpdateProgress(0);
             if (isNowDownloading)
             {
-                BundlesController.Instance.OnChangeLevelProgress += UpdateProgress;
-                _isShowingProgress = true;
+                if(_isShowingProgress == false)
+                {
+                    BundlesController.Instance.OnChangeLevelProgress += UpdateProgress;
+                    _isShowingProgress = true;
+                }
             }
             else if (_isShowingProgress)
             {
@@ -71,8 +75,11 @@ namespace MyGame.Menu
         private void OnDestroy()
         {
             TryStopAnim();
-            if(_isShowingProgress)
+            if (_isShowingProgress)
+            {
                 BundlesController.Instance.OnChangeLevelProgress -= UpdateProgress;
+                _isShowingProgress = false;
+            }
         }
     }
 }
