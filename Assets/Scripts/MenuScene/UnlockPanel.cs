@@ -57,6 +57,9 @@ namespace MyGame.Menu
         {
             //Debug.Log(GameData.CurrentLevel);
             var itemShop = NutakuAPIInitializator.instance.PuarchaseService.GetShopItemShowGirl(GameData.CurrentLevel);
+
+            int price = itemShop.priceGold;
+
             NutakuAPIInitializator.instance.PuarchaseService.PurchaseItem(itemShop, ActionSuccessPurchase);
 
             //GameData.Levels.SetOpened(GameData.CurrentLevel);
@@ -68,6 +71,10 @@ namespace MyGame.Menu
         private void OpenAll()
         {
             var itemShop = NutakuAPIInitializator.instance.PuarchaseService.GetShopItemShowGirls();
+
+            int price = itemShop.priceGold;
+
+
             NutakuAPIInitializator.instance.PuarchaseService.PurchaseItem(itemShop, ActionSuccessPurchase);
 
             //GameData.Levels.OpenAll();

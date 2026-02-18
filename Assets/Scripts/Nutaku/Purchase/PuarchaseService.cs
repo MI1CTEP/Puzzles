@@ -480,13 +480,31 @@ public class PuarchaseService : MonoBehaviour
             if (shopItem.category == category && shopItem.available)
             {
                 int curIndex = int.Parse(shopItem.id.Split('_')[^1]);
-                if(curIndex == index)
+                if (curIndex == index)
                     return shopItem;
             }
         }
 
         return null;
     }
+
+    //public int GetShopItemBonusStagePrice(int index)
+    //{
+    //    string category = "bonus_stage";
+    //    foreach (var shopItem in _shopItems)
+    //    {
+    //        if (shopItem.category == category && shopItem.available)
+    //        {
+    //            int curIndex = int.Parse(shopItem.id.Split('_')[^1]);
+    //            if (curIndex == index)
+    //                return shopItem.priceGold;
+    //        }
+    //    }
+
+    //    return 49;
+    //}
+
+
 
     //Получить предмет категории secret_album по индексу
     public ShopItem GetShopItemSecretAlbum(int index)

@@ -40,7 +40,12 @@ namespace MyGame.Gameplay
             //GameData.PaidContent.Save(GameData.CurrentLevel);
 
             var itemShop = NutakuAPIInitializator.instance.PuarchaseService.GetShopItemBonusStage(GameData.CurrentLevel);
+
+            int price = itemShop.priceGold;
+
             NutakuAPIInitializator.instance.PuarchaseService.PurchaseItem(itemShop, ActionSuccessPurchase);
+
+
 
 
            // Close();

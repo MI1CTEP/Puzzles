@@ -15,8 +15,10 @@ public class NutakuAPIInitializator : MonoBehaviour
 
     [SerializeField] private LoginPanel _loginPanel;
     [SerializeField] private PanelUserInfo _panelUserInfo;
-    [SerializeField] private UIShopController _uIShopController;
+    //[SerializeField] private UIShopController _uIShopController;
 
+    [SerializeField] private GameObject _PanelQA;
+    [SerializeField] private Button _buttonQA;
 
     public string SessionToken => _sessionToken;
     private string _sessionToken = "";
@@ -29,6 +31,9 @@ public class NutakuAPIInitializator : MonoBehaviour
     public bool IsOpenAllContent {  get; private set; } = false;
     public bool IsOpenGameplayIntoScenarioMenu { get; set; } = false;
     public int IdStageScenario { get; set; } = 0;
+
+
+
 
     private void Awake()
     {
@@ -55,58 +60,57 @@ public class NutakuAPIInitializator : MonoBehaviour
         _puarchaseService = GO.AddComponent<PuarchaseService>();
         _puarchaseService.Initialize();
 
+
+        string keyFirstEntered = "the_first_entered_at_device";
+        if (PlayerPrefs.HasKey(keyFirstEntered))
+        {
+            NutakuSdk.Initialize(this);
+            _loginPanel.Initialize(); //Кнопка авторизации
+        }
+        else
+        {
+            ShowQA();
+        }
+
+
+        //NutakuSdk.Initialize(this);
+        //_loginPanel.Initialize(); //Кнопка авторизации
+
+    }
+
+
+    private void ShowQA()
+    {
+        _buttonQA.onClick.AddListener(HideQA);
+        _PanelQA.SetActive(true);
+    }
+
+    private void HideQA()
+    {
+        string keyFirstEntered = "the_first_entered_at_device";
+        PlayerPrefs.SetInt(keyFirstEntered, 1);
+
+        _PanelQA.SetActive(false);
+
         NutakuSdk.Initialize(this);
+        _loginPanel.Initialize();
 
-        _loginPanel.Initialize(); //Кнопка авторизации
-
-
-       // _uIShopController.gameObject.SetActive(false);
-
-
-
-       // StartCoroutine(Test());
-
+        _buttonQA.onClick.RemoveListener(HideQA);
     }
 
 
     private IEnumerator LoadGame()
     {
         PuarchaseService.LoadShopItems();
-
-       // yield return StartCoroutine(PuarchaseService.MakeInventoryRequest("sku_testing", 5));
-       // yield return StartCoroutine(PuarchaseService.GetCurrentQuantityAndUpdate("sku_testing", 2));
-
         PuarchaseService.LoadInventory();
 
         yield return new WaitForSeconds(1);
-        //SceneManager.LoadScene("InitScene");
+
         SceneLoader.LoadInitScene();
 
     }
 
-    private IEnumerator Test()
-    {
-
-        yield return new WaitForSeconds(4);
-        //PuarchaseService.LoadShopItems();
-        //yield return new WaitForSeconds(2);
-        //_uIShopController.CreateItems(PuarchaseService.GetShopItemsFromCategory("show_girl"), PuarchaseService.PurchaseItem);
-        //yield return new WaitForSeconds(2);
-        //_uIShopController.gameObject.SetActive(true);
-
-        PuarchaseService.LoadInventory();
-
-        yield return new WaitForSeconds(2);
-
-        PuarchaseService.GetAllAvailableShowGirls();
-
-        var res2 = PuarchaseService.IsAvaliableShowGirl(2);
-        var res3 = PuarchaseService.IsAvaliableShowGirl(3);
-        Debug.Log($" 2 -  {res2}");
-        Debug.Log($" 3 -  {res3}");
-    }
-
-
+   
 
     // ========== NUTAKU SDK CALLBACKS ==========
     public static void LoginResultCallback(bool wasSuccess)

@@ -29,6 +29,9 @@ namespace MyGame.Shop
             //Продать 10 подарков
 
             var itemShop = NutakuAPIInitializator.instance.PuarchaseService.GetShopItemLootbox(_idGroup);
+
+            int price = itemShop.priceGold;
+
             NutakuAPIInitializator.instance.PuarchaseService.PurchaseItem(itemShop, ActionSuccessPurchase);
 
             //Вот это добавить callback после покупки

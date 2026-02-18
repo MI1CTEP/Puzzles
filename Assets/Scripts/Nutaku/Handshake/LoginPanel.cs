@@ -10,6 +10,7 @@ public class LoginPanel : MonoBehaviour
 
     public void Initialize()
     {
+        
         _loginButton.onClick.AddListener(NutakuSdk.OpenLoginPageInBrowser);
     }
 }
