@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using MyGame.Gifts;
+using TMPro;
 
 namespace MyGame.Shop
 {
@@ -9,6 +10,7 @@ namespace MyGame.Shop
     {
         [SerializeField] private Button _buyButton;
         [SerializeField] private int _idGroup;
+        [SerializeField] private TextMeshProUGUI _priceText;
 
         private GiftsSettings _giftsSettings;
 
@@ -21,6 +23,11 @@ namespace MyGame.Shop
             _giftsSettings = giftsSettings;
             _buyButton.onClick.AddListener(Buy);
             _onClosePanelShopGifts = onClosePanelShopGifts;
+        }
+
+        public void ShowPrice()
+        {
+            _priceText.text = NutakuAPIInitializator.instance.PuarchaseService.GetShopItemLootbox(_idGroup).priceGold.ToString();
         }
 
         public void Buy()

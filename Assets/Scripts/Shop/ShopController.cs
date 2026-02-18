@@ -40,6 +40,8 @@ namespace MyGame.Shop
             _seq = DOTween.Sequence();
             _seq.Insert(0, _background.DOFade(0.9f, _timeAnim));
             _seq.Insert(0, _window.DOLocalMoveY(0, _timeAnim).SetEase(Ease.OutBack));
+            for (int i = 0; i < _products.Length; i++)
+                _products[i].ShowPrice();
         }
 
         private void Close()

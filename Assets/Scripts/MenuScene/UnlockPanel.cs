@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 namespace MyGame.Menu
 {
@@ -13,6 +14,8 @@ namespace MyGame.Menu
         [SerializeField] private MenuButton _openAllButton;
         [SerializeField] private GameObject _levelInfo;
         [SerializeField] private GameObject _allInfo;
+        [SerializeField] private TextMeshProUGUI _priceText;
+        [SerializeField] private TextMeshProUGUI _priceTextAll;
 
         private UnityAction _onShowGallaryPanel;
 
@@ -48,7 +51,11 @@ namespace MyGame.Menu
             _openAllButton.Hide();
         }
 
-        protected override void OnStartShow() { }
+        protected override void OnStartShow()
+        {
+            _priceText.text = NutakuAPIInitializator.instance.PuarchaseService.GetShopItemShowGirl(GameData.CurrentLevel).priceGold.ToString();
+            _priceTextAll.text = NutakuAPIInitializator.instance.PuarchaseService.GetShopItemShowGirls().priceGold.ToString();
+        }
 
 
 

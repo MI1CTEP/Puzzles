@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using TMPro;
 
 namespace MyGame.Gameplay
 {
@@ -8,6 +9,7 @@ namespace MyGame.Gameplay
     {
         [SerializeField] private Button _buyButton;
         [SerializeField] private Button _missButton;
+        [SerializeField] private TextMeshProUGUI _priceText;
 
         public UnityAction OnEnd { get; set; }
 
@@ -22,7 +24,10 @@ namespace MyGame.Gameplay
             if(NutakuAPIInitializator.instance.PuarchaseService.IsAvaliableBonusStage(GameData.CurrentLevel))
                 OnEnd?.Invoke();
             else
+            {
+                _priceText.text = NutakuAPIInitializator.instance.PuarchaseService.GetShopItemBonusStage(GameData.CurrentLevel).priceGold.ToString();
                 gameObject.SetActive(true);
+            }
 
 
             //if (GameData.PaidContent.IsUnlock(GameData.CurrentLevel))
