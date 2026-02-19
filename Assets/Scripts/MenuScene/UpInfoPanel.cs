@@ -78,7 +78,7 @@ namespace MyGame.Menu
             UpdateTextStep();
 
             //Если доступен
-            if (_step == 0 || GameData.StageGirlLevel.IsUnlockedStage(GameData.CurrentLevel, _step))
+            if (_step == 0 || GameData.StageGirlLevel.IsUnlockedStage(GameData.CurrentLevel, _step) || GameData.PaidContent.IsUnlock(GameData.CurrentLevel))
             {
                 _imageBlur.gameObject.SetActive(false);
                 _buttonPlay.SetInteractable(true);
