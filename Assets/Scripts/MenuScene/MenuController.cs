@@ -22,6 +22,9 @@ namespace MyGame.Menu
             _albumPanel.Init(ShowGallaryPanel);
             _settingsPanel.Init(ShowMainPanel);
             _unlockPanel.Init(ShowGallaryPanel, _gallaryPanel.SetLevel);
+
+
+            
         }
 
         private void ShowMainPanel()

@@ -12,6 +12,7 @@ public class PuarchaseService : MonoBehaviour
 {
 
     private string _apiBaseUrl = "https://api.tetragon-games.org";
+    public string ApiBaseUrl => _apiBaseUrl;
 
 
     // Поля для обработки покупок

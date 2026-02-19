@@ -22,6 +22,7 @@ namespace MyGame.Gameplay.Dialogue
 
         public void TryShowValue(int dialogueId, int positionId, int value)
         {
+
             if (GameData.Dialogues.IsUnlocked(GameData.CurrentLevel, dialogueId, positionId))
             {
                 _valueObject.SetActive(true);

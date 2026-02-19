@@ -20,8 +20,11 @@ public class NutakuAPIInitializator : MonoBehaviour
     [SerializeField] private GameObject _PanelQA;
     [SerializeField] private Button _buttonQA;
 
+    [SerializeField] private PanelDeactivitedSession _panelDeactivitedSession;
+
     public string SessionToken => _sessionToken;
     private string _sessionToken = "";
+    private WaitForSeconds _secondsControlTime = new WaitForSeconds(10);
 
     private PuarchaseService _puarchaseService;
     public PuarchaseService PuarchaseService => _puarchaseService;
@@ -32,11 +35,13 @@ public class NutakuAPIInitializator : MonoBehaviour
     public bool IsOpenGameplayIntoScenarioMenu { get; set; } = false;
     public int IdStageScenario { get; set; } = 0;
 
-
+    private Coroutine _coroutineControlSessions;
 
 
     private void Awake()
     {
+
+
         if (instance != null)
         {
             Destroy(gameObject);
@@ -45,12 +50,16 @@ public class NutakuAPIInitializator : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+
+
     }
 
     private void Start()
     {
-       // Debug.Log(Application.persistentDataPath);
 
+        // Debug.Log(Application.persistentDataPath);
+
+        
 
         NutakuSdkConfig.loginResultToGameCallbackDelegate = LoginResultCallback;
 
@@ -60,6 +69,8 @@ public class NutakuAPIInitializator : MonoBehaviour
         _puarchaseService = GO.AddComponent<PuarchaseService>();
         _puarchaseService.Initialize();
 
+
+        _panelDeactivitedSession.Initialize(Application.Quit);
 
         string keyFirstEntered = "the_first_entered_at_device";
         if (PlayerPrefs.HasKey(keyFirstEntered))
@@ -79,6 +90,82 @@ public class NutakuAPIInitializator : MonoBehaviour
     }
 
 
+    void OnApplicationPause(bool pauseStatus)
+    {
+        if (!pauseStatus)
+        {
+            NutakuApi.SendHeartbeat(this);
+        }
+    }
+
+
+
+    private IEnumerator VerifySessionWithServer()
+    {
+        if (string.IsNullOrEmpty(_sessionToken))
+            yield break;
+
+        using (UnityWebRequest request = UnityWebRequest.Get($"{_puarchaseService.ApiBaseUrl}/api/session/check"))
+        {
+            request.SetRequestHeader("Authorization", $"Bearer {_sessionToken}");
+            request.timeout = 5;
+
+            yield return request.SendWebRequest();
+
+            if (request.responseCode == 401)
+            {
+                //Тут логика отключения
+                Debug.Log("Session expired - another device logged in");
+                StopCheckSessions();
+                _panelDeactivitedSession.Show();
+            }
+            else if(request.result == UnityWebRequest.Result.Success)
+            {
+                Debug.Log("Сессия активна");
+            }
+            else if (request.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log($"Session check failed: {request.error}");
+            }
+        }
+    }
+
+
+
+    public void StartCheckSessions()
+    {
+        _coroutineControlSessions = StartCoroutine(ControlSessionsCoroutine());
+    }
+    public void StopCheckSessions()
+    {
+        if( _coroutineControlSessions != null ) 
+            StopCoroutine(_coroutineControlSessions);
+    }
+
+    private IEnumerator ControlSessionsCoroutine()
+    {
+        while (true)
+        {
+            yield return _secondsControlTime;
+
+
+            StartCoroutine(VerifySessionWithServer());
+
+        }
+
+        //string serverSessionToken = "dsfsdfs";   
+
+        //if (_sessionToken != serverSessionToken)
+        //{
+        //    Debug.Log("сессия не правильная");
+        //    //SceneLoader.LoadInitializeScene();
+        //    _panelDeactivitedSession.Show();
+
+        //    StopCheckSessions();
+        //}
+    }
+
+    //Предупреждение о раннем доступе
     private void ShowQA()
     {
         _buttonQA.onClick.AddListener(HideQA);
@@ -101,10 +188,14 @@ public class NutakuAPIInitializator : MonoBehaviour
 
     private IEnumerator LoadGame()
     {
+       
+
         PuarchaseService.LoadShopItems();
         PuarchaseService.LoadInventory();
 
         yield return new WaitForSeconds(1);
+
+        StartCheckSessions();
 
         SceneLoader.LoadInitScene();
 
@@ -141,10 +232,19 @@ public class NutakuAPIInitializator : MonoBehaviour
     }
 
     public void ShowLoginScreen()
-    {       
+    {
+        StartCoroutine(ShowLoginScreenCoroutine());
+    }
+
+
+    private IEnumerator ShowLoginScreenCoroutine()
+    {
+        yield return new WaitForSeconds(2);
+
         if (_loginPanel != null)
             _loginPanel.gameObject.SetActive(true);
     }
+
 
     // ========== GAME HANDSHAKE ==========
     void PerformGameHandshake(string userId)
