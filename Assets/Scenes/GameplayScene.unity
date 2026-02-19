@@ -3108,6 +3108,11 @@ MonoBehaviour:
   mAlignment_LTR: 513
   mAlignmentWasRTL: 0
   mInitializeAlignment: 1
+--- !u!1 &615637776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6966021490653667825, guid: 241eee647b0b37e41af60bb080dda25f, type: 3}
+  m_PrefabInstance: {fileID: 1157609500}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &616564217 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4872165812759637907, guid: 3615ecba1815d724d9febd78a52bb8fd, type: 3}
@@ -5733,7 +5738,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5323309880920662886, guid: 241eee647b0b37e41af60bb080dda25f, type: 3}
   m_PrefabInstance: {fileID: 1157609500}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 615637776}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -10483,6 +10488,7 @@ MonoBehaviour:
   _giftsGiver: {fileID: 2042862278}
   _achievements: {fileID: 698805261}
   _endPanel: {fileID: 1833777397}
+  _continueButtotAfterVideo: {fileID: 615637776}
 --- !u!4 &2041977681
 Transform:
   m_ObjectHideFlags: 0

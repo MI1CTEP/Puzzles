@@ -23,6 +23,7 @@ namespace MyGame.Gameplay
         [SerializeField] private GiftsGiver _giftsGiver;
         [SerializeField] private Achievements _achievements;
         [SerializeField] private EndPanel _endPanel;
+        [SerializeField] private GameObject _continueButtotAfterVideo;
 
         private ScenarioLoader _scenarioLoader;
         private Scenario _scenario;
@@ -43,6 +44,7 @@ namespace MyGame.Gameplay
 
             if (GameData.CurrentPuzzleStep > 0)
             {
+                _continueButtotAfterVideo.SetActive(false);
                 int currentStage = 0;
                 for (int i = 0; ; i++)
                 {
