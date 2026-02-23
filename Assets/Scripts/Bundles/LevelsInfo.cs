@@ -101,8 +101,10 @@ namespace MyGame.Bundles
 
         private bool IsBundleCached(string bundleName, int version)
         {
-            CachedAssetBundle cached = new(bundleName, Hash128.Compute(version));
-            return Caching.IsVersionCached(cached);
+            //CachedAssetBundle cached = new(bundleName, Hash128.Compute(version));
+            //return Caching.IsVersionCached(cached);
+
+            return true;
         }
     }
 }

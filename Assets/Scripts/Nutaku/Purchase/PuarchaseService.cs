@@ -1,46 +1,39 @@
+#if UNITY_WEBGL
 using MyGame.Bundles;
-using NutakuUnitySdk;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Reflection;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Networking;
 
 public class PuarchaseService : MonoBehaviour
 {
-
     private string _apiBaseUrl = "https://api.tetragon-games.org";
     public string ApiBaseUrl => _apiBaseUrl;
-
 
     // Поля для обработки покупок
     private string _currentTransactionUrl = "";
     private string _currentPaymentId = "";
     private ShopItem _currentPurchaseItem;
 
-
-    //Для проверок
+    // Для проверок
     private List<ShopItem> _shopItems = new List<ShopItem>();
     private List<InventoryItem> _inventoryItems = new List<InventoryItem>();
     public List<ShopItem> ShopItems => _shopItems;
     public List<InventoryItem> InventoryItems => _inventoryItems;
 
-
     private UnityAction succesCallbackPurchase;
 
     public void Initialize()
     {
-        NutakuSdkConfig.paymentBrowserResultToGameCallbackDelegate = OnPaymentResultFromBrowser;
+        // В WebGL нет делегата, просто логируем
+        Debug.Log("PuarchaseService initialized for WebGL");
     }
 
-
-    //Метод покупки предмета
+    // ========== ПОКУПКИ ==========
     public void PurchaseItem(ShopItem item, UnityAction succesCallback = null)
     {
-
-        //Проверка на доступность 
         if (!item.available)
         {
             Debug.Log("Item is not available for purchase");
@@ -50,131 +43,27 @@ public class PuarchaseService : MonoBehaviour
         _currentPurchaseItem = item;
         Debug.Log($"Purchasing: {item.name} ({item.priceGold} gold)");
 
-
-        // Создаем платеж через Nutaku SDK
-        var payment = NutakuPayment.PaymentCreationInfo(
-            item.sku,
-            item.name,
-            item.priceGold,
-            item.imageUrl,
-            item.description
-        );
-
-        NutakuApi.CreatePayment(payment, this, (rawResult) =>
+        var paymentData = new
         {
+            price = item.priceGold,
+            name = item.name,
+            skuId = item.sku,
+            imgUrl = item.imageUrl,
+            description = item.description,
+            message = ""
+        };
 
-            try
-            {
-                if (rawResult.responseCode >= 200 && rawResult.responseCode < 300)
-                {
-                    succesCallbackPurchase = succesCallback;
+        string json = JsonUtility.ToJson(paymentData);
+        _currentPaymentId = ""; // Очищаем перед новой покупкой
+        _currentTransactionUrl = "";
+        succesCallbackPurchase = succesCallback;
 
-                    var parsedResult = NutakuApi.Parse_CreatePayment(rawResult);
-
-                    Debug.Log($"Payment created: {parsedResult.paymentId}");
-                    Debug.Log($"Next step: {parsedResult.next}");
-
-                    // Сохраняем данные для возможного fallback
-                    _currentPaymentId = parsedResult.paymentId;
-                    _currentTransactionUrl = parsedResult.transactionUrl;
-
-                    if (parsedResult.next == "put")
-                    {
-                        // Можно завершить через API - показываем подтверждение
-                        ConfirmPurchase(parsedResult.paymentId);
-                    }
-                    else
-                    {
-                        // Нужно открыть браузер
-                        OpenTransactionInBrowser(parsedResult.transactionUrl);
-                    }
-                }
-                else
-                {
-                    Debug.Log($"Payment creation failed: {rawResult.responseCode}");
-                    Debug.Log($"Error: {rawResult.body}");
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.Log("Payment error: " + ex.Message);
-                Debug.Log($"Exception: {ex}");
-            }
-        });
+        // Вызываем JS функцию NutakuGI.createPayment
+        Application.ExternalCall("NutakuGI.createPayment", json);
     }
 
-    
-    void ConfirmPurchase(string paymentId)
-    {
-        Debug.Log("Confirming purchase...");
-
-        NutakuApi.PutPayment(paymentId, this, (rawResult) =>
-        {
-
-            if (rawResult.responseCode == 200)
-            {
-                Debug.Log("Purchase completed successfully!");
-                Debug.Log($"Payment completed: {rawResult.correlationId}");
-
-
-                succesCallbackPurchase?.Invoke();
-                succesCallbackPurchase = null;
-                // Обновляем инвентарь после покупки
-                StartCoroutine(VerifyAndUpdateInventory());
-            }
-            else if (rawResult.responseCode == 424)
-            {
-                Debug.Log("Payment failed: Server error");
-                Debug.Log($"GPHS error for payment: {rawResult.correlationId}");
-
-                // Пробуем через браузер как fallback
-                if (!string.IsNullOrEmpty(_currentTransactionUrl))
-                {
-                    Debug.Log("Trying browser fallback...");
-                    OpenTransactionInBrowser(_currentTransactionUrl);
-                }
-            }
-            else
-            {
-                Debug.Log($"Payment failed: {rawResult.responseCode}");
-                Debug.Log($"Error: {rawResult.body}");
-
-                // Пробуем через браузер как fallback
-                if (!string.IsNullOrEmpty(_currentTransactionUrl))
-                {
-                    OpenTransactionInBrowser(_currentTransactionUrl);
-                }
-            }
-        });
-    }
-
-
-    void OpenTransactionInBrowser(string transactionUrl)
-    {
-        if (string.IsNullOrEmpty(transactionUrl))
-        {
-            Debug.Log("Cannot open browser: transaction URL is empty");
-            succesCallbackPurchase = null;
-            return;
-        }
-
-        try
-        {
-            NutakuSdk.OpenTransactionUrlInBrowser(transactionUrl);
-            Debug.Log("Please complete purchase in browser...");
-            Debug.Log($"Opened browser with URL: {transactionUrl}");
-        }
-        catch (Exception ex)
-        {
-            succesCallbackPurchase = null;
-            Debug.Log("Failed to open browser: " + ex.Message);
-            Debug.Log($"Browser open error: {ex}");
-        }
-    }
-
-
-    //Калбек покупки
-    void OnPaymentResultFromBrowser(string paymentId, string status)
+    // Вызывается из NutakuWebGLInitializator.OnPaymentResult
+    public void OnPaymentResultFromBrowser(string paymentId, string status)
     {
         Debug.Log($"Browser payment result: {status} for {paymentId}");
 
@@ -185,7 +74,6 @@ public class PuarchaseService : MonoBehaviour
             succesCallbackPurchase?.Invoke();
             succesCallbackPurchase = null;
 
-            // Проверяем с сервером что предмет действительно начислен
             StartCoroutine(VerifyAndUpdateInventory());
         }
         else if (status == "cancel")
@@ -205,22 +93,14 @@ public class PuarchaseService : MonoBehaviour
         }
     }
 
-    
     private IEnumerator VerifyAndUpdateInventory()
     {
-        // Ждем немного чтобы сервер успел обработать платеж
         yield return new WaitForSeconds(1.5f);
-
-        // Загружаем обновленный инвентарь
         LoadInventory();
-
-        //// Показываем сообщение об успехе
-        Debug.Log($"Successfully purchased");
-
+        Debug.Log("Successfully purchased");
     }
 
-
-    //Делает запрос к БД и скачивает все доступные предметы инвентаря пользователя.
+    // ========== ИНВЕНТАРЬ ==========
     public void LoadInventory()
     {
         StartCoroutine(MakeAuthenticatedRequest($"{_apiBaseUrl}/api/inventory", "GET", null, (success, json) =>
@@ -246,12 +126,8 @@ public class PuarchaseService : MonoBehaviour
                             source = itemData.source,
                         };
 
-                        //Тут добавляем все предметы в список инвентаря вместе с новым купленным
                         _inventoryItems.Add(inventoryItem);
                     }
-
-
-                    
 
                     Debug.Log($"Loaded {inventoryResponse.total_items} inventory items");
                 }
@@ -267,7 +143,7 @@ public class PuarchaseService : MonoBehaviour
         }));
     }
 
-    //Получить индексы всех доступных девушек
+    // ========== ПРОВЕРКИ ИНВЕНТАРЯ ==========
     public List<int> GetAllAvailableShowGirls()
     {
         Debug.Log($"GetAllAvailableShowGirls {_inventoryItems.Count}");
@@ -288,7 +164,6 @@ public class PuarchaseService : MonoBehaviour
         return list;
     }
 
-    //Проверка доступности Девушки, если она куплена или открыта за Respect
     public bool IsAvaliableShowGirl(int idLevel)
     {
         string category = "show_girl";
@@ -311,13 +186,11 @@ public class PuarchaseService : MonoBehaviour
                     return true;
                 }
             }
-
-        }     
+        }
 
         return false;
     }
 
-    //Проверка доступности всех Девушек
     public bool IsAvaliableAllShowGirls()
     {
         string category = "show_all_girls";
@@ -332,8 +205,6 @@ public class PuarchaseService : MonoBehaviour
         return false;
     }
 
-
-    //Проверка доступности Дополнительного уровня, idLevel это номер девушки
     public bool IsAvaliableBonusStage(int idLevel)
     {
         string category = "bonus_stage";
@@ -350,7 +221,6 @@ public class PuarchaseService : MonoBehaviour
         return false;
     }
 
-    //Проверка есть ли такая награда
     public bool IsHasAchievements(string keyAchievements)
     {
         string source = "reward";
@@ -358,7 +228,7 @@ public class PuarchaseService : MonoBehaviour
         {
             if (item.source == source)
             {
-                if(keyAchievements == item.sku)
+                if (keyAchievements == item.sku)
                     return true;
             }
         }
@@ -366,7 +236,6 @@ public class PuarchaseService : MonoBehaviour
         return false;
     }
 
-    //Проверка экстра уровня
     public bool IsUnlockPartExtraLevel(string keyPart)
     {
         string source = "reward";
@@ -382,7 +251,6 @@ public class PuarchaseService : MonoBehaviour
         return false;
     }
 
-    //получение количества (quantity) по ключу
     public int GetOpenedPartsValue(string key)
     {
         string source = "reward";
@@ -398,7 +266,6 @@ public class PuarchaseService : MonoBehaviour
         return 0;
     }
 
-    //Проверка есть ли такой диалог
     public bool IsHasDialogues(string keyDialogues)
     {
         string source = "reward";
@@ -414,14 +281,11 @@ public class PuarchaseService : MonoBehaviour
         return false;
     }
 
-
-    //Загрузка доступных предметов из магазина.
+    // ========== МАГАЗИН ==========
     public void LoadShopItems()
     {
-
         StartCoroutine(MakeGetRequest($"{_apiBaseUrl}/api/shop/items", (success, json) =>
         {
-
             if (success)
             {
                 try
@@ -445,8 +309,6 @@ public class PuarchaseService : MonoBehaviour
                     }
 
                     Debug.Log($"Loaded {shopResponse.items.Count} shop items");
-
-
                 }
                 catch (Exception ex)
                 {
@@ -460,7 +322,6 @@ public class PuarchaseService : MonoBehaviour
         }));
     }
 
-    //Получить все предметы указанной категории
     public List<ShopItem> GetShopItemsFromCategory(string category)
     {
         List<ShopItem> shopItems = new List<ShopItem>();
@@ -472,7 +333,6 @@ public class PuarchaseService : MonoBehaviour
         return shopItems;
     }
 
-    //Получить предмет категории bonus_stage по индексу
     public ShopItem GetShopItemBonusStage(int index)
     {
         string category = "bonus_stage";
@@ -488,26 +348,7 @@ public class PuarchaseService : MonoBehaviour
 
         return null;
     }
-   
-    //public int GetShopItemBonusStagePrice(int index)
-    //{
-    //    string category = "bonus_stage";
-    //    foreach (var shopItem in _shopItems)
-    //    {
-    //        if (shopItem.category == category && shopItem.available)
-    //        {
-    //            int curIndex = int.Parse(shopItem.id.Split('_')[^1]);
-    //            if (curIndex == index)
-    //                return shopItem.priceGold;
-    //        }
-    //    }
 
-    //    return 49;
-    //}
-
-
-
-    //Получить предмет категории secret_album по индексу
     public ShopItem GetShopItemSecretAlbum(int index)
     {
         string category = "secret_album";
@@ -524,7 +365,6 @@ public class PuarchaseService : MonoBehaviour
         return null;
     }
 
-    //Получить предмет категории show_girl по индексу
     public ShopItem GetShopItemShowGirl(int index)
     {
         string category = "show_girl";
@@ -541,7 +381,6 @@ public class PuarchaseService : MonoBehaviour
         return null;
     }
 
-    //Получить предмет категории show_all_girls все уровни
     public ShopItem GetShopItemShowGirls()
     {
         string category = "show_all_girls";
@@ -561,7 +400,6 @@ public class PuarchaseService : MonoBehaviour
         string category = "lootbox";
         foreach (var shopItem in _shopItems)
         {
-
             if (shopItem.category == category && shopItem.available)
             {
                 Debug.Log(shopItem.sku);
@@ -574,31 +412,9 @@ public class PuarchaseService : MonoBehaviour
         return null;
     }
 
-
-
-    //Получить предмет категории girl по индексу
-    //public ShopItem GetShopItemGirl(int index)
-    //{
-    //    string category = "girl";
-    //    foreach (var shopItem in _shopItems)
-    //    {
-    //        if (shopItem.category == category && shopItem.available)
-    //        {
-    //            int curIndex = int.Parse(shopItem.id.Split('_')[^1]);
-    //            if (curIndex == index)
-    //                return shopItem;
-    //        }
-    //    }
-
-    //    return null;
-    //}
-
-
-
-    //Загрузка данных профиля. Вдруг понадобится.
+    // ========== ПРОФИЛЬ ==========
     public void LoadProfile()
     {
-
         StartCoroutine(MakeAuthenticatedRequest($"{_apiBaseUrl}/api/profile", "GET", null, (success, json) =>
         {
             if (success)
@@ -616,11 +432,9 @@ public class PuarchaseService : MonoBehaviour
         }));
     }
 
-
-    //Аутентификация. Проверка сессии пользователя.
+    // ========== HTTP ЗАПРОСЫ ==========
     private IEnumerator MakeAuthenticatedRequest(string url, string method, string body, Action<bool, string> callback)
     {
-
         using (UnityWebRequest request = new UnityWebRequest(url, method))
         {
             if (!string.IsNullOrEmpty(body))
@@ -655,36 +469,6 @@ public class PuarchaseService : MonoBehaviour
         }
     }
 
-
-
-    // Управление достижениями
-
-    // Добавить предмет (если его нет) или увеличить количество
-    //public void AddItemToInventory(string sku, int quantity = 1)
-    //{
-    //    StartCoroutine(MakeInventoryRequest(sku, quantity));
-    //}
-
-    //// Удалить предмет из инвентаря
-    //public void RemoveItemFromInventory(string sku)
-    //{
-    //    // quantity_change = -9999 удалит предмет полностью
-    //    StartCoroutine(MakeInventoryRequest(sku, -9999));
-    //}
-
-    //// Уменьшить количество предмета (например, использовать предмет)
-    //public void UseItem(string sku, int amount = 1)
-    //{
-    //    StartCoroutine(MakeInventoryRequest(sku, -amount));
-    //}
-
-    // Установить точное количество
-    //public void SetItemQuantity(string sku, int exactQuantity)
-    //{
-    //    // Сначала получим текущее количество
-    //    StartCoroutine(GetCurrentQuantityAndUpdate(sku, exactQuantity));
-    //}
-
     private IEnumerator MakeGetRequest(string url, Action<bool, string> callback)
     {
         using (UnityWebRequest request = UnityWebRequest.Get(url))
@@ -716,8 +500,7 @@ public class PuarchaseService : MonoBehaviour
         }
     }
 
-
-    //добавить предмет в инвентарь, изменить его количество
+    // ========== УПРАВЛЕНИЕ ИНВЕНТАРЕМ ==========
     public IEnumerator MakeInventoryRequest(string sku, int quantityChange, UnityAction succesCallback = null, UnityAction failCallback = null)
     {
         var requestData = new UpdateInventoryRequest
@@ -742,9 +525,7 @@ public class PuarchaseService : MonoBehaviour
             if (request.result == UnityWebRequest.Result.Success)
             {
                 Debug.Log($"Inventory updated: {sku} changed by {quantityChange}");
-
                 LoadInventory();
-
                 succesCallback?.Invoke();
             }
             else
@@ -759,34 +540,8 @@ public class PuarchaseService : MonoBehaviour
     {
         StartCoroutine(MakeInventoryRequest(sku, quantityChange, succesCallback, failCallback));
     }
-
-    //Обновление количества
-    //public IEnumerator GetCurrentQuantityAndUpdate(string sku, int exactQuantity)
-    //{
-    //    // Сначала получаем инвентарь
-    //   // yield return StartCoroutine(LoadInventory());
-
-    //    // Находим текущее количество
-    //    int currentQuantity = 0;
-    //    foreach (var item in InventoryItems)
-    //    {
-    //        if (item.sku == sku)
-    //        {
-    //            currentQuantity = item.quantity;
-    //            break;
-    //        }
-    //    }
-
-    //    // Вычисляем разницу
-    //    int quantityChange = exactQuantity - currentQuantity;
-
-    //    if (quantityChange != 0)
-    //    {
-    //        yield return StartCoroutine(MakeInventoryRequest(sku, quantityChange));
-    //    }
-    //}
-
 }
+#endif
 
 
 

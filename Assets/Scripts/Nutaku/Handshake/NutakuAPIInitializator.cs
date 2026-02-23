@@ -1,6 +1,5 @@
-#if UNITY_ANDROID || UNITY_IOS
+#if UNITY_WEBGL
 using MyGame;
-using NutakuUnitySdk;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,11 +14,8 @@ public class NutakuAPIInitializator : MonoBehaviour
 
     [SerializeField] private LoginPanel _loginPanel;
     [SerializeField] private PanelUserInfo _panelUserInfo;
-    //[SerializeField] private UIShopController _uIShopController;
-
     [SerializeField] private GameObject _PanelQA;
     [SerializeField] private Button _buttonQA;
-
     [SerializeField] private PanelDeactivitedSession _panelDeactivitedSession;
 
     public string SessionToken => _sessionToken;
@@ -29,19 +25,14 @@ public class NutakuAPIInitializator : MonoBehaviour
     private PuarchaseService _puarchaseService;
     public PuarchaseService PuarchaseService => _puarchaseService;
 
-
-    //По сути свойства ниже логично убрать в другие скрипты
-    public bool IsOpenAllContent {  get; private set; } = false;
+    public bool IsOpenAllContent { get; private set; } = false;
     public bool IsOpenGameplayIntoScenarioMenu { get; set; } = false;
     public int IdStageScenario { get; set; } = 0;
 
     private Coroutine _coroutineControlSessions;
 
-
     private void Awake()
     {
-
-
         if (instance != null)
         {
             Destroy(gameObject);
@@ -50,56 +41,52 @@ public class NutakuAPIInitializator : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
-
-
     }
 
     private void Start()
     {
-
-        // Debug.Log(Application.persistentDataPath);
-
-        
-
-        NutakuSdkConfig.loginResultToGameCallbackDelegate = LoginResultCallback;
-
-
         var GO = Instantiate(new GameObject(), transform);
         GO.name = "PuarchaseService";
         _puarchaseService = GO.AddComponent<PuarchaseService>();
         _puarchaseService.Initialize();
-
 
         _panelDeactivitedSession.Initialize(Application.Quit);
 
         string keyFirstEntered = "the_first_entered_at_device";
         if (PlayerPrefs.HasKey(keyFirstEntered))
         {
-            NutakuSdk.Initialize(this);
-            _loginPanel.Initialize(); //Кнопка авторизации
+            CheckNutakuReady();
+            _loginPanel.Initialize();
         }
         else
         {
             ShowQA();
         }
-
-
-        //NutakuSdk.Initialize(this);
-        //_loginPanel.Initialize(); //Кнопка авторизации
-
     }
 
-
-    void OnApplicationPause(bool pauseStatus)
+    private void CheckNutakuReady()
     {
-        if (!pauseStatus)
-        {
-            NutakuApi.SendHeartbeat(this);
-        }
+        Application.ExternalEval(@"
+            if (typeof NutakuGI !== 'undefined') {
+                SendMessage('NutakuAPIInitializator', 'OnNutakuReady');
+            } else {
+                var checkInterval = setInterval(function() {
+                    if (typeof NutakuGI !== 'undefined') {
+                        clearInterval(checkInterval);
+                        SendMessage('NutakuAPIInitializator', 'OnNutakuReady');
+                    }
+                }, 100);
+            }
+        ");
     }
 
+    public void OnNutakuReady()
+    {
+        Debug.Log("Nutaku JS API ready");
+        Application.ExternalCall("NutakuGI.getQuickUserInfo");
+    }
 
-
+    // ========== УПРАВЛЕНИЕ СЕССИЯМИ ==========
     private IEnumerator VerifySessionWithServer()
     {
         if (string.IsNullOrEmpty(_sessionToken))
@@ -114,31 +101,29 @@ public class NutakuAPIInitializator : MonoBehaviour
 
             if (request.responseCode == 401)
             {
-                //Тут логика отключения
                 Debug.Log("Session expired - another device logged in");
                 StopCheckSessions();
                 _panelDeactivitedSession.Show();
             }
-            else if(request.result == UnityWebRequest.Result.Success)
+            else if (request.result == UnityWebRequest.Result.Success)
             {
                 Debug.Log("Сессия активна");
             }
-            else if (request.result != UnityWebRequest.Result.Success)
+            else
             {
                 Debug.Log($"Session check failed: {request.error}");
             }
         }
     }
 
-
-
     public void StartCheckSessions()
     {
         _coroutineControlSessions = StartCoroutine(ControlSessionsCoroutine());
     }
+
     public void StopCheckSessions()
     {
-        if( _coroutineControlSessions != null ) 
+        if (_coroutineControlSessions != null)
             StopCoroutine(_coroutineControlSessions);
     }
 
@@ -147,25 +132,11 @@ public class NutakuAPIInitializator : MonoBehaviour
         while (true)
         {
             yield return _secondsControlTime;
-
-
             StartCoroutine(VerifySessionWithServer());
-
         }
-
-        //string serverSessionToken = "dsfsdfs";   
-
-        //if (_sessionToken != serverSessionToken)
-        //{
-        //    Debug.Log("сессия не правильная");
-        //    //SceneLoader.LoadInitializeScene();
-        //    _panelDeactivitedSession.Show();
-
-        //    StopCheckSessions();
-        //}
     }
 
-    //Предупреждение о раннем доступе
+    // ========== ЛОГИН ==========
     private void ShowQA()
     {
         _buttonQA.onClick.AddListener(HideQA);
@@ -178,57 +149,10 @@ public class NutakuAPIInitializator : MonoBehaviour
         PlayerPrefs.SetInt(keyFirstEntered, 1);
 
         _PanelQA.SetActive(false);
-
-        NutakuSdk.Initialize(this);
+        CheckNutakuReady();
         _loginPanel.Initialize();
 
         _buttonQA.onClick.RemoveListener(HideQA);
-    }
-
-
-    private IEnumerator LoadGame()
-    {
-       
-
-        PuarchaseService.LoadShopItems();
-        PuarchaseService.LoadInventory();
-
-        yield return new WaitForSeconds(1);
-
-        StartCheckSessions();
-
-        SceneLoader.LoadInitScene();
-
-    }
-
-   
-
-    // ========== NUTAKU SDK CALLBACKS ==========
-    public static void LoginResultCallback(bool wasSuccess)
-    {
-        if (wasSuccess)        
-            instance.OnLoginSuccess();        
-        else        
-            instance.ShowLoginScreen();        
-    }
-
-    private void OnLoginSuccess()
-    {
-        Debug.Log("Успешный логинг");
-
-        // Получаем данные пользователя из SDK
-        string userId = NutakuCurrentUser.GetUserId().ToString();
-        string nickname = NutakuCurrentUser.GetUserNickname();
-
-        _panelUserInfo.Initialize(userId, nickname);
-
-
-        // Скрываем панель логина
-        if (_loginPanel != null)
-            _loginPanel.gameObject.SetActive(false);
-
-        // Выполняем Game Handshake
-        PerformGameHandshake(userId);
     }
 
     public void ShowLoginScreen()
@@ -236,80 +160,117 @@ public class NutakuAPIInitializator : MonoBehaviour
         StartCoroutine(ShowLoginScreenCoroutine());
     }
 
-
     private IEnumerator ShowLoginScreenCoroutine()
     {
         yield return new WaitForSeconds(2);
-
         if (_loginPanel != null)
             _loginPanel.gameObject.SetActive(true);
     }
 
+    public void OnUserInfoReceived(string userInfoJson)
+    {
+        try
+        {
+            var userInfo = JsonUtility.FromJson<NutakuUserInfo>(userInfoJson);
+
+            if (userInfo != null && !string.IsNullOrEmpty(userInfo.id))
+            {
+                Debug.Log($"Успешный логин в WebGL: {userInfo.id}");
+                _panelUserInfo.Initialize(userInfo.id, userInfo.nickname);
+
+                if (_loginPanel != null)
+                    _loginPanel.gameObject.SetActive(false);
+
+                PerformGameHandshake(userInfo.id);
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.Log($"Error parsing user info: {ex.Message}");
+        }
+    }
 
     // ========== GAME HANDSHAKE ==========
     void PerformGameHandshake(string userId)
     {
+        Application.ExternalCall("NutakuGI.startHandshake");
+    }
 
-        NutakuApi.GameHandshake(this, (rawResult) =>
+    public void OnHandshakeComplete(string responseJson)
+    {
+        try
         {
-            try
+            var rawResponse = JsonUtility.FromJson<RawHandshakeResponse>(responseJson);
+
+            if (rawResponse.game_rc != 0 && !string.IsNullOrEmpty(rawResponse.message))
             {
-                if (rawResult.responseCode >= 200 && rawResult.responseCode < 300)
+                var handshakeResponse = JsonUtility.FromJson<GameHandshakeResponse>(rawResponse.message);
+
+                if (handshakeResponse != null && handshakeResponse.status == "success")
                 {
-                    var parsedResult = NutakuApi.Parse_GameHandshake(rawResult);
+                    _sessionToken = handshakeResponse.session_token;
+                    Debug.Log("Game Handshake successful!");
 
-                    //неполадки с сервером
-                    if (parsedResult.game_rc == 0)
-                    {
-                        Debug.Log($"Handshake failed: {parsedResult.message}");
-                        ShowLoginScreen();
-                    }
-                    else
-                    {
-                        // Парсим JSON ответ от нашего сервера
-                        try
-                        {
-                            var handshakeResponse = JsonUtility.FromJson<GameHandshakeResponse>(parsedResult.message);
-
-                            //сессия создана и сверена можно пускать в игру
-                            if (handshakeResponse != null && handshakeResponse.status == "success")
-                            {
-                                _sessionToken = handshakeResponse.session_token;
-                                Debug.Log("Game Handshake successful!");
-
-                                // Загружаем сцену с игрой или даем досмтуп к игре
-
-
-                                StartCoroutine(LoadGame());
-                            }
-                            else //Ошибка в сверке сессии
-                            {
-                                Debug.Log($"Server response: {parsedResult.message}");
-                                ShowLoginScreen();
-                            }
-                        }
-                        catch (Exception jsonEx) //Ошибка
-                        {
-                            Debug.Log($"JSON Parse Error: {jsonEx.Message}");
-                            ShowLoginScreen();
-                        }
-                    }
+                    StartCoroutine(LoadGame());
                 }
-                else //Ошибка
+                else
                 {
-                    Debug.Log($"Handshake failed with HTTP {rawResult.responseCode}");
-                    Debug.Log($"Handshake failed with HTTP {rawResult.body}");
+                    Debug.Log($"Handshake failed: {rawResponse.message}");
                     ShowLoginScreen();
                 }
             }
-            catch (Exception ex)
+            else
             {
-                Debug.Log("Handshake error: " + ex.Message);
+                Debug.Log($"Handshake failed with game_rc={rawResponse.game_rc}: {rawResponse.message}");
                 ShowLoginScreen();
             }
-        });
+        }
+        catch (Exception ex)
+        {
+            Debug.Log($"Handshake error: {ex.Message}");
+            ShowLoginScreen();
+        }
     }
 
+    // ========== ЗАГРУЗКА ИГРЫ ==========
+    private IEnumerator LoadGame()
+    {
+        PuarchaseService.LoadShopItems();
+        PuarchaseService.LoadInventory();
+
+        yield return new WaitForSeconds(1);
+
+        StartCheckSessions();
+        SceneLoader.LoadInitScene();
+    }
+
+    // ========== РАЗМЕР IFRAME ==========
+    public void SetIframeSize(int height = 0)
+    {
+        Application.ExternalCall("NutakuGI.setIframeSize", height);
+    }
+
+    private void OnDestroy()
+    {
+        StopCheckSessions();
+    }
+}
+
+[System.Serializable]
+public class NutakuUserInfo
+{
+    public string id;
+    public string nickname;
+    public int grade;
+    public int test;
+    public string language;
+}
+
+[System.Serializable]
+public class RawHandshakeResponse
+{
+    public int game_rc;
+    public string message;
 }
 
 [System.Serializable]
@@ -322,5 +283,4 @@ public class GameHandshakeResponse
     public string status;
     public string message;
 }
-
 #endif
