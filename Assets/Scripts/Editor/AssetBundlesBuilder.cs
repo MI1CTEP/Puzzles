@@ -4,6 +4,7 @@ using System.IO;
 public class BuildAssetBundles
 {
     private static string _outputPathAndroid = "AssetBundles/Android";
+    private static string _outputPathWebGL = "AssetBundles/WebGL";
 
     [MenuItem("Tools/AssetBundles/Build for Android")]
     public static void BuildAllAssetBundlesForAndroid()
@@ -19,7 +20,24 @@ public class BuildAssetBundles
             BuildTarget.Android
         );
 
-        DeleteUnnecessaryFiles();
+        DeleteUnnecessaryFilesAndroid();
+    }
+
+    [MenuItem("Tools/AssetBundles/Build for WebGL")]
+    public static void BuildAllAssetBundlesForWebGL()
+    {
+        SetNameBundles();
+
+        if (!Directory.Exists(_outputPathWebGL))
+            Directory.CreateDirectory(_outputPathWebGL);
+
+        BuildPipeline.BuildAssetBundles(
+            _outputPathWebGL,
+            BuildAssetBundleOptions.None,
+            BuildTarget.WebGL
+        );
+
+        DeleteUnnecessaryFilesWebGL();
     }
 
     private static void SetNameBundles()
@@ -59,13 +77,25 @@ public class BuildAssetBundles
             return "only_gameplay";
     }
 
-    private static void DeleteUnnecessaryFiles()
+    private static void DeleteUnnecessaryFilesAndroid()
     {
         string androidFile = Path.Combine(_outputPathAndroid, "Android");
         if (File.Exists(androidFile))
             File.Delete(androidFile);
 
         string[] files = Directory.GetFiles(_outputPathAndroid, "*.manifest");
+        foreach (string file in files)
+            File.Delete(file);
+        AssetDatabase.Refresh();
+    }
+
+    private static void DeleteUnnecessaryFilesWebGL()
+    {
+        string androidFile = Path.Combine(_outputPathWebGL, "WebGL");
+        if (File.Exists(androidFile))
+            File.Delete(androidFile);
+
+        string[] files = Directory.GetFiles(_outputPathWebGL, "*.manifest");
         foreach (string file in files)
             File.Delete(file);
         AssetDatabase.Refresh();

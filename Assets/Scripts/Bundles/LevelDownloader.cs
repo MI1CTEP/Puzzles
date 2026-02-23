@@ -18,7 +18,11 @@ namespace MyGame.Bundles
         {
             _controller = controller;
             _levelsInfo = levelsInfo;
-            _url = url;
+#if UNITY_ANDROID
+            _url = url + "android/";
+#elif UNITY_WEBGL
+            _url = url + "webGL/";
+#endif
         }
 
         public async UniTask DownloadAllLevels()
@@ -52,7 +56,7 @@ namespace MyGame.Bundles
 
         private async UniTask DownloadBundle(string bundleName, int id, float startProgress = 0, float maxProgress = 0)
         {
-            string pathToBundle = _url + $"android/scenario_{id + 1}/" + bundleName;
+            string pathToBundle = _url + $"scenario_{id + 1}/" + bundleName;
 
             CachedAssetBundle cached = new(bundleName, Hash128.Compute(_levelsInfo.Level(id).version));
 
