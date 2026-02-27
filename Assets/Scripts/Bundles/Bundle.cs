@@ -17,20 +17,56 @@ namespace MyGame.Bundles
 
         public abstract string GetFileName(int id);
 
+
+
+        //public async UniTask Load(int id, UnityAction onEnd)
+        //{
+        //    TryUnload();
+
+        //    CachedAssetBundle cached = new(GetFileName(id), Hash128.Compute(_levelsInfo.Level(id).version));
+
+
+        //    UnityWebRequest uWR = UnityWebRequestAssetBundle.GetAssetBundle("", cached);
+
+        //    await uWR.SendWebRequest();
+
+        //    _bundle = DownloadHandlerAssetBundle.GetContent(uWR);
+
+        //    LoadResources();
+
+        //    if(onEnd != null)
+        //        onEnd.Invoke();
+        //}
+
+
         public async UniTask Load(int id, UnityAction onEnd)
         {
+            //https://storage.yandexcloud.net/digitalmountains.coloring/puzzles/webGL/scenario_1/scenario_1.main_resources
+
+
+
             TryUnload();
+            
             CachedAssetBundle cached = new(GetFileName(id), Hash128.Compute(_levelsInfo.Level(id).version));
-            UnityWebRequest uWR = UnityWebRequestAssetBundle.GetAssetBundle("", cached);
+
+            string url = $"https://storage.yandexcloud.net/digitalmountains.coloring/puzzles/webGL/scenario_{id + 1}/{GetFileName(id)}";
+
+            UnityWebRequest uWR = UnityWebRequestAssetBundle.GetAssetBundle(url, cached);
+
             await uWR.SendWebRequest();
-            _bundle = DownloadHandlerAssetBundle.GetContent(uWR);
-            LoadResources();
-            if (onEnd != null)
-                onEnd.Invoke();
+
+            if (uWR.result == UnityWebRequest.Result.Success)
+            {
+                _bundle = DownloadHandlerAssetBundle.GetContent(uWR);
+                LoadResources();
+                onEnd?.Invoke();
+            }
         }
+
 
         public void TryUnload()
         {
+
             if (_bundle != null)
             {
                 _bundle.Unload(true);

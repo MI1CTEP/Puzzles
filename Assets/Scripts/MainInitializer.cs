@@ -16,7 +16,7 @@ namespace MyGame
             Input.multiTouchEnabled = false;
 
             GameData.CurrentLevel = 0;
-            _bundlesController.Init(SceneLoader.LoadMenu);
+            _bundlesController.Init(SceneLoader.LoadMenu).Forget();
         }
     }
 }

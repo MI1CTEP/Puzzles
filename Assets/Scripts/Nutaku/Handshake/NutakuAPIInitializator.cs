@@ -1,12 +1,13 @@
-#if UNITY_WEBGL
+//#if UNITY_WEBGL
 using MyGame;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Cysharp.Threading.Tasks;
+using System.Threading;
 
 public class NutakuAPIInitializator : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class NutakuAPIInitializator : MonoBehaviour
 
     public string SessionToken => _sessionToken;
     private string _sessionToken = "";
-    private WaitForSeconds _secondsControlTime = new WaitForSeconds(10);
+    private float _secondsControlTime = 45f;
 
     private PuarchaseService _puarchaseService;
     public PuarchaseService PuarchaseService => _puarchaseService;
@@ -29,7 +30,9 @@ public class NutakuAPIInitializator : MonoBehaviour
     public bool IsOpenGameplayIntoScenarioMenu { get; set; } = false;
     public int IdStageScenario { get; set; } = 0;
 
-    private Coroutine _coroutineControlSessions;
+    private CancellationTokenSource _sessionCheckCts;
+
+    public bool IsEditorWebGL = false;
 
     private void Awake()
     {
@@ -45,25 +48,60 @@ public class NutakuAPIInitializator : MonoBehaviour
 
     private void Start()
     {
-        var GO = Instantiate(new GameObject(), transform);
+#if UNITY_EDITOR
+        Debug.Log("Это сообщение появится только в редакторе Unity!");
+
+        IsEditorWebGL = true;
+
+        OnCompleteHandshakeAsync().Forget();
+
+#elif UNITY_WEBGL
+
+       CheckNutakuReady();
+
+#elif UNITY_ANDROID || UNITY_IOS
+
+
+#else
+
+
+
+#endif
+
+    }
+
+
+
+
+    private async UniTask GameStart()
+    {
+        Debug.Log("START");
+
+        var GO = Instantiate(new GameObject());
+        DontDestroyOnLoad(GO);
         GO.name = "PuarchaseService";
         _puarchaseService = GO.AddComponent<PuarchaseService>();
         _puarchaseService.Initialize();
-
         _panelDeactivitedSession.Initialize(Application.Quit);
 
-        string keyFirstEntered = "the_first_entered_at_device";
-        if (PlayerPrefs.HasKey(keyFirstEntered))
-        {
-            CheckNutakuReady();
-            _loginPanel.Initialize();
-        }
-        else
-        {
-            ShowQA();
-        }
+        await UniTask.Delay(1000);
+
+
+
+        //string keyFirstEntered = "the_first_entered_at_device";
+        //if (PlayerPrefs.HasKey(keyFirstEntered))
+        //{
+
+        //    _loginPanel.Initialize();
+        //}
+        //else
+        //{
+        //    ShowQA();
+        //}
     }
 
+    //Он должен быть 1
+    //Этот метод выполняет проверку готовности Nutaku API в браузере и уведомляет Unity
     private void CheckNutakuReady()
     {
         Application.ExternalEval(@"
@@ -80,93 +118,15 @@ public class NutakuAPIInitializator : MonoBehaviour
         ");
     }
 
+    //Это ответ после CheckNutakuReady
     public void OnNutakuReady()
     {
-        Debug.Log("Nutaku JS API ready");
+        Debug.Log("Nutaku JS API ready at Client");
         Application.ExternalCall("NutakuGI.getQuickUserInfo");
     }
 
-    // ========== УПРАВЛЕНИЕ СЕССИЯМИ ==========
-    private IEnumerator VerifySessionWithServer()
-    {
-        if (string.IsNullOrEmpty(_sessionToken))
-            yield break;
 
-        using (UnityWebRequest request = UnityWebRequest.Get($"{_puarchaseService.ApiBaseUrl}/api/session/check"))
-        {
-            request.SetRequestHeader("Authorization", $"Bearer {_sessionToken}");
-            request.timeout = 5;
-
-            yield return request.SendWebRequest();
-
-            if (request.responseCode == 401)
-            {
-                Debug.Log("Session expired - another device logged in");
-                StopCheckSessions();
-                _panelDeactivitedSession.Show();
-            }
-            else if (request.result == UnityWebRequest.Result.Success)
-            {
-                Debug.Log("Сессия активна");
-            }
-            else
-            {
-                Debug.Log($"Session check failed: {request.error}");
-            }
-        }
-    }
-
-    public void StartCheckSessions()
-    {
-        _coroutineControlSessions = StartCoroutine(ControlSessionsCoroutine());
-    }
-
-    public void StopCheckSessions()
-    {
-        if (_coroutineControlSessions != null)
-            StopCoroutine(_coroutineControlSessions);
-    }
-
-    private IEnumerator ControlSessionsCoroutine()
-    {
-        while (true)
-        {
-            yield return _secondsControlTime;
-            StartCoroutine(VerifySessionWithServer());
-        }
-    }
-
-    // ========== ЛОГИН ==========
-    private void ShowQA()
-    {
-        _buttonQA.onClick.AddListener(HideQA);
-        _PanelQA.SetActive(true);
-    }
-
-    private void HideQA()
-    {
-        string keyFirstEntered = "the_first_entered_at_device";
-        PlayerPrefs.SetInt(keyFirstEntered, 1);
-
-        _PanelQA.SetActive(false);
-        CheckNutakuReady();
-        _loginPanel.Initialize();
-
-        _buttonQA.onClick.RemoveListener(HideQA);
-    }
-
-    public void ShowLoginScreen()
-    {
-        StartCoroutine(ShowLoginScreenCoroutine());
-    }
-
-    private IEnumerator ShowLoginScreenCoroutine()
-    {
-        yield return new WaitForSeconds(2);
-        if (_loginPanel != null)
-            _loginPanel.gameObject.SetActive(true);
-    }
-
+    //Ответ от java, что юзер залогинился в WebGL
     public void OnUserInfoReceived(string userInfoJson)
     {
         try
@@ -175,7 +135,7 @@ public class NutakuAPIInitializator : MonoBehaviour
 
             if (userInfo != null && !string.IsNullOrEmpty(userInfo.id))
             {
-                Debug.Log($"Успешный логин в WebGL: {userInfo.id}");
+                Debug.Log("Успешный логин в WebGL");
                 _panelUserInfo.Initialize(userInfo.id, userInfo.nickname);
 
                 if (_loginPanel != null)
@@ -186,16 +146,19 @@ public class NutakuAPIInitializator : MonoBehaviour
         }
         catch (Exception ex)
         {
-            Debug.Log($"Error parsing user info: {ex.Message}");
+            Debug.Log("Error parsing user info");
         }
     }
 
+
     // ========== GAME HANDSHAKE ==========
+    //Отправка запроса на Handshake
     void PerformGameHandshake(string userId)
     {
-        Application.ExternalCall("NutakuGI.startHandshake");
+        Application.ExternalCall("window.startGameHandshake");
     }
 
+    //Получение ответа от OnHandshakeComplete
     public void OnHandshakeComplete(string responseJson)
     {
         try
@@ -211,38 +174,174 @@ public class NutakuAPIInitializator : MonoBehaviour
                     _sessionToken = handshakeResponse.session_token;
                     Debug.Log("Game Handshake successful!");
 
-                    StartCoroutine(LoadGame());
+                    //LoadGameAsync().Forget();
+                    OnCompleteHandshakeAsync().Forget();
                 }
                 else
                 {
-                    Debug.Log($"Handshake failed: {rawResponse.message}");
-                    ShowLoginScreen();
+                    Debug.Log("Handshake failed");
+                    //ShowLoginScreen();
                 }
             }
             else
             {
-                Debug.Log($"Handshake failed with game_rc={rawResponse.game_rc}: {rawResponse.message}");
-                ShowLoginScreen();
+                Debug.Log("Handshake failed with game_rc");
+                //ShowLoginScreen();
             }
         }
         catch (Exception ex)
         {
-            Debug.Log($"Handshake error: {ex.Message}");
-            ShowLoginScreen();
+            Debug.Log("Handshake error");
+            //ShowLoginScreen();
         }
     }
 
-    // ========== ЗАГРУЗКА ИГРЫ ==========
-    private IEnumerator LoadGame()
+    //Действия при положительном Handshake
+    private async UniTask OnCompleteHandshakeAsync()
     {
-        PuarchaseService.LoadShopItems();
-        PuarchaseService.LoadInventory();
+        Debug.Log("OnCompleteHandshakeAsync");
 
-        yield return new WaitForSeconds(1);
+        await GameStart();
+
+        //await UniTask.Delay(3000);
+
+        await LoadGameAsync();
+    }
+
+
+
+    // ========== ЗАГРУЗКА ИГРЫ ==========
+    private async UniTask LoadGameAsync()
+    {
+        Debug.Log("LoadGame");
+
+        // Запускаем загрузки параллельно
+        var shopTask = PuarchaseService.LoadShopItemsAsync();
+
+
+        //если в редакторе
+        if(IsEditorWebGL)
+        {
+            await UniTask.WhenAll(shopTask);
+        }
+        else
+        {
+            var inventoryTask = PuarchaseService.LoadInventoryAsync();
+            await UniTask.WhenAll(shopTask, inventoryTask);
+        }
+
+        // var inventoryTask = PuarchaseService.LoadInventoryAsync();
+        // Ждем обе
+       // await UniTask.WhenAll(shopTask, inventoryTask);
+
+
+        // Небольшая задержка для надежности
+        await UniTask.Delay(TimeSpan.FromSeconds(2));
 
         StartCheckSessions();
         SceneLoader.LoadInitScene();
     }
+
+
+
+
+
+
+
+
+
+
+    // ========== УПРАВЛЕНИЕ СЕССИЯМИ ==========
+    private async UniTask VerifySessionWithServer()
+    {
+        if (string.IsNullOrEmpty(_sessionToken))
+            return;
+
+        using (UnityWebRequest request = UnityWebRequest.Get($"{_puarchaseService.ApiBaseUrl}/api/session/check"))
+        {
+            request.SetRequestHeader("Authorization", $"Bearer {_sessionToken}");
+            request.timeout = 5;
+
+            await request.SendWebRequest();
+
+            if (request.responseCode == 401)
+            {
+                Debug.Log("Session expired - another device logged in");
+                StopCheckSessions();
+                _panelDeactivitedSession.Show();
+            }
+            else if (request.result == UnityWebRequest.Result.Success)
+            {
+                Debug.Log("Сессия активна");
+            }
+            else
+            {
+                Debug.Log("Session check failed");
+            }
+        }
+    }
+
+    public void StartCheckSessions()
+    {
+        _sessionCheckCts = new CancellationTokenSource();
+        ControlSessionsLoop(_sessionCheckCts.Token).Forget();
+    }
+
+    public void StopCheckSessions()
+    {
+        _sessionCheckCts?.Cancel();
+        _sessionCheckCts?.Dispose();
+        _sessionCheckCts = null;
+    }
+
+    private async UniTaskVoid ControlSessionsLoop(CancellationToken token)
+    {
+        while (!token.IsCancellationRequested)
+        {
+            await UniTask.Delay(TimeSpan.FromSeconds(_secondsControlTime), cancellationToken: token);
+            if (!token.IsCancellationRequested)
+            {
+                await VerifySessionWithServer();
+            }
+        }
+    }
+
+
+    private void ShowQA()
+    {
+        _buttonQA.onClick.AddListener(HideQA);
+        _PanelQA.SetActive(true);
+    }
+
+    private void HideQA()
+    {
+        string keyFirstEntered = "the_first_entered_at_device";
+        PlayerPrefs.SetInt(keyFirstEntered, 1);
+
+        _PanelQA.SetActive(false);
+        _loginPanel.Initialize();
+
+        _buttonQA.onClick.RemoveListener(HideQA);
+    }
+
+    public void ShowLoginScreen()
+    {
+        ShowLoginScreenAsync().Forget();
+    }
+
+    private async UniTaskVoid ShowLoginScreenAsync()
+    {
+        await UniTask.Delay(TimeSpan.FromSeconds(2));
+        if (_loginPanel != null)
+            _loginPanel.gameObject.SetActive(true);
+    }
+
+    
+
+   
+
+
+    
 
     // ========== РАЗМЕР IFRAME ==========
     public void SetIframeSize(int height = 0)
@@ -283,4 +382,4 @@ public class GameHandshakeResponse
     public string status;
     public string message;
 }
-#endif
+//#endif

@@ -1,11 +1,16 @@
+
+
+
 #if UNITY_WEBGL
 using MyGame.Bundles;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Networking;
+using Cysharp.Threading.Tasks;
+using System.Threading;
+using Newtonsoft.Json.Linq;
 
 public class PuarchaseService : MonoBehaviour
 {
@@ -27,7 +32,6 @@ public class PuarchaseService : MonoBehaviour
 
     public void Initialize()
     {
-        // В WebGL нет делегата, просто логируем
         Debug.Log("PuarchaseService initialized for WebGL");
     }
 
@@ -41,7 +45,7 @@ public class PuarchaseService : MonoBehaviour
         }
 
         _currentPurchaseItem = item;
-        Debug.Log($"Purchasing: {item.name} ({item.priceGold} gold)");
+        Debug.Log("Purchasing");
 
         var paymentData = new
         {
@@ -54,18 +58,16 @@ public class PuarchaseService : MonoBehaviour
         };
 
         string json = JsonUtility.ToJson(paymentData);
-        _currentPaymentId = ""; // Очищаем перед новой покупкой
+        _currentPaymentId = "";
         _currentTransactionUrl = "";
         succesCallbackPurchase = succesCallback;
 
-        // Вызываем JS функцию NutakuGI.createPayment
         Application.ExternalCall("NutakuGI.createPayment", json);
     }
 
-    // Вызывается из NutakuWebGLInitializator.OnPaymentResult
     public void OnPaymentResultFromBrowser(string paymentId, string status)
     {
-        Debug.Log($"Browser payment result: {status} for {paymentId}");
+        Debug.Log("Browser payment result");
 
         if (status == "purchase")
         {
@@ -74,7 +76,7 @@ public class PuarchaseService : MonoBehaviour
             succesCallbackPurchase?.Invoke();
             succesCallbackPurchase = null;
 
-            StartCoroutine(VerifyAndUpdateInventory());
+            VerifyAndUpdateInventoryAsync().Forget();
         }
         else if (status == "cancel")
         {
@@ -89,80 +91,140 @@ public class PuarchaseService : MonoBehaviour
         else
         {
             succesCallbackPurchase = null;
-            Debug.Log($"Payment error in browser: {status}");
+            Debug.Log("Payment error in browser");
         }
     }
 
-    private IEnumerator VerifyAndUpdateInventory()
+    private async UniTaskVoid VerifyAndUpdateInventoryAsync()
     {
-        yield return new WaitForSeconds(1.5f);
-        LoadInventory();
+        await UniTask.Delay(TimeSpan.FromSeconds(1.5f));
+        await LoadInventoryAsync();
         Debug.Log("Successfully purchased");
     }
 
+
     // ========== ИНВЕНТАРЬ ==========
+    public async UniTask LoadInventoryAsync()
+    {
+        Debug.Log("Start LoadInventoryAsync");
+
+        string tempUrl = "https://api.tetragon-games.org";
+        Debug.Log("Inventory URL");
+
+        var (success, json) = await MakeAuthenticatedRequestAsync($"{tempUrl}/api/inventory", "GET", null);
+
+        if (success)
+        {
+            try
+            {
+                Debug.Log("Raw inventory JSON length}");
+
+                if (string.IsNullOrEmpty(json))
+                {
+                    Debug.LogError("Empty inventory response from server");
+                    return;
+                }
+
+                // Проверяем, что ответ начинается с { (объект)
+                if (!json.TrimStart().StartsWith("{"))
+                {
+                    Debug.LogError("Invalid JSON format - doesn't start with ");
+                    return;
+                }
+
+                // ИСПОЛЬЗУЕМ NEWTONSOFT ВМЕСТО JsonUtility
+                var response = JObject.Parse(json);
+                _inventoryItems.Clear();
+
+                var inventoryArray = response["inventory"] as JArray;
+                if (inventoryArray == null)
+                {
+                    Debug.LogError("inventory array is null");
+                    return;
+                }
+
+                foreach (var itemToken in inventoryArray)
+                {
+                    if (itemToken == null) continue;
+
+                    var inventoryItem = new InventoryItem
+                    {
+                        sku = itemToken["item_sku"]?.ToString() ?? "",
+                        name = itemToken["name"]?.ToString() ?? "",
+                        description = itemToken["description"]?.ToString() ?? "",
+                        quantity = itemToken["quantity"]?.Value<int>() ?? 0,
+                        imageUrl = itemToken["image_url"]?.ToString() ?? "",
+                        category = itemToken["category"]?.ToString() ?? "",
+                        source = itemToken["source"]?.ToString() ?? "",
+                    };
+
+                    _inventoryItems.Add(inventoryItem);
+                }
+
+                int totalItems = response["total_items"]?.Value<int>() ?? _inventoryItems.Count;
+                Debug.Log("Loaded inventory items");
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError("Error parsing inventory:");
+                Debug.LogError("Stack trace: ");
+                Debug.LogError("JSON that caused error:");
+            }
+        }
+        else
+        {
+            Debug.LogError("Failed to load inventory");
+        }
+    }
+
     public void LoadInventory()
     {
-        StartCoroutine(MakeAuthenticatedRequest($"{_apiBaseUrl}/api/inventory", "GET", null, (success, json) =>
-        {
-            if (success)
-            {
-                try
-                {
-                    var inventoryResponse = JsonUtility.FromJson<InventoryResponse>(json);
-                    _inventoryItems.Clear();
-
-                    Debug.Log(json);
-                    foreach (var itemData in inventoryResponse.inventory)
-                    {
-                        var inventoryItem = new InventoryItem
-                        {
-                            sku = itemData.item_sku,
-                            name = itemData.name,
-                            description = itemData.description,
-                            quantity = itemData.quantity,
-                            imageUrl = itemData.image_url,
-                            category = itemData.category,
-                            source = itemData.source,
-                        };
-
-                        _inventoryItems.Add(inventoryItem);
-                    }
-
-                    Debug.Log($"Loaded {inventoryResponse.total_items} inventory items");
-                }
-                catch (Exception ex)
-                {
-                    Debug.Log($"Error parsing inventory: {ex.Message}");
-                }
-            }
-            else
-            {
-                Debug.Log("Failed to load inventory");
-            }
-        }));
+        LoadInventoryAsync().Forget();
     }
 
     // ========== ПРОВЕРКИ ИНВЕНТАРЯ ==========
+
+
     public List<int> GetAllAvailableShowGirls()
     {
-        Debug.Log($"GetAllAvailableShowGirls {_inventoryItems.Count}");
         var list = new List<int>();
-
         string category = "show_girl";
+
         foreach (var item in _inventoryItems)
         {
-            Debug.Log(item.category);
-            if (item.category == category)
+            if (item.category == category && !string.IsNullOrEmpty(item.sku))
             {
-                int curIndex = int.Parse(item.sku.Split('_')[^1]);
-                Debug.Log($"проверка {curIndex}");
-                list.Add(curIndex);
+                string[] skuParts = item.sku.Split('_');
+                if (skuParts.Length > 0 && int.TryParse(skuParts[skuParts.Length - 1], out int curIndex))
+                {
+                    list.Add(curIndex);
+                }
             }
         }
-
         return list;
     }
+
+
+    //public List<int> GetAllAvailableShowGirls()
+    //{
+    //    var list = new List<int>();
+
+    //    string category = "show_girl";
+    //    foreach (var item in _inventoryItems)
+    //    {
+
+    //        if (item.category == category)
+    //        {
+    //            int curIndex = int.Parse(item.sku.Split('_')[^1]);
+
+    //            list.Add(curIndex);
+    //        }
+    //    }
+
+    //    return list;
+    //}
+
+
 
     public bool IsAvaliableShowGirl(int idLevel)
     {
@@ -171,25 +233,52 @@ public class PuarchaseService : MonoBehaviour
 
         foreach (var item in _inventoryItems)
         {
-            if (item.category == category)
+            if (item.category == category && !string.IsNullOrEmpty(item.sku))
             {
-                int curIndex = int.Parse(item.sku.Split('_')[^1]);
-                if (curIndex == idLevel)
+                string[] skuParts = item.sku.Split('_');
+                if (skuParts.Length > 0 && int.TryParse(skuParts[skuParts.Length - 1], out int curIndex) && curIndex == idLevel)
                     return true;
             }
 
-            if (source == item.source)
+            if (source == item.source && item.sku == $"keyLevelOnRespect_{idLevel}")
             {
-                string key = $"keyLevelOnRespect_{idLevel}";
-                if (item.sku == key)
-                {
-                    return true;
-                }
+                return true;
             }
         }
-
         return false;
     }
+
+
+    //public bool IsAvaliableShowGirl(int idLevel)
+    //{
+    //    string category = "show_girl";
+    //    string source = "reward";
+
+    //    foreach (var item in _inventoryItems)
+    //    {
+    //        if (item.category == category)
+    //        {
+
+    //            int curIndex = int.Parse(item.sku.Split('_')[^1]);
+    //            if (curIndex == idLevel)
+    //                return true;
+    //        }
+
+    //        if (source == item.source)
+    //        {
+    //            string key = $"keyLevelOnRespect_{idLevel}";
+    //            if (item.sku == key)
+    //            {
+    //                return true;
+    //            }
+    //        }
+    //    }
+
+    //    return false;
+    //}
+
+
+
 
     public bool IsAvaliableAllShowGirls()
     {
@@ -205,21 +294,39 @@ public class PuarchaseService : MonoBehaviour
         return false;
     }
 
+
+
     public bool IsAvaliableBonusStage(int idLevel)
     {
         string category = "bonus_stage";
         foreach (var item in _inventoryItems)
         {
-            if (item.category == category)
+            if (item.category == category && !string.IsNullOrEmpty(item.sku))
             {
-                int curIndex = int.Parse(item.sku.Split('_')[^1]);
-                if (curIndex == idLevel)
+                string[] skuParts = item.sku.Split('_');
+                if (skuParts.Length > 0 && int.TryParse(skuParts[skuParts.Length - 1], out int curIndex) && curIndex == idLevel)
                     return true;
             }
         }
-
         return false;
     }
+
+
+    //public bool IsAvaliableBonusStage(int idLevel)
+    //{
+    //    string category = "bonus_stage";
+    //    foreach (var item in _inventoryItems)
+    //    {
+    //        if (item.category == category)
+    //        {
+    //            int curIndex = int.Parse(item.sku.Split('_')[^1]);
+    //            if (curIndex == idLevel)
+    //                return true;
+    //        }
+    //    }
+
+    //    return false;
+    //}
 
     public bool IsHasAchievements(string keyAchievements)
     {
@@ -282,44 +389,100 @@ public class PuarchaseService : MonoBehaviour
     }
 
     // ========== МАГАЗИН ==========
+    // ========== МАГАЗИН ==========
+    public async UniTask LoadShopItemsAsync()
+    {
+       
+        string tempUrl = "https://api.tetragon-games.org";
+
+
+
+
+        var (success, json) = await MakeGetRequestAsync($"{tempUrl}/api/shop/items");
+
+        if (success)
+        {
+            try
+            {
+                Debug.Log("Raw shop JSON response length:");
+
+                if (string.IsNullOrEmpty(json))
+                {
+                    Debug.LogError("Empty shop response from server");
+                    return;
+                }
+
+                // Проверяем, что ответ начинается с { (объект)
+                if (!json.TrimStart().StartsWith("{"))
+                {
+                    Debug.LogError("Invalid JSON format - doesn't start with ");
+                    return;
+                }
+
+                // ИСПОЛЬЗУЕМ NEWTONSOFT ВМЕСТО JsonUtility
+
+                Debug.Log("Raw shop JSON response length: 0");
+                Debug.Log(_shopItems);
+                var response = JObject.Parse(json);
+                //Debug.Log(response);
+
+
+                Debug.Log(gameObject);
+
+                _shopItems.Clear();
+                Debug.Log(_shopItems);
+                var itemsArray = response["items"] as JArray;
+                if (itemsArray == null)
+                {
+                    Debug.LogError("items array is null");
+                    return;
+                }
+
+
+                Debug.Log("Raw shop JSON response length: 1");
+
+                //Дошла вот до сюда _shopItems == null
+                //Поэтому не может добавит в _shopItems
+                //Возможно вобще весь объект пустой и не создан
+
+                foreach (var itemToken in itemsArray)
+                {
+                    if (itemToken == null) continue;
+
+                    var shopItem = new ShopItem
+                    {
+                        id = itemToken["id"]?.ToString() ?? "",
+                        sku = itemToken["sku"]?.ToString() ?? "",
+                        name = itemToken["name"]?.ToString() ?? "",
+                        description = itemToken["description"]?.ToString() ?? "",
+                        priceGold = itemToken["price_gold"]?.Value<int>() ?? 0,
+                        imageUrl = itemToken["image_url"]?.ToString() ?? "",
+                        available = itemToken["available"]?.Value<bool>() ?? false,
+                        category = itemToken["category"]?.ToString() ?? ""
+                    };
+                    _shopItems.Add(shopItem);
+                }
+
+
+                Debug.Log("Raw shop JSON response length: 2");
+
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError("Error parsing shop items");
+                Debug.LogError("Stack trace");
+                Debug.LogError("JSON that caused error");
+            }
+        }
+        else
+        {
+            Debug.LogError("Failed to load shop items");
+        }
+    }
+
     public void LoadShopItems()
     {
-        StartCoroutine(MakeGetRequest($"{_apiBaseUrl}/api/shop/items", (success, json) =>
-        {
-            if (success)
-            {
-                try
-                {
-                    var shopResponse = JsonUtility.FromJson<ShopResponse>(json);
-                    _shopItems.Clear();
-                    foreach (var itemData in shopResponse.items)
-                    {
-                        var shopItem = new ShopItem
-                        {
-                            id = itemData.id,
-                            sku = itemData.sku,
-                            name = itemData.name,
-                            description = itemData.description,
-                            priceGold = itemData.price_gold,
-                            imageUrl = itemData.image_url,
-                            available = itemData.available,
-                            category = itemData.category
-                        };
-                        _shopItems.Add(shopItem);
-                    }
-
-                    Debug.Log($"Loaded {shopResponse.items.Count} shop items");
-                }
-                catch (Exception ex)
-                {
-                    Debug.Log($"Error parsing shop items: {ex.Message}");
-                }
-            }
-            else
-            {
-                Debug.Log("Failed to load shop items");
-            }
-        }));
+        LoadShopItemsAsync().Forget();
     }
 
     public List<ShopItem> GetShopItemsFromCategory(string category)
@@ -333,53 +496,109 @@ public class PuarchaseService : MonoBehaviour
         return shopItems;
     }
 
+
     public ShopItem GetShopItemBonusStage(int index)
     {
         string category = "bonus_stage";
         foreach (var shopItem in _shopItems)
         {
-            if (shopItem.category == category && shopItem.available)
+            if (shopItem.category == category && shopItem.available && !string.IsNullOrEmpty(shopItem.id))
             {
-                int curIndex = int.Parse(shopItem.id.Split('_')[^1]);
-                if (curIndex == index)
+                string[] idParts = shopItem.id.Split('_');
+                if (idParts.Length > 0 && int.TryParse(idParts[idParts.Length - 1], out int curIndex) && curIndex == index)
                     return shopItem;
             }
         }
-
         return null;
     }
+
+
+    //public ShopItem GetShopItemBonusStage(int index)
+    //{
+    //    string category = "bonus_stage";
+    //    foreach (var shopItem in _shopItems)
+    //    {
+    //        if (shopItem.category == category && shopItem.available)
+    //        {
+    //            int curIndex = int.Parse(shopItem.id.Split('_')[^1]);
+    //            if (curIndex == index)
+    //                return shopItem;
+    //        }
+    //    }
+
+    //    return null;
+    //}
+
+
+
 
     public ShopItem GetShopItemSecretAlbum(int index)
     {
         string category = "secret_album";
         foreach (var shopItem in _shopItems)
         {
-            if (shopItem.category == category && shopItem.available)
+            if (shopItem.category == category && shopItem.available && !string.IsNullOrEmpty(shopItem.id))
             {
-                int curIndex = int.Parse(shopItem.id.Split('_')[^1]);
-                if (curIndex == index)
+                string[] idParts = shopItem.id.Split('_');
+                if (idParts.Length > 0 && int.TryParse(idParts[idParts.Length - 1], out int curIndex) && curIndex == index)
                     return shopItem;
             }
         }
-
         return null;
     }
+
+
+    //public ShopItem GetShopItemSecretAlbum(int index)
+    //{
+    //    string category = "secret_album";
+    //    foreach (var shopItem in _shopItems)
+    //    {
+    //        if (shopItem.category == category && shopItem.available)
+    //        {
+    //            int curIndex = int.Parse(shopItem.id.Split('_')[^1]);
+    //            if (curIndex == index)
+    //                return shopItem;
+    //        }
+    //    }
+
+    //    return null;
+    //}
+
+
 
     public ShopItem GetShopItemShowGirl(int index)
     {
         string category = "show_girl";
         foreach (var shopItem in _shopItems)
         {
-            if (shopItem.category == category && shopItem.available)
+            if (shopItem.category == category && shopItem.available && !string.IsNullOrEmpty(shopItem.id))
             {
-                int curIndex = int.Parse(shopItem.id.Split('_')[^1]);
-                if (curIndex == index)
+                string[] idParts = shopItem.id.Split('_');
+                if (idParts.Length > 0 && int.TryParse(idParts[idParts.Length - 1], out int curIndex) && curIndex == index)
                     return shopItem;
             }
         }
-
         return null;
     }
+
+
+
+
+    //public ShopItem GetShopItemShowGirl(int index)
+    //{
+    //    string category = "show_girl";
+    //    foreach (var shopItem in _shopItems)
+    //    {
+    //        if (shopItem.category == category && shopItem.available)
+    //        {
+    //            int curIndex = int.Parse(shopItem.id.Split('_')[^1]);
+    //            if (curIndex == index)
+    //                return shopItem;
+    //        }
+    //    }
+
+    //    return null;
+    //}
 
     public ShopItem GetShopItemShowGirls()
     {
@@ -395,114 +614,205 @@ public class PuarchaseService : MonoBehaviour
         return null;
     }
 
+
+
     public ShopItem GetShopItemLootbox(int index)
     {
         string category = "lootbox";
         foreach (var shopItem in _shopItems)
         {
-            if (shopItem.category == category && shopItem.available)
+            if (shopItem.category == category && shopItem.available && !string.IsNullOrEmpty(shopItem.sku))
             {
-                Debug.Log(shopItem.sku);
-                int curIndex = int.Parse(shopItem.sku.Split('_')[^1]);
-                if (curIndex == index)
+                string[] skuParts = shopItem.sku.Split('_');
+                if (skuParts.Length > 0 && int.TryParse(skuParts[skuParts.Length - 1], out int curIndex) && curIndex == index)
                     return shopItem;
             }
         }
-
         return null;
     }
 
+
+
+    //public ShopItem GetShopItemLootbox(int index)
+    //{
+    //    string category = "lootbox";
+    //    foreach (var shopItem in _shopItems)
+    //    {
+    //        if (shopItem.category == category && shopItem.available)
+    //        {
+    //           // Debug.Log(shopItem.sku);
+    //            int curIndex = int.Parse(shopItem.sku.Split('_')[^1]);
+    //            if (curIndex == index)
+    //                return shopItem;
+    //        }
+    //    }
+
+    //    return null;
+    //}
+
     // ========== ПРОФИЛЬ ==========
-    public void LoadProfile()
+    public async UniTask LoadProfileAsync()
     {
-        StartCoroutine(MakeAuthenticatedRequest($"{_apiBaseUrl}/api/profile", "GET", null, (success, json) =>
+        var (success, json) = await MakeAuthenticatedRequestAsync($"{ApiBaseUrl}/api/profile", "GET", null);
+
+        if (success)
         {
-            if (success)
+            try
             {
-                try
-                {
-                    var profileResponse = JsonUtility.FromJson<ProfileResponse>(json);
-                    Debug.Log($"Profile loaded: {profileResponse.nickname}, Spent gold: {profileResponse.total_spent_gold}");
-                }
-                catch (Exception ex)
-                {
-                    Debug.Log($"Error parsing profile: {ex.Message}");
-                }
+                var profileResponse = JsonUtility.FromJson<ProfileResponse>(json);
+                Debug.Log("Profile loaded: ");
             }
-        }));
+            catch (Exception ex)
+            {
+                Debug.Log("Error parsing profile");
+            }
+        }
     }
 
-    // ========== HTTP ЗАПРОСЫ ==========
-    private IEnumerator MakeAuthenticatedRequest(string url, string method, string body, Action<bool, string> callback)
+    public void LoadProfile()
     {
+        LoadProfileAsync().Forget();
+    }
+
+    // ========== HTTP ЗАПРОСЫ (UniTask версии) ==========
+    private async UniTask<(bool success, string response)> MakeAuthenticatedRequestAsync(string url, string method, string body)
+    {
+        Debug.Log("MakeAuthenticatedRequestAsync");
+        Debug.Log("SessionToken exists");
+
         using (UnityWebRequest request = new UnityWebRequest(url, method))
         {
             if (!string.IsNullOrEmpty(body))
             {
                 byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(body);
                 request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+                //Debug.Log("Request body");
             }
 
             request.downloadHandler = new DownloadHandlerBuffer();
             request.SetRequestHeader("Content-Type", "application/json");
-            request.SetRequestHeader("Authorization", $"Bearer {NutakuAPIInitializator.instance.SessionToken}");
-            request.timeout = 10;
 
-            yield return request.SendWebRequest();
-
-            if (request.result == UnityWebRequest.Result.Success)
+            if (!string.IsNullOrEmpty(NutakuAPIInitializator.instance?.SessionToken))
             {
-                callback?.Invoke(true, request.downloadHandler.text);
+                request.SetRequestHeader("Authorization", $"Bearer {NutakuAPIInitializator.instance.SessionToken}");
             }
             else
             {
-                Debug.Log($"Auth request error {request.responseCode}: {request.error}");
+                Debug.LogError("No session token available for authenticated request!");
+            }
+
+            request.timeout = 10;
+
+            await request.SendWebRequest();
+
+            Debug.Log("Response code");
+
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                string responseText = request.downloadHandler?.text ?? "";
+                Debug.Log("MakeAuthenticatedRequestAsync Success, response length");
+
+                if (responseText.Length > 0)
+                {
+                    Debug.Log("Response preview");
+                }
+
+                return (true, responseText);
+            }
+            else
+            {
+                string errorText = request.error ?? "Unknown error";
+                Debug.LogError("Auth request error ");
+
+                if (request.downloadHandler != null && !string.IsNullOrEmpty(request.downloadHandler.text))
+                {
+                    string errorResponse = request.downloadHandler.text;
+                    Debug.LogError("Error response body");
+
+                    try
+                    {
+                        var errorResponseObj = JsonUtility.FromJson<ErrorResponse>(errorResponse);
+                        if (!string.IsNullOrEmpty(errorResponseObj?.detail))
+                        {
+                            Debug.LogError("Server error detail");
+                        }
+                    }
+                    catch { }
+                }
 
                 if (request.responseCode == 401)
                 {
-                    Debug.Log("Session expired or invalid. Please log in again.");
-                    NutakuAPIInitializator.instance.ShowLoginScreen();
+                    Debug.LogError("Session expired or invalid. Please log in again.");
+                    //NutakuAPIInitializator.instance?.ShowLoginScreen();
+                }
+                else if (request.responseCode == 0)
+                {
+                    Debug.LogError("Network error - possible CORS or connection issue");
                 }
 
-                callback?.Invoke(false, request.error);
+                return (false, errorText);
             }
         }
     }
 
-    private IEnumerator MakeGetRequest(string url, Action<bool, string> callback)
+    private async UniTask<(bool success, string response)> MakeGetRequestAsync(string url)
     {
+        Debug.Log("MakeGetRequestAsync");
+
         using (UnityWebRequest request = UnityWebRequest.Get(url))
         {
             request.timeout = 10;
 
-            yield return request.SendWebRequest();
+            await request.SendWebRequest();
 
             if (request.result == UnityWebRequest.Result.Success)
             {
-                callback?.Invoke(true, request.downloadHandler.text);
+                string responseText = request.downloadHandler?.text ?? "";
+                Debug.Log("MakeGetRequestAsync Success, response length");
+
+                if (responseText.Length > 0)
+                {
+                    Debug.Log("Response preview");
+                }
+
+                return (true, responseText);
             }
             else
             {
-                Debug.Log($"HTTP GET error {request.responseCode}: {request.error}");
+                string errorText = request.error ?? "Unknown error";
+                Debug.LogError("HTTP GET error ");
 
-                try
+                if (request.downloadHandler != null && !string.IsNullOrEmpty(request.downloadHandler.text))
                 {
-                    var errorResponse = JsonUtility.FromJson<ErrorResponse>(request.downloadHandler.text);
-                    if (!string.IsNullOrEmpty(errorResponse?.detail))
-                    {
-                        Debug.Log($"Server error: {errorResponse.detail}");
-                    }
-                }
-                catch { }
+                    string errorResponse = request.downloadHandler.text;
+                    Debug.LogError("Error response body");
 
-                callback?.Invoke(false, request.error);
+                    try
+                    {
+                        var errorResponseObj = JsonUtility.FromJson<ErrorResponse>(errorResponse);
+                        if (!string.IsNullOrEmpty(errorResponseObj?.detail))
+                        {
+                            Debug.LogError("Server error detail");
+                        }
+                    }
+                    catch { }
+                }
+
+                if (request.responseCode == 0)
+                {
+                    Debug.LogError("Network error - possible CORS or connection issue");
+                }
+
+                return (false, errorText);
             }
         }
     }
 
     // ========== УПРАВЛЕНИЕ ИНВЕНТАРЕМ ==========
-    public IEnumerator MakeInventoryRequest(string sku, int quantityChange, UnityAction succesCallback = null, UnityAction failCallback = null)
+    public async UniTask MakeInventoryRequestAsync(string sku, int quantityChange, UnityAction succesCallback = null, UnityAction failCallback = null)
     {
+        Debug.Log("MakeInventoryRequestAsync");
+
         var requestData = new UpdateInventoryRequest
         {
             item_sku = sku,
@@ -511,7 +821,7 @@ public class PuarchaseService : MonoBehaviour
 
         string json = JsonUtility.ToJson(requestData);
 
-        using (UnityWebRequest request = new UnityWebRequest($"{_apiBaseUrl}/api/inventory/update", "POST"))
+        using (UnityWebRequest request = new UnityWebRequest($"{ApiBaseUrl}/api/inventory/update", "POST"))
         {
             byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(json);
             request.uploadHandler = new UploadHandlerRaw(bodyRaw);
@@ -520,17 +830,18 @@ public class PuarchaseService : MonoBehaviour
             request.SetRequestHeader("Content-Type", "application/json");
             request.SetRequestHeader("Authorization", $"Bearer {NutakuAPIInitializator.instance.SessionToken}");
 
-            yield return request.SendWebRequest();
+            await request.SendWebRequest();
 
             if (request.result == UnityWebRequest.Result.Success)
             {
-                Debug.Log($"Inventory updated: {sku} changed by {quantityChange}");
-                LoadInventory();
+                Debug.Log("MakeInventoryRequestAsync Success");
+              
+                await LoadInventoryAsync();
                 succesCallback?.Invoke();
             }
             else
             {
-                Debug.LogError($"Failed to update inventory: {request.error}");
+                Debug.LogError("Failed to update inventory");
                 failCallback?.Invoke();
             }
         }
@@ -538,10 +849,14 @@ public class PuarchaseService : MonoBehaviour
 
     public void StartMakeInventoryRequest(string sku, int quantityChange, UnityAction succesCallback = null, UnityAction failCallback = null)
     {
-        StartCoroutine(MakeInventoryRequest(sku, quantityChange, succesCallback, failCallback));
+        if (NutakuAPIInitializator.instance.IsEditorWebGL)
+            return;
+
+        MakeInventoryRequestAsync(sku, quantityChange, succesCallback, failCallback).Forget();
     }
 }
 #endif
+
 
 
 

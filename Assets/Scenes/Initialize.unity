@@ -2073,7 +2073,7 @@ GameObject:
   - component: {fileID: 2138598068}
   - component: {fileID: 2138598072}
   m_Layer: 5
-  m_Name: CanvasNutakuAPIInitializator
+  m_Name: NutakuAPIInitializator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -56,11 +56,16 @@ namespace MyGame.Bundles
 
         private async UniTask DownloadBundle(string bundleName, int id, float startProgress = 0, float maxProgress = 0)
         {
+            Debug.Log("DownloadBundle");
+            Debug.Log(bundleName);
+
             string pathToBundle = _url + $"scenario_{id + 1}/" + bundleName;
+            Debug.Log(pathToBundle);
 
             CachedAssetBundle cached = new(bundleName, Hash128.Compute(_levelsInfo.Level(id).version));
 
             UnityWebRequest uWR = UnityWebRequestAssetBundle.GetAssetBundle(pathToBundle, cached);
+           // UnityWebRequest uWR = UnityWebRequestAssetBundle.GetAssetBundle("", cached);
             UnityWebRequestAsyncOperation operation = uWR.SendWebRequest();
 
             while (!operation.isDone)
@@ -71,7 +76,8 @@ namespace MyGame.Bundles
 
             if (uWR.result != UnityWebRequest.Result.Success)
             {
-                Debug.LogError($"Ошибка загрузки бандла: {bundleName} для уровня {id}. Ошибка: {uWR.error}");
+                //Debug.LogError($"Ошибка загрузки бандла: {bundleName} для уровня {id}. Ошибка: {uWR.error}");
+                Debug.LogError("Ошибка загрузки бандла");
                 uWR.Dispose();
                 return;
             }

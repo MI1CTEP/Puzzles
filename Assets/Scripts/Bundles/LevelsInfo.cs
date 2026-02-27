@@ -101,10 +101,17 @@ namespace MyGame.Bundles
 
         private bool IsBundleCached(string bundleName, int version)
         {
+
+#if UNITY_WEBGL
+            return false; // В WebGL всегда скачиваем заново
+#else
+    CachedAssetBundle cached = new(bundleName, Hash128.Compute(version));
+    return Caching.IsVersionCached(cached);
+#endif
+
+
             //CachedAssetBundle cached = new(bundleName, Hash128.Compute(version));
             //return Caching.IsVersionCached(cached);
-
-            return true;
         }
     }
 }

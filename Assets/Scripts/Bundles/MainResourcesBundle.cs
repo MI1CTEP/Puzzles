@@ -17,6 +17,9 @@ namespace MyGame.Bundles
 
         protected override void LoadResources()
         {
+            Debug.Log("LoadResources");
+
+
             Sprites.Clear();
             bool isHaveResource = true;
             int id = 1;
