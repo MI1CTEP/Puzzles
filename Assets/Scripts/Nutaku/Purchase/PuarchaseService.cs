@@ -2,15 +2,17 @@
 
 
 #if UNITY_WEBGL
+using Cysharp.Threading.Tasks;
+using I2.Loc.SimpleJSON;
 using MyGame.Bundles;
+//using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Networking;
-using Cysharp.Threading.Tasks;
-using System.Threading;
-using Newtonsoft.Json.Linq;
 
 public class PuarchaseService : MonoBehaviour
 {
@@ -35,7 +37,10 @@ public class PuarchaseService : MonoBehaviour
         Debug.Log("PuarchaseService initialized for WebGL");
     }
 
-    // ========== œŒ ”œ » ==========
+
+
+
+
     public void PurchaseItem(ShopItem item, UnityAction succesCallback = null)
     {
         if (!item.available)
@@ -47,53 +52,114 @@ public class PuarchaseService : MonoBehaviour
         _currentPurchaseItem = item;
         Debug.Log("Purchasing");
 
-        var paymentData = new
+        Debug.Log(item.priceGold);
+        Debug.Log(item.name);
+        Debug.Log(item.sku);
+        Debug.Log(item.imageUrl);
+        Debug.Log(item.description);
+
+        var paymentData = new PaymentData
         {
-            price = item.priceGold,
+            price = item.priceGold.ToString(),
             name = item.name,
             skuId = item.sku,
-            imgUrl = item.imageUrl,
-            description = item.description,
+            imgUrl = "https://drive.google.com/uc?export=download&id=1gPxkmuh4sd27pSda1nQiBc-H7Wff17ri",
+            description = "description",
             message = ""
         };
 
         string json = JsonUtility.ToJson(paymentData);
+        Debug.Log(json);
+
+
         _currentPaymentId = "";
         _currentTransactionUrl = "";
         succesCallbackPurchase = succesCallback;
 
-        Application.ExternalCall("NutakuGI.createPayment", json);
+        //Application.ExternalCall("NutakuGI.createPayment", json);
+
+        Application.ExternalCall("window.createPayment", json);
     }
 
-    public void OnPaymentResultFromBrowser(string paymentId, string status)
+
+
+    public void OnPaymentResultFromBrowser(string jsonResult)
     {
         Debug.Log("Browser payment result");
 
-        if (status == "purchase")
-        {
-            Debug.Log("Purchase completed in browser!");
+        Debug.Log(jsonResult);
 
-            succesCallbackPurchase?.Invoke();
-            succesCallbackPurchase = null;
+        var json = JSON.Parse(jsonResult);
+        string status = json["status"].Value;
+        string paymentId = json["paymentId"].Value;
+        // œ‡ÒËÏ JSON
+        //var result = JsonUtility.FromJson<PaymentResultDataPuzzles>(jsonResult);
 
-            VerifyAndUpdateInventoryAsync().Forget();
-        }
-        else if (status == "cancel")
-        {
-            succesCallbackPurchase = null;
-            Debug.Log("Purchase cancelled in browser");
-        }
-        else if (status == "errorFromGPHS")
-        {
-            succesCallbackPurchase = null;
-            Debug.Log("Payment failed: Server error (GPHS)");
-        }
-        else
-        {
-            succesCallbackPurchase = null;
-            Debug.Log("Payment error in browser");
-        }
+     
+
+        //string status = result.status;
+        //string paymentId = result.paymentId;
+
+            if (status == "success")
+            {
+                Debug.Log("Purchase completed in browser!");
+
+                succesCallbackPurchase?.Invoke();
+                succesCallbackPurchase = null;
+
+                VerifyAndUpdateInventoryAsync().Forget();
+            }
+            else if (status == "cancel")
+            {
+                succesCallbackPurchase = null;
+                Debug.Log("Purchase cancelled in browser");
+            }
+            else if (status == "errorFromGPHS")
+            {
+                succesCallbackPurchase = null;
+                Debug.Log("Payment failed: Server error (GPHS)");
+            }
+            else
+            {
+                succesCallbackPurchase = null;
+                Debug.Log("Payment error in browser");
+            }
+
+
+
+
     }
+
+
+    //public void OnPaymentResultFromBrowser(string paymentId, string status)
+    //{
+    //    Debug.Log("Browser payment result");
+
+    //    if (status == "purchase")
+    //    {
+    //        Debug.Log("Purchase completed in browser!");
+
+    //        succesCallbackPurchase?.Invoke();
+    //        succesCallbackPurchase = null;
+
+    //        VerifyAndUpdateInventoryAsync().Forget();
+    //    }
+    //    else if (status == "cancel")
+    //    {
+    //        succesCallbackPurchase = null;
+    //        Debug.Log("Purchase cancelled in browser");
+    //    }
+    //    else if (status == "errorFromGPHS")
+    //    {
+    //        succesCallbackPurchase = null;
+    //        Debug.Log("Payment failed: Server error (GPHS)");
+    //    }
+    //    else
+    //    {
+    //        succesCallbackPurchase = null;
+    //        Debug.Log("Payment error in browser");
+    //    }
+    //}
 
     private async UniTaskVoid VerifyAndUpdateInventoryAsync()
     {
@@ -298,6 +364,7 @@ public class PuarchaseService : MonoBehaviour
 
     public bool IsAvaliableBonusStage(int idLevel)
     {
+        Debug.Log("IsAvaliableBonusStage");
         string category = "bonus_stage";
         foreach (var item in _inventoryItems)
         {
@@ -499,6 +566,8 @@ public class PuarchaseService : MonoBehaviour
 
     public ShopItem GetShopItemBonusStage(int index)
     {
+        Debug.Log("GetShopItemBonusStage");
+
         string category = "bonus_stage";
         foreach (var shopItem in _shopItems)
         {
@@ -618,6 +687,8 @@ public class PuarchaseService : MonoBehaviour
 
     public ShopItem GetShopItemLootbox(int index)
     {
+        Debug.Log("GetShopItemLootbox");
+
         string category = "lootbox";
         foreach (var shopItem in _shopItems)
         {
@@ -849,7 +920,7 @@ public class PuarchaseService : MonoBehaviour
 
     public void StartMakeInventoryRequest(string sku, int quantityChange, UnityAction succesCallback = null, UnityAction failCallback = null)
     {
-        if (NutakuAPIInitializator.instance.IsEditorWebGL)
+        if (NutakuAPIInitializator.instance.TypePlatform == TypePlatform.Editor)
             return;
 
         MakeInventoryRequestAsync(sku, quantityChange, succesCallback, failCallback).Forget();
@@ -857,7 +928,16 @@ public class PuarchaseService : MonoBehaviour
 }
 #endif
 
-
+[System.Serializable]
+public class PaymentData
+{
+    public string price;
+    public string name;
+    public string skuId;
+    public string imgUrl;
+    public string description;
+    public string message;
+}
 
 
 [System.Serializable]
@@ -957,3 +1037,12 @@ public class UpdateInventoryRequest
     public int quantity_change;
     public string source = "reward";
 }
+
+
+//[System.Serializable]
+//public class PaymentResultDataPuzzles
+//{
+//    public string paymentId;
+//    public string status;
+//    public string error;
+//}

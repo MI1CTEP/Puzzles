@@ -11,9 +11,6 @@ public class ForBuilds : MonoBehaviour
     }
 
 
-    private void NN()
-    {
-
-    }
+   
 
 }

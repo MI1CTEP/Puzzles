@@ -1,6 +1,7 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
-using DG.Tweening;
+using UnityEngine.UIElements;
 
 namespace MyGame.Menu
 {
@@ -14,6 +15,8 @@ namespace MyGame.Menu
 
         public void Init(UnityAction onShowGallaryPanel, UnityAction onShowSettingsPanel)
         {
+            SetSettingsScreen();
+
             gameObject.SetActive(true);
             MenuPanelInit();
             _rectTransform = GetComponent<RectTransform>();
@@ -41,6 +44,16 @@ namespace MyGame.Menu
             _seq.InsertCallback(0, _buttonExit.Hide);
             _seq.InsertCallback(0.1f, _buttonSettings.Hide);
             _seq.InsertCallback(0.3f, _buttonGallary.Hide);
+        }
+
+        //Установка экрана в зависимости от платформы
+        private void SetSettingsScreen()
+        {
+            //if (NutakuAPIInitializator.instance.WeaponType == WeaponType.Editor || NutakuAPIInitializator.instance.WeaponType == WeaponType.WebGL)
+            //{
+            //    float scale = 0.7f;
+            //    transform.localScale = new Vector3(scale, scale, scale);
+            //}
         }
     }
 }

@@ -11,6 +11,9 @@ namespace MyGame.Gameplay
 
         public ScenarioStage TryGetScenarioStage(int id)
         {
+            Debug.Log("TryGetScenarioStage");
+            Debug.Log(id);
+            Debug.Log(scenarioStages.Count);
             if (id < scenarioStages.Count)
                 return scenarioStages[id];
 

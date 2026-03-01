@@ -42,6 +42,9 @@ namespace MyGame.Gameplay
             _scenarioLoader = new();
             _scenario = await _scenarioLoader.GetScenario();
 
+
+
+
             if (GameData.CurrentPuzzleStep > 0)
             {
                 _continueButtotAfterVideo.SetActive(false);
@@ -73,13 +76,22 @@ namespace MyGame.Gameplay
             _achievements.Init(_puzzleController, _giftsGiver, _dialogueController);
             _endPanel.Init(_dialogueController, _giftController, _achievements);
             TryStartNextStage();
+
+
+            
         }
 
         private void TryStartNextStage()
         {
+
             _currentScenarioStage = _scenario.TryGetScenarioStage(_currentGameStageId);
+
             _currentGameStageId++;
-            if (_currentScenarioStage == null || _isPaidContent && !GameData.PaidContent.IsUnlock(GameData.CurrentLevel))
+
+            bool isUnlock = GameData.PaidContent.IsUnlock(GameData.CurrentLevel);
+
+
+            if (_currentScenarioStage == null || _isPaidContent && !isUnlock)
             {
                 End();
                 return;

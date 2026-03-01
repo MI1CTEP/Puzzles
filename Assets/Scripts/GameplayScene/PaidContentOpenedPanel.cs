@@ -21,11 +21,17 @@ namespace MyGame.Gameplay
 
         public void Play(ScenarioStage scenarioStage)
         {
-            if(NutakuAPIInitializator.instance.PuarchaseService.IsAvaliableBonusStage(GameData.CurrentLevel))
+            Debug.Log("Play");
+            bool isAvaiable = NutakuAPIInitializator.instance.PuarchaseService.IsAvaliableBonusStage(GameData.CurrentLevel);
+            if (isAvaiable)
+            {
                 OnEnd?.Invoke();
+            }
             else
             {
-                _priceText.text = NutakuAPIInitializator.instance.PuarchaseService.GetShopItemBonusStage(GameData.CurrentLevel).priceGold.ToString();
+                string text = NutakuAPIInitializator.instance.PuarchaseService.GetShopItemBonusStage(GameData.CurrentLevel).priceGold.ToString();
+                Debug.Log(text);
+                _priceText.text = text;
                 gameObject.SetActive(true);
             }
 
@@ -41,13 +47,13 @@ namespace MyGame.Gameplay
         //Покупка платного уровня. Подруги.
         private void Buy()
         {
-
+            Debug.Log("Buy");
             //GameData.PaidContent.Save(GameData.CurrentLevel);
 
             var itemShop = NutakuAPIInitializator.instance.PuarchaseService.GetShopItemBonusStage(GameData.CurrentLevel);
-
+            Debug.Log(itemShop);
             int price = itemShop.priceGold;
-
+            Debug.Log(price);
             NutakuAPIInitializator.instance.PuarchaseService.PurchaseItem(itemShop, ActionSuccessPurchase);
 
 

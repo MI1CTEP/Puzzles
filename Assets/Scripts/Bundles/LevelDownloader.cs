@@ -56,11 +56,10 @@ namespace MyGame.Bundles
 
         private async UniTask DownloadBundle(string bundleName, int id, float startProgress = 0, float maxProgress = 0)
         {
-            Debug.Log("DownloadBundle");
-            Debug.Log(bundleName);
+           
 
             string pathToBundle = _url + $"scenario_{id + 1}/" + bundleName;
-            Debug.Log(pathToBundle);
+       
 
             CachedAssetBundle cached = new(bundleName, Hash128.Compute(_levelsInfo.Level(id).version));
 

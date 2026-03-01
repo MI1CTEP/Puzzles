@@ -13,8 +13,12 @@ namespace MyGame.Menu
         private readonly float _timeAnim = 0.2f;
         private bool _isHide;
 
-        public void Init(UnityAction onClick)
+        private float _scaleDefolt = 0.8f;
+
+        public void Init(UnityAction onClick, float scaleDefolt = 0.8f)
         {
+            //if()
+
             _button = GetComponent<Button>();
             if (onClick != null)
                 _button.onClick.AddListener(onClick);

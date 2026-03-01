@@ -7,7 +7,7 @@ namespace MyGame.Menu
     public abstract class MenuPanel : MonoBehaviour
     {
         [SerializeField] private RectTransform _rectTransformBackground;
-
+         
         private Image _image;
         protected Sequence _seq;
         private Vector2 _startSizeDelta;
@@ -32,6 +32,7 @@ namespace MyGame.Menu
             _startSizeDelta = _rectTransformBackground.sizeDelta;
             _startPosition = _rectTransformBackground.position;
             _startColor = _image.color;
+
         }
 
         protected void FirstShow()
@@ -83,5 +84,8 @@ namespace MyGame.Menu
         {
             TryStopAnim();
         }
+
+
+        
     }
 }

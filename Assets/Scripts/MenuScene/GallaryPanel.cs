@@ -28,6 +28,7 @@ namespace MyGame.Menu
         [SerializeField] private Sprite _downloadBackground;
         [SerializeField] private Sprite _respectIcon;
         [SerializeField] private Sprite _detailIcon;
+        [SerializeField] private Transform _openedCardObj;
 
         private RespectPanel _respectPanel;
         private BundlesController _bundlesController;
@@ -36,6 +37,10 @@ namespace MyGame.Menu
 
         public void Init(RespectPanel respectPanel, UnityAction onShowMainPanel, UnityAction onShowStoryPanel, UnityAction onShowAnbumPanel, UnityAction onShowUnlockPanel)
         {
+
+           // Debug.Log(_openedCardObj.transform.localPosition.y);
+            SetSettingsScreen();
+           // Debug.Log(_openedCardObj.transform.localPosition.y);
             _respectPanel = respectPanel;
             _bundlesController = BundlesController.Instance;
             _bundlesController.OnStartDownloadLevel += TrySetDownloading;
@@ -56,6 +61,7 @@ namespace MyGame.Menu
             _buttonHistory.Init(onShowStoryPanel);
             _buttonOpenLevel.Init(OpenLevel);
             _onShowUnlockPanel = onShowUnlockPanel;
+
         }
 
         protected override void OnStartShow() 
@@ -278,6 +284,27 @@ namespace MyGame.Menu
             _bundlesController.OnStartDownloadLevel -= TrySetDownloading;
             _bundlesController.OnEndDownloadLevel -= TryActivateLevel;
             TryStopAnim();
+        }
+
+        //Установка экрана в зависимости от платформы
+        private void SetSettingsScreen()
+        {
+            //if (NutakuAPIInitializator.instance.WeaponType == WeaponType.Editor || NutakuAPIInitializator.instance.WeaponType == WeaponType.WebGL)
+            //{
+            //    float scaleCard = 0.45f;
+            //    _openedCardObj.localScale = new Vector3(scaleCard, scaleCard, scaleCard);
+            //    _openedCardObj.localPosition = new Vector2(300f, -320f);
+
+            //    float scaleButton = 0.7f;
+            //    _buttonPlay.transform.localScale = new Vector3(scaleButton, scaleButton, scaleButton);
+            //    _buttonAlbum.transform.localScale = new Vector3(scaleButton, scaleButton, scaleButton);
+            //    _buttonHistory.transform.localScale = new Vector3(scaleButton, scaleButton, scaleButton);
+
+            //    _buttonPlay.transform.localPosition = new Vector2(-235f, -167f);
+            //    _buttonAlbum.transform.localPosition = new Vector2(-235f, -337f);
+            //    _buttonHistory.transform.localPosition = new Vector2(-235f, -507f);
+
+            //}
         }
     }
 }

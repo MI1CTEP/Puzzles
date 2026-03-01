@@ -27,18 +27,21 @@ namespace MyGame.Shop
 
         public void ShowPrice()
         {
-            _priceText.text = NutakuAPIInitializator.instance.PuarchaseService.GetShopItemLootbox(_idGroup).priceGold.ToString();
+            Debug.Log("ShowPrice");
+            string priceText = NutakuAPIInitializator.instance.PuarchaseService.GetShopItemLootbox(_idGroup).priceGold.ToString();
+            Debug.Log(priceText);
+            _priceText.text = priceText;
         }
 
         public void Buy()
         {
             //Вызвать метод покупки
             //Продать 10 подарков
-
+            Debug.Log("Buy");
             var itemShop = NutakuAPIInitializator.instance.PuarchaseService.GetShopItemLootbox(_idGroup);
-
+            Debug.Log(itemShop);
             int price = itemShop.priceGold;
-
+            Debug.Log(price);
             NutakuAPIInitializator.instance.PuarchaseService.PurchaseItem(itemShop, ActionSuccessPurchase);
 
             //Вот это добавить callback после покупки

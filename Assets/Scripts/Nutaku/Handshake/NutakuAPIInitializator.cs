@@ -34,6 +34,9 @@ public class NutakuAPIInitializator : MonoBehaviour
 
     public bool IsEditorWebGL = false;
 
+    private TypePlatform _typePlatform = TypePlatform.Editor;
+    public TypePlatform TypePlatform => _typePlatform;
+
     private void Awake()
     {
         if (instance != null)
@@ -51,16 +54,15 @@ public class NutakuAPIInitializator : MonoBehaviour
 #if UNITY_EDITOR
         Debug.Log("Это сообщение появится только в редакторе Unity!");
 
-        IsEditorWebGL = true;
-
+        _typePlatform = TypePlatform.Editor;
         OnCompleteHandshakeAsync().Forget();
 
 #elif UNITY_WEBGL
-
+       _typePlatform = TypePlatform.WebGL;
        CheckNutakuReady();
 
 #elif UNITY_ANDROID || UNITY_IOS
-
+       _typePlatform = TypePlatform.Phone;
 
 #else
 
@@ -220,7 +222,7 @@ public class NutakuAPIInitializator : MonoBehaviour
 
 
         //если в редакторе
-        if(IsEditorWebGL)
+        if(TypePlatform == TypePlatform.Editor)
         {
             await UniTask.WhenAll(shopTask);
         }
@@ -383,3 +385,12 @@ public class GameHandshakeResponse
     public string message;
 }
 //#endif
+
+
+public enum TypePlatform
+{
+    Editor,
+    Phone,
+    WebGL,
+    Desctop
+}
