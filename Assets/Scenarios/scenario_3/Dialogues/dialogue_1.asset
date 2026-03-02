@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6982f52e7d42440a758671d1357932, type: 3}
+  m_Name: dialogue_1
+  m_EditorClassIdentifier: 
+  firstPhrase:
+    ru: "\u042F \u0442\u043E\u043B\u044C\u043A\u043E \u0447\u0442\u043E \u0441\u043F\u0430\u0441\u043B\u0430
+      \u0442\u0435\u0431\u044F, \u0442\u044B \u0447\u0443\u0442\u044C \u043D\u0435
+      \u0443\u0442\u043E\u043D\u0443\u043B \u0432 \u043E\u043A\u0435\u0430\u043D\u0435,
+      \u0447\u0435\u043C \u044F \u043C\u043E\u0433\u0443 \u043F\u043E\u043C\u043E\u0447\u044C
+      \u0442\u0435\u0431\u0435?"
+    en: "I just saved your life \u2014 you almost drowned. How can I help you now?"
+    de: "Ich hab dich gerade aus dem Ozean gerettet \u2013 du w\xE4rst fast ertrunken.
+      Wie kann ich dir jetzt helfen?"
+    zh: "\u521A\u521A\u628A\u4F60\u4ECE\u6D77\u91CC\u6551\u4E0A\u6765\uFF0C\u4F60\u5DEE\u70B9\u5C31\u6DF9\u6B7B\u4E86\uFF0C\u6211\u8FD8\u80FD\u600E\u4E48\u5E2E\u4F60\uFF1F"
+    fr: "Je viens de te sauver la vie \u2014 tu as failli te noyer. Comment puis-je
+      t\u2019aider maintenant ?"
+    hi: "\u092E\u0948\u0902\u0928\u0947 \u0905\u092D\u0940-\u0905\u092D\u0940 \u0924\u0941\u092E\u094D\u0939\u0947\u0902
+      \u0938\u092E\u0941\u0926\u094D\u0930 \u0938\u0947 \u092C\u091A\u093E\u092F\u093E
+      \u2014 \u0924\u0941\u092E \u0932\u0917\u092D\u0917 \u0921\u0942\u092C \u0939\u0940
+      \u0917\u090F \u0925\u0947\u0964 \u0905\u092C \u092E\u0948\u0902 \u0924\u0941\u092E\u094D\u0939\u093E\u0930\u0940
+      \u0914\u0930 \u0915\u0948\u0938\u0947 \u092E\u0926\u0926 \u0915\u0930\u0942\u0901?"
+    it: "Ti ho appena salvato la vita \u2014 stavi per annegare. Come posso aiutarti
+      adesso?"
+    ja: "\u4ECA\u3001\u541B\u3092\u6D77\u304B\u3089\u6551\u3063\u305F\u3088\u3002\u6EBA\u308C\u305D\u3046\u3060\u3063\u305F\u306D\u3002\u4ECA\u3001\u3069\u3046\u3057\u3066\u307B\u3057\u3044\uFF1F"
+    pt: "Acabei de te salvar \u2014 quase te afogaste. Como posso ajudar-te agora?"
+    es: "Acabo de salvarte \u2014 casi te ahogas. \xBFEn qu\xE9 m\xE1s puedo ayudarte?"
+  phraseVariants:
+  - answer:
+      ru: "\u0422\u044B \u0441\u043F\u0430\u0441\u043B\u0430 \u043C\u043D\u0435 \u0436\u0438\u0437\u043D\u044C,
+        \u0445\u043E\u0447\u0443 \u043F\u0440\u0438\u0433\u043B\u0430\u0441\u0438\u0442\u044C
+        \u0442\u0435\u0431\u044F \u043D\u0430 \u0441\u0432\u0438\u0434\u0430\u043D\u0438\u0435."
+      en: "You saved my life \u2014 let me take you on a date."
+      de: "Du hast mir das Leben gerettet \u2013 ich will dich zum Date einladen."
+      zh: "\u4F60\u6551\u4E86\u6211\u7684\u547D\uFF0C\u6211\u60F3\u7EA6\u4F60\u51FA\u53BB\u3002"
+      fr: "Tu m\u2019as sauv\xE9 la vie \u2014 laisse-moi t\u2019inviter \xE0 un
+        rendez-vous."
+      hi: "\u0924\u0942\u0928\u0947 \u092E\u0947\u0930\u0940 \u091C\u093E\u0928 \u092C\u091A\u093E\u0908
+        \u2014 \u092E\u0948\u0902 \u0924\u0941\u091D\u0947 \u0921\u0947\u091F \u092A\u0930
+        \u0932\u0947 \u091C\u093E\u0928\u093E \u091A\u093E\u0939\u0924\u093E \u0939\u0942\u0901\u0964"
+      it: "Mi hai salvato la vita \u2014 voglio invitarti a un appuntamento."
+      ja: "\u547D\u3092\u6551\u3063\u3066\u304F\u308C\u305F\u3002\u304A\u793C\u306B\u30C7\u30FC\u30C8\u306B\u8A98\u308F\u305B\u3066\u3002"
+      pt: "Salvaste-me a vida \u2014 quero convidar-te para um encontro."
+      es: "Me salvaste la vida \u2014 quiero invitarte a una cita."
+    respect: 4
+  - answer:
+      ru: "\u0421\u043D\u0438\u043C\u0438 \u0441\u0432\u043E\u0438 \u0442\u0440\u0443\u0441\u0438\u043A\u0438
+        \u0438 \u043F\u043E\u043C\u043E\u0433\u0438 \u043C\u043D\u0435 \u043D\u0430\u043F\u043E\u043B\u043D\u0438\u0442\u0441\u044F
+        \u044D\u043D\u0435\u0440\u0433\u0438\u0435\u0439."
+      en: Take off your panties and help me recharge my energy.
+      de: "Zieh dein H\xF6schen aus und hilf mir, wieder Energie zu tanken."
+      zh: "\u628A\u5185\u88E4\u8131\u4E86\uFF0C\u5E2E\u6211\u8865\u5145\u80FD\u91CF\u5427\u3002"
+      fr: "Enl\xE8ve ta culotte et aide-moi \xE0 recharger mes batteries."
+      hi: "\u0905\u092A\u0928\u0940 \u092A\u0948\u0902\u091F\u0940 \u0909\u0924\u093E\u0930
+        \u0914\u0930 \u092E\u0941\u091D\u0947 \u090F\u0928\u0930\u094D\u091C\u0940
+        \u092D\u0930\u0928\u0947 \u092E\u0947\u0902 \u092E\u0926\u0926 \u0915\u0930\u0964"
+      it: Togliti le mutandine e aiutami a ricaricarmi.
+      ja: "\u30D1\u30F3\u30C4\u8131\u3044\u3067\u3001\u30A8\u30CD\u30EB\u30AE\u30FC\u88DC\u7D66\u624B\u4F1D\u3063\u3066\u3002"
+      pt: Tira as cuequinhas e ajuda-me a recarregar energia.
+      es: "Qu\xEDtate las bragas y ay\xFAdame a recargar energ\xEDa."
+    respect: 2
+  - answer:
+      ru: "\u0423\u0441\u0442\u0440\u043E\u0439 \u043C\u043D\u0435 \u0440\u0435\u043B\u0430\u043A\u0441,
+        \u043D\u043E \u0442\u0432\u043E\u0439 \u043A\u0443\u043F\u0430\u043B\u044C\u043D\u0438\u043A
+        \u043D\u0430\u043C \u043F\u043E\u043C\u0435\u0448\u0430\u0435\u0442."
+      en: "Give me some relaxation\u2026 but that swimsuit has to go."
+      de: "Mach mir Entspannung\u2026 aber dein Bikini muss weg."
+      zh: "\u7ED9\u6211\u653E\u677E\u4E00\u4E0B\u5427\u2026\u2026\u4E0D\u8FC7\u4F60\u7684\u6BD4\u57FA\u5C3C\u5F97\u8131\u6389\u3002"
+      fr: "Offre-moi de la d\xE9tente\u2026 mais ton maillot doit dispara\xEEtre."
+      hi: "\u092E\u0941\u091D\u0947 \u0930\u093F\u0932\u0948\u0915\u094D\u0938 \u0915\u0930\u2026
+        \u092A\u0930 \u0924\u0947\u0930\u0940 \u092C\u093F\u0915\u093F\u0928\u0940
+        \u0928\u093F\u0915\u093E\u0932\u0928\u0940 \u092A\u0921\u093C\u0947\u0917\u0940\u0964"
+      it: "Rilassami\u2026 ma quel bikini deve sparire."
+      ja: "\u30EA\u30E9\u30C3\u30AF\u30B9\u3055\u305B\u3066\u3002\u3067\u3082\u305D\u306E\u30D3\u30AD\u30CB\u3001\u90AA\u9B54\u3060\u3088\u3002"
+      pt: "D\xE1-me relaxamento\u2026 mas esse biqu\xEDni tem de sair."
+      es: "Rel\xE1jame\u2026 pero ese bikini tiene que irse."
+    respect: 0
+  id: 0

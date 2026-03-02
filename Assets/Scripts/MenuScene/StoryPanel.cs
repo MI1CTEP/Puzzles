@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
-using MyGame.Bundles;
 
 namespace MyGame.Menu
 {
@@ -30,17 +29,17 @@ namespace MyGame.Menu
             string currentLang = I2.Loc.LocalizationManager.CurrentLanguage;
                 string text = currentLang switch
                 {
-                    "Russian" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.ru,
-                    "English" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.en,
-                    "German" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.de,
-                    "Chinese" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.zh,
-                    "French" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.fr,
-                    "Hindi" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.hi,
-                    "Italian" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.it,
-                    "Japanese" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.ja,
-                    "Portuguese" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.pt,
-                    "Spanish" => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.es,
-                    _ => BundlesController.Instance.MainResourcesBundle.GetInfoLanguages.en
+                    "Russian" => AsyncContent.LevelInfo.languages.ru,
+                    "English" => AsyncContent.LevelInfo.languages.en,
+                    "German" => AsyncContent.LevelInfo.languages.de,
+                    "Chinese" => AsyncContent.LevelInfo.languages.zh,
+                    "French" => AsyncContent.LevelInfo.languages.fr,
+                    "Hindi" => AsyncContent.LevelInfo.languages.hi,
+                    "Italian" => AsyncContent.LevelInfo.languages.it,
+                    "Japanese" => AsyncContent.LevelInfo.languages.ja,
+                    "Portuguese" => AsyncContent.LevelInfo.languages.pt,
+                    "Spanish" => AsyncContent.LevelInfo.languages.es,
+                    _ => AsyncContent.LevelInfo.languages.en
                 };
             _text.text = text;
         }

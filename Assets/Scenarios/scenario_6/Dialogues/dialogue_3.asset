@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6982f52e7d42440a758671d1357932, type: 3}
+  m_Name: dialogue_3
+  m_EditorClassIdentifier: 
+  firstPhrase:
+    ru: "\u0422\u044B \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
+      \u0433\u043E\u0441\u0442\u044C, \u043A\u043E\u0442\u043E\u0440\u043E\u043C\u0443
+      \u044F \u043F\u043E\u0437\u0432\u043E\u043B\u0438\u043B\u0430 \u043F\u0440\u0438\u0442\u0440\u043E\u043D\u0443\u0442\u044C\u0441\u044F
+      \u0447\u043B\u0435\u043D\u043E\u043C \u043A \u043C\u043E\u0435\u0439 \u043F\u043E\u043F\u043A\u0435."
+    en: "You\u2019re the only guest I\u2019ve ever let touch my ass with his cock."
+    de: "Du bist der einzige Gast, dem ich erlaube, mit deinem Schwanz meinen Arsch
+      zu ber\xFChren."
+    zh: "\u4F60\u662F\u552F\u4E00\u4E00\u4E2A\u6211\u5141\u8BB8\u7528\u9E21\u9E21\u78B0\u6211\u5C41\u80A1\u7684\u5BA2\u4EBA\u3002"
+    fr: "Tu es le seul client \xE0 qui j\u2019autorise \xE0 toucher mon cul avec
+      ta queue."
+    hi: "\u0924\u0942 \u0905\u0915\u0947\u0932\u093E \u0917\u0947\u0938\u094D\u091F
+      \u0939\u0948 \u091C\u093F\u0938\u0947 \u092E\u0948\u0902 \u0905\u092A\u0928\u093E
+      \u092C\u091F \u0905\u092A\u0928\u0947 \u0932\u0902\u0921 \u0938\u0947 \u091B\u0942\u0928\u0947
+      \u0915\u0940 \u0907\u091C\u093E\u091C\u093C\u0924 \u0926\u0947\u0924\u0940
+      \u0939\u0942\u0901\u0964"
+    it: "Sei l\u2019unico cliente a cui permetto di toccarmi il culo con il tuo cazzo."
+    ja: "\u541B\u3060\u3051\u7279\u5225\u3002\u30C1\u30F3\u30DD\u3067\u304A\u5C3B\u89E6\u3063\u3066\u3044\u3044\u3088\u3002"
+    pt: "\xC9s o \xFAnico cliente a quem permito tocar-me na bunda com o teu pau."
+    es: "Eres el \xFAnico cliente al que permito tocarme el culo con tu polla."
+  phraseVariants:
+  - answer:
+      ru: "\u0422\u0432\u043E\u044F \u043F\u043E\u043F\u043A\u0430 \u0432 \u0442\u0440\u0443\u0441\u0438\u043A\u0430\u0445,
+        \u0434\u043E\u0432\u043E\u0434\u0438\u0442 \u043C\u0435\u043D\u044F \u0434\u043E
+        \u043E\u0440\u0433\u0430\u0437\u043C\u0430."
+      en: Your ass in those panties is making me cum.
+      de: "Dein Arsch in diesen H\xF6schen bringt mich zum Abspritzen."
+      zh: "\u4F60\u7A7F\u7740\u5185\u88E4\u7684\u5C41\u80A1\u8BA9\u6211\u8981\u5C04\u4E86\u3002"
+      fr: Ton cul dans cette culotte me fait presque jouir.
+      hi: "\u0924\u0947\u0930\u0940 \u092A\u0948\u0902\u091F\u0940 \u0935\u093E\u0932\u0940
+        \u0917\u093E\u0902\u0921 \u0926\u0947\u0916\u0915\u0930 \u092E\u0948\u0902
+        \u091D\u0921\u093C\u0928\u0947 \u0935\u093E\u0932\u093E \u0939\u0942\u0901\u0964"
+      it: Quel culo in mutandine mi sta facendo venire.
+      ja: "\u305D\u306E\u30D1\u30F3\u30C4\u8D8A\u3057\u306E\u304A\u5C3B\u3067\u30A4\u30AD\u305D\u3046\u3002"
+      pt: "Essa bunda com cuequinha est\xE1 a fazer-me gozar."
+      es: Tu culo en esas bragas me hace estar a punto de correrme.
+    respect: 4
+  - answer:
+      ru: "\u041C\u043D\u0435 \u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F \u0442\u0432\u043E\u044F
+        \u0440\u0430\u0441\u043A\u0440\u0435\u043F\u043E\u0449\u0435\u043D\u043D\u043E\u0441\u0442\u044C,
+        \u043D\u0430\u0434\u0435\u044E\u0441\u044C \u0442\u044B \u0433\u043E\u0432\u043E\u0440\u0438\u0448\u044C
+        \u043F\u0440\u0430\u0432\u0434\u0443."
+      en: "I love how open you are \u2014 I hope you\u2019re serious."
+      de: "Ich liebe deine Hemmungslosigkeit \u2013 ich hoffe, du meinst es ernst."
+      zh: "\u6211\u559C\u6B22\u4F60\u7684\u653E\u8361\uFF0C\u5E0C\u671B\u4F60\u662F\u8BA4\u771F\u7684\u3002"
+      fr: "J\u2019adore ton c\xF4t\xE9 d\xE9complex\xE9 \u2013 j\u2019esp\xE8re que
+        tu es s\xE9rieuse."
+      hi: "\u0924\u0947\u0930\u0940 \u092C\u0947\u0936\u0930\u094D\u092E\u0940 \u092E\u0941\u091D\u0947
+        \u092C\u0939\u0941\u0924 \u092A\u0938\u0902\u0926 \u0939\u0948 \u2013 \u0909\u092E\u094D\u092E\u0940\u0926
+        \u0939\u0948 \u0938\u091A \u092C\u094B\u0932 \u0930\u0939\u0940 \u0939\u0948\u0964"
+      it: "Amo quanto sei disinibita \u2013 spero che fai sul serio."
+      ja: "\u305D\u306E\u89E3\u653E\u3063\u3077\u308A\u6700\u9AD8\u3002\u30DE\u30B8\u3067\u8A00\u3063\u3066\u308B\u3088\u306D\uFF1F"
+      pt: "Adoro a tua falta de inibi\xE7\xF5es \u2013 espero que estejas a falar
+        a s\xE9rio."
+      es: "Me encanta lo desinhibida que eres \u2013 ojal\xE1 lo digas en serio."
+    respect: 2
+  - answer:
+      ru: "\u041D\u0430\u0432\u0435\u0440\u043D\u043E\u0435 \u043F\u043E\u0440\u0430
+        \u0441\u043D\u044F\u0442\u044C \u0442\u0440\u0443\u0441\u0438\u043A\u0438
+        \u0438 \u0431\u044B\u0442\u044C \u043C\u0435\u043D\u0435\u0435 \u0441\u043A\u0440\u043E\u043C\u043D\u043E\u0439."
+      en: Time to take off those panties and be less shy.
+      de: "Wahrscheinlich wird\u2019s Zeit, die H\xF6schen auszuziehen und weniger
+        sch\xFCchtern zu sein."
+      zh: "\u5927\u6982\u8BE5\u628A\u5185\u88E4\u8131\u4E86\uFF0C\u5C11\u4E00\u70B9\u5BB3\u7F9E\u4E86\u5427\u3002"
+      fr: "Le moment est venu d\u2019enlever la culotte et d\u2019\xEAtre moins timide."
+      hi: "\u0905\u092C \u092A\u0948\u0902\u091F\u0940 \u0909\u0924\u093E\u0930 \u0926\u0947
+        \u0914\u0930 \u0936\u0930\u094D\u092E\u093E\u0928\u093E \u092C\u0902\u0926
+        \u0915\u0930\u0964"
+      it: "\xC8 ora di togliere le mutandine e smettere di fare la timida."
+      ja: "\u305D\u308D\u305D\u308D\u30D1\u30F3\u30C4\u8131\u3044\u3067\u3001\u6065\u305A\u304B\u3057\u304C\u3089\u305A\u306B\u3044\u3053\u3046\u304B\u3002"
+      pt: "J\xE1 \xE9 hora de tirar as cuecas e ser menos t\xEDmida."
+      es: "Ya va siendo hora de quitarte las bragas y ser menos t\xEDmida."
+    respect: 0
+  id: 0

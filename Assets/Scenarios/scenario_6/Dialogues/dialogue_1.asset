@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6982f52e7d42440a758671d1357932, type: 3}
+  m_Name: dialogue_1
+  m_EditorClassIdentifier: 
+  firstPhrase:
+    ru: "\u0414\u043E\u0431\u0440\u043E \u043F\u043E\u0436\u0430\u043B\u043E\u0432\u0430\u0442\u044C
+      \u0432 \u043D\u0430\u0448\u0435 \u0443\u044E\u0442\u043D\u043E\u0435 \u043A\u0430\u0444\u0435!
+      \u0427\u0442\u043E \u0432\u044B \u0436\u0435\u043B\u0430\u0435\u0442\u0435?"
+    en: "Welcome to our cozy caf\xE9! What would you like?"
+    de: "Willkommen in unserem gem\xFCtlichen Caf\xE9! Was m\xF6chtest du bestellen?"
+    zh: "\u6B22\u8FCE\u5149\u4E34\u6211\u4EEC\u6E29\u99A8\u7684\u5C0F\u5496\u5561\u9986\uFF01\u60A8\u60F3\u70B9\u4EC0\u4E48\uFF1F"
+    fr: "Bienvenue dans notre petit caf\xE9 cosy ! Que d\xE9sires-tu ?"
+    hi: "\u0939\u092E\u093E\u0930\u0947 \u0906\u0930\u093E\u092E\u0926\u093E\u092F\u0915
+      \u0915\u0948\u092B\u093C\u0947 \u092E\u0947\u0902 \u0906\u092A\u0915\u093E
+      \u0938\u094D\u0935\u093E\u0917\u0924 \u0939\u0948! \u0915\u094D\u092F\u093E
+      \u0911\u0930\u094D\u0921\u0930 \u0915\u0930\u0947\u0902\u0917\u0947?"
+    it: "Benvenuto nel nostro accogliente caff\xE8! Cosa desideri?"
+    ja: "\u3044\u3089\u3063\u3057\u3083\u3044\u307E\u305B\u266A \u5C45\u5FC3\u5730\u306E\u3044\u3044\u30AB\u30D5\u30A7\u3078\u3088\u3046\u3053\u305D\u3002\u4F55\u306E\u3054\u6CE8\u6587\uFF1F"
+    pt: "Bem-vindo ao nosso caf\xE9zinho acolhedor! O que desejas pedir?"
+    es: "\xA1Bienvenido a nuestro acogedor caf\xE9! \xBFQu\xE9 te gustar\xEDa?"
+  phraseVariants:
+  - answer:
+      ru: "\u042F \u0445\u043E\u0442\u0435\u043B \u0431\u044B \u0432\u044B\u043F\u0438\u0442\u044C
+        \u0447\u0430\u0448\u043A\u0443 \u043A\u043E\u0444\u0435 \u0438 \u043F\u043E\u0431\u0435\u0441\u0435\u0434\u043E\u0432\u0430\u0442\u044C
+        \u0441 \u044E\u043D\u043E\u0439 \u043E\u0444\u0438\u0446\u0438\u0430\u043D\u0442\u043A\u043E\u0439."
+      en: "I\u2019d love a cup of coffee and a chat with the cute waitress."
+      de: "Ich h\xE4tte gern einen Kaffee\u2026 und ein bisschen mit der s\xFC\xDFen
+        Kellnerin plaudern."
+      zh: "\u6211\u60F3\u559D\u676F\u5496\u5561\uFF0C\u7136\u540E\u548C\u53EF\u7231\u7684\u5C0F\u670D\u52A1\u751F\u804A\u804A\u5929\u3002"
+      fr: "J\u2019aimerais un caf\xE9 et discuter un peu avec la jolie serveuse."
+      hi: "\u092E\u0948\u0902 \u090F\u0915 \u0915\u0949\u092B\u093C\u0940 \u0932\u0942\u0901\u0917\u093E\u2026
+        \u0914\u0930 \u0907\u0938 \u092A\u094D\u092F\u093E\u0930\u0940 \u0935\u0947\u091F\u094D\u0930\u0947\u0938
+        \u0938\u0947 \u0925\u094B\u0921\u093C\u0940 \u092C\u093E\u0924 \u0915\u0930\u0942\u0901\u0964"
+      it: "Vorrei un caff\xE8 e fare due chiacchiere con la cameriera carina."
+      ja: "\u30B3\u30FC\u30D2\u30FC\u3068\u3001\u53EF\u611B\u3044\u30A6\u30A7\u30A4\u30C8\u30EC\u30B9\u3055\u3093\u3068\u304A\u3057\u3083\u3079\u308A\u3057\u305F\u3044\u306A\u3002"
+      pt: "Gostaria de um caf\xE9 e conversar um pouco com a empregada gira."
+      es: "Quisiera un caf\xE9 y charlar un rato con la camarera tan mona."
+    respect: 4
+  - answer:
+      ru: "\u041F\u0440\u0438 \u0432\u0438\u0434\u0435 \u0432\u0430\u0448\u0438\u0445
+        \u0447\u0443\u043B\u043E\u043A, \u043D\u0430\u0447\u0438\u043D\u0430\u044E\u0442
+        \u043F\u0443\u0442\u0430\u0442\u044C\u0441\u044F \u043C\u044B\u0441\u043B\u0438."
+      en: Your stockings are making it impossible to think straight.
+      de: "Beim Anblick deiner Str\xFCmpfe kann ich kaum noch klar denken."
+      zh: "\u4E00\u770B\u5230\u4F60\u7684\u4E1D\u889C\uFF0C\u6211\u8111\u5B50\u5C31\u4E71\u4E86\u3002"
+      fr: "En voyant tes bas, mes id\xE9es se brouillent compl\xE8tement."
+      hi: "\u0924\u0947\u0930\u0940 \u0938\u094D\u091F\u0949\u0915\u093F\u0902\u0917\u094D\u0938
+        \u0926\u0947\u0916\u0915\u0930 \u0926\u093F\u092E\u093E\u0917\u093C \u0915\u093E\u092E
+        \u0915\u0930\u0928\u093E \u092C\u0902\u0926 \u0915\u0930 \u0926\u0947\u0924\u093E
+        \u0939\u0948\u0964"
+      it: "Quando vedo le tue calze non riesco pi\xF9 a pensare lucidamente."
+      ja: "\u541B\u306E\u30B9\u30C8\u30C3\u30AD\u30F3\u30B0\u898B\u3066\u305F\u3089\u982D\u304C\u307C\u30FC\u3063\u3068\u3057\u3061\u3083\u3046\u3002"
+      pt: "Ao ver as tuas meias fico com a cabe\xE7a \xE0 roda."
+      es: Al ver tus medias me pongo a mil y no pienso claro.
+    respect: 2
+  - answer:
+      ru: "\u041A\u043E\u0433\u0434\u0430 \u0443\u0432\u0438\u0434\u0435\u043B \u0442\u0435\u0431\u044F,
+        \u043F\u0440\u043E\u043F\u0430\u043B\u043E \u0436\u0435\u043B\u0430\u043D\u0438\u0435
+        \u043F\u0435\u0440\u0435\u043A\u0443\u0441\u0438\u0442\u044C, \u0442\u044B
+        \u0432\u043E\u0437\u0431\u0443\u0436\u0434\u0430\u0435\u0448\u044C."
+      en: "When I saw you, I completely lost my appetite for food \u2014 you\u2019re
+        way more tempting."
+      de: "Als ich dich sah, hatte ich pl\xF6tzlich keinen Hunger mehr \u2013 nur
+        noch Lust auf dich."
+      zh: "\u4E00\u770B\u5230\u4F60\u5C31\u5B8C\u5168\u6CA1\u4E86\u98DF\u6B32\uFF0C\u53EA\u60F3\u5403\u4F60\u3002"
+      fr: "Quand je t\u2019ai vue, plus du tout faim de nourriture\u2026 juste envie
+        de toi."
+      hi: "\u0924\u0941\u091D\u0947 \u0926\u0947\u0916\u0924\u0947 \u0939\u0940 \u0916\u093E\u0928\u0947
+        \u0915\u0940 \u092D\u0942\u0916 \u091A\u0932\u0940 \u0917\u0908 \u2013 \u0938\u093F\u0930\u094D\u092B\u093C
+        \u0924\u0941\u091D \u092A\u0930 \u092D\u0942\u0916 \u0932\u0917\u0940 \u0939\u0948\u0964"
+      it: "Appena ti ho vista mi \xE8 passata la fame\u2026 ho solo voglia di te."
+      ja: "\u541B\u3092\u898B\u305F\u77AC\u9593\u3001\u98DF\u6B32\u306A\u304F\u306A\u3063\u3061\u3083\u3063\u305F\u3002\u541B\u304C\u6B32\u3057\u3044\u3060\u3051\u3002"
+      pt: "Quando te vi perdi logo a fome de comida\u2026 s\xF3 apetite por ti."
+      es: "Cuando te vi se me quit\xF3 el hambre de comida\u2026 s\xF3lo ganas de
+        ti."
+    respect: 0
+  id: 0

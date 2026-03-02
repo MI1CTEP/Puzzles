@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6982f52e7d42440a758671d1357932, type: 3}
+  m_Name: dialogue_4
+  m_EditorClassIdentifier: 
+  firstPhrase:
+    ru: "\u042F \u0437\u043D\u0430\u044E, \u0447\u0442\u043E \u0442\u044B \u043C\u0435\u0447\u0442\u0430\u0435\u0448\u044C
+      \u043E \u043C\u043E\u0435\u0439 \u043F\u043E\u043F\u043A\u0435 \u043D\u0430
+      \u0441\u0432\u043E\u0451\u043C \u043B\u0438\u0446\u0435, \u043D\u0430\u0447\u043D\u0435\u043C?"
+    en: "I know you dream of my ass on your face \u2014 shall we start?"
+    de: "Ich wei\xDF, du tr\xE4umst davon, dass mein Arsch auf deinem Gesicht sitzt
+      \u2013 fangen wir an?"
+    zh: "\u6211\u77E5\u9053\u4F60\u68A6\u60F3\u6211\u7684\u5C41\u80A1\u5750\u5728\u4F60\u8138\u4E0A\uFF0C\u5F00\u59CB\u5417\uFF1F"
+    fr: "Je sais que tu r\xEAves que mon cul soit sur ton visage \u2013 on commence
+      ?"
+    hi: "\u092E\u0941\u091D\u0947 \u092A\u0924\u093E \u0939\u0948 \u0924\u0941\u092E
+      \u0938\u092A\u0928\u0947 \u0926\u0947\u0916\u0924\u0947 \u0939\u094B \u092E\u0947\u0930\u0940
+      \u0917\u093E\u0902\u0921 \u0924\u0941\u092E\u094D\u0939\u093E\u0930\u0947 \u092E\u0941\u0901\u0939
+      \u092A\u0930 \u2013 \u0936\u0941\u0930\u0942 \u0915\u0930\u0947\u0902?"
+    it: "So che sogni il mio culo sulla tua faccia \u2013 iniziamo?"
+    ja: "\u79C1\u306E\u5C3B\u3092\u541B\u306E\u9854\u306B\u306E\u305B\u308B\u306E\u304C\u5922\u3060\u3063\u3066\u77E5\u3063\u3066\u308B\u3088\u3001\u59CB\u3081\u3088\u3046\uFF1F"
+    pt: "Eu sei que sonhas com a minha bunda na tua cara \u2013 come\xE7amos?"
+    es: "S\xE9 que sue\xF1as con mi culo sobre tu cara \u2013 \xBFempezamos?"
+  phraseVariants:
+  - answer:
+      ru: "\u0414\u0430, \u0432\u044B \u0437\u043D\u0430\u0435\u0442\u0435 \u043C\u043E\u0438
+        \u0442\u0430\u0439\u043D\u044B\u0435 \u0444\u0430\u043D\u0442\u0430\u0437\u0438\u0438."
+      en: Yes, you know my secret fantasies perfectly.
+      de: Ja, Sie kennen meine geheimsten Fantasien genau.
+      zh: "\u662F\u7684\uFF0C\u60A8\u5B8C\u5168\u4E86\u89E3\u6211\u7684\u79D8\u5BC6\u5E7B\u60F3\u3002"
+      fr: Oui, vous connaissez parfaitement mes fantasmes les plus secrets.
+      hi: "\u0939\u093E\u0901, \u0906\u092A \u092E\u0947\u0930\u0940 \u091B\u0941\u092A\u0940
+        \u0939\u0941\u0908 \u092B\u0948\u0902\u091F\u0938\u0940\u091C\u093C \u092C\u093F\u0932\u094D\u0915\u0941\u0932
+        \u091C\u093E\u0928\u0924\u0947 \u0939\u0948\u0902\u0964"
+      it: "S\xEC, conosci perfettamente le mie fantasie pi\xF9 segrete."
+      ja: "\u305D\u3046\u3001\u79C1\u306E\u96A0\u308C\u305F\u5984\u60F3\u5168\u90E8\u30D0\u30EC\u3066\u308B\u3002"
+      pt: Sim, conheces perfeitamente as minhas fantasias mais secretas.
+      es: "S\xED, conoces perfectamente mis fantas\xEDas m\xE1s ocultas."
+    respect: 4
+  - answer:
+      ru: "\u042D\u0442\u043E \u043C\u043E\u0439 \u043F\u0435\u0440\u0432\u044B\u0439
+        \u043E\u043F\u044B\u0442, \u043D\u0430\u0434\u0435\u044E\u0441\u044C \u043C\u043D\u0435
+        \u043F\u043E\u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F."
+      en: "This is my first time like this \u2014 I hope I\u2019ll love it."
+      de: "Das ist mein erstes Mal so \u2013 ich hoffe, es gef\xE4llt mir."
+      zh: "\u8FD9\u662F\u6211\u7B2C\u4E00\u6B21\u8FD9\u6837\uFF0C\u5E0C\u671B\u6211\u4F1A\u7231\u4E0A\u3002"
+      fr: "C\u2019est ma premi\xE8re fois comme \xE7a \u2013 j\u2019esp\xE8re que
+        je vais aimer."
+      hi: "\u0910\u0938\u093E \u092A\u0939\u0932\u0940 \u092C\u093E\u0930 \u0915\u0930
+        \u0930\u0939\u093E \u0939\u0942\u0901 \u2013 \u0909\u092E\u094D\u092E\u0940\u0926
+        \u0939\u0948 \u092E\u091C\u093C\u093E \u0906\u090F\u0917\u093E\u0964"
+      it: "\xC8 la mia prima volta cos\xEC \u2014 spero mi piaccia."
+      ja: "\u521D\u3081\u3066\u306E\u7D4C\u9A13\u3060\u304B\u3089\u3001\u6C17\u306B\u5165\u308B\u3068\u3044\u3044\u306A\u3002"
+      pt: "\xC9 a minha primeira vez assim \u2014 espero que goste."
+      es: "Es mi primera vez as\xED \u2013 espero que me guste."
+    respect: 2
+  - answer:
+      ru: "\u041E\u0431\u043E\u0436\u0430\u044E \u0441\u0435\u043A\u0441\u0443\u0430\u043B\u044C\u043D\u044B\u0435
+        \u043F\u043E\u043F\u043A\u0438 \u043D\u0430 \u043C\u043E\u0435\u043C \u043B\u0438\u0446\u0435."
+      en: I love sexy asses on my face.
+      de: "Ich liebe es, wenn geile \xC4rsche auf meinem Gesicht sitzen."
+      zh: "\u6211\u8D85\u7231\u6027\u611F\u7684\u5C41\u80A1\u5750\u5728\u6211\u8138\u4E0A\u3002"
+      fr: "J\u2019adore quand des culs bien chauds sont pos\xE9s sur mon visage."
+      hi: "\u0938\u0947\u0915\u094D\u0938\u0940 \u0917\u093E\u0902\u0921\u0947\u0902
+        \u092E\u0947\u0930\u0947 \u092E\u0941\u0901\u0939 \u092A\u0930 \u092C\u0948\u0920\u0940
+        \u0939\u094B\u0902, \u092E\u0941\u091D\u0947 \u092C\u0939\u0941\u0924 \u092A\u0938\u0902\u0926
+        \u0939\u0948\u0964"
+      it: Adoro quando culi caldi mi siedono in faccia.
+      ja: "\u30A8\u30ED\u3044\u5C3B\u304C\u9854\u306B\u306E\u3063\u3066\u308B\u306E\u3001\u5927\u597D\u304D\u3002"
+      pt: Adoro quando bundas quentes se sentam na minha cara.
+      es: Me encanta cuando culos calientes se sientan en mi cara.
+    respect: 0
+  id: 0

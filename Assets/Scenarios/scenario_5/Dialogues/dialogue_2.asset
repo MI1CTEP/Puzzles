@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6982f52e7d42440a758671d1357932, type: 3}
+  m_Name: dialogue_2
+  m_EditorClassIdentifier: 
+  firstPhrase:
+    ru: "\u041F\u043E\u043A\u0430 \u0442\u044B \u0437\u0430 \u0441\u0442\u0435\u043A\u043B\u043E\u043C,
+      \u0445\u043E\u0447\u0443 \u0432\u043E\u0437\u0431\u0443\u0434\u0438\u0442\u044C
+      \u0442\u0435\u0431\u044F, \u0447\u0442\u043E \u0441\u043A\u0430\u0436\u0435\u0448\u044C?"
+    en: "While you\u2019re still behind that glass, I want to tease you \u2014 what
+      do you say?"
+    de: "Solange du hinter Glas bist, will ich dich aufgeilen \u2013 was sagst du
+      dazu?"
+    zh: "\u8D81\u4F60\u8FD8\u5728\u73BB\u7483\u540E\u9762\uFF0C\u6211\u60F3\u5148\u6311\u9017\u4F60\uFF0C\u4F60\u89C9\u5F97\u5462\uFF1F"
+    fr: "Tant que tu es encore derri\xE8re la vitre, j\u2019ai envie de te chauffer
+      \u2013 \xE7a te dit ?"
+    hi: "\u091C\u092C \u0924\u0915 \u0924\u0942 \u0936\u0940\u0936\u0947 \u0915\u0947
+      \u092A\u0940\u091B\u0947 \u0939\u0948, \u092E\u0948\u0902 \u0924\u0941\u091D\u0947
+      \u0909\u0924\u094D\u0924\u0947\u091C\u093F\u0924 \u0915\u0930\u0928\u093E \u091A\u093E\u0939\u0924\u0940
+      \u0939\u0942\u0901 \u2013 \u092C\u094B\u0932?"
+    it: "Mentre sei ancora dietro il vetro voglio farti eccitare \u2013 che ne dici?"
+    ja: "\u30AC\u30E9\u30B9\u8D8A\u3057\u3060\u3051\u3069\u3001\u8208\u596E\u3055\u305B\u3066\u3042\u3052\u308B\u3002\u4F55\u3066\uFF1F"
+    pt: "Enquanto ainda est\xE1s atr\xE1s do vidro, quero excitar-te \u2013 que achas?"
+    es: "Mientras est\xE1s detr\xE1s del cristal quiero excitarte \u2013 \xBFqu\xE9
+      dices?"
+  phraseVariants:
+  - answer:
+      ru: "\u041C\u0435\u043D\u044F \u0432\u043E\u0437\u0431\u0443\u0436\u0434\u0430\u0435\u0442
+        \u0442\u0432\u043E\u044F \u0433\u0440\u0443\u0434\u044C, \u0445\u043E\u0442\u0435\u043B
+        \u0431\u044B \u0443\u0432\u0438\u0434\u0435\u0442\u044C \u0435\u0449\u0435
+        \u043F\u043E\u043F\u043A\u0443."
+      en: "Your breasts drive me wild \u2014 now show me that ass."
+      de: "Meine Titten machen dich verr\xFCckt \u2013 jetzt zeig ich dir noch meinen
+        Arsch."
+      zh: "\u6211\u7684\u80F8\u90E8\u8BA9\u4F60\u75AF\u72C2\uFF0C\u73B0\u5728\u518D\u7ED9\u4F60\u770B\u5C41\u80A1\u3002"
+      fr: "Tes seins te rendent dingue \u2013 maintenant je te montre mon cul."
+      hi: "\u092E\u0947\u0930\u0940 \u091A\u0942\u091A\u093F\u092F\u093E\u0901 \u0924\u0941\u091D\u0947
+        \u092A\u093E\u0917\u0932 \u0915\u0930 \u0930\u0939\u0940 \u0939\u0948\u0902
+        \u2013 \u0905\u092C \u0917\u093E\u0902\u0921 \u092D\u0940 \u0926\u093F\u0916\u093E
+        \u0926\u0942\u0901?"
+      it: "Le mie tette ti fanno impazzire \u2013 ora ti mostro il culo."
+      ja: "\u304A\u3063\u3071\u3044\u3067\u30A4\u30AB\u305B\u3066\u308B\u306D\u3002\u4ECA\u5EA6\u306F\u304A\u5C3B\u898B\u305B\u3066\u3042\u3052\u308B\u3002"
+      pt: "Os meus peitos deixam-te louco \u2013 agora mostro-te a bunda."
+      es: "Mis tetas te vuelven loco \u2013 ahora te ense\xF1o el culo."
+    respect: 4
+  - answer:
+      ru: "\u0416\u0430\u043B\u044C, \u0447\u0442\u043E \u0441\u0442\u0435\u043A\u043B\u043E
+        \u043D\u0430\u0441 \u0440\u0430\u0437\u0434\u0435\u043B\u044F\u0435\u0442."
+      en: "Too bad there\u2019s glass between us."
+      de: "Schade, dass Glas uns trennt\u2026 aber mein Arsch ist atemberaubend."
+      zh: "\u53EF\u60DC\u6709\u73BB\u7483\u6321\u7740\u2026\u2026\u4E0D\u8FC7\u6211\u7684\u5C41\u80A1\u8D85\u8D5E\u3002"
+      fr: "Dommage que la vitre nous s\xE9pare\u2026 mais mon cul est \xE0 couper
+        le souffle."
+      hi: "\u0936\u0940\u0936\u093E \u092C\u0940\u091A \u092E\u0947\u0902 \u0939\u0948
+        \u0905\u092B\u093C\u0938\u094B\u0938, \u092A\u0930 \u092E\u0947\u0930\u0940
+        \u0917\u093E\u0902\u0921 \u0915\u092E\u093E\u0932 \u0915\u0940 \u0939\u0948\u0964"
+      it: "Peccato il vetro, ma questo culo \xE8 mozzafiato."
+      ja: "\u30AC\u30E9\u30B9\u304C\u90AA\u9B54\u3060\u3051\u3069\u3001\u3053\u306E\u5C3B\u306F\u6700\u9AD8\u3067\u3057\u3087\u3002"
+      pt: "Pena o vidro separar-nos\u2026 mas esta bunda \xE9 de tirar o f\xF4lego."
+      es: "Qu\xE9 l\xE1stima que haya cristal, pero mi culo es impresionante."
+    respect: 2
+  - answer:
+      ru: "\u0422\u0430\u043A\u043E\u0439 \u0434\u043E\u043F\u0440\u043E\u0441, \u043C\u043E\u0433
+        \u0431\u044B\u0442\u044C \u0442\u043E\u043B\u044C\u043A\u043E \u0432 \u043C\u043E\u0438\u0445
+        \u0444\u0430\u043D\u0442\u0430\u0437\u0438\u044F\u0445."
+      en: This kind of interrogation only happens in my fantasies.
+      de: "So eine Vernehmung gab\u2019s nur in meinen geilsten Fantasien."
+      zh: "\u8FD9\u6837\u7684\u5BA1\u8BAF\u53EA\u6709\u6211\u6700\u6DEB\u8361\u7684\u5E7B\u60F3\u91CC\u624D\u6709\u3002"
+      fr: "Ce genre d\u2019interrogatoire n\u2019existait que dans mes fantasmes
+        les plus chauds."
+      hi: "\u0910\u0938\u093E \u0907\u0902\u091F\u0947\u0930\u094B\u0917\u0947\u0936\u0928
+        \u0924\u094B \u092E\u0947\u0930\u0940 \u0938\u092C\u0938\u0947 \u0917\u0902\u0926\u0940
+        \u092B\u0948\u0902\u091F\u0938\u0940 \u092E\u0947\u0902 \u0939\u0940 \u0925\u093E\u0964"
+      it: "Un interrogatorio cos\xEC esisteva solo nelle mie fantasie pi\xF9 spinte."
+      ja: "\u3053\u3093\u306A\u53D6\u308A\u8ABF\u3079\u3001\u4FFA\u306E\u30A8\u30ED\u5984\u60F3\u3067\u3057\u304B\u306A\u304B\u3063\u305F\u3002"
+      pt: "Este tipo de interrogat\xF3rio s\xF3 existia nas minhas fantasias mais
+        quentes."
+      es: "Esta clase de interrogatorio s\xF3lo exist\xEDa en mis fantas\xEDas m\xE1s
+        calientes."
+    respect: 0
+  id: 0

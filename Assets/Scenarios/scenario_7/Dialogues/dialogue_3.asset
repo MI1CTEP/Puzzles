@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6982f52e7d42440a758671d1357932, type: 3}
+  m_Name: dialogue_3
+  m_EditorClassIdentifier: 
+  firstPhrase:
+    ru: "\u0412 \u044D\u0442\u043E\u043C \u043C\u044F\u0433\u043A\u043E\u043C \u043A\u0440\u0435\u0441\u043B\u0435,
+      \u0443\u0434\u043E\u0431\u043D\u043E \u0447\u0438\u0442\u0430\u0442\u044C \u0438
+      \u043F\u043E\u043B\u0443\u0447\u0430\u0442\u044C \u043E\u0440\u0433\u0430\u0437\u043C,
+      \u0441\u043E\u0433\u043B\u0430\u0441\u043D\u044B?"
+    en: "This soft armchair is perfect for reading\u2026 and cumming. Don\u2019t
+      you agree?"
+    de: "In diesem weichen Sessel l\xE4sst es sich perfekt lesen\u2026 und kommen.
+      Stimmt\u2019s?"
+    zh: "\u5728\u8FD9\u67D4\u8F6F\u7684\u6276\u624B\u6905\u4E0A\u8BFB\u4E66\u548C\u9AD8\u6F6E\u90FD\u8D85\u8212\u670D\uFF0C\u5BF9\u5427\uFF1F"
+    fr: "Dans ce fauteuil moelleux, on lit parfaitement\u2026 et on jouit parfaitement.
+      Tu es d\u2019accord ?"
+    hi: "\u0907\u0938 \u0938\u0949\u092B\u094D\u091F \u0906\u0930\u094D\u092E\u091A\u0947\u092F\u0930
+      \u092E\u0947\u0902 \u092A\u0922\u093C\u0928\u093E \u092D\u0940 \u092E\u091C\u093C\u093E\u2026
+      \u0914\u0930 \u091D\u0921\u093C\u0928\u093E \u092D\u0940 \u092E\u091C\u093C\u093E\u0964
+      \u0938\u0939\u0940 \u0939\u0948 \u0928\u093E?"
+    it: "In questa poltrona morbida si legge benissimo\u2026 e si viene alla grande.
+      Vero?"
+    ja: "\u3053\u306E\u3075\u304B\u3075\u304B\u306E\u6905\u5B50\u3067\u8AAD\u66F8\u3082\u30AA\u30CA\u30CB\u30FC\u3082\u6700\u9AD8\u3060\u3088\u306D\uFF1F"
+    pt: "Nesta poltrona fofinha l\xEA-se perfeitamente\u2026 e goza-se perfeitamente.
+      Concordas?"
+    es: "En este sill\xF3n mullido se lee de maravilla\u2026 y se corre de maravilla.
+      \xBFVerdad?"
+  phraseVariants:
+  - answer:
+      ru: "\u0411\u043E\u043B\u0435\u0435 \u0447\u0435\u043C, \u0432\u0430\u0448\u0438
+        \u043A\u0440\u0430\u0441\u043D\u044B\u0435 \u0447\u0443\u043B\u043A\u0438
+        \u043F\u043E\u0434\u0447\u0435\u0440\u043A\u0438\u0432\u0430\u044E\u0442
+        \u043A\u0440\u0430\u0441\u0438\u0432\u044B\u0435 \u043D\u043E\u0433\u0438,
+        \u0430 \u0432\u043E\u043B\u043E\u0441\u044B \u043F\u0440\u0435\u043A\u0440\u0430\u0441\u043D\u044B
+        \u043F\u0440\u0438 \u0441\u043E\u043B\u043D\u0435\u0447\u043D\u043E\u043C
+        \u0441\u0432\u0435\u0442\u0435."
+      en: "Absolutely \u2014 your red stockings highlight those perfect legs, and
+        your hair looks amazing in the sunlight."
+      de: "Mehr als das \u2013 Ihre roten Str\xFCmpfe betonen die perfekten Beine,
+        und Ihr Haar ist im Sonnenlicht wundersch\xF6n."
+      zh: "\u4F55\u6B62\u5982\u6B64\uFF0C\u4F60\u7684\u7EA2\u8272\u4E1D\u889C\u5B8C\u7F8E\u886C\u6258\u7F8E\u817F\uFF0C\u5934\u53D1\u5728\u9633\u5149\u4E0B\u4E5F\u597D\u7F8E\u3002"
+      fr: "Bien plus que \xE7a \u2013 vos bas rouges subliment vos jambes parfaites,
+        et vos cheveux sont magnifiques au soleil."
+      hi: "\u0907\u0938\u0938\u0947 \u0915\u0939\u0940\u0902 \u091C\u093C\u094D\u092F\u093E\u0926\u093E
+        \u2013 \u0924\u0947\u0930\u0940 \u0932\u093E\u0932 \u0938\u094D\u091F\u0949\u0915\u093F\u0902\u0917\u094D\u0938
+        \u0924\u0947\u0930\u0947 \u092A\u0930\u092B\u0947\u0915\u094D\u091F \u0932\u0947\u0917\u094D\u0938
+        \u0915\u094B \u0914\u0930 \u0939\u0949\u091F \u092C\u0928\u093E \u0930\u0939\u0940
+        \u0939\u0948\u0902, \u0914\u0930 \u0938\u0942\u0930\u091C \u0915\u0940 \u0930\u094B\u0936\u0928\u0940
+        \u092E\u0947\u0902 \u092C\u093E\u0932 \u0915\u092E\u093E\u0932 \u0915\u0947
+        \u0932\u0917 \u0930\u0939\u0947 \u0939\u0948\u0902\u0964"
+      it: "Molto di pi\xF9 \u2013 le tue calze rosse esaltano gambe perfette, e i
+        tuoi capelli al sole sono stupendi."
+      ja: "\u305D\u308C\u4EE5\u4E0A\u3060\u3088\u3002\u8D64\u3044\u30B9\u30C8\u30C3\u30AD\u30F3\u30B0\u304C\u7DBA\u9E97\u306A\u811A\u3092\u5F37\u8ABF\u3057\u3066\u3066\u3001\u9AEA\u304C\u967D\u5149\u306B\u6620\u3048\u3066\u6700\u9AD8\u3002"
+      pt: "Muito mais \u2013 as tuas meias vermelhas real\xE7am pernas perfeitas,
+        teu cabelo ao sol \xE9 lindo."
+      es: "Mucho m\xE1s \u2013 tus medias rojas resaltan tus piernas perfectas, y
+        tu pelo luce incre\xEDble con la luz del sol."
+    respect: 4
+  - answer:
+      ru: "\u0414\u0430\u0436\u0435 \u043D\u0435 \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u044F\u043B,
+        \u0447\u0442\u043E \u0447\u0442\u0435\u043D\u0438\u0435 \u043C\u043E\u0436\u043D\u043E
+        \u0441\u043E\u0432\u043C\u0435\u0441\u0442\u0438\u0442\u044C \u0441 \u0442\u0430\u043A\u0438\u043C
+        \u0432\u043E\u0437\u0431\u0443\u0436\u0434\u0435\u043D\u0438\u0435\u043C."
+      en: I never imagined reading could be combined with this kind of arousal.
+      de: "Ich h\xE4tte nie gedacht, dass man Lesen und so starke Erregung kombinieren
+        kann."
+      zh: "\u771F\u6CA1\u60F3\u5230\u8BFB\u4E66\u8FD8\u80FD\u8FD9\u4E48\u5174\u594B\u3002"
+      fr: "Je n\u2019aurais jamais imagin\xE9 qu\u2019on puisse combiner lecture
+        et excitation aussi intense."
+      hi: "\u0915\u092D\u0940 \u0938\u094B\u091A\u093E \u0928\u0939\u0940\u0902 \u0925\u093E
+        \u0915\u093F \u092A\u0922\u093C\u093E\u0908 \u0914\u0930 \u0907\u0924\u0928\u0940
+        \u091C\u092C\u0930\u0926\u0938\u094D\u0924 \u0909\u0924\u094D\u0924\u0947\u091C\u0928\u093E
+        \u090F\u0915 \u0938\u093E\u0925 \u0939\u094B \u0938\u0915\u0924\u0940 \u0939\u0948\u0964"
+      it: "Non avrei mai immaginato che leggere e un\u2019eccitazione cos\xEC forte
+        potessero combinarsi."
+      ja: "\u8AAD\u66F8\u3068\u3053\u3093\u306A\u8208\u596E\u304C\u4E00\u7DD2\u306B\u6765\u308B\u306A\u3093\u3066\u601D\u308F\u306A\u304B\u3063\u305F\u3002"
+      pt: "Nunca pensei que ler e excita\xE7\xE3o t\xE3o forte pudessem andar juntas."
+      es: "Nunca imagin\xE9 que se pudiera combinar lectura con una excitaci\xF3n
+        tan fuerte."
+    respect: 2
+  - answer:
+      ru: "\u0417\u0430\u0447\u0435\u043C \u0447\u0438\u0442\u0430\u0442\u044C? \u041C\u044B
+        \u043C\u043E\u0436\u0435\u043C \u0437\u0430\u043D\u044F\u0442\u044C\u0441\u044F
+        \u043B\u044E\u0431\u043E\u0432\u044C\u044E \u0438 \u043F\u0440\u0435\u043A\u0440\u0430\u0441\u043D\u043E
+        \u043F\u0440\u043E\u0432\u0435\u0441\u0442\u0438 \u0432\u0440\u0435\u043C\u044F."
+      en: Why read? We could make love and have an amazing time.
+      de: "Warum lesen? Wir k\xF6nnen Liebe machen und eine wunderbare Zeit verbringen."
+      zh: "\u5E72\u561B\u8BFB\u4E66\uFF1F\u6211\u4EEC\u53EF\u4EE5\u505A\u7231\uFF0C\u5EA6\u8FC7\u7F8E\u597D\u65F6\u5149\u3002"
+      fr: "P\u4E3A\u4EC0\u4E48\u8981 lire ? On peut faire l\u2019amour et passer
+        un moment merveilleux."
+      hi: "\u092A\u0922\u093C\u0928\u0947 \u0915\u0940 \u0915\u094D\u092F\u093E \u091C\u093C\u0930\u0942\u0930\u0924?
+        \u0939\u092E \u092A\u094D\u092F\u093E\u0930 \u0915\u0930 \u0938\u0915\u0924\u0947
+        \u0939\u0948\u0902 \u0914\u0930 \u0915\u092E\u093E\u0932 \u0915\u093E \u091F\u093E\u0907\u092E
+        \u0938\u094D\u092A\u0947\u0902\u0921 \u0915\u0930 \u0938\u0915\u0924\u0947
+        \u0939\u0948\u0902\u0964"
+      it: "Perch\xE9 leggere? Possiamo fare l\u2019amore e passare un momento meraviglioso."
+      ja: "\u8AAD\u66F8\u306A\u3093\u3066\u3057\u306A\u304F\u3066\u3044\u3044\u3088\u3002\u611B\u3057\u5408\u304A\u3046\u3002"
+      pt: "Para qu\xEA ler? Podemos fazer amor e passar um tempo maravilhoso."
+      es: "\xBFPor qu\xE9 leer? Podemos hacer el amor y pasar un rato incre\xEDble."
+    respect: 0
+  id: 0

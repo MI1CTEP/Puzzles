@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6982f52e7d42440a758671d1357932, type: 3}
+  m_Name: dialogue_1
+  m_EditorClassIdentifier: 
+  firstPhrase:
+    ru: "\u0422\u0435\u0431\u0435 \u043F\u0440\u0438\u0434\u0435\u0442\u0441\u044F
+      \u043F\u0440\u043E\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u0442\u044C \u0441\u043E
+      \u043C\u043D\u043E\u0439 \u0432 \u043F\u043E\u043B\u0438\u0446\u0435\u0439\u0441\u043A\u0438\u0439
+      \u0443\u0447\u0430\u0441\u0442\u043E\u043A! \u0422\u044B \u043F\u043E\u043D\u0438\u043C\u0430\u0435\u0448\u044C
+      \u043F\u043E\u0447\u0435\u043C\u0443 \u0437\u0430\u0434\u0435\u0440\u0436\u0430\u043D?"
+    en: "You\u2019ll have to come with me to the station. Any idea why you\u2019re
+      being detained?"
+    de: "Du musst mit auf\u2019s Revier kommen! Hast du eine Ahnung, warum du festgenommen
+      wirst?"
+    zh: "\u4F60\u5F97\u8DDF\u6211\u53BB\u8B66\u5C40\uFF01\u4F60\u77E5\u9053\u81EA\u5DF1\u4E3A\u4EC0\u4E48\u88AB\u6293\u5417\uFF1F"
+    fr: "Tu vas devoir me suivre au poste. Une id\xE9e de pourquoi tu es en \xE9tat
+      d\u2019arrestation ?"
+    hi: "\u0924\u0941\u091D\u0947 \u092A\u0941\u0932\u093F\u0938 \u0938\u094D\u091F\u0947\u0936\u0928
+      \u091A\u0932\u0928\u093E \u0939\u094B\u0917\u093E! \u092A\u0924\u093E \u0939\u0948
+      \u0924\u0941\u091D\u0947 \u0915\u094D\u092F\u094B\u0902 \u092A\u0915\u0921\u093C\u093E
+      \u0917\u092F\u093E?"
+    it: Dovrai seguirmi in questura. Hai idea del motivo per cui sei in arresto?
+    ja: "\u7F72\u307E\u3067\u540C\u884C\u3057\u3066\u3082\u3089\u3046\u3088\u3002\u306A\u3093\u3067\u6355\u307E\u3063\u3066\u308B\u304B\u5206\u304B\u308B\uFF1F"
+    pt: "Tens de vir comigo para a esquadra. Sabes por que est\xE1s detido?"
+    es: "Tienes que venir conmigo a la comisar\xEDa. \xBFAlguna idea de por qu\xE9
+      est\xE1s detenido?"
+  phraseVariants:
+  - answer:
+      ru: "\u0414\u0430, \u044F \u0434\u043E\u043B\u0433\u043E \u0441\u043C\u043E\u0442\u0440\u0435\u043B
+        \u043D\u0430 \u0442\u0432\u043E\u0438 \u0430\u043F\u043F\u0435\u0442\u0438\u0442\u043D\u044B\u0435
+        \u0444\u043E\u0440\u043C\u044B."
+      en: "Yes\u2026 I was staring at your delicious curves for too long."
+      de: "Ja\u2026 ich hab zu lange auf deine leckeren Kurven gestarrt."
+      zh: "\u662F\u7684\u2026\u2026\u6211\u4E00\u76F4\u76EF\u7740\u4F60\u7F8E\u5473\u7684\u66F2\u7EBF\u770B\u592A\u4E45\u4E86\u3002"
+      fr: "Oui\u2026 je matais trop tes formes d\xE9licieuses."
+      hi: "\u0939\u093E\u0901\u2026 \u0924\u0947\u0930\u0940 \u091F\u0947\u0938\u094D\u091F\u0940
+        \u0915\u0930\u094D\u0935\u094D\u0938 \u0915\u094B \u092C\u0939\u0941\u0924
+        \u0926\u0947\u0930 \u0924\u0915 \u0918\u0942\u0930\u0924\u093E \u0930\u0939\u093E\u0964"
+      it: "S\xEC\u2026 stavo fissando troppo a lungo le tue curve deliziose."
+      ja: "\u3046\u3093\u2026\u305D\u306E\u7F8E\u5473\u3057\u305D\u3046\u306A\u66F2\u7DDA\u3092\u30AC\u30F3\u898B\u3057\u3059\u304E\u305F\u3002"
+      pt: "Sim\u2026 estava a olhar demais para essas curvas deliciosas."
+      es: "S\xED\u2026 estuve mirando demasiado tiempo tus curvas deliciosas."
+    respect: 4
+  - answer:
+      ru: "\u041F\u043E\u0442\u043E\u043C\u0443 \u0447\u0442\u043E \u0441\u043C\u043E\u0442\u0440\u0435\u043B,
+        \u043A\u0430\u043A \u043F\u043E\u043B\u0438\u0446\u0435\u0439\u0441\u043A\u0430\u044F
+        \u0444\u043E\u0440\u043C\u0430 \u043F\u043E\u0434\u0447\u0435\u0440\u043A\u0438\u0432\u0430\u0435\u0442
+        \u0442\u0432\u043E\u044E \u0444\u0438\u0433\u0443\u0440\u0443."
+      en: "Because I couldn\u2019t stop staring at how that police uniform hugs your
+        body."
+      de: "Weil ich nicht aufh\xF6ren konnte zu gucken, wie geil die Polizeiuniform
+        deine Figur betont."
+      zh: "\u56E0\u4E3A\u6211\u5FCD\u4E0D\u4F4F\u4E00\u76F4\u770B\u8B66\u670D\u600E\u4E48\u5B8C\u7F8E\u886C\u6258\u4F60\u7684\u8EAB\u6750\u3002"
+      fr: "Parce que je n\u2019arrivais pas \xE0 d\xE9tacher les yeux de comment
+        l\u2019uniforme moule ton corps."
+      hi: "\u0915\u094D\u092F\u094B\u0902\u0915\u093F \u092A\u0941\u0932\u093F\u0938
+        \u092F\u0942\u0928\u093F\u092B\u0949\u0930\u094D\u092E \u0924\u0947\u0930\u0940
+        \u092C\u0949\u0921\u0940 \u0915\u094B \u0907\u0924\u0928\u093E \u0938\u0947\u0915\u094D\u0938\u0940
+        \u092C\u0928\u093E \u0930\u0939\u0940 \u0925\u0940 \u0915\u093F \u0928\u091C\u093C\u0930
+        \u0939\u0940 \u0928\u0939\u0940\u0902 \u0939\u091F \u0930\u0939\u0940 \u0925\u0940\u0964"
+      it: "Perch\xE9 non riuscivo a smettere di guardare come l\u2019uniforme ti
+        fascia il corpo."
+      ja: "\u8B66\u670D\u304C\u541B\u306E\u4F53\u306B\u3074\u3063\u305F\u308A\u3059\u304E\u3066\u76EE\u304C\u96E2\u305B\u306A\u304B\u3063\u305F\u304B\u3089\u3002"
+      pt: "Porque n\xE3o conseguia parar de olhar como o uniforme real\xE7a o teu
+        corpo."
+      es: "Porque no pod\xEDa dejar de mirar c\xF3mo el uniforme resalta tu figura."
+    respect: 2
+  - answer:
+      ru: "\u041D\u0430\u0432\u0435\u0440\u043D\u043E\u0435, \u043F\u043E\u0442\u043E\u043C\u0443
+        \u0447\u0442\u043E \u0441\u043C\u043E\u0442\u0440\u0435\u043B \u043D\u0430
+        \u0442\u0435\u0431\u044F \u0438 \u043F\u0435\u0440\u0435\u0448\u0435\u043B
+        \u0434\u043E\u0440\u043E\u0433\u0443 \u043D\u0430 \u043A\u0440\u0430\u0441\u043D\u044B\u0439
+        \u0441\u0432\u0435\u0442."
+      en: Probably because I was staring at you and crossed the street on red.
+      de: "Wahrscheinlich, weil ich dich angestarrt hab und bei Rot \xFCber die Stra\xDFe
+        gegangen bin."
+      zh: "\u5927\u6982\u662F\u56E0\u4E3A\u76EF\u7740\u4F60\u770B\uFF0C\u7ED3\u679C\u95EF\u7EA2\u706F\u4E86\u5427\u3002"
+      fr: "Probablement parce que je te regardais et que j\u2019ai travers\xE9 au
+        rouge."
+      hi: "\u0936\u093E\u092F\u0926 \u0907\u0938\u0932\u093F\u090F \u0915\u093F \u0924\u0941\u091D\u0947
+        \u0926\u0947\u0916\u0924\u0947-\u0926\u0947\u0916\u0924\u0947 \u0932\u093E\u0932
+        \u092C\u0924\u094D\u0924\u0940 \u092A\u0930 \u0938\u0921\u093C\u0915 \u092A\u093E\u0930
+        \u0915\u0930 \u0917\u092F\u093E\u0964"
+      it: "Probabilmente perch\xE9 ti fissavo e ho attraversato col rosso."
+      ja: "\u591A\u5206\u3001\u541B\u3092\u30AC\u30F3\u898B\u3057\u3066\u3066\u8D64\u4FE1\u53F7\u3067\u6E21\u3063\u3061\u3083\u3063\u305F\u304B\u3089\u3002"
+      pt: Provavelmente porque te estava a olhar e atravessei com vermelho.
+      es: "Probablemente porque te miraba y cruc\xE9 con el sem\xE1foro en rojo."
+    respect: 0
+  id: 0

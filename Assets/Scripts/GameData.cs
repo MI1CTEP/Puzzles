@@ -7,6 +7,9 @@ namespace MyGame
     {
         public static int CurrentLevel { get; set; }
         public static int CurrentPuzzleStep { get; set; }
+        public static int EasyPuzzle { get; } = 2;
+        public static int MediumPuzzle { get; } = 3;
+        public static int HardPuzzle { get; } = 5;
 
         //Это валюта, за которую открываются уровни. Зарабатывается при прохождении.
         public static class Respect

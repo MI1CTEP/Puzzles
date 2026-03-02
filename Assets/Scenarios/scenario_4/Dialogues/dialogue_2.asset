@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6982f52e7d42440a758671d1357932, type: 3}
+  m_Name: dialogue_2
+  m_EditorClassIdentifier: 
+  firstPhrase:
+    ru: "\u0422\u0435\u0431\u0435 \u043D\u0443\u0436\u043D\u043E \u043B\u0443\u0447\u0448\u0435
+      \u0437\u043D\u0430\u0442\u044C \u043C\u043E\u0439 \u043F\u0440\u0435\u0434\u043C\u0435\u0442,
+      \u043C\u043E\u0436\u0435\u0442 \u043C\u043E\u044F \u043F\u043E\u043F\u043A\u0430
+      \u043F\u043E\u0432\u044B\u0441\u0438\u0442 \u0442\u0432\u043E\u0435 \u0436\u0435\u043B\u0430\u043D\u0438\u0435?"
+    en: "You need to master my subject\u2026 maybe my ass will motivate you?"
+    de: "Du musst mein Fach besser beherrschen\u2026 vielleicht motiviert dich mein
+      Arsch?"
+    zh: "\u4F60\u5F97\u628A\u6211\u7684\u8BFE\u5B66\u597D\u2026\u2026\u6216\u8BB8\u6211\u7684\u5C41\u80A1\u80FD\u6FC0\u52B1\u4F60\uFF1F"
+    fr: "Tu dois mieux ma\xEEtriser ma mati\xE8re\u2026 peut-\xEAtre que mon cul
+      te motivera ?"
+    hi: "\u092E\u0947\u0930\u0940 \u0938\u092C\u094D\u091C\u0947\u0915\u094D\u091F
+      \u0915\u094B \u0905\u091A\u094D\u091B\u0947 \u0938\u0947 \u0938\u0940\u0916\u0928\u093E
+      \u0939\u094B\u0917\u093E\u2026 \u0936\u093E\u092F\u0926 \u092E\u0947\u0930\u0940
+      \u0917\u093E\u0902\u0921 \u092E\u094B\u091F\u093F\u0935\u0947\u091F \u0915\u0930
+      \u0926\u0947?"
+    it: "Devi padroneggiare meglio la mia materia\u2026 forse il mio culo ti motiver\xE0?"
+    ja: "\u79C1\u306E\u6388\u696D\u3092\u3082\u3063\u3068\u30DE\u30B9\u30BF\u30FC\u3057\u306A\u3044\u3068\u2026\u2026\u304A\u5C3B\u3067\u3084\u308B\u6C17\u51FA\u308B\uFF1F"
+    pt: "Tens de dominar melhor a minha disciplina\u2026 talvez a minha bunda te
+      motive?"
+    es: "Tienes que dominar mi asignatura\u2026 \xBFquiz\xE1s mi culo te motive?"
+  phraseVariants:
+  - answer:
+      ru: "\u041E \u0434\u0430, \u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E
+        \u0437\u0430\u0439\u043C\u0443\u0441\u044C \u0443\u0447\u0435\u0431\u043E\u0439
+        \u044D\u0442\u0438\u043C \u0432\u0435\u0447\u0435\u0440\u043E\u043C \u0438
+        \u0431\u0443\u0434\u0443 \u0434\u0443\u043C\u0430\u0442\u044C \u043E \u0432\u0430\u0441."
+      en: "Oh yes, I\u2019ll definitely study tonight\u2026 thinking only of you."
+      de: "Oh ja, heute Abend werde ich definitiv lernen \u2013 und nur an Sie denken."
+      zh: "\u54E6\u662F\u7684\uFF0C\u4ECA\u665A\u6211\u4E00\u5B9A\u597D\u597D\u5B66\u4E60\u2026\u2026\u8111\u5B50\u91CC\u53EA\u6709\u60A8\u3002"
+      fr: "Oh oui, ce soir je vais absolument \xE9tudier\u2026 en ne pensant qu\u2019\xE0
+        vous."
+      hi: "\u0913\u0939 \u0939\u093E\u0901, \u0906\u091C \u0930\u093E\u0924 \u092E\u0948\u0902
+        \u091C\u093C\u0930\u0942\u0930 \u092A\u0922\u093C\u093E\u0908 \u0915\u0930\u0942\u0901\u0917\u093E\u2026
+        \u0914\u0930 \u0938\u093F\u0930\u094D\u092B\u093C \u0924\u0941\u092E\u094D\u0939\u093E\u0930\u0947
+        \u092C\u093E\u0930\u0947 \u092E\u0947\u0902 \u0938\u094B\u091A\u0942\u0901\u0917\u093E\u0964"
+      it: "Oh s\xEC, stasera studier\xF2 di sicuro\u2026 pensando solo a te."
+      ja: "\u3042\u3042\u3001\u4ECA\u591C\u306F\u7D76\u5BFE\u52C9\u5F37\u3059\u308B\u3088\u2026\u2026\u982D\u306E\u4E2D\u306F\u5148\u751F\u3060\u3051\u3002"
+      pt: "Oh sim, esta noite vou estudar com certeza \u2014 s\xF3 a pensar em ti."
+      es: "Oh s\xED, esta noche estudiar\xE9 sin falta\u2026 pensando s\xF3lo en
+        ti."
+    respect: 4
+  - answer:
+      ru: "\u041C\u043D\u0435 \u043A\u0430\u0436\u0435\u0442\u0441\u044F \u0441\u0435\u043A\u0441,
+        \u043D\u0430\u043C\u043D\u043E\u0433\u043E \u043B\u0443\u0447\u0448\u0435,
+        \u0447\u0435\u043C \u0443\u0447\u0435\u0431\u0430."
+      en: Sex is way better than studying.
+      de: Mir ist Sex viel lieber als Lernen.
+      zh: "\u5BF9\u6211\u6765\u8BF4\u6027\u7231\u6BD4\u5B66\u4E60\u723D\u591A\u4E86\u3002"
+      fr: "Le sexe m\u2019int\xE9resse bien plus que les \xE9tudes."
+      hi: "\u0938\u0947\u0915\u094D\u0938 \u092A\u0922\u093C\u093E\u0908 \u0938\u0947
+        \u0915\u0939\u0940\u0902 \u092C\u0947\u0939\u0924\u0930 \u0939\u0948\u0964"
+      it: "Il sesso mi interessa molto pi\xF9 dello studio."
+      ja: "\u52C9\u5F37\u3088\u308A\u30BB\u30C3\u30AF\u30B9\u306E\u65B9\u304C\u3044\u3044\u306B\u6C7A\u307E\u3063\u3066\u308B\u3002"
+      pt: "Sexo \xE9 bem mais interessante do que estudar."
+      es: "El sexo me gusta mucho m\xE1s que estudiar."
+    respect: 2
+  - answer:
+      ru: "\u0412 \u044D\u0442\u043E\u0439 \u0430\u0443\u0434\u0438\u0442\u043E\u0440\u0438\u0438,
+        \u0438\u043D\u0442\u0435\u0440\u0435\u0441 \u0432\u044B\u0437\u044B\u0432\u0430\u0435\u0442\u0435
+        \u0442\u043E\u043B\u044C\u043A\u043E \u0432\u044B."
+      en: "In this classroom, you\u2019re the only thing that interests me."
+      de: "In diesem H\xF6rsaal interessierst nur du mich."
+      zh: "\u5728\u8FD9\u95F4\u6559\u5BA4\u91CC\uFF0C\u53EA\u6709\u60A8\u8BA9\u6211\u611F\u5174\u8DA3\u3002"
+      fr: "Dans cet amphith\xE9\xE2tre, seule toi m\u2019int\xE9resses."
+      hi: "\u0907\u0938 \u0932\u0947\u0915\u094D\u091A\u0930 \u0939\u0949\u0932 \u092E\u0947\u0902
+        \u0938\u093F\u0930\u094D\u092B\u093C \u0924\u0941\u092E \u0939\u0940 \u0907\u0902\u091F\u0930\u0947\u0938\u094D\u091F\u093F\u0902\u0917
+        \u0939\u094B\u0964"
+      it: "In quest\u2019aula mi interessi solo tu."
+      ja: "\u3053\u306E\u6559\u5BA4\u3067\u8208\u5473\u3042\u308B\u306E\u306F\u5148\u751F\u3060\u3051\u3060\u3088\u3002"
+      pt: "Nesta sala s\xF3 me interessas tu."
+      es: "En este aula s\xF3lo me interesas t\xFA."
+    respect: 0
+  id: 0

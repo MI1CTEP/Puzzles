@@ -9775,6 +9775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rectTransformBackground: {fileID: 1834700244}
+  _levels: {fileID: 11400000, guid: fb82919486026464d8f5acc10c027b29, type: 2}
   _upInfoPanel: {fileID: 1326383839}
   _contentImage: {fileID: 1585105527}
   _sympathyPanel: {fileID: 1543093331}
@@ -9790,7 +9791,6 @@ MonoBehaviour:
   _extraLevelInfo: {fileID: 174699859}
   _lock: {fileID: 1447756129}
   _priceLogo: {fileID: 2054744252}
-  _contentDownloadingPanel: {fileID: 418049847}
   _downloadBackground: {fileID: 21300000, guid: 86ad16b98845e4941b9f0cd28f63eb77, type: 3}
   _respectIcon: {fileID: 21300000, guid: c5a019998a1929345907af552a6fca14, type: 3}
   _detailIcon: {fileID: 21300000, guid: f617c743fba36a74eb45c8c96967ff1f, type: 3}

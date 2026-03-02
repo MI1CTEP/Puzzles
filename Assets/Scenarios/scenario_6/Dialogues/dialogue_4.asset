@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6982f52e7d42440a758671d1357932, type: 3}
+  m_Name: dialogue_4
+  m_EditorClassIdentifier: 
+  firstPhrase:
+    ru: "\u0425\u043E\u0447\u0443 \u043F\u0440\u044B\u0433\u0430\u0442\u044C \u043D\u0430
+      \u0442\u0432\u043E\u0435\u043C \u0447\u043B\u0435\u043D\u0435 \u0434\u043E
+      \u0441\u0430\u043C\u043E\u0433\u043E \u0437\u0430\u043A\u0440\u044B\u0442\u0438\u044F
+      \u043A\u0430\u0444\u0435, \u0442\u044B \u043D\u0435 \u043F\u0440\u043E\u0442\u0438\u0432?"
+    en: "I want to ride your cock until the caf\xE9 closes \u2014 you don\u2019t
+      mind, do you?"
+    de: "Ich will bis Ladenschluss auf deinem Schwanz h\xFCpfen \u2013 hast du was
+      dagegen?"
+    zh: "\u6211\u60F3\u9A91\u5728\u4F60\u9E21\u9E21\u4E0A\u4E00\u76F4\u5230\u5496\u5561\u9986\u5173\u95E8\uFF0C\u4F60\u4E0D\u4ECB\u610F\u5427\uFF1F"
+    fr: "Je veux chevaucher ta queue jusqu\u2019\xE0 la fermeture du caf\xE9 \u2013
+      tu es d\u2019accord ?"
+    hi: "\u092E\u0948\u0902 \u0924\u0947\u0930\u0947 \u0932\u0902\u0921 \u092A\u0930
+      \u0915\u0942\u0926\u0928\u093E \u091A\u093E\u0939\u0924\u0940 \u0939\u0942\u0901
+      \u091C\u092C \u0924\u0915 \u0915\u0948\u092B\u093C\u0947 \u092C\u0902\u0926
+      \u0928 \u0939\u094B \u091C\u093E\u090F \u2013 \u092E\u0928\u093E \u0939\u0948?"
+    it: "Voglio saltarti addosso fino all\u2019orario di chiusura \u2013 ti dispiace?"
+    ja: "\u9589\u5E97\u307E\u3067\u541B\u306E\u30C1\u30F3\u30DD\u306B\u8DE8\u3063\u3066\u305F\u3044\u3002\u3044\u3044\u3088\u306D\uFF1F"
+    pt: "Quero cavalgar-te at\xE9 fechar o caf\xE9 \u2013 importas-te?"
+    es: "Quiero montarte hasta que cierre el caf\xE9 \u2013 \xBFte importa?"
+  phraseVariants:
+  - answer:
+      ru: "\u042F \u043D\u0438\u043A\u0443\u0434\u0430 \u043D\u0435 \u0442\u043E\u0440\u043E\u043F\u043B\u044E\u0441\u044C
+        \u0438 \u0441\u0447\u0430\u0441\u0442\u043B\u0438\u0432, \u0447\u0442\u043E
+        \u0441\u0435\u0433\u043E\u0434\u043D\u044F \u0432\u0441\u0442\u0440\u0435\u0442\u0438\u043B
+        \u0442\u0435\u0431\u044F \u0432 \u043A\u0430\u0444\u0435."
+      en: "I\u2019m in no hurry and so happy I met you in the caf\xE9 today."
+      de: "Ich hab\u2019s nicht eilig und bin so gl\xFCcklich, dich heute hier getroffen
+        zu haben."
+      zh: "\u6211\u4E0D\u7740\u6025\uFF0C\u5F88\u5F00\u5FC3\u4ECA\u5929\u5728\u8FD9\u513F\u9047\u5230\u4F60\u3002"
+      fr: "Je ne suis pas press\xE9 et tellement heureux de t\u2019avoir rencontr\xE9e
+        aujourd\u2019hui."
+      hi: "\u092E\u0941\u091D\u0947 \u0915\u0939\u0940\u0902 \u091C\u0932\u094D\u0926\u0940
+        \u0928\u0939\u0940\u0902 \u0939\u0948 \u0914\u0930 \u0906\u091C \u0924\u0941\u091D\u0938\u0947
+        \u092E\u093F\u0932\u0915\u0930 \u092C\u0939\u0941\u0924 \u0916\u0941\u0936
+        \u0939\u0942\u0901\u0964"
+      it: Non ho fretta e sono felicissimo di averti incontrata qui oggi.
+      ja: "\u6025\u3044\u3067\u306A\u3044\u3088\u3002\u4ECA\u65E5\u3053\u3053\u3067\u4F1A\u3048\u3066\u8D85\u5E78\u305B\u3002"
+      pt: "N\xE3o tenho pressa e estou t\xE3o feliz por te ter encontrado aqui hoje."
+      es: "No tengo prisa y estoy feliz de haberte conocido hoy aqu\xED."
+    respect: 4
+  - answer:
+      ru: "\u042F \u043D\u0435 \u043F\u0440\u043E\u0442\u0438\u0432, \u043D\u043E
+        \u0434\u043E \u0437\u0430\u043A\u0440\u044B\u0442\u0438\u044F \u0435\u0449\u0435
+        \u0434\u043E\u043B\u0433\u043E."
+      en: "I don\u2019t mind, and we have plenty of time before closing."
+      de: "Ich hab nichts dagegen \u2013 und wir haben noch viel Zeit bis Ladenschluss."
+      zh: "\u6211\u4E0D\u53CD\u5BF9\uFF0C\u800C\u4E14\u79BB\u5173\u95E8\u8FD8\u65E9\u5462\u3002"
+      fr: "Je suis carr\xE9ment pour \u2013 et on a encore plein de temps avant la
+        fermeture."
+      hi: "\u092E\u0941\u091D\u0947 \u0915\u094B\u0908 \u092A\u094D\u0930\u0949\u092C\u094D\u0932\u092E
+        \u0928\u0939\u0940\u0902 \u2013 \u0914\u0930 \u092C\u0902\u0926 \u0939\u094B\u0928\u0947
+        \u092E\u0947\u0902 \u0905\u092D\u0940 \u092C\u0939\u0941\u0924 \u091F\u093E\u0907\u092E
+        \u0939\u0948\u0964"
+      it: "Non mi dispiace affatto \u2013 e abbiamo ancora tanto tempo prima della
+        chiusura."
+      ja: "\u5168\u7136\uFF2F\uFF2B\u3002\u9589\u5E97\u307E\u3067\u307E\u3060\u307E\u3060\u6642\u9593\u3042\u308B\u3057\u3002"
+      pt: "N\xE3o me importo nada \u2013 e ainda temos muito tempo at\xE9 fechar."
+      es: "No me importa \u2013 y a\xFAn falta mucho para cerrar."
+    respect: 2
+  - answer:
+      ru: "\u0425\u043E\u0447\u0443 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C
+        \u043E\u0440\u0433\u0430\u0437\u043C \u0438 \u0443\u0441\u043F\u0435\u0442\u044C
+        \u043D\u0430 \u0441\u043E\u0432\u0435\u0449\u0430\u043D\u0438\u0435."
+      en: I want to cum and still make it to my meeting.
+      de: Ich will kommen und dann noch zu meinem Meeting gehen.
+      zh: "\u6211\u60F3\u9AD8\u6F6E\uFF0C\u7136\u540E\u8FD8\u5F97\u53BB\u5F00\u4F1A\u3002"
+      fr: "Je veux jouir et ensuite aller \xE0 mon rendez-vous."
+      hi: "\u092E\u0941\u091D\u0947 \u091D\u0921\u093C\u0928\u093E \u0939\u0948 \u0914\u0930
+        \u092B\u093F\u0930 \u092E\u0940\u091F\u093F\u0902\u0917 \u092A\u0930 \u091C\u093E\u0928\u093E
+        \u0939\u0948\u0964"
+      it: Voglio venire e poi andare alla mia riunione.
+      ja: "\u30A4\u30C3\u3066\u304B\u3089\u4F1A\u8B70\u884C\u304D\u305F\u3044\u3002"
+      pt: "Quero gozar e depois ir para a minha reuni\xE3o."
+      es: "Quiero correrme y luego ir a mi reuni\xF3n."
+    respect: 0
+  id: 0

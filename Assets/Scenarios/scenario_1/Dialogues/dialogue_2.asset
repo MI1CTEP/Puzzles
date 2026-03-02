@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6982f52e7d42440a758671d1357932, type: 3}
+  m_Name: dialogue_2
+  m_EditorClassIdentifier: 
+  firstPhrase:
+    ru: "\u0427\u0443\u0432\u0441\u0442\u0432\u0443\u044E \u0441\u0435\u0431\u044F
+      \u0441\u0432\u043E\u0431\u043E\u0434\u043D\u043E \u0431\u0435\u0437 \u043E\u0434\u0435\u0436\u0434\u044B,
+      \u0442\u0435\u0431\u0435 \u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F \u043C\u043E\u044F
+      \u0444\u0438\u0433\u0443\u0440\u0430?"
+    en: "I feel so free without clothes \u2014 do you like my body?"
+    de: "Ohne Kleidung f\xFChle ich mich so frei \u2013 gef\xE4llt dir mein K\xF6rper?"
+    zh: "\u4E0D\u7A7F\u8863\u670D\u611F\u89C9\u597D\u81EA\u7531\uFF0C\u4F60\u559C\u6B22\u6211\u7684\u8EAB\u6750\u5417\uFF1F"
+    fr: "Je me sens si libre sans v\xEAtements, tu aimes mon corps ?"
+    hi: "\u092C\u093F\u0928\u093E \u0915\u092A\u0921\u093C\u094B\u0902 \u0915\u0947
+      \u092E\u0941\u091D\u0947 \u092C\u0939\u0941\u0924 \u0906\u091C\u093C\u093E\u0926\u0940
+      \u092E\u0939\u0938\u0942\u0938 \u0939\u094B\u0924\u0940 \u0939\u0948, \u092E\u0947\u0930\u0940
+      \u092C\u0949\u0921\u0940 \u092A\u0938\u0902\u0926 \u0939\u0948?"
+    it: "Mi sento cos\xEC libera senza vestiti, ti piace il mio corpo?"
+    ja: "\u670D\u3092\u7740\u3066\u306A\u3044\u3068\u3059\u3054\u304F\u89E3\u653E\u611F\u304C\u3042\u308B\u3088\u3002\u79C1\u306E\u4F53\u3001\u597D\u304D\uFF1F"
+    pt: "Me sinto t\xE3o livre sem roupa \u2014 gostas do meu corpo?"
+    es: "Me siento tan libre sin ropa, \xBFte gusta mi cuerpo?"
+  phraseVariants:
+  - answer:
+      ru: "\u0414\u0430, \u0445\u043E\u0447\u0443 \u0443\u0434\u043E\u0432\u043B\u0435\u0442\u0432\u043E\u0440\u0438\u0442\u044C
+        \u0442\u0435\u0431\u044F!"
+      en: "Yes \u2014 I want to satisfy you!"
+      de: Ja, ich will dich befriedigen!
+      zh: "\u662F\u7684\uFF0C\u6211\u60F3\u8BA9\u4F60\u723D\u7FFB\uFF01"
+      fr: Oui, je veux te faire jouir !
+      hi: "\u0939\u093E\u0901, \u092E\u0941\u091D\u0947 \u0924\u0941\u091D\u0947
+        \u091A\u094B\u0926\u0915\u0930 \u0938\u0902\u0924\u0941\u0937\u094D\u091F
+        \u0915\u0930\u0928\u093E \u0939\u0948!"
+      it: "S\xEC, voglio farti venire!"
+      ja: "\u3046\u3093\u3001\u541B\u3092\u30A4\u30AB\u305B\u305F\u3044\uFF01"
+      pt: Sim, quero te satisfazer!
+      es: "S\xED, quiero satisfacerte completamente."
+    respect: 4
+  - answer:
+      ru: "\u0422\u0432\u043E\u044F \u0444\u0438\u0433\u0443\u0440\u0430 \u043E\u0447\u0435\u043D\u044C
+        \u0441\u0435\u043A\u0441\u0443\u0430\u043B\u044C\u043D\u0430\u044F."
+      en: Your body is incredibly sexy.
+      de: "Dein K\xF6rper ist unglaublich sexy."
+      zh: "\u4F60\u7684\u8EAB\u6750\u8D85\u7EA7\u6027\u611F\u3002"
+      fr: Ton corps est incroyablement sexy.
+      hi: "\u0924\u0947\u0930\u0940 \u092C\u0949\u0921\u0940 \u0915\u092E\u093E\u0932
+        \u0915\u0940 \u0938\u0947\u0915\u094D\u0938\u0940 \u0939\u0948\u0964"
+      it: "Il tuo corpo \xE8 incredibilmente sexy."
+      ja: "\u305D\u306E\u4F53\u3001\u3081\u3063\u3061\u3083\u30BB\u30AF\u30B7\u30FC\u3060\u3088\u3002"
+      pt: "O teu corpo \xE9 incrivelmente sexy."
+      es: "Tu cuerpo es incre\xEDblemente sexy."
+    respect: 2
+  - answer:
+      ru: "\u0411\u043E\u044E\u0441\u044C \u043F\u043E\u043A\u0430\u0437\u0430\u0442\u044C\u0441\u044F
+        \u043F\u043E\u0448\u043B\u044B\u043C, \u043D\u043E \u0442\u044B \u043C\u0435\u043D\u044F
+        \u0432\u043E\u0437\u0431\u0443\u0436\u0434\u0430\u0435\u0448\u044C."
+      en: "I\u2019m afraid I\u2019ll sound crude, but you turn me on so much."
+      de: "Ich will nicht vulg\xE4r wirken, aber du machst mich wahnsinnig an."
+      zh: "\u6015\u663E\u5F97\u592A\u4E0B\u6D41\uFF0C\u4F46\u4F60\u771F\u7684\u8BA9\u6211\u597D\u5174\u594B\u3002"
+      fr: "J\u2019ai peur de para\xEEtre vulgaire, mais tu m\u2019excites tellement."
+      hi: "\u092E\u0941\u091D\u0947 \u0921\u0930 \u0939\u0948 \u0915\u093F \u092B\u0942\u0939\u0921\u093C
+        \u0932\u0917\u0942\u0901\u0917\u093E, \u092A\u0930 \u0924\u0942 \u092E\u0941\u091D\u0947
+        \u092C\u0939\u0941\u0924 \u0909\u0924\u094D\u0924\u0947\u091C\u093F\u0924
+        \u0915\u0930 \u0930\u0939\u0940 \u0939\u0948\u0964"
+      it: Temo di sembrare volgare, ma mi ecciti da morire.
+      ja: "\u4E0B\u54C1\u3060\u3068\u601D\u308F\u308C\u305F\u304F\u306A\u3044\u3051\u3069\u3001\u541B\u306B\u30E1\u30C3\u30C1\u30E3\u8208\u596E\u3057\u3066\u308B\u3002"
+      pt: Tenho medo de parecer vulgar, mas tu me deixas louco.
+      es: "Me da miedo sonar grosero, pero me pones much\xEDsimo."
+    respect: 0
+  id: 0

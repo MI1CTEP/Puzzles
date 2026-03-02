@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using DG.Tweening;
-using MyGame.Bundles;
 
 namespace MyGame.Gameplay.ExtraLevel
 {
@@ -59,8 +58,11 @@ namespace MyGame.Gameplay.ExtraLevel
 
         private void LoadNewSprite()
         {
-            _sprite = BundlesController.Instance.ForCollectBundle.TryGetSprite();
-            _background.SetSprite(_sprite);
+            AsyncContent.LoadForCollect(() =>
+            {
+                _sprite = AsyncContent.ForCollect;
+                _background.SetSprite(_sprite);
+            });
         }
 
         private void Open()
@@ -104,7 +106,6 @@ namespace MyGame.Gameplay.ExtraLevel
                 _value.ResetValue();
                 CreateArays(false);
                 MixDetailIds();
-                BundlesController.Instance.ForCollectBundle.TryLoadLast(LoadNewSprite);
             }
             _continueButton.gameObject.SetActive(true);
         }
@@ -152,6 +153,7 @@ namespace MyGame.Gameplay.ExtraLevel
 
         private void OnDestroy()
         {
+            AsyncContent.TryReleaseForCollect();
             TryStopAnim();
         }
     }

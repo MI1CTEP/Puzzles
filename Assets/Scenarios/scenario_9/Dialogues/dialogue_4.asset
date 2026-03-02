@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6982f52e7d42440a758671d1357932, type: 3}
+  m_Name: dialogue_4
+  m_EditorClassIdentifier: 
+  firstPhrase:
+    ru: "\u042D\u0442\u043E \u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E
+      \u043F\u043E\u0441\u043B\u0435 \u0440\u0430\u0437\u043C\u0438\u043D\u043A\u0438?
+      \u041C\u043E\u044F \u043A\u0438\u0441\u043A\u0430 \u0447\u0443\u0432\u0441\u0442\u0432\u0443\u0435\u0442
+      \u0431\u043E\u043B\u044C\u0448\u043E\u0439 \u0447\u043B\u0435\u043D."
+    en: Is this mandatory after warm-up? My pussy can feel your huge cock already.
+    de: "Das ist nach dem Aufw\xE4rmen Pflicht? Meine Muschi sp\xFCrt schon deinen
+      riesigen Schwanz."
+    zh: "\u70ED\u8EAB\u540E\u8FD9\u662F\u5FC5\u4FEE\u8BFE\u5417\uFF1F\u6211\u7684\u5C0F\u7A74\u5DF2\u7ECF\u611F\u89C9\u5230\u4F60\u7684\u5927\u9E21\u9E21\u4E86\u3002"
+    fr: "C\u2019est obligatoire apr\xE8s l\u2019\xE9chauffement ? Ma chatte sent
+      d\xE9j\xE0 ton \xE9norme queue."
+    hi: "\u0915\u094D\u092F\u093E \u0935\u093E\u0930\u094D\u092E-\u0905\u092A \u0915\u0947
+      \u092C\u093E\u0926 \u092F\u0939 \u0906\u0935\u0936\u094D\u092F\u0915 \u0939\u0948?
+      \u092E\u0947\u0930\u0940 \u092C\u093F\u0932\u094D\u0932\u0940 \u090F\u0915
+      \u092C\u0921\u093C\u093E \u0921\u093F\u0915 \u0932\u0917\u0924\u093E \u0939\u0948."
+    it: "\xC8 obbligatorio dopo il riscaldamento? La mia figa sente gi\xE0 il tuo
+      cazzo enorme."
+    ja: "\u30A6\u30A9\u30FC\u30DF\u30F3\u30B0\u30A2\u30C3\u30D7\u306E\u5F8C\u306F\u3053\u308C\u5FC5\u9808\uFF1F\u3082\u3046\u30DE\u30F3\u30B3\u304C\u30C7\u30AB\u30C1\u30F3\u30DD\u611F\u3058\u3066\u308B\u3002"
+    pt: "Isto \xE9 obrigat\xF3rio depois do aquecimento? A minha rata j\xE1 sente
+      o teu pauz\xE3o."
+    es: "\xBFEs obligatorio despu\xE9s del calentamiento? Mi co\xF1o ya siente tu
+      enorme polla."
+  phraseVariants:
+  - answer:
+      ru: "\u041C\u044B \u0431\u0443\u0434\u0435\u043C \u0437\u0430\u043D\u0438\u043C\u0430\u0442\u044C\u0441\u044F
+        \u044D\u0442\u0438\u043C \u043A\u0430\u0436\u0434\u0443\u044E \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0443,
+        \u0432\u0435\u0434\u044C \u043A\u0438\u0441\u043A\u0443 \u0438 \u043F\u043E\u043F\u043A\u0443,
+        \u043D\u0430\u0434\u043E \u0442\u043E\u0436\u0435 \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u0430\u0442\u044C."
+      en: "We\u2019ll do this every training session \u2014 pussy and ass need training
+        too."
+      de: "Wir machen das bei jedem Training \u2013 Muschi und Arsch m\xFCssen auch
+        trainiert werden."
+      zh: "\u6BCF\u8282\u8BAD\u7EC3\u8BFE\u90FD\u8FD9\u6837\u505A\uFF0C\u5C0F\u7A74\u548C\u5C41\u80A1\u4E5F\u8981\u953B\u70BC\u3002"
+      fr: "On fera \xE7a \xE0 chaque s\xE9ance \u2013 la chatte et le cul doivent
+        aussi s\u2019entra\xEEner."
+      hi: "\u0939\u092E \u092F\u0939 \u0939\u0930 \u0915\u0938\u0930\u0924 \u0915\u0930\u0947\u0902\u0917\u0947,
+        \u0915\u094D\u092F\u094B\u0902\u0915\u093F \u092C\u093F\u0932\u094D\u0932\u0940
+        \u0914\u0930 \u0917\u0927\u0947 \u0915\u094B \u092D\u0940 \u092A\u094D\u0930\u0936\u093F\u0915\u094D\u0937\u093F\u0924
+        \u0915\u0930\u0928\u0947 \u0915\u0940 \u0906\u0935\u0936\u094D\u092F\u0915\u0924\u093E
+        \u0939\u0948 \u0964 "
+      it: "Lo faremo ad ogni allenamento \u2013 figa e culo devono allenarsi anche
+        loro."
+      ja: "\u6BCE\u56DE\u3053\u308C\u3084\u308B\u3088\u3002\u30DE\u30F3\u30B3\u3082\u304A\u5C3B\u3082\u935B\u3048\u306A\u3044\u3068\u3002"
+      pt: "Vamos fazer isto em cada treino \u2013 a rata e a bunda tamb\xE9m precisam
+        de treino."
+      es: "Lo haremos en cada entrenamiento \u2013 el co\xF1o y el culo tambi\xE9n
+        necesitan entrenarse."
+    respect: 4
+  - answer:
+      ru: "\u041F\u043E\u0440\u043E\u0439 \u043F\u0440\u0438\u0445\u043E\u0434\u0438\u0442\u0441\u044F
+        \u0442\u0430\u043A \u0434\u0435\u043B\u0430\u0442\u044C, \u0435\u0441\u043B\u0438
+        \u044F \u0441\u043E\u043C\u043D\u0435\u0432\u0430\u044E\u0441\u044C \u0432
+        \u0442\u0432\u043E\u0435\u043C \u0443\u0440\u043E\u0432\u043D\u0435 \u0444\u0438\u0437\u0438\u0447\u0435\u0441\u043A\u043E\u0439
+        \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u043A\u0438."
+      en: "Sometimes it\u2019s necessary when I\u2019m not sure about your fitness
+        level."
+      de: "Manchmal ist es n\xF6tig, wenn ich an deiner Fitness zweifle."
+      zh: "\u6709\u65F6\u5019\u6211\u6000\u7591\u4F60\u7684\u4F53\u80FD\uFF0C\u5C31\u5F97\u8FD9\u6837\u505A\u3002"
+      fr: "Parfois c\u2019est n\xE9cessaire quand je doute de ton niveau de forme."
+      hi: "\u0915\u092D\u0940-\u0915\u092D\u0940 \u092E\u0941\u091D\u0947 \u092F\u0939
+        \u0915\u0930\u0928\u093E \u092A\u0921\u093C\u0924\u093E \u0939\u0948 \u0905\u0917\u0930
+        \u092E\u0941\u091D\u0947 \u0906\u092A\u0915\u0940 \u0936\u093E\u0930\u0940\u0930\u093F\u0915
+        \u092B\u093F\u091F\u0928\u0947\u0938 \u0915\u0947 \u0938\u094D\u0924\u0930
+        \u092A\u0930 \u0938\u0902\u0926\u0947\u0939 \u0939\u0948 \u0964 "
+      it: "A volte \xE8 necessario quando dubito del tuo livello di forma fisica."
+      ja: "\u4F53\u529B\u306B\u4E0D\u5B89\u304C\u3042\u308B\u3068\u304D\u306F\u5FC5\u8981\u3060\u3088\u3002"
+      pt: "\xC0s vezes \xE9 necess\xE1rio quando duvido do teu n\xEDvel f\xEDsico."
+      es: "A veces es necesario cuando dudo de tu nivel f\xEDsico."
+    respect: 2
+  - answer:
+      ru: "\u042D\u0442\u043E \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u0441\u0442\u044C,
+        \u043F\u043E\u0442\u043E\u043C\u0443 \u0447\u0442\u043E \u0442\u044B \u0441\u043D\u044F\u043B\u0430
+        \u0448\u043E\u0440\u0442\u044B, \u043D\u043E \u043D\u0430\u0434\u043E \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u0442\u044C
+        \u043F\u0440\u043E\u0446\u0435\u0441\u0441 \u0440\u0430\u0437\u043C\u0438\u043D\u043A\u0438."
+      en: It was an accident because you took off your shorts, but we still need
+        to finish the warm-up.
+      de: "Das war ein Versehen, weil du die Shorts ausgezogen hast \u2013 aber wir
+        m\xFCssen das Aufw\xE4rmen beenden."
+      zh: "\u56E0\u4E3A\u4F60\u8131\u4E86\u77ED\u88E4\u6240\u4EE5\u662F\u610F\u5916\uFF0C\u4F46\u8FD8\u5F97\u5B8C\u6210\u70ED\u8EAB\u3002"
+      fr: "C\u2019\xE9tait un accident parce que tu as enlev\xE9 ton short \u2013
+        mais il faut finir l\u2019\xE9chauffement."
+      hi: "\u092F\u0939 \u090F\u0915 \u0926\u0941\u0930\u094D\u0918\u091F\u0928\u093E
+        \u0925\u0940 \u0915\u094D\u092F\u094B\u0902\u0915\u093F \u0906\u092A\u0928\u0947
+        \u0905\u092A\u0928\u0947 \u0936\u0949\u0930\u094D\u091F\u094D\u0938 \u0909\u0924\u093E\u0930
+        \u0926\u093F\u090F \u0925\u0947, \u0932\u0947\u0915\u093F\u0928 \u0906\u092A\u0915\u094B
+        \u0935\u093E\u0930\u094D\u092E-\u0905\u092A \u092A\u094D\u0930\u0915\u094D\u0930\u093F\u092F\u093E
+        \u0915\u094B \u092A\u0942\u0930\u093E \u0915\u0930\u0928\u093E \u0939\u094B\u0917\u093E
+        \u0964 "
+      it: "\xC8 stato un incidente perch\xE9 ti sei tolta i pantaloncini \u2013 ma
+        dobbiamo finire il riscaldamento."
+      ja: "\u30B7\u30E7\u30FC\u30C4\u8131\u3044\u3060\u304B\u3089\u4E8B\u6545\u3002\u3067\u3082\u307E\u3060\u30A6\u30A9\u30FC\u30DF\u30F3\u30B0\u30A2\u30C3\u30D7\u7D42\u308F\u3063\u3066\u306A\u3044\u3088\u3002"
+      pt: "Foi um acidente porque tiraste os cal\xE7\xF5es \u2013 mas temos de acabar
+        o aquecimento."
+      es: "Fue un accidente porque te quitaste los shorts \u2013 pero tenemos que
+        terminar el calentamiento."
+    respect: 0
+  id: 0

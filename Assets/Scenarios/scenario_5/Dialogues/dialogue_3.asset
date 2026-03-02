@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6982f52e7d42440a758671d1357932, type: 3}
+  m_Name: dialogue_3
+  m_EditorClassIdentifier: 
+  firstPhrase:
+    ru: "\u042F \u043F\u043E\u043A\u0430\u0437\u0430\u043B\u0430 \u0442\u0435\u0431\u0435
+      \u0433\u0440\u0443\u0434\u044C, \u0442\u0435\u043F\u0435\u0440\u044C \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0438
+      \u043D\u0430 \u043F\u043E\u043F\u043A\u0443! \u041D\u0440\u0430\u0432\u0438\u0442\u0441\u044F?"
+    en: I showed you my breasts, now check out my ass! Like it?
+    de: "Ich hab dir meine Titten gezeigt \u2013 jetzt schau dir meinen Arsch an!
+      Gef\xE4llt er dir?"
+    zh: "\u6211\u7ED9\u4F60\u770B\u4E86\u80F8\u90E8\uFF0C\u73B0\u5728\u770B\u770B\u5C41\u80A1\uFF01\u559C\u6B22\u5417\uFF1F"
+    fr: "Je t\u2019ai montr\xE9 mes seins \u2013 maintenant regarde mon cul ! Tu
+      aimes ?"
+    hi: "\u092E\u0948\u0902\u0928\u0947 \u0924\u0941\u092E\u094D\u0939\u0947\u0902
+      \u0905\u092A\u0928\u0947 \u0938\u094D\u0924\u0928 \u0926\u093F\u0916\u093E\u090F,
+      \u0905\u092C \u092E\u0947\u0930\u0940 \u0917\u093E\u0902\u0921 \u0926\u0947\u0916\u094B!
+      \u0915\u094D\u092F\u093E \u0906\u092A\u0915\u094B \u092F\u0939 \u092A\u0938\u0902\u0926
+      \u0939\u0948?"
+    it: "Ti ho fatto vedere le tette \u2013 ora guarda il mio culo! Ti piace?"
+    ja: "\u304A\u3063\u3071\u3044\u898B\u305B\u305F\u304B\u3089\u3001\u4ECA\u5EA6\u306F\u304A\u5C3B\uFF01\u6C17\u306B\u5165\u3063\u305F\uFF1F"
+    pt: "Mostrei-te os peitos \u2013 agora olha para a bunda! Gostas?"
+    es: "Te ense\xF1\xE9 las tetas \u2013 ahora mira mi culo. \xBFTe gusta?"
+  phraseVariants:
+  - answer:
+      ru: "\u0414\u0430, \u043E\u043D\u0430 \u0432\u043E\u0437\u0431\u0443\u0436\u0434\u0430\u0435\u0442
+        \u043C\u0435\u043D\u044F."
+      en: "Yes, it\u2019s driving me crazy."
+      de: Ja, er macht mich total geil.
+      zh: "\u662F\u7684\uFF0C\u5B83\u8BA9\u6211\u8D85\u7EA7\u5174\u594B\u3002"
+      fr: "Oui, il me rend compl\xE8tement dingue."
+      hi: "\u0939\u093E\u0901, \u092F\u0947 \u092E\u0941\u091D\u0947 \u092C\u0939\u0941\u0924
+        \u0909\u0924\u094D\u0924\u0947\u091C\u093F\u0924 \u0915\u0930 \u0930\u0939\u0940
+        \u0939\u0948\u0964"
+      it: "S\xEC, mi fa impazzire."
+      ja: "\u3046\u3093\u3001\u305D\u308C\u898B\u3066\u3081\u3063\u3061\u3083\u8208\u596E\u3057\u3066\u308B\u3002"
+      pt: Sim, deixa-me louco.
+      es: "S\xED, me pone supercachondo."
+    respect: 4
+  - answer:
+      ru: "\u0423\u0436\u0435 \u043D\u0430\u0447\u0438\u043D\u0430\u044E \u043D\u0435\u043D\u0430\u0432\u0438\u0434\u0435\u0442\u044C
+        \u0441\u0442\u0435\u043A\u043B\u0430, \u043D\u043E \u043F\u043E\u043F\u043A\u0430
+        \u0432\u044B\u0437\u044B\u0432\u0430\u0435\u0442 \u0432\u043E\u0441\u0442\u043E\u0440\u0433."
+      en: "I\u2019m starting to hate this glass, but your ass is breathtaking."
+      de: "Ich fange an, dieses Glas zu hassen \u2013 aber dein Arsch ist umwerfend."
+      zh: "\u6211\u5F00\u59CB\u8BA8\u538C\u8FD9\u5757\u73BB\u7483\u4E86\uFF0C\u4E0D\u8FC7\u4F60\u7684\u5C41\u80A1\u592A\u68D2\u4E86\u3002"
+      fr: "Je commence \xE0 d\xE9tester cette vitre \u2013 mais ton cul est sublime."
+      hi: "\u092F\u0947 \u0936\u0940\u0936\u093E \u0905\u092C \u0928\u092B\u093C\u0930\u0924
+        \u0939\u094B\u0928\u0947 \u0932\u0917\u093E \u0939\u0948 \u2013 \u092A\u0930
+        \u0924\u0947\u0930\u0940 \u0917\u093E\u0902\u0921 \u0915\u092E\u093E\u0932
+        \u0915\u0940 \u0939\u0948\u0964"
+      it: "Inizio a odiare questo vetro \u2013 ma questo culo \xE8 spettacolare."
+      ja: "\u30AC\u30E9\u30B9\u5ACC\u3044\u306B\u306A\u3063\u3066\u304D\u305F\u3002\u3067\u3082\u3053\u306E\u5C41\u80A1\u6700\u9AD8\u3002"
+      pt: "J\xE1 come\xE7o a odiar este vidro \u2013 mas essa bunda \xE9 espectacular."
+      es: Ya empiezo a odiar este cristal, pero tu culo es espectacular.
+    respect: 2
+  - answer:
+      ru: "\u0412\u044B\u0433\u043B\u044F\u0434\u0438\u0442 \u043D\u0435\u043F\u043B\u043E\u0445\u043E,
+        \u043D\u043E \u0432 \u0443\u043D\u0438\u0444\u043E\u0440\u043C\u0435 \u0442\u044B
+        \u0431\u043E\u043B\u0435\u0435 \u0441\u0435\u043A\u0441\u0443\u0430\u043B\u044C\u043D\u0430."
+      en: "Looks good, but you\u2019re even sexier in uniform."
+      de: "Sieht gut aus \u2013 aber in Uniform bist du noch viel geiler."
+      zh: "\u770B\u8D77\u6765\u4E0D\u9519\uFF0C\u4F46\u5728\u5236\u670D\u91CC\u4F60\u66F4\u6027\u611F\u3002"
+      fr: "\xC7a claque \u2013 mais en uniforme tu es encore plus bandante."
+      hi: "\u0920\u0940\u0915 \u0939\u0948 \u2013 \u092A\u0930 \u092F\u0942\u0928\u093F\u092B\u0949\u0930\u094D\u092E
+        \u092E\u0947\u0902 \u0924\u0942 \u0914\u0930 \u092D\u0940 \u091C\u093C\u094D\u092F\u093E\u0926\u093E
+        \u0938\u0947\u0915\u094D\u0938\u0940 \u0932\u0917\u0924\u0940 \u0939\u0948\u0964"
+      it: "Ci sta \u2013 ma in uniforme sei ancora pi\xF9 sexy."
+      ja: "\u60AA\u304F\u306A\u3044\u3051\u3069\u3001\u5236\u670D\u306E\u65B9\u304C\u3082\u3063\u3068\u30A8\u30ED\u3044\u3088\u3002"
+      pt: "Fica bom \u2013 mas de uniforme \xE9s ainda mais excitante."
+      es: "Est\xE1 bien \u2013 pero en uniforme est\xE1s mucho m\xE1s caliente."
+    respect: 0
+  id: 0

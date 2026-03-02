@@ -10,6 +10,7 @@ namespace MyGame.Gameplay
 {
     public sealed class GameplayController : MonoBehaviour
     {
+        [SerializeField] private Scenario _scenario;
         [SerializeField] private ProgressPanel _progressPanel;
         [SerializeField] private VideoController _videoController;
         [SerializeField] private ExtraLevelUnlocker _extraLevelUnlocker;
@@ -25,31 +26,32 @@ namespace MyGame.Gameplay
         [SerializeField] private EndPanel _endPanel;
         [SerializeField] private GameObject _continueButtotAfterVideo;
 
-        private ScenarioLoader _scenarioLoader;
-        private Scenario _scenario;
-        private ScenarioStage _currentScenarioStage;
+        private ScenarioStage _scenarioStage;
         private IGameStage _currentGameStage;
         private int _currentGameStageId;
         private bool _isPaidContent = false;
 
         private void Start()
         {
-            Init();
+            AsyncContent.LoadVideos((videos) =>
+            {
+                AsyncContent.LoadDialogues((dialogues) =>
+                {
+                    Init();
+                });
+            });
         }
 
-        private async UniTask Init()
+        private void Init()
         {
-            _scenarioLoader = new();
-            _scenario = await _scenarioLoader.GetScenario();
-
             if (GameData.CurrentPuzzleStep > 0)
             {
                 _continueButtotAfterVideo.SetActive(false);
                 int currentStage = 0;
                 for (int i = 0; ; i++)
                 {
-                    _currentScenarioStage = _scenario.TryGetScenarioStage(i);
-                    if (_currentScenarioStage.typeStage == "Puzzle")
+                    _scenarioStage = _scenario.TryGetScenarioStage(i);
+                    if (_scenarioStage.typeStage == TypeStage.Puzzle)
                         currentStage++;
                     if (currentStage == GameData.CurrentPuzzleStep)
                     {
@@ -64,7 +66,7 @@ namespace MyGame.Gameplay
             _videoController.Init();
             _extraLevelUnlocker.Init();
             _puzzleController.Init(_progressPanel, _extraLevelUnlocker);
-            _dialogueController.Init(_scenario, _progressPanel);
+            _dialogueController.Init(_progressPanel);
             _paidContentOpenedPanel.Init();
             _cameraController.Init();
             _giftController.Init();
@@ -77,9 +79,9 @@ namespace MyGame.Gameplay
 
         private void TryStartNextStage()
         {
-            _currentScenarioStage = _scenario.TryGetScenarioStage(_currentGameStageId);
+            _scenarioStage = _scenario.TryGetScenarioStage(_currentGameStageId);
             _currentGameStageId++;
-            if (_currentScenarioStage == null || _isPaidContent && !GameData.PaidContent.IsUnlock(GameData.CurrentLevel))
+            if (_scenarioStage == null || _isPaidContent && !GameData.PaidContent.IsUnlock(GameData.CurrentLevel))
             {
                 End();
                 return;
@@ -87,9 +89,9 @@ namespace MyGame.Gameplay
 
             TryStopLastStage();
 
-            switch (_currentScenarioStage.typeStage)
+            switch (_scenarioStage.typeStage)
             {
-                case "Puzzle":
+                case TypeStage.Puzzle:
 
                     //Debug.Log($"Puzzle {_currentGameStageId} {GameData.CurrentStep}");
                     //Debug.Log($"dialogueId  {_currentScenarioStage.dialogueId}");
@@ -103,12 +105,12 @@ namespace MyGame.Gameplay
                     SetBackgroundImage();
                     StartNextStage();
                     break;
-                case "Video":
+                case TypeStage.Video:
                     _currentGameStage = _videoController;
                     _progressPanel.Hide(true);
                     StartNextStage();
                     break;
-                case "Dialogue":
+                case TypeStage.Dialogue:
                     _videoController.Disable();
                     _currentGameStage = _dialogueController;
                     _progressPanel.Show(true);
@@ -116,7 +118,7 @@ namespace MyGame.Gameplay
                     SetBackgroundImage();
                     StartNextStage();
                     break;
-                case "Gifts":
+                case TypeStage.Gifts:
                     _videoController.Disable();
                     _currentGameStage = _giftsGiver;
                     _progressPanel.Hide(true);
@@ -124,7 +126,7 @@ namespace MyGame.Gameplay
                     SetBackgroundImage();
                     StartNextStage();
                     break;
-                case "PaidContent":
+                case TypeStage.PaidContent:
 
                     Debug.Log("PaidContent");
                     //GameData.StageGirlLevel.UnlockStage(GameData.CurrentLevel, GameData.CurrentStep);
@@ -143,18 +145,18 @@ namespace MyGame.Gameplay
 
         private void UpdateCameraSize()
         {
-            _cameraController.UpdateSize(_currentScenarioStage.Image.texture.height, _currentScenarioStage.Image.texture.width);
+            _cameraController.UpdateSize(AsyncContent.Images.sprites[0].texture.height, AsyncContent.Images.sprites[0].texture.width);
         }
 
         private void SetBackgroundImage()
         {
-            _backgroundController.SetSprite(_currentScenarioStage.Image, _currentScenarioStage.isAnimImage);
+            _backgroundController.SetSprite(AsyncContent.Images.sprites[_scenarioStage.imageId - 1], false);
         }
 
         private void StartNextStage()
         {
             _currentGameStage.OnEnd += TryStartNextStage;
-            _currentGameStage.Play(_currentScenarioStage);
+            _currentGameStage.Play(_scenarioStage);
         }
 
         private void End()
@@ -178,6 +180,8 @@ namespace MyGame.Gameplay
 
         private void OnDestroy()
         {
+            AsyncContent.TryReleaseDialogues();
+            AsyncContent.TryReleaseVideos();
             TryStopLastStage();
         }
     }

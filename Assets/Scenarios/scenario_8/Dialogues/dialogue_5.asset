@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6982f52e7d42440a758671d1357932, type: 3}
+  m_Name: dialogue_5
+  m_EditorClassIdentifier: 
+  firstPhrase:
+    ru: "\u0410\u043D\u0430\u043B\u044C\u043D\u044B\u0439 \u0441\u0435\u043A\u0441
+      \u0432 \u0434\u0438\u043A\u0438\u0445 \u0434\u0436\u0443\u043D\u0433\u043B\u044F\u0445,
+      \u044F \u0434\u043E\u043B\u0433\u043E \u0436\u0434\u0430\u043B\u0430 \u044D\u0442\u043E\u0433\u043E
+      \u043C\u043E\u043C\u0435\u043D\u0442\u0430."
+    en: "Anal sex in the wild jungle \u2014 I\u2019ve been waiting for this moment
+      for so long."
+    de: "Anal-Sex in der wilden Jungle \u2013 darauf habe ich so lange gewartet."
+    zh: "\u5728\u72C2\u91CE\u4E1B\u6797\u91CC\u809B\u4EA4\uFF0C\u6211\u7B49\u8FD9\u4E00\u523B\u597D\u4E45\u4E86\u3002"
+    fr: "Sexe anal dans la jungle sauvage \u2013 j\u2019ai attendu ce moment si longtemps."
+    hi: "\u091C\u0902\u0917\u0932\u0940 \u091C\u0902\u0917\u0932 \u092E\u0947\u0902
+      \u0905\u0928\u0932 \u0938\u0947\u0915\u094D\u0938 \u2013 \u092E\u0948\u0902
+      \u0907\u0938 \u092A\u0932 \u0915\u093E \u0915\u093F\u0924\u0928\u0947 \u091F\u093E\u0907\u092E
+      \u0938\u0947 \u0907\u0902\u0924\u091C\u093C\u093E\u0930 \u0915\u0930 \u0930\u0939\u0940
+      \u0925\u0940\u0964"
+    it: "Sesso anale nella giungla selvaggia \u2013 ho aspettato cos\xEC tanto questo
+      momento."
+    ja: "\u30EF\u30A4\u30EB\u30C9\u306A\u30B8\u30E3\u30F3\u30B0\u30EB\u3067\u30A2\u30CA\u30EB\u30BB\u30C3\u30AF\u30B9\u3002\u305A\u3063\u3068\u5F85\u3063\u3066\u305F\u3002"
+    pt: "Sexo anal na selva selvagem \u2013 esperei tanto por este momento."
+    es: "Sexo anal en la selva salvaje \u2013 llevaba tanto tiempo esperando este
+      momento."
+  phraseVariants:
+  - answer:
+      ru: "\u042F \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u044F\u043B
+        \u0442\u0430\u043A\u043E\u0435 \u0432 \u0441\u0432\u043E\u0438\u0445 \u0444\u0430\u043D\u0442\u0430\u0437\u0438\u044F\u0445,
+        \u044F \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E
+        \u0432\u043E\u0437\u0431\u0443\u0436\u0434\u0435\u043D."
+      en: "I fantasized about exactly this \u2014 I\u2019m at maximum arousal."
+      de: "Genau das habe ich mir in meinen Fantasien vorgestellt \u2013 ich bin
+        maximal erregt."
+      zh: "\u8FD9\u5C31\u662F\u6211\u5E7B\u60F3\u4E2D\u7684\u573A\u666F\uFF0C\u6211\u5DF2\u7ECF\u786C\u5230\u6781\u81F4\u4E86\u3002"
+      fr: "C\u2019est exactement ce que j\u2019imaginais dans mes fantasmes \u2013
+        je suis au maximum de l\u2019excitation."
+      hi: "\u092C\u093F\u0932\u094D\u0915\u0941\u0932 \u0935\u0948\u0938\u093E \u0939\u0940
+        \u091C\u0948\u0938\u093E \u092E\u0948\u0902 \u0905\u092A\u0928\u0940 \u092B\u0948\u0902\u091F\u0938\u0940
+        \u092E\u0947\u0902 \u0938\u094B\u091A\u0924\u093E \u0925\u093E \u2013 \u092E\u0948\u0902
+        \u092A\u0942\u0930\u0940 \u0924\u0930\u0939 \u0938\u0947 \u0909\u0924\u094D\u0924\u0947\u091C\u093F\u0924
+        \u0939\u0942\u0901\u0964"
+      it: "\xC8 proprio quello che fantasticavo \u2013 sono al massimo dell\u2019eccitazione."
+      ja: "\u307E\u3055\u306B\u5984\u60F3\u3057\u3066\u305F\u3084\u3064\u3002\u3082\u3046MAX\u306B\u8208\u596E\u3057\u3066\u308B\u3002"
+      pt: "\xC9 exatamente o que fantasiava \u2013 estou no m\xE1ximo do tes\xE3o."
+      es: "Es exactamente lo que imaginaba en mis fantas\xEDas \u2013 estoy al m\xE1ximo
+        de excitaci\xF3n."
+    respect: 4
+  - answer:
+      ru: "\u0422\u0432\u043E\u044F \u043F\u043E\u043F\u043A\u0430 \u0438 \u0434\u0438\u043A\u0430\u044F
+        \u043F\u0440\u0438\u0440\u043E\u0434\u0430, \u0436\u0430\u043B\u044C, \u0447\u0442\u043E
+        \u044D\u0442\u043E \u043D\u0435\u043D\u0430\u0434\u043E\u043B\u0433\u043E."
+      en: "Your ass and the wild jungle \u2014 shame it\u2019s only temporary."
+      de: "Dein Arsch und die wilde Natur \u2013 schade, dass es nur vor\xFCbergehend
+        ist."
+      zh: "\u4F60\u7684\u5C41\u80A1\u52A0\u91CE\u6027\u81EA\u7136\uFF0C\u592A\u53EF\u60DC\u53EA\u662F\u6682\u65F6\u7684\u3002"
+      fr: "Ton cul et la nature sauvage \u2013 dommage que ce soit temporaire."
+      hi: "\u0924\u0947\u0930\u0940 \u0917\u093E\u0902\u0921 \u0914\u0930 \u092F\u0947
+        \u091C\u0902\u0917\u0932\u0940 \u092E\u093E\u0939\u094C\u0932 \u2013 \u0905\u092B\u093C\u0938\u094B\u0938
+        \u0915\u093F \u092F\u0947 \u092C\u0938 \u0925\u094B\u0921\u093C\u0947 \u091F\u093E\u0907\u092E
+        \u0915\u0947 \u0932\u093F\u090F \u0939\u0948\u0964"
+      it: "Quel culo e la natura selvaggia \u2013 peccato che sia solo temporaneo."
+      ja: "\u305D\u306E\u5C3B\u3068\u30EF\u30A4\u30EB\u30C9\u306A\u81EA\u7136\u3002\u4E00\u6642\u7684\u3067\u6B8B\u5FF5\u3060\u3002"
+      pt: "Essa bunda e a natureza selvagem \u2013 pena que seja tempor\xE1rio."
+      es: "Tu culo y la naturaleza salvaje \u2013 l\xE1stima que sea temporal."
+    respect: 2
+  - answer:
+      ru: "\u041D\u0430\u043C \u043F\u043E\u0440\u0430 \u0437\u0430\u043A\u0430\u043D\u0447\u0438\u0432\u0430\u0442\u044C
+        \u0438 \u043F\u0440\u043E\u0434\u043E\u043B\u0436\u0430\u0442\u044C \u043F\u0443\u0442\u044C,
+        \u0445\u043E\u0442\u044F \u0442\u0430\u043A\u043E\u0439 \u0441\u0435\u043A\u0441,
+        \u043C\u043D\u0435 \u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F."
+      en: We should finish and continue the journey, though I love this kind of sex.
+      de: "Wir sollten fertig machen und weiter \u2013 obwohl ich diesen Sex liebe."
+      zh: "\u6211\u4EEC\u8BE5\u7ED3\u675F\u4E86\u7EE7\u7EED\u8D76\u8DEF\uFF0C\u867D\u7136\u6211\u7231\u8FD9\u79CD\u6027\u7231\u3002"
+      fr: "On devrait finir et continuer \u2013 m\xEAme si j\u2019adore ce sexe."
+      hi: "\u0939\u092E\u0947 \u0916\u093C\u0924\u094D\u092E \u0915\u0930\u0915\u0947
+        \u0906\u0917\u0947 \u092C\u0922\u093C\u0928\u093E \u091A\u093E\u0939\u093F\u090F
+        \u2013 \u0939\u093E\u0932\u093E\u0901\u0915\u093F \u092E\u0941\u091D\u0947
+        \u092F\u0947 \u0938\u0947\u0915\u094D\u0938 \u092C\u0939\u0941\u0924 \u092A\u0938\u0902\u0926
+        \u0939\u0948\u0964"
+      it: "Dovremmo finire e proseguire \u2013 anche se adoro questo sesso."
+      ja: "\u7D42\u308F\u3089\u305B\u3066\u9032\u307E\u306A\u304D\u3083\u3002\u3067\u3082\u3053\u306E\u30BB\u30C3\u30AF\u30B9\u5927\u597D\u304D\u3002"
+      pt: "Dever\xEDamos acabar e continuar \u2013 apesar de adorar este sexo."
+      es: "Deber\xEDamos terminar y seguir \u2013 aunque me encanta este sexo."
+    respect: 0
+  id: 0

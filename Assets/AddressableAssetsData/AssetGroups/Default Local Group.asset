@@ -1,0 +1,300 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: d8b86a799eb837a4cb8823a2dfa41614
+  m_SerializeEntries:
+  - m_GUID: 003128683cd4c6a4da4e736b445500f9
+    m_Address: videos_9
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0799eedda64e83f4f8c60d3460fe34b4
+    m_Address: level_Info_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0aefc8266b961ef4c86371d32851002c
+    m_Address: extra_images_5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c6898468b902b740b71afd425e97e63
+    m_Address: extra_images_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0ce4c56fa30254a4a925a5fa0617bef7
+    m_Address: images_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 16b0bc624cbd9634284d8df5a9d1eab3
+    m_Address: gameplay_audio_7
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 19ca15a4bc2aef845a63cee47da87c4d
+    m_Address: level_Info_8
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1aa09cc14c01bf2499cbd4668560b852
+    m_Address: videos_7
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1e44c496268c2ce4e942b259b3ebeab6
+    m_Address: images_9
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 23b5ac866a34fd24ab17c94a69fff525
+    m_Address: dialogues_5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 252000ae9a7769442986d801545ad534
+    m_Address: dialogues_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 27d51fb13c3752445bbffe15fdb0fc1a
+    m_Address: videos_5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2891e4ba3dfd3884b85521405bc5d636
+    m_Address: gameplay_audio_5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3495459708012aa4a8c62a3f1e52cd75
+    m_Address: images_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 36fd01f37225ef74182ac9913a1e21f5
+    m_Address: level_Info_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3c56bdafd7a1a384594205d0e468fa51
+    m_Address: level_Info_9
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3d311d00c7c56eb4f929d0af360143c4
+    m_Address: extra_images_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 40bd6fb99bafc104786fd8cd12c9ce74
+    m_Address: gameplay_audio_4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 49836e273e352d941be2fdd975c263c7
+    m_Address: extra_images_6
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4bf21c574a0d2fa4da683475d60c2669
+    m_Address: for_collect_image_9
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 504de512acac3fa489ff9748fc04bb39
+    m_Address: images_7
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 546733ca3de641b44967cb9be8a22fd9
+    m_Address: videos_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 59586e8bdc5a260478ae785b9f0325f6
+    m_Address: level_Info_6
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a7162924cd5a1548aa14c85797247d2
+    m_Address: dialogues_6
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5f9fca4bfb2b9054abac53c1472c8a61
+    m_Address: images_6
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68394f652c08ff640a0006bffcc59ad3
+    m_Address: extra_images_8
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 72da9377e669aeb47a1556b3baf9a682
+    m_Address: gameplay_audio_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 736a2402178f5c047a3e6bf69dc37031
+    m_Address: images_8
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7a9a1181ccab38943a967a3b0ae92ed3
+    m_Address: gameplay_audio_6
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c55231376c497d4f9a39657230e43eb
+    m_Address: videos_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e2f7dcfd247e9644ad2b0d1dfd5b4ed
+    m_Address: dialogues_8
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8a7937331899f284584b94ebc4b194f3
+    m_Address: dialogues_7
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 92c2b5426e52eef4faafb195d63a6b27
+    m_Address: level_Info_4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9316a33a7df388b43866bfb81010df93
+    m_Address: extra_images_4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9517ba01849ed0f40b07cc15f18811ce
+    m_Address: images_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a936fde847164cb45ac77afe2d6a3ba8
+    m_Address: dialogues_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ad1bc233478c8214687377b2afe6e9e4
+    m_Address: images_5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: adc1ac7f7a4ec0d478a538406d2f96bd
+    m_Address: gameplay_audio_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b170cf7840bd14f4eb4f9a9e1b1bf59c
+    m_Address: gameplay_audio_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b40f5e4c2e4135b4584f170eee2faa63
+    m_Address: videos_6
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b5beb4370595fbf4cb39636d7cdd74e5
+    m_Address: dialogues_9
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b706e074833f764479cb6f5863c15dda
+    m_Address: images_4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b765225e5fab08341bb5ace12e039054
+    m_Address: level_Info_5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b9129afecbeefc945992d72e61dc2c87
+    m_Address: dialogues_4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c47e4c3876c2da04e9d55e83aef9fef1
+    m_Address: extra_images_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d0ac7760dcb50254ab59fe996c865a63
+    m_Address: videos_4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d45b78a28a14c9a4e836167c989d58bc
+    m_Address: videos_2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d4b45b8141077e645a85cd4f5b983759
+    m_Address: videos_8
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d5c50efa7be33644dbdcf586a222a07e
+    m_Address: gameplay_audio_9
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6f4ddc5a168c5648b87d3a0889205b8
+    m_Address: level_Info_1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d91f81c8718021d4ea9c26acfa441992
+    m_Address: dialogues_3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd3a213e01a23e549b9198c4b2908269
+    m_Address: extra_images_7
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: de78cbb7611f0a847bcb93c983eb9637
+    m_Address: extra_images_9
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eb3025c0d9b3dff42a8013c947d6a4b7
+    m_Address: gameplay_audio_8
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fea0e1a39fd106142bad0a57eba0ccdc
+    m_Address: level_Info_7
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 150f1f8946e9bed458736ce53de55e17, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2bede812475f42c4a8a2e275abb90f57, type: 2}
+    - {fileID: 11400000, guid: 11cffdc4f3c57d542aea062db0f84103, type: 2}

@@ -2,7 +2,6 @@
 
 
 #if UNITY_WEBGL
-using MyGame.Bundles;
 using System;
 using System.Collections.Generic;
 using UnityEngine;

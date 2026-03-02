@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
 using MyGame.Gameplay.ExtraLevel;
-using MyGame.Bundles;
 
 namespace MyGame.Gameplay.Puzzle
 {
@@ -53,7 +52,7 @@ namespace MyGame.Gameplay.Puzzle
         public void StartGameplay(int puzzleValueX, float chanceGetDetail)
         {
             _chanceGetDetail = chanceGetDetail;
-            _parts = _partsGenerator.GetPuzzleParts(_scenarioStage.Image.texture, puzzleValueX);
+            _parts = _partsGenerator.GetPuzzleParts(AsyncContent.Images.sprites[_scenarioStage.imageId - 1].texture, puzzleValueX);
             _partsLength = new(_parts.GetUpperBound(0) + 1, _parts.GetUpperBound(1) + 1);
             _board.ResetProgress();
             _board.SetParts(_parts, _partsLength);
@@ -76,7 +75,7 @@ namespace MyGame.Gameplay.Puzzle
             _board.OnAddProgress -= UpdateProgressView;
             _background.SetActiveMask(false);
             float random = Random.Range(0, 1f);
-            if (random < _chanceGetDetail && BundlesController.Instance.ForCollectBundle.IsHaveBundle)
+            if (random < _chanceGetDetail)
             {
                 _progressPanel.Hide(true);
                 _extraLevelUnlocker.Show(OnEnd);

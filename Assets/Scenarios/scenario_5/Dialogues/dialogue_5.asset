@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6982f52e7d42440a758671d1357932, type: 3}
+  m_Name: dialogue_5
+  m_EditorClassIdentifier: 
+  firstPhrase:
+    ru: "\u0422\u044B \u0445\u043E\u0440\u043E\u0448\u043E \u0441\u0435\u0431\u044F
+      \u0432\u0435\u043B \u0432 \u043F\u043E\u043B\u0438\u0446\u0435\u0439\u0441\u043A\u043E\u043C
+      \u0443\u0447\u0430\u0441\u0442\u043A\u0435, \u043D\u0430\u0441\u0442\u0430\u043B\u043E
+      \u0432\u0440\u0435\u043C\u044F \u043E\u0442\u043F\u0443\u0441\u0442\u0438\u0442\u044C
+      \u0442\u0435\u0431\u044F \u0434\u043E\u043C\u043E\u0439, \u043D\u043E \u043F\u0435\u0440\u0435\u0434
+      \u044D\u0442\u0438\u043C \u0442\u0435\u0431\u044F \u0436\u0434\u0435\u0442
+      \u0441\u0442\u0440\u0430\u0441\u0442\u043D\u044B\u0439 \u043C\u0438\u043D\u0435\u0442."
+    en: "You behaved well at the station \u2014 time to let you go\u2026 but first,
+      a passionate blowjob."
+    de: "Du hast dich im Revier gut benommen \u2013 Zeit, dich freizulassen\u2026
+      aber erst gibt\u2019s einen geilen Blowjob."
+    zh: "\u4F60\u5728\u8B66\u5C40\u8868\u73B0\u4E0D\u9519\uFF0C\u8BE5\u653E\u4F60\u8D70\u4E86\u2026\u2026\u4F46\u5148\u7ED9\u4F60\u4E00\u4E2A\u8D85\u7EA7\u53E3\u4EA4\u3002"
+    fr: "Tu as \xE9t\xE9 sage au poste \u2013 il est temps de te lib\xE9rer\u2026
+      mais d\u2019abord une pipe torride."
+    hi: "\u0924\u0942 \u0938\u094D\u091F\u0947\u0936\u0928 \u092E\u0947\u0902 \u0905\u091A\u094D\u091B\u093E
+      \u092C\u093F\u0939\u0947\u0935 \u0915\u093F\u092F\u093E \u2013 \u0905\u092C
+      \u0930\u093F\u0939\u093E \u0915\u0930 \u0926\u0942\u0901\u0917\u0940\u2026
+      \u092A\u0930 \u092A\u0939\u0932\u0947 \u090F\u0915 \u091C\u093C\u092C\u0930\u0926\u0938\u094D\u0924
+      \u092C\u094D\u0932\u094B\u091C\u0949\u092C\u0964"
+    it: "Ti sei comportato bene in questura \u2013 ora ti lascio andare\u2026 ma
+      prima un pompino bollente."
+    ja: "\u7F72\u3067\u3044\u3044\u5B50\u306B\u3057\u3066\u305F\u304B\u3089\u91C8\u653E\u3002\u3067\u3082\u305D\u306E\u524D\u306B\u6FC0\u30A8\u30ED\u30D5\u30A7\u30E9\u3057\u3066\u3042\u3052\u308B\u3002"
+    pt: "Portaste-te bem na esquadra \u2013 hora de te libertar\u2026 mas primeiro
+      um boquete quente."
+    es: "Te portaste bien en la comisar\xEDa \u2013 hora de soltarte\u2026 pero antes
+      una mamada apasionada."
+  phraseVariants:
+  - answer:
+      ru: "\u041E\u0431\u043E\u0436\u0430\u044E \u0442\u0435\u0431\u044F, \u0441\u0442\u043E\u043B\u044C\u043A\u043E
+        \u0441\u0435\u043A\u0441\u0443\u0430\u043B\u044C\u043D\u044B\u0445 \u044D\u043C\u043E\u0446\u0438\u0439
+        \u0437\u0430 \u043E\u0434\u0438\u043D \u0434\u0435\u043D\u044C!"
+      en: "I adore you \u2014 so many sexy emotions in one day!"
+      de: "Ich liebe dich \u2013 so viele geile Gef\xFChle an einem Tag!"
+      zh: "\u6211\u7231\u4F60\uFF0C\u4E00\u5929\u4E4B\u5185\u8FD9\u4E48\u591A\u6DEB\u8361\u7684\u611F\u89C9\uFF01"
+      fr: "Je t\u2019adore \u2013 tellement d\u2019\xE9motions torrides en une seule
+        journ\xE9e !"
+      hi: "\u092E\u0948\u0902 \u0924\u0941\u091D\u0947 \u092A\u094D\u092F\u093E\u0930
+        \u0915\u0930\u0924\u093E \u0939\u0942\u0901 \u2013 \u090F\u0915 \u0939\u0940
+        \u0926\u093F\u0928 \u092E\u0947\u0902 \u0907\u0924\u0928\u0940 \u0938\u0947\u0915\u094D\u0938\u0940
+        \u092B\u0940\u0932\u093F\u0902\u0917\u094D\u0938!"
+      it: "Ti adoro \u2013 cos\xEC tante emozioni spinte in un solo giorno!"
+      ja: "\u5927\u597D\u304D\u3002\u4E00\u65E5\u3067\u3053\u3093\u306A\u306B\u30A8\u30ED\u3044\u611F\u60C5\u4F53\u9A13\u3057\u305F\u3002"
+      pt: "Adoro-te \u2013 tantas emo\xE7\xF5es quentes num s\xF3 dia!"
+      es: "Te adoro \u2013 tantas emociones calientes en un solo d\xEDa."
+    respect: 4
+  - answer:
+      ru: "\u041F\u0435\u0440\u0432\u044B\u0439 \u0440\u0430\u0437 \u0442\u0430\u043A
+        \u0432\u043E\u0437\u0431\u0443\u0436\u0434\u0435\u043D \u0432 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0438
+        \u0441\u0442\u0440\u0435\u0441\u0441\u0430."
+      en: First time being this aroused while under arrest.
+      de: Zum ersten Mal so geil unter Stress.
+      zh: "\u7B2C\u4E00\u6B21\u5728\u538B\u529B\u4E0B\u8FD9\u4E48\u5174\u594B\u3002"
+      fr: "Premi\xE8re fois aussi excit\xE9 sous pression."
+      hi: "\u0938\u094D\u091F\u094D\u0930\u0947\u0938 \u092E\u0947\u0902 \u092A\u0939\u0932\u0940
+        \u092C\u093E\u0930 \u0907\u0924\u0928\u093E \u0909\u0924\u094D\u0924\u0947\u091C\u093F\u0924
+        \u0939\u0941\u0906 \u0939\u0942\u0901\u0964"
+      it: "Prima volta cos\xEC eccitato sotto stress."
+      ja: "\u30B9\u30C8\u30EC\u30B9\u306E\u4E2D\u3067\u521D\u3081\u3066\u3053\u3093\u306A\u306B\u8208\u596E\u3057\u3066\u308B\u3002"
+      pt: "Primeira vez t\xE3o excitado sob stress."
+      es: "Primera vez tan cachondo bajo estr\xE9s."
+    respect: 2
+  - answer:
+      ru: "\u041F\u043E\u0441\u043B\u0435 \u0442\u043E\u0433\u043E, \u043A\u0430\u043A
+        \u043E\u0431\u043B\u0438\u0436\u0435\u0448\u044C \u043C\u043E\u0439 \u0447\u043B\u0435\u043D,
+        \u0432\u044B\u043F\u0443\u0441\u0442\u0438 \u043C\u0435\u043D\u044F \u0438\u0437
+        \u043F\u043E\u043B\u0438\u0446\u0435\u0439\u0441\u043A\u043E\u0433\u043E
+        \u0443\u0447\u0430\u0441\u0442\u043A\u0430."
+      en: After you lick my cock, let me out of the station.
+      de: Nachdem du meinen Schwanz abgeleckt hast, lass mich endlich raus.
+      zh: "\u7B49\u4F60\u628A\u6211\u7684\u9E21\u9E21\u8214\u5E72\u51C0\u540E\uFF0C\u5C31\u653E\u6211\u8D70\u5427\u3002"
+      fr: "Apr\xE8s que tu m\u2019auras suc\xE9 la queue, tu me laisses sortir."
+      hi: "\u092E\u0947\u0930\u093E \u0932\u0902\u0921 \u091A\u093E\u091F\u0928\u0947
+        \u0915\u0947 \u092C\u093E\u0926 \u092E\u0941\u091D\u0947 \u091B\u094B\u0921\u093C
+        \u0926\u0947\u0928\u093E\u0964"
+      it: Dopo che mi hai leccato il cazzo, fammi uscire.
+      ja: "\u30C1\u30F3\u30DD\u8210\u3081\u7D42\u308F\u3063\u305F\u3089\u91C8\u653E\u3057\u3066\u306D\u3002"
+      pt: Depois de me limpares o pau, deixas-me sair.
+      es: "Despu\xE9s de que me chupes la polla, me dejas salir."
+    respect: 0
+  id: 0

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b60d0775fd7e84c88151508cf1daad, type: 3}
+  m_Name: videos_9
+  m_EditorClassIdentifier: 
+  videoClips:
+  - {fileID: 32900000, guid: 1660843b6dab1834181f7930d837a951, type: 3}
+  - {fileID: 32900000, guid: 88881f464e62fd043be3e7b43f8218a0, type: 3}
+  - {fileID: 32900000, guid: 040e2be82c25ecb42995f0825b7e4d19, type: 3}
+  - {fileID: 32900000, guid: 275d817782d12ad4f92cbb1034a4af0f, type: 3}
+  - {fileID: 32900000, guid: 3bcf013c4984b3b48b4fc564788a4542, type: 3}

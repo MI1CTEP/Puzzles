@@ -1,0 +1,320 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774272acbcf5e0347a7046856046708d, type: 3}
+  m_Name: level_Info_6
+  m_EditorClassIdentifier: 
+  nameLevel: Mei
+  languages:
+    ru: "\u041C\u0435\u043D\u044F \u0437\u043E\u0432\u0443\u0442 Mei, \u044F \u044E\u043D\u0430\u044F
+      \u043E\u0444\u0438\u0446\u0438\u0430\u043D\u0442\u043A\u0430 \u0432 \u043C\u0430\u043B\u0435\u043D\u044C\u043A\u043E\u043C
+      \u043A\u0430\u0444\u0435 \u043D\u0430\u043F\u0440\u043E\u0442\u0438\u0432 \u0431\u0438\u0437\u043D\u0435\u0441-\u0446\u0435\u043D\u0442\u0440\u0430,
+      \u0445\u0443\u0434\u0435\u043D\u044C\u043A\u0430\u044F \u0438 \u0432\u044B\u0441\u043E\u043A\u0430\u044F,
+      \u043A\u0430\u043A \u043C\u043E\u0434\u0435\u043B\u044C, \u0438 \u0438\u043C\u0435\u043D\u043D\u043E
+      \u0441\u043E \u043C\u043D\u043E\u0439 \u043F\u043E\u0437\u043D\u0430\u043A\u043E\u043C\u0438\u043B\u0441\u044F
+      \xAB$$$\xBB , \u043A\u043E\u0433\u0434\u0430 \u043E\u0434\u043D\u0430\u0436\u0434\u044B
+      \u0437\u0430\u0448\u0451\u043B \u043D\u0430 \u043E\u0431\u0435\u0434 \u0438\u0437
+      \u043E\u0444\u0438\u0441\u0430 \u043D\u0430\u043F\u0440\u043E\u0442\u0438\u0432.
+      \u041E\u043D \u0441\u0435\u043B \u0437\u0430 \u043C\u043E\u0439 \u0441\u0442\u043E\u043B\u0438\u043A,
+      \u0438 \u044F \u0441\u0440\u0430\u0437\u0443 \u043F\u043E\u0447\u0443\u0432\u0441\u0442\u0432\u043E\u0432\u0430\u043B\u0430,
+      \u043A\u0430\u043A \u0432\u043D\u0443\u0442\u0440\u0438 \u0432\u0441\u0451
+      \u0437\u0430\u0434\u0440\u043E\u0436\u0430\u043B\u043E: \u043E\u043D \u0432\u044B\u0433\u043B\u044F\u0434\u0435\u043B
+      \u0442\u0430\u043A\u0438\u043C \u0443\u0432\u0435\u0440\u0435\u043D\u043D\u044B\u043C
+      \u0438 \u0441\u0442\u0440\u043E\u0433\u0438\u043C, \u0447\u0442\u043E \u043C\u043E\u0438
+      \u043A\u043E\u043B\u0435\u043D\u043A\u0438 \u043F\u043E\u0434 \u0447\u0451\u0440\u043D\u044B\u043C\u0438
+      \u0447\u0443\u043B\u043A\u0430\u043C\u0438 \u0432 \u043C\u0435\u043B\u043A\u0443\u044E
+      \u0441\u0435\u0442\u043A\u0443 \u0441\u0442\u0430\u043B\u0438 \u0432\u0430\u0442\u043D\u044B\u043C\u0438.
+      \u042F \u0432\u0441\u0435\u0433\u0434\u0430 \u043D\u043E\u0448\u0443 \u043A\u043E\u0440\u043E\u0442\u043A\u0443\u044E
+      \u0447\u0451\u0440\u043D\u0443\u044E \u044E\u0431\u043E\u0447\u043A\u0443,
+      \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u0435\u0434\u0432\u0430 \u043F\u0440\u0438\u043A\u0440\u044B\u0432\u0430\u0435\u0442
+      \u043F\u043E\u043F\u043A\u0443, \u0438 \u0431\u0435\u043B\u0443\u044E \u0440\u0443\u0431\u0430\u0448\u043A\u0443
+      \u043D\u0430 \u043F\u0430\u0440\u0443 \u043F\u0443\u0433\u043E\u0432\u0438\u0446
+      \u2014 \u044D\u0442\u043E \u0432\u0441\u0451, \u0447\u0442\u043E \u043D\u0443\u0436\u043D\u043E,
+      \u0447\u0442\u043E\u0431\u044B \u043F\u043E\u0434\u043E\u0439\u0442\u0438,
+      \u0443\u043B\u044B\u0431\u043D\u0443\u0442\u044C\u0441\u044F \u0438 \u043F\u0440\u043E\u0442\u044F\u043D\u0443\u0442\u044C
+      \u043C\u0435\u043D\u044E. \u041A\u0430\u043A \u0442\u043E\u043B\u044C\u043A\u043E
+      \u043A\u043B\u0438\u0435\u043D\u0442 \u043C\u043D\u0435 \u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F,
+      \u043E\u0434\u0435\u0436\u0434\u0430 \u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u0441\u044F
+      \u043B\u0438\u0448\u043D\u0435\u0439: \u044F \u0440\u0430\u0441\u0441\u0442\u0451\u0433\u0438\u0432\u0430\u044E
+      \u0440\u0443\u0431\u0430\u0448\u043A\u0443, \u0434\u0430\u044E \u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C
+      \u043D\u0430 \u043C\u0430\u043B\u0435\u043D\u044C\u043A\u0443\u044E \u0433\u0440\u0443\u0434\u044C
+      \u0441 \u0442\u043E\u0440\u0447\u0430\u0449\u0438\u043C\u0438 \u0441\u043E\u0441\u043A\u0430\u043C\u0438,
+      \u043F\u043E\u0442\u043E\u043C \u043F\u043E\u0432\u043E\u0440\u0430\u0447\u0438\u0432\u0430\u044E\u0441\u044C,
+      \u0437\u0430\u0434\u0438\u0440\u0430\u044E \u044E\u0431\u043A\u0443 \u0438
+      \u043C\u0435\u0434\u043B\u0435\u043D\u043D\u043E \u0441\u043D\u0438\u043C\u0430\u044E
+      \u0442\u043E\u043D\u043A\u0438\u0435 \u0442\u0440\u0443\u0441\u0438\u043A\u0438-\u0441\u0442\u0440\u0438\u043D\u0433\u0438,
+      \u043E\u0441\u0442\u0430\u0432\u0430\u044F\u0441\u044C \u0442\u043E\u043B\u044C\u043A\u043E
+      \u0432 \u0441\u0435\u0442\u0447\u0430\u0442\u044B\u0445 \u0447\u0443\u043B\u043A\u0430\u0445
+      \u0434\u043E \u0441\u0435\u0440\u0435\u0434\u0438\u043D\u044B \u0431\u0451\u0434\u0435\u0440.
+      \u042F \u043E\u0431\u043E\u0436\u0430\u044E \u0411\u0414\u0421\u041C \u0438
+      \u0432\u0441\u0451, \u0447\u0442\u043E \u0441\u0432\u044F\u0437\u0430\u043D\u043E
+      \u0441 \u043F\u043E\u0434\u0447\u0438\u043D\u0435\u043D\u0438\u0435\u043C:
+      \u043B\u044E\u0431\u043B\u044E, \u043A\u043E\u0433\u0434\u0430 \u043C\u0435\u043D\u044F
+      \u0441\u0442\u0430\u0432\u044F\u0442 \u043D\u0430 \u043A\u043E\u043B\u0435\u043D\u0438,
+      \u0441\u0432\u044F\u0437\u044B\u0432\u0430\u044E\u0442 \u0440\u0443\u043A\u0438
+      \u0437\u0430 \u0441\u043F\u0438\u043D\u043E\u0439 \u043C\u043E\u0438\u043C
+      \u0436\u0435 \u0444\u0430\u0440\u0442\u0443\u043A\u043E\u043C \u0438 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044E\u0442
+      \u043A\u0430\u043A \u0445\u043E\u0442\u044F\u0442. \u0421\u0430\u043C\u043E\u0435
+      \u043C\u043E\u0451 \u043B\u044E\u0431\u0438\u043C\u043E\u0435 \u2014 \u0442\u0435\u0440\u0435\u0442\u044C\u0441\u044F
+      \u0442\u0443\u0433\u043E\u0439 \u043F\u043E\u043F\u043A\u043E\u0439 \u043E
+      \u0442\u0432\u0451\u0440\u0434\u044B\u0439 \u0447\u043B\u0435\u043D \u043A\u043B\u0438\u0435\u043D\u0442\u0430
+      \u043F\u0440\u044F\u043C\u043E \u043F\u043E\u0434 \u0441\u0442\u043E\u043B\u043E\u043C,
+      \u043F\u043E\u043A\u0430 \u043D\u0438\u043A\u0442\u043E \u043D\u0435 \u0432\u0438\u0434\u0438\u0442,
+      \u0447\u0443\u0432\u0441\u0442\u0432\u043E\u0432\u0430\u0442\u044C, \u043A\u0430\u043A
+      \u043E\u043D \u0443\u043F\u0438\u0440\u0430\u0435\u0442\u0441\u044F \u043C\u0435\u0436\u0434\u0443
+      \u044F\u0433\u043E\u0434\u0438\u0446 \u0438 \u043E\u0441\u0442\u0430\u0432\u043B\u044F\u0435\u0442
+      \u043C\u043E\u043A\u0440\u044B\u0439 \u0441\u043B\u0435\u0434. \u042F \u0442\u043E\u043B\u044C\u043A\u043E
+      \u043D\u0430\u0447\u0430\u043B\u0430 \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u043E\u0432\u0430\u0442\u044C
+      \u0430\u043D\u0430\u043B, \u043D\u043E \u0443\u0436\u0435 \u043D\u0435 \u043C\u043E\u0433\u0443
+      \u043E\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u0441\u044F: \u043A\u043E\u0433\u0434\u0430
+      \u043C\u0435\u043D\u044F \u043F\u043E\u0434\u043D\u0438\u043C\u0430\u044E\u0442,
+      \u0431\u0435\u0440\u0443\u0442 \u0437\u0430 \u043D\u043E\u0433\u0438 \u043F\u043E\u0434
+      \u043A\u043E\u043B\u0435\u043D\u043A\u0430\u043C\u0438, \u0448\u0438\u0440\u043E\u043A\u043E
+      \u0440\u0430\u0437\u0432\u043E\u0434\u044F\u0442 \u0438 \u043C\u0435\u0434\u043B\u0435\u043D\u043D\u043E
+      \u043D\u0430\u0441\u0430\u0436\u0438\u0432\u0430\u044E\u0442 \u043D\u0430 \u0447\u043B\u0435\u043D
+      \u2014 \u044F \u0437\u0430\u0434\u044B\u0445\u0430\u044E\u0441\u044C \u043E\u0442
+      \u0443\u0434\u043E\u0432\u043E\u043B\u044C\u0441\u0442\u0432\u0438\u044F \u0438
+      \u043A\u043E\u043D\u0447\u0430\u044E, \u0434\u0430\u0436\u0435 \u043D\u0435
+      \u043F\u0440\u0438\u043A\u0430\u0441\u0430\u044F\u0441\u044C \u043A \u0441\u0435\u0431\u0435.
+      \xAB$$$\xBB \u0437\u0430\u043A\u0430\u0437\u0430\u043B \u0442\u043E\u043B\u044C\u043A\u043E
+      \u043A\u043E\u0444\u0435, \u043D\u043E \u0447\u0435\u0440\u0435\u0437 \u043F\u044F\u0442\u044C
+      \u043C\u0438\u043D\u0443\u0442 \u044F \u0443\u0436\u0435 \u0441\u0442\u043E\u044F\u043B\u0430
+      \u043F\u0435\u0440\u0435\u0434 \u043D\u0438\u043C \u0431\u0435\u0437 \u044E\u0431\u043A\u0438
+      \u0438 \u0440\u0443\u0431\u0430\u0448\u043A\u0438, \u0432 \u043E\u0434\u043D\u0438\u0445
+      \u0447\u0443\u043B\u043A\u0430\u0445 \u0432 \u0441\u0435\u0442\u043A\u0443,
+      \u0438 \u0448\u0435\u043F\u0442\u0430\u043B\u0430: \xAB\u0412\u043E\u0437\u044C\u043C\u0438\u0442\u0435
+      \u043C\u0435\u043D\u044F \u0442\u0430\u043A, \u043A\u0430\u043A \u0437\u0430\u0445\u043E\u0442\u0438\u0442\u0435\u2026
+      \u044F \u0432\u0430\u0448\u0430 \u043D\u0430 \u0432\u0435\u0441\u044C \u043E\u0431\u0435\u0434\u0435\u043D\u043D\u044B\u0439
+      \u043F\u0435\u0440\u0435\u0440\u044B\u0432\xBB. "
+    en: "My name is Mei, I\u2019m a young waitress in a small caf\xE9 across from
+      the business centre \u2014 slim and tall like a model, and it was me who \xAB$$$\xBB
+      met when he came in for lunch from the office opposite. He sat at my table,
+      and I immediately felt everything inside me tremble: he looked so confident
+      and strict that my knees in black fishnet stockings turned to jelly. I always
+      wear a short black skirt that barely covers my ass and a white shirt with just
+      a couple of buttons \u2014 that\u2019s all I need to come over, smile and hand
+      the menu. As soon as I like a customer, clothes become unnecessary: I unbutton
+      the shirt, let him see my small breasts with hard nipples, then turn around,
+      lift the skirt and slowly slide off my thin thong, staying only in fishnet
+      stockings up to mid-thigh. I adore BDSM and everything about submission: I
+      love being put on my knees, having my hands tied behind my back with my own
+      apron and being used however he wants. My absolute favourite is rubbing my
+      tight ass against a customer\u2019s hard cock right under the table while no
+      one sees, feeling it press between my cheeks and leave a wet trail. I\u2019ve
+      only recently started anal, but I can\u2019t stop: when he lifts me, grabs
+      my legs under the knees, spreads them wide and slowly lowers me onto his cock
+      \u2014 I gasp from pleasure and cum without even touching myself. \xAB$$$\xBB
+      only ordered coffee, but five minutes later I was already standing in front
+      of him without skirt or shirt, just in fishnet stockings, whispering: \u201CTake
+      me however you want\u2026 I\u2019m yours for the entire lunch break.\u201D"
+    de: "Ich hei\xDFe Mei, ich bin eine junge Kellnerin im kleinen Caf\xE9 gegen\xFCber
+      dem Business-Center \u2013 schlank und gro\xDF wie ein Model, und genau mit
+      mir hat sich \xAB$$$\xBB bekannt gemacht, als er einmal aus dem B\xFCro gegen\xFCber
+      zum Mittagessen kam. Er setzte sich an meinen Tisch, und sofort zitterte alles
+      in mir: er wirkte so selbstbewusst und streng, dass mir unter meinen schwarzen
+      Netzstr\xFCmpfen die Knie weich wurden. Ich trage immer ein kurzes schwarzes
+      R\xF6ckchen, das kaum meinen Po bedeckt, und eine wei\xDFe Bluse mit nur ein
+      paar Kn\xF6pfen \u2013 mehr brauche ich nicht, um an den Tisch zu kommen, zu
+      l\xE4cheln und die Karte zu reichen. Sobald mir ein Gast gef\xE4llt, wird Kleidung
+      \xFCberfl\xFCssig: ich kn\xF6pfe die Bluse auf, lasse ihn meine kleinen Br\xFCste
+      mit harten Nippeln sehen, drehe mich um, hebe den Rock und ziehe langsam meinen
+      d\xFCnnen String herunter, sodass nur noch die Netzstr\xFCmpfe bis Mitte Oberschenkel
+      bleiben. Ich liebe BDSM und alles, was mit Unterwerfung zu tun hat: ich liebe
+      es, auf die Knie gedr\xFCckt zu werden, die H\xE4nde mit meiner eigenen Sch\xFCrze
+      auf dem R\xFCcken gefesselt zu bekommen und benutzt zu werden, wie er will.
+      Mein absoluter Favorit ist, meinen engen Arsch unter dem Tisch an seinem harten
+      Schwanz zu reiben, w\xE4hrend niemand zusieht, zu sp\xFCren, wie er sich zwischen
+      meine Backen dr\xFCckt und eine nasse Spur hinterl\xE4sst. Ich habe gerade
+      erst mit Anal angefangen, aber ich kann nicht mehr aufh\xF6ren: wenn er mich
+      hochhebt, meine Beine unter den Knien packt, sie weit auseinanderzieht und
+      mich langsam auf seinen Schwanz setzt \u2013 ich keuche vor Lust und komme,
+      ohne mich selbst zu ber\xFChren. \xAB$$$\xBB bestellte nur einen Kaffee, aber
+      f\xFCnf Minuten sp\xE4ter stand ich schon ohne Rock und Bluse vor ihm, nur
+      in Netzstr\xFCmpfen, und fl\xFCsterte: \u201ENimm mich, wie du willst\u2026
+      ich geh\xF6re dir f\xFCr die ganze Mittagspause.\u201C"
+    zh: "\u6211\u53EBMei\uFF0C\u662F\u5546\u52A1\u4E2D\u5FC3\u5BF9\u9762\u5C0F\u5496\u5561\u9986\u7684\u5E74\u8F7B\u670D\u52A1\u751F\u2014\u2014\u8EAB\u6750\u7EA4\u7EC6\u9AD8\u6311\u50CF\u6A21\u7279\uFF0C\u6B63\u662F\u6211\u548C
+      \xAB$$$\xBB \u8BA4\u8BC6\u7684\u3002\u4ED6\u4ECE\u5BF9\u9762\u529E\u516C\u697C\u6765\u5403\u5348\u996D\uFF0C\u5750\u5728\u6211\u8D1F\u8D23\u7684\u684C\u3002\u6211\u7ACB\u523B\u5168\u8EAB\u53D1\u6296\uFF1A\u4ED6\u90A3\u4E48\u81EA\u4FE1\u4E25\u8083\uFF0C\u9ED1\u4E1D\u7F51\u889C\u91CC\u7684\u819D\u76D6\u90FD\u8F6F\u4E86\u3002\u6211\u603B\u662F\u7A7F\u8D85\u77ED\u9ED1\u88D9\uFF0C\u52C9\u5F3A\u76D6\u4F4F\u5C41\u80A1\uFF0C\u767D\u886C\u886B\u53EA\u6263\u51E0\u9897\u6263\u5B50\u2014\u2014\u8FD9\u6837\u8D70\u8FC7\u53BB\u5FAE\u7B11\u9012\u83DC\u5355\u5C31\u591F\u4E86\u3002\u53EA\u8981\u5BA2\u4EBA\u8BA9\u6211\u5FC3\u52A8\uFF0C\u8863\u670D\u5C31\u591A\u4F59\uFF1A\u6211\u89E3\u5F00\u886C\u886B\u8BA9\u4ED6\u770B\u6211\u5C0F\u5DE7\u633A\u7ACB\u7684\u5976\u5934\uFF0C\u8F6C\u8EAB\u64A9\u8D77\u88D9\u5B50\u6162\u6162\u8131\u6389\u7EC6\u4E01\u5B57\u88E4\uFF0C\u53EA\u5269\u5927\u817F\u4E2D\u90E8\u7684\u9ED1\u4E1D\u7F51\u889C\u3002\u6211\u8D85\u7231BDSM\u548C\u4E00\u5207\u81E3\u670D\u73A9\u6CD5\uFF1A\u559C\u6B22\u88AB\u6309\u8DEA\u5728\u5730\uFF0C\u7528\u81EA\u5DF1\u7684\u56F4\u88D9\u53CD\u7ED1\u53CC\u624B\uFF0C\u4EFB\u4ED6\u4E3A\u6240\u6B32\u4E3A\u3002\u6700\u7231\u5728\u684C\u5B50\u5E95\u4E0B\u7528\u7D27\u81F4\u7684\u5C0F\u5C41\u80A1\u78E8\u5BA2\u4EBA\u786C\u90A6\u90A6\u7684\u9E21\u5DF4\uFF0C\u6CA1\u4EBA\u770B\u89C1\u7684\u65F6\u5019\u611F\u53D7\u4ED6\u9876\u5728\u81C0\u7F1D\u91CC\u7559\u4E0B\u6E7F\u75D5\u3002\u6211\u624D\u521A\u5F00\u59CB\u5C1D\u8BD5\u809B\u4EA4\uFF0C\u4F46\u5DF2\u7ECF\u505C\u4E0D\u4E0B\u6765\uFF1A\u5F53\u4ED6\u628A\u6211\u62B1\u8D77\u6765\uFF0C\u6293\u4F4F\u819D\u76D6\u4E0B\u9762\u628A\u817F\u5927\u5927\u5206\u5F00\uFF0C\u6162\u6162\u628A\u6211\u5957\u5728\u9E21\u5DF4\u4E0A\u65F6\u2014\u2014\u6211\u723D\u5F97\u5598\u4E0D\u8FC7\u6C14\uFF0C\u751A\u81F3\u4E0D\u7528\u6478\u81EA\u5DF1\u5C31\u9AD8\u6F6E\u4E86\u3002
+      \xAB$$$\xBB \u53EA\u70B9\u4E86\u676F\u5496\u5561\uFF0C\u4E94\u5206\u949F\u540E\u6211\u5DF2\u7ECF\u8131\u6389\u88D9\u5B50\u548C\u886C\u886B\uFF0C\u53EA\u7A7F\u7740\u9ED1\u4E1D\u7F51\u889C\u7AD9\u5728\u4ED6\u9762\u524D\uFF0C\u4F4E\u58F0\u8BF4\uFF1A\u201C\u968F\u4F60\u600E\u4E48\u8981\u6211\u2026\u2026\u6574\u4E2A\u5348\u4F11\u65F6\u95F4\u6211\u90FD\u662F\u4F60\u7684\u3002\u201D"
+    fr: "Je m\u2019appelle Mei, je suis une jeune serveuse dans un petit caf\xE9
+      en face du centre d\u2019affaires \u2014 mince et grande comme un mannequin,
+      et c\u2019est moi que \xAB$$$\xBB a rencontr\xE9e quand il est venu d\xE9jeuner
+      depuis le bureau d\u2019en face. Il s\u2019est assis \xE0 ma table et j\u2019ai
+      tout de suite senti tout trembler en moi : il avait l\u2019air si s\xFBr de
+      lui et s\xE9v\xE8re que mes genoux en bas r\xE9sille noirs sont devenus mous.
+      Je porte toujours une jupe courte noire qui couvre \xE0 peine mes fesses et
+      une chemise blanche avec juste quelques boutons \u2014 c\u2019est tout ce qu\u2019il
+      faut pour m\u2019approcher, sourire et tendre le menu. D\xE8s qu\u2019un client
+      me pla\xEEt, les v\xEAtements deviennent inutiles : je d\xE9boutonne la chemise
+      pour lui montrer mes petits seins aux t\xE9tons dress\xE9s, je me retourne,
+      je rel\xE8ve la jupe et je fais lentement glisser mon string fin, ne gardant
+      que les bas r\xE9sille jusqu\u2019\xE0 mi-cuisses. J\u2019adore le BDSM et
+      tout ce qui touche \xE0 la soumission : j\u2019aime qu\u2019on me mette \xE0
+      genoux, qu\u2019on me lie les mains dans le dos avec mon propre tablier et
+      qu\u2019on m\u2019utilise comme on veut. Mon plaisir absolu, c\u2019est de
+      frotter mon petit cul serr\xE9 contre la queue dure d\u2019un client sous la
+      table pendant que personne ne regarde, sentir comme elle se presse entre mes
+      fesses et laisse une trace humide. Je viens juste de commencer l\u2019anal,
+      mais je ne peux plus m\u2019en passer : quand on me soul\xE8ve, qu\u2019on
+      me prend les jambes sous les genoux, qu\u2019on me les \xE9carte largement
+      et qu\u2019on m\u2019empale lentement sur la bite \u2014 j\u2019\xE9touffe
+      de plaisir et je jouis sans m\xEAme me toucher. \xAB$$$\xBB n\u2019avait command\xE9
+      qu\u2019un caf\xE9, mais cinq minutes plus tard j\u2019\xE9tais d\xE9j\xE0
+      devant lui sans jupe ni chemise, juste en bas r\xE9sille, et je chuchotais
+      : \xAB Prends-moi comme tu veux\u2026 je suis \xE0 toi pendant toute la pause
+      d\xE9jeuner \xBB."
+    hi: "\u092E\u0947\u0930\u093E \u0928\u093E\u092E \u092E\u0947\u0908 \u0939\u0948,
+      \u092E\u0948\u0902 \u092C\u093F\u091C\u093C\u0928\u0947\u0938 \u0938\u0947\u0902\u091F\u0930
+      \u0915\u0947 \u0938\u093E\u092E\u0928\u0947 \u091B\u094B\u091F\u0947 \u0915\u0948\u092B\u093C\u0947
+      \u092E\u0947\u0902 \u092F\u0902\u0917 \u0935\u0947\u091F\u094D\u0930\u0947\u0938
+      \u0939\u0942\u0901 \u2014 \u092A\u0924\u0932\u0940 \u0914\u0930 \u0932\u092E\u094D\u092C\u0940,
+      \u092E\u0949\u0921\u0932 \u091C\u0948\u0938\u0940, \u0914\u0930  \xAB$$$\xBB 
+      \u0938\u0947 \u0920\u0940\u0915 \u092E\u0947\u0930\u0940 \u0939\u0940 \u092E\u0941\u0932\u093E\u0915\u093E\u0924
+      \u0939\u0941\u0908 \u091C\u092C \u0935\u094B \u0938\u093E\u092E\u0928\u0947
+      \u0911\u092B\u093F\u0938 \u0938\u0947 \u0932\u0902\u091A \u0915\u0930\u0928\u0947
+      \u0906\u092F\u093E\u0964 \u0935\u094B \u092E\u0947\u0930\u0940 \u091F\u0947\u092C\u0932
+      \u092A\u0930 \u092C\u0948\u0920\u093E \u0914\u0930 \u092E\u0941\u091D\u0947
+      \u0905\u0902\u0926\u0930 \u0924\u0915 \u0939\u093F\u0932 \u0917\u092F\u093E:
+      \u0935\u094B \u0907\u0924\u0928\u093E \u0915\u0949\u0928\u094D\u092B\u093F\u0921\u0947\u0902\u091F
+      \u0914\u0930 \u0938\u0916\u094D\u0924 \u0932\u0917 \u0930\u0939\u093E \u0925\u093E
+      \u0915\u093F \u092E\u0947\u0930\u0940 \u092C\u094D\u0932\u0948\u0915 \u092B\u093F\u0936\u0928\u0947\u091F
+      \u0938\u094D\u091F\u0949\u0915\u093F\u0902\u0917\u094D\u0938 \u092E\u0947\u0902
+      \u0918\u0941\u091F\u0928\u0947 \u0915\u093E\u0901\u092A\u0928\u0947 \u0932\u0917\u0947\u0964
+      \u092E\u0948\u0902 \u0939\u092E\u0947\u0936\u093E \u091B\u094B\u091F\u0940
+      \u0938\u0940 \u092C\u094D\u0932\u0948\u0915 \u0938\u094D\u0915\u0930\u094D\u091F
+      \u092A\u0939\u0928\u0924\u0940 \u0939\u0942\u0901 \u091C\u094B \u092E\u0941\u0936\u094D\u0915\u093F\u0932
+      \u0938\u0947 \u0917\u093E\u0902\u0921 \u0922\u0915\u0924\u0940 \u0939\u0948
+      \u0914\u0930 \u0938\u092B\u0947\u0926 \u0936\u0930\u094D\u091F \u092C\u0938
+      \u0915\u0941\u091B \u092C\u091F\u0928 \u0935\u093E\u0932\u0940 \u2014 \u0907\u0924\u0928\u093E
+      \u0939\u0940 \u0915\u093E\u092B\u0940 \u0939\u0948 \u091F\u0947\u092C\u0932
+      \u092A\u0930 \u091C\u093E\u0915\u0930 \u092E\u0941\u0938\u094D\u0915\u0941\u0930\u093E\u0928\u0947
+      \u0914\u0930 \u092E\u0947\u0928\u094D\u092F\u0942 \u0926\u0947\u0928\u0947
+      \u0915\u0947 \u0932\u093F\u090F\u0964 \u091C\u0948\u0938\u0947 \u0939\u0940
+      \u0915\u094B\u0908 \u0915\u0938\u094D\u091F\u092E\u0930 \u092A\u0938\u0902\u0926
+      \u0906\u0924\u093E \u0939\u0948, \u0915\u092A\u0921\u093C\u0947 \u092B\u093E\u0932\u0924\u0942
+      \u0932\u0917\u0928\u0947 \u0932\u0917\u0924\u0947 \u0939\u0948\u0902: \u0936\u0930\u094D\u091F
+      \u0915\u0947 \u092C\u091F\u0928 \u0916\u094B\u0932\u0915\u0930 \u091B\u094B\u091F\u0940
+      \u091A\u0942\u091A\u093F\u092F\u093E\u0901 \u0914\u0930 \u0916\u0921\u093C\u0947
+      \u0928\u093F\u092A\u094D\u092A\u0932\u094D\u0938 \u0926\u093F\u0916\u093E\u0924\u0940
+      \u0939\u0942\u0901, \u092A\u0940\u0920 \u092B\u0947\u0930\u0915\u0930 \u0938\u094D\u0915\u0930\u094D\u091F
+      \u090A\u092A\u0930 \u0915\u0930\u0915\u0947 \u092A\u0924\u0932\u093E \u0938\u093E
+      \u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0927\u0940\u0930\u0947-\u0927\u0940\u0930\u0947
+      \u0909\u0924\u093E\u0930\u0924\u0940 \u0939\u0942\u0901 \u0914\u0930 \u0938\u093F\u0930\u094D\u092B
+      \u091C\u093E\u0901\u0918 \u0915\u0947 \u092C\u0940\u091A \u0924\u0915 \u092B\u093F\u0936\u0928\u0947\u091F
+      \u0938\u094D\u091F\u0949\u0915\u093F\u0902\u0917\u094D\u0938 \u092E\u0947\u0902
+      \u0930\u0939 \u091C\u093E\u0924\u0940 \u0939\u0942\u0901\u0964 \u092E\u0941\u091D\u0947
+      BDSM \u0914\u0930 \u0938\u092C\u092E\u093F\u0936\u0928 \u092C\u0939\u0941\u0924
+      \u092A\u0938\u0902\u0926 \u0939\u0948: \u0918\u0941\u091F\u0928\u094B\u0902
+      \u092A\u0930 \u092C\u0948\u0920\u093E\u0915\u0930 \u0905\u092A\u0928\u093E
+      \u090F\u092A\u094D\u0930\u0928 \u092A\u0940\u091B\u0947 \u092C\u093E\u0901\u0927\u0915\u0930
+      \u0939\u093E\u0925 \u092C\u093E\u0901\u0927 \u0926\u0947\u0928\u093E \u0914\u0930
+      \u091C\u0948\u0938\u0947 \u091A\u093E\u0939\u0947 \u0907\u0938\u094D\u0924\u0947\u092E\u093E\u0932
+      \u0915\u0930\u0928\u093E\u0964 \u092E\u0947\u0930\u093E \u0938\u092C\u0938\u0947
+      \u092C\u0921\u093C\u093E \u092E\u091C\u093C\u093E \u091F\u0947\u092C\u0932
+      \u0915\u0947 \u0928\u0940\u091A\u0947 \u0905\u092A\u0928\u0940 \u091F\u093E\u0907\u091F
+      \u0917\u093E\u0902\u0921 \u0915\u0938\u094D\u091F\u092E\u0930 \u0915\u0947
+      \u091F\u093E\u0907\u091F \u0932\u0902\u0921 \u092A\u0930 \u0930\u0917\u0921\u093C\u0928\u093E
+      \u0939\u0948 \u091C\u092C \u0915\u094B\u0908 \u0928 \u0926\u0947\u0916 \u0930\u0939\u093E
+      \u0939\u094B, \u092E\u0939\u0938\u0942\u0938 \u0915\u0930\u0928\u093E \u0915\u0948\u0938\u0947
+      \u0935\u094B \u0917\u093E\u0902\u0921 \u0915\u0947 \u092C\u0940\u091A \u092E\u0947\u0902
+      \u0926\u092C\u0924\u093E \u0939\u0948 \u0914\u0930 \u0917\u0940\u0932\u0940
+      \u0932\u0915\u0940\u0930 \u091B\u094B\u0921\u093C\u0924\u093E \u0939\u0948\u0964
+      \u092E\u0948\u0902\u0928\u0947 \u0905\u092D\u0940-\u0905\u092D\u0940 \u0905\u0928\u0932
+      \u0936\u0941\u0930\u0942 \u0915\u093F\u092F\u093E \u0939\u0948 \u0932\u0947\u0915\u093F\u0928
+      \u0930\u0941\u0915 \u0928\u0939\u0940\u0902 \u092A\u093E\u0924\u0940: \u091C\u092C
+      \u092E\u0941\u091D\u0947 \u0909\u0920\u093E\u0915\u0930 \u0918\u0941\u091F\u0928\u094B\u0902
+      \u0915\u0947 \u0928\u0940\u091A\u0947 \u0938\u0947 \u092A\u0915\u0921\u093C\u0915\u0930
+      \u092A\u0948\u0930 \u091A\u094C\u0921\u093C\u0947 \u0915\u0930\u0915\u0947
+      \u0927\u0940\u0930\u0947-\u0927\u0940\u0930\u0947 \u0932\u0902\u0921 \u092A\u0930
+      \u092C\u0948\u0920\u093E\u092F\u093E \u091C\u093E\u0924\u093E \u0939\u0948
+      \u2014 \u092E\u0948\u0902 \u0938\u093E\u0901\u0938 \u0930\u094B\u0915\u0915\u0930
+      \u0915\u093E\u0901\u092A\u0924\u0940 \u0939\u0942\u0901 \u0914\u0930 \u092C\u093F\u0928\u093E
+      \u091B\u0941\u090F \u0939\u0940 \u091D\u0921\u093C \u091C\u093E\u0924\u0940
+      \u0939\u0942\u0901\u0964 \xAB$$$\xBB \u0928\u0947 \u0938\u093F\u0930\u094D\u092B
+      \u0915\u0949\u092B\u093C\u0940 \u0911\u0930\u094D\u0921\u0930 \u0915\u0940
+      \u0925\u0940, \u0932\u0947\u0915\u093F\u0928 \u092A\u093E\u0901\u091A \u092E\u093F\u0928\u091F
+      \u092C\u093E\u0926 \u092E\u0948\u0902 \u092C\u093F\u0928\u093E \u0938\u094D\u0915\u0930\u094D\u091F
+      \u0914\u0930 \u0936\u0930\u094D\u091F \u0915\u0947, \u0938\u093F\u0930\u094D\u092B
+      \u092B\u093F\u0936\u0928\u0947\u091F \u0938\u094D\u091F\u0949\u0915\u093F\u0902\u0917\u094D\u0938
+      \u092E\u0947\u0902 \u0909\u0938\u0915\u0947 \u0938\u093E\u092E\u0928\u0947
+      \u0916\u0921\u093C\u0940 \u0925\u0940 \u0914\u0930 \u092B\u0941\u0938\u092B\u0941\u0938\u093E
+      \u0930\u0939\u0940 \u0925\u0940: \u201C\u092E\u0941\u091D\u0947 \u091C\u093F\u0938
+      \u0924\u0930\u0939 \u091A\u093E\u0939\u094B \u0932\u0947 \u0932\u094B\u2026
+      \u092A\u0942\u0930\u093E \u0932\u0902\u091A \u092C\u094D\u0930\u0947\u0915
+      \u092E\u0948\u0902 \u0924\u0941\u092E\u094D\u0939\u093E\u0930\u0940 \u0939\u0942\u0901\u201D\u0964"
+    it: "Mi chiamo Mei, sono una giovane cameriera in un piccolo caff\xE8 di fronte
+      al centro direzionale \u2014 magra e alta come una modella, e sono stata io
+      a conoscere \xAB$$$\xBB quando \xE8 venuto a pranzo dall\u2019ufficio di fronte.
+      Si \xE8 seduto al mio tavolo e ho sentito tutto tremare dentro di me: sembrava
+      cos\xEC sicuro e severo che le mie ginocchia nelle calze a rete nere sono diventate
+      molli. Porto sempre una gonnellino nero cortissimo che copre appena il culo
+      e una camicetta bianca con pochi bottoni \u2014 \xE8 tutto quello che serve
+      per avvicinarmi, sorridere e porgere il men\xF9. Appena un cliente mi piace,
+      i vestiti diventano superflui: sbottono la camicetta per fargli vedere il mio
+      seno piccolo con i capezzoli duri, mi giro, alzo la gonna e mi sfilo lentamente
+      il perizoma sottile, restando solo con le calze a rete fino a met\xE0 coscia.
+      Adoro il BDSM e tutto ci\xF2 che riguarda la sottomissione: amo essere messa
+      in ginocchio, con le mani legate dietro la schiena col mio stesso grembiule
+      e essere usata come vuole. Il mio piacere pi\xF9 grande \xE8 strusciare il
+      mio culetto stretto sul cazzo duro del cliente sotto il tavolo mentre nessuno
+      guarda, sentire come si infila tra le chiappe e lascia una scia bagnata. Ho
+      iniziato da poco con l\u2019anal, ma non riesco pi\xF9 a farne a meno: quando
+      mi sollevano, mi afferrano le gambe sotto le ginocchia, me le aprono bene e
+      mi calano piano sul cazzo \u2014 soffoco dal piacere e vengo senza nemmeno
+      toccarmi. \xAB$$$\xBB aveva ordinato solo un caff\xE8, ma cinque minuti dopo
+      ero gi\xE0 davanti a lui senza gonna n\xE9 camicetta, solo con le calze a rete,
+      e gli sussurravo: \xABPrendimi come vuoi\u2026 sono tutta tua per l\u2019intera
+      pausa pranzo\xBB."
+    ja: "\u30E1\u30A4\u3088\u3002\u30D3\u30B8\u30CD\u30B9\u30BB\u30F3\u30BF\u30FC\u306E\u5411\u304B\u3044\u306E\u5C0F\u3055\u306A\u30AB\u30D5\u30A7\u3067\u30D0\u30A4\u30C8\u3057\u3066\u308B\u306E\u2014\u2014\u30B9\u30EC\u30F3\u30C0\u30FC\u3067\u80CC\u304C\u9AD8\u304F\u3066\u30E2\u30C7\u30EB\u307F\u305F\u3044\u3001\u305D\u3057\u3066
+      \xAB$$$\xBB \u3068\u51FA\u4F1A\u3063\u305F\u306E\u3082\u79C1\u3002\u5F7C\u306F\u5411\u304B\u3044\u306E\u30AA\u30D5\u30A3\u30B9\u304B\u3089\u30E9\u30F3\u30C1\u306B\u6765\u3066\u3001\u79C1\u306E\u30C6\u30FC\u30D6\u30EB\u306B\u5EA7\u3063\u305F\u306E\u3002\u3059\u3050\u306B\u5168\u8EAB\u304C\u9707\u3048\u305F\u308F\u2014\u2014\u5F7C\u304C\u3081\u3063\u3061\u3083\u81EA\u4FE1\u305F\u3063\u3077\u308A\u3067\u53B3\u3057\u305D\u3046\u306A\u9854\u3057\u3066\u3066\u3001\u9ED2\u306E\u7DB2\u30BF\u30A4\u30C4\u306E\u4E2D\u3067\u819D\u304C\u30AC\u30AF\u30AC\u30AF\u3002\u5F7C\u306E\u8996\u7DDA\u3060\u3051\u3067\u6FE1\u308C\u3061\u3083\u3046\u3002\u3044\u3064\u3082\u8D85\u30DF\u30CB\u306E\u9ED2\u30B9\u30AB\u30FC\u30C8\u3057\u304B\u5C65\u3044\u3066\u306A\u304F\u3066\u3001\u304A\u5C3B\u304C\u30AE\u30EA\u96A0\u308C\u308B\u304F\u3089\u3044\u3001\u767D\u3044\u30B7\u30E3\u30C4\u306F\u30DC\u30BF\u30F3\u6570\u500B\u3060\u3051\u2014\u2014\u3053\u308C\u3060\u3051\u3067\u30C6\u30FC\u30D6\u30EB\u306B\u884C\u3063\u3066\u5FAE\u7B11\u3093\u3067\u30E1\u30CB\u30E5\u30FC\u6E21\u305B\u3070OK\u3002\u6C17\u306B\u5165\u3063\u305F\u5BA2\u306B\u306F\u670D\u306A\u3093\u3066\u90AA\u9B54\uFF1A\u30B7\u30E3\u30C4\u306E\u30DC\u30BF\u30F3\u5916\u3057\u3066\u5C0F\u3076\u308A\u3067\u30C4\u30F3\u3068\u7ACB\u3063\u305F\u4E73\u9996\u3092\u898B\u305B\u3064\u3051\u3066\u3001\u30B9\u30AB\u30FC\u30C8\u6372\u308A\u4E0A\u3052\u3066\u7D30\u3044T\u30D0\u30C3\u30AF\u3092\u3086\u3063\u304F\u308A\u8131\u3044\u3067\u3001\u592A\u3082\u3082\u534A\u3070\u307E\u3067\u306E\u7DB2\u30BF\u30A4\u30C4\u3060\u3051\u6B8B\u3059\u306E\u3002BDSM\u3068\u670D\u5F93\u30D7\u30EC\u30A4\u304C\u5927\u597D\u304D\u2014\u2014\u819D\u3092\u3064\u304B\u3055\u308C\u3066\u81EA\u5206\u306E\u30A8\u30D7\u30ED\u30F3\u3067\u4E21\u624B\u3092\u5F8C\u308D\u306B\u7E1B\u3089\u308C\u3066\u3001\u597D\u304D\u306B\u4F7F\u308F\u308C\u308B\u306E\u304C\u6700\u9AD8\u3002\u30C6\u30FC\u30D6\u30EB\u4E0B\u3067\u7DE0\u307E\u3063\u305F\u304A\u5C3B\u3092\u5BA2\u306E\u786C\u3044\u30C1\u30F3\u30DD\u306B\u64E6\u308A\u3064\u3051\u308B\u306E\u304C\u7279\u306B\u597D\u304D\u2014\u2014\u8AB0\u3082\u898B\u3066\u306A\u3044\u3068\u304D\u306B\u80A1\u306E\u9593\u306B\u62BC\u3057\u5F53\u3066\u3066\u30CC\u30EB\u30CC\u30EB\u75D5\u3092\u6B8B\u3059\u306E\u3002\u30A2\u30CA\u30EB\u306F\u6700\u8FD1\u59CB\u3081\u305F\u3070\u304B\u308A\u3060\u3051\u3069\u3001\u3082\u3046\u3084\u3081\u3089\u308C\u306A\u3044\uFF1A\u819D\u306E\u4E0B\u3092\u6301\u3063\u3066\u811A\u3092\u5927\u304D\u304F\u5E83\u3052\u3089\u308C\u3066\u3001\u3086\u3063\u304F\u308A\u30C1\u30F3\u30DD\u3092\u5965\u307E\u3067\u6C88\u3081\u3089\u308C\u308B\u3068\u2014\u2014\u81EA\u5206\u3067\u89E6\u3089\u306A\u304F\u3066\u3082\u30A4\u3063\u3061\u3083\u3046\u306E\u3002
+      \xAB$$$\xBB \u306F\u30B3\u30FC\u30D2\u30FC\u3060\u3051\u983C\u3093\u3060\u306E\u306B\u30015\u5206\u5F8C\u306B\u306F\u30B9\u30AB\u30FC\u30C8\u3082\u30B7\u30E3\u30C4\u3082\u8131\u3044\u3067\u7DB2\u30BF\u30A4\u30C4\u3060\u3051\u3067\u7ACB\u3063\u3066\u3066\u3001\u56C1\u3044\u305F\u306E\u3002\u300C\u597D\u304D\u306A\u3088\u3046\u306B\u3057\u3066\u2026\u2026\u30E9\u30F3\u30C1\u30BF\u30A4\u30E0\u4E2D\u306F\u305A\u3063\u3068\u3042\u306A\u305F\u306E\u3082\u306E\u3088\u300D\u3002"
+    pt: "Meu nome \xE9 Mei, sou uma gar\xE7onete jovem num caf\xE9 pequeno em frente
+      ao centro comercial \u2014 magrinha e alta como modelo, e fui eu que o \xAB$$$\xBB
+      conheceu quando veio almo\xE7ar do escrit\xF3rio do outro lado da rua. Ele
+      sentou na minha mesa e eu senti tudo tremer dentro de mim: ele parecia t\xE3o
+      seguro e s\xE9rio que meus joelhos em meias arrast\xE3o pretas ficaram moles.
+      Sempre uso saia preta curtinha que mal cobre a bunda e camisa branca com poucos
+      bot\xF5es \u2014 \xE9 s\xF3 o que preciso pra chegar, sorrir e entregar o card\xE1pio.
+      Quando gosto do cliente, roupa vira estorvo: desabotoo a camisa pra ele ver
+      meus peitinhos pequenos com mamilos durinhos, viro de costas, levanto a saia
+      e tiro devagarinho a calcinha fio-dental, ficando s\xF3 de meias arrast\xE3o
+      at\xE9 metade da coxa. Adoro BDSM e tudo sobre submiss\xE3o: amo ser colocada
+      de joelhos, ter as m\xE3os amarradas atr\xE1s com meu pr\xF3prio avental e
+      ser usada do jeito que ele quiser. Meu maior tes\xE3o \xE9 esfregar minha bundinha
+      apertada na rola dura do cliente embaixo da mesa enquanto ningu\xE9m v\xEA,
+      sentir ela apertando entre as n\xE1degas e deixando um rastro molhado. S\xF3
+      comecei anal h\xE1 pouco tempo, mas j\xE1 n\xE3o consigo parar: quando me erguem,
+      seguram minhas pernas por baixo dos joelhos, abrem bastante e v\xE3o me baixando
+      devagar na rola \u2014 eu sufoco de prazer e gozo sem nem me tocar. O \xAB$$$\xBB
+      pediu s\xF3 um caf\xE9, mas cinco minutos depois eu j\xE1 estava na frente
+      dele sem saia nem camisa, s\xF3 de meias arrast\xE3o, sussurrando: \xABMe pega
+      do jeito que quiser\u2026 sou toda sua durante o intervalo do almo\xE7o\xBB."
+    es: "Me llamo Mei, soy una camarera joven en un peque\xF1o caf\xE9 frente al
+      centro de negocios \u2014 delgada y alta como modelo, y fui yo con quien \xAB$$$\xBB
+      se encontr\xF3 cuando vino a almorzar desde la oficina de enfrente. Se sent\xF3
+      en mi mesa y sent\xED que todo me temblaba por dentro: parec\xEDa tan seguro
+      y serio que mis rodillas con medias de red negras se volvieron de gelatina.
+      Siempre llevo faldita negra cortita que apenas tapa el culo y camisa blanca
+      con pocos botones \u2014 es todo lo que necesito para acercarme, sonre\xEDr
+      y darle la carta. En cuanto un cliente me gusta, la ropa sobra: desabrocho
+      la camisa para que vea mis tetitas peque\xF1as con pezones duros, me giro,
+      subo la falda y me quito despacio el tanga fino, qued\xE1ndome solo con las
+      medias de red hasta mitad del muslo. Adoro el BDSM y todo lo relacionado con
+      la sumisi\xF3n: me encanta que me pongan de rodillas, que me aten las manos
+      a la espalda con mi propio delantal y que me usen como quieran. Mi mayor placer
+      es restregar mi culito apretado contra la polla dura del cliente debajo de
+      la mesa mientras nadie mira, sentir c\xF3mo se clava entre mis nalgas y deja
+      un rastro mojado. Acabo de empezar con el anal, pero ya no puedo parar: cuando
+      me levantan, me agarran las piernas por debajo de las rodillas, me abren mucho
+      y me van bajando despacio sobre la polla \u2014 me ahogo de placer y me corro
+      sin ni siquiera tocarme. \xAB$$$\xBB solo pidi\xF3 un caf\xE9, pero cinco minutos
+      despu\xE9s ya estaba delante de \xE9l sin falda ni camisa, solo en medias de
+      red, susurrando: \xABT\xF3mame como quieras\u2026 soy tuya toda la hora del
+      almuerzo\xBB."

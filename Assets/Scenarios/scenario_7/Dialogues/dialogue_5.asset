@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6982f52e7d42440a758671d1357932, type: 3}
+  m_Name: dialogue_5
+  m_EditorClassIdentifier: 
+  firstPhrase:
+    ru: "\u0412\u044B \u043D\u0430\u0448\u043B\u0438 \u043D\u0443\u0436\u043D\u044B\u0435
+      \u043A\u043D\u0438\u0433\u0438, \u043E\u0442\u0434\u043E\u0445\u043D\u0438\u0442\u0435
+      \u0438 \u043F\u043E\u043B\u0443\u0447\u0430\u0439\u0442\u0435 \u043D\u0430\u0441\u043B\u0430\u0436\u0434\u0435\u043D\u0438\u0435.
+      \u0410 \u044F \u043F\u043E\u043A\u0430\u0436\u0443 \u0432\u0430\u043C, \u043A\u0430\u043A
+      \u0443\u0434\u043E\u0432\u043B\u0435\u0442\u0432\u043E\u0440\u044F\u044E \u0441\u0435\u0431\u044F.
+      \u0421\u043E\u0433\u043B\u0430\u0441\u043D\u044B?"
+    en: "You found the books \u2014 now relax and enjoy. I\u2019ll show you how I
+      pleasure myself. Sound good?"
+    de: "Sie haben die richtigen B\xFCcher gefunden \u2013 jetzt entspannen und genie\xDFen.
+      Ich zeige Ihnen, wie ich mich selbst befriedige. Einverstanden?"
+    zh: "\u4F60\u627E\u5230\u5408\u9002\u7684\u4E66\u4E86\uFF0C\u653E\u677E\u4EAB\u53D7\u5427\u3002\u6211\u7ED9\u4F60\u5C55\u793A\u6211\u600E\u4E48\u81EA\u6170\uFF0C\u597D\u5417\uFF1F"
+    fr: "Tu as trouv\xE9 les bons livres \u2013 maintenant d\xE9tends-toi et profite.
+      Je vais te montrer comment je me fais plaisir. D\u2019accord ?"
+    hi: "\u0924\u0941\u092E\u0928\u0947 \u0938\u0939\u0940 \u0915\u093F\u0924\u093E\u092C\u0947\u0902
+      \u0922\u0942\u0902\u0922 \u0932\u0940\u0902 \u2013 \u0905\u092C \u0930\u093F\u0932\u0948\u0915\u094D\u0938
+      \u0915\u0930\u094B \u0914\u0930 \u090F\u0902\u091C\u0949\u092F \u0915\u0930\u094B\u0964
+      \u092E\u0948\u0902 \u0926\u093F\u0916\u093E\u0924\u0940 \u0939\u0942\u0901
+      \u0915\u0948\u0938\u0947 \u0916\u0941\u0926 \u0915\u094B \u0916\u0941\u0936
+      \u0915\u0930\u0924\u0940 \u0939\u0942\u0901\u0964 \u0920\u0940\u0915 \u0939\u0948?"
+    it: "Hai trovato i libri giusti \u2013 ora rilassati e goditi. Ti mostro come
+      mi do piacere. D\u2019accordo?"
+    ja: "\u6B32\u3057\u3044\u672C\u898B\u3064\u304B\u3063\u305F\u306D\u3002\u30EA\u30E9\u30C3\u30AF\u30B9\u3057\u3066\u3066\u3002\u79C1\u304C\u3069\u3046\u3084\u3063\u3066\u30AA\u30CA\u30CB\u30FC\u3059\u308B\u304B\u898B\u305B\u3066\u3042\u3052\u308B\u3002\u3044\u3044\uFF1F"
+    pt: "Encontraste os livros certos \u2013 agora relaxa e desfruta. Vou mostrar-te
+      como me dou prazer. Combinado?"
+    es: "Has encontrado los libros adecuados \u2013 ahora rel\xE1jate y disfruta.
+      Te muestro c\xF3mo me doy placer. \xBFVale?"
+  phraseVariants:
+  - answer:
+      ru: "\u041E\u0442\u043B\u0438\u0447\u043D\u044B\u0439 \u0432\u0435\u0447\u0435\u0440
+        \u0432 \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0435 \u0438
+        \u0448\u0438\u043A\u0430\u0440\u043D\u0430\u044F \u0436\u0435\u043D\u0449\u0438\u043D\u0430,
+        \u0440\u0435\u0434\u043A\u0438\u0439 \u0441\u043B\u0443\u0447\u0430\u0439."
+      en: "Amazing evening in the library with a gorgeous woman \u2014 very rare."
+      de: "Ein gro\xDFartiger Abend in der Bibliothek mit einer wundervollen Frau
+        \u2013 das ist selten."
+      zh: "\u56FE\u4E66\u9986\u91CC\u548C\u7EDD\u8272\u7F8E\u5973\u5EA6\u8FC7\u5B8C\u7F8E\u591C\u665A\uFF0C\u592A\u96BE\u5F97\u4E86\u3002"
+      fr: "Une soir\xE9e formidable dans une biblioth\xE8que avec une femme magnifique
+        \u2013 c\u2019est rare."
+      hi: "\u0932\u093E\u0907\u092C\u094D\u0930\u0947\u0930\u0940 \u092E\u0947\u0902
+        \u0907\u0924\u0928\u0940 \u0939\u0949\u091F \u0914\u0930\u0924 \u0915\u0947
+        \u0938\u093E\u0925 \u0915\u092E\u093E\u0932 \u0915\u0940 \u0936\u093E\u092E
+        \u2013 \u092C\u0939\u0941\u0924 \u0930\u0947\u092F\u0930 \u0939\u0948\u0964"
+      it: "Una serata fantastica in biblioteca con una donna meravigliosa \u2013
+        \xE8 raro."
+      ja: "\u56F3\u66F8\u9928\u3067\u3053\u3093\u306A\u7D20\u6575\u306A\u5973\u6027\u3068\u904E\u3054\u305B\u308B\u306A\u3093\u3066\u7A00\u3060\u3088\u3002"
+      pt: "Uma noite fant\xE1stica na biblioteca com uma mulher maravilhosa \u2013
+        \xE9 raro."
+      es: "Una velada incre\xEDble en la biblioteca con una mujer maravillosa \u2013
+        eso es raro."
+    respect: 4
+  - answer:
+      ru: "\u041F\u0440\u0435\u043A\u0440\u0430\u0441\u043D\u043E\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u0435
+        \u0432\u0435\u0447\u0435\u0440\u0430, \u043A\u043E\u0433\u0434\u0430 \u043C\u044B
+        \u0441\u043C\u043E\u0436\u0435\u043C \u043F\u043E\u0432\u0442\u043E\u0440\u0438\u0442\u044C?"
+      en: "Perfect way to end the evening \u2014 when can we do it again?"
+      de: "Perfektes Ende des Abends \u2013 wann k\xF6nnen wir das wiederholen?"
+      zh: "\u5B8C\u7F8E\u591C\u665A\u7684\u6536\u5C3E\uFF0C\u4EC0\u4E48\u65F6\u5019\u80FD\u518D\u6765\u4E00\u6B21\uFF1F"
+      fr: "Fin parfaite de soir\xE9e \u2013 quand peut-on remettre \xE7a ?"
+      hi: "\u0936\u093E\u092E \u0915\u093E \u092A\u0930\u092B\u0947\u0915\u094D\u091F
+        \u090F\u0902\u0921\u093F\u0902\u0917 \u2013 \u092B\u093F\u0930 \u0915\u092C
+        \u0915\u0930 \u0938\u0915\u0924\u0947 \u0939\u0948\u0902?"
+      it: "Fine perfetta della serata \u2013 quando possiamo rifarlo?"
+      ja: "\u6700\u9AD8\u306E\u591C\u306E\u7DE0\u3081\u304F\u304F\u308A\u3002\u307E\u305F\u3044\u3064\u3067\u304D\u308B\uFF1F"
+      pt: "Fim perfeito da noite \u2013 quando podemos repetir?"
+      es: "Final perfecto de la velada \u2013 \xBFcu\xE1ndo podemos repetirlo?"
+    respect: 2
+  - answer:
+      ru: "\u0421\u0442\u0440\u0430\u043D\u043D\u043E, \u0447\u0442\u043E \u043F\u043E\u0441\u043B\u0435
+        \u0432\u0430\u0448\u0438\u0445 \u0433\u0443\u0431, \u044F \u043D\u0435 \u043E\u0449\u0443\u0442\u0438\u043B
+        \u043D\u0430 \u0447\u043B\u0435\u043D\u0435 \u0432\u0430\u0448\u0443 \u043F\u043E\u043F\u043A\u0443."
+      en: "Strange that after your lips I still haven\u2019t felt your ass on my
+        cock."
+      de: "Seltsam \u2013 nach Ihren Lippen habe ich Ihren Arsch noch nicht auf meinem
+        Schwanz gesp\xFCrt."
+      zh: "\u5947\u602A\uFF0C\u4EAB\u53D7\u4E86\u4F60\u7684\u5507\uFF0C\u5374\u8FD8\u6CA1\u611F\u53D7\u5230\u4F60\u7684\u5C41\u80A1\u5957\u5728\u6211\u9E21\u9E21\u4E0A\u3002"
+      fr: "Bizarre \u2013 apr\xE8s vos l\xE8vres, je n\u2019ai pas encore senti votre
+        cul sur ma queue."
+      hi: "\u0905\u091C\u0940\u092C \u0939\u0948 \u2013 \u0924\u0947\u0930\u0947
+        \u0939\u094B\u0902\u0920\u094B\u0902 \u0915\u093E \u092E\u091C\u093C\u093E
+        \u0932\u093F\u092F\u093E, \u092A\u0930 \u0924\u0947\u0930\u0940 \u0917\u093E\u0902\u0921
+        \u0905\u092D\u0940 \u0924\u0915 \u092E\u0947\u0930\u0947 \u0932\u0902\u0921
+        \u092A\u0930 \u092E\u0939\u0938\u0942\u0938 \u0928\u0939\u0940\u0902 \u0939\u0941\u0908\u0964"
+      it: "Strano \u2013 dopo le tue labbra non ho ancora sentito quel culo sul mio
+        cazzo."
+      ja: "\u4E0D\u601D\u8B70\u3002\u5507\u306F\u5473\u308F\u3063\u305F\u306E\u306B\u3001\u307E\u3060\u305D\u306E\u5C3B\u3092\u30C1\u30F3\u30DD\u3067\u5473\u308F\u3063\u3066\u306A\u3044\u3002"
+      pt: "Esquisito \u2013 depois dos teus l\xE1bios ainda n\xE3o senti essa bunda
+        no meu pau."
+      es: "Qu\xE9 raro \u2013 despu\xE9s de tus labios a\xFAn no he sentido tu culo
+        en mi polla."
+    respect: 0
+  id: 0

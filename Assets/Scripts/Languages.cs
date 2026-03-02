@@ -1,17 +1,19 @@
+using UnityEngine;
+
 namespace MyGame
 {
     [System.Serializable]
     public class Languages
     {
-        public string ru;
-        public string en;
-        public string de;
-        public string zh;
-        public string fr;
-        public string hi;
-        public string it;
-        public string ja;
-        public string pt;
-        public string es;
+        [TextArea(1, 100)] public string ru;
+        [TextArea(1, 100)] public string en;
+        [TextArea(1, 100)] public string de;
+        [TextArea(1, 100)] public string zh;
+        [TextArea(1, 100)] public string fr;
+        [TextArea(1, 100)] public string hi;
+        [TextArea(1, 100)] public string it;
+        [TextArea(1, 100)] public string ja;
+        [TextArea(1, 100)] public string pt;
+        [TextArea(1, 100)] public string es;
     }
 }

@@ -1,10 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
-using TMPro;
 using MyGame.Gameplay.Dialogue;
 using MyGame.Gifts;
-using MyGame.Bundles;
 
 namespace MyGame.Gameplay
 {
@@ -121,7 +119,8 @@ namespace MyGame.Gameplay
 
         public void Exit()
         {
-            BundlesController.Instance.OnlyGameplayBundle.TryUnload();
+            AsyncContent.TryReleaseDialogues();
+            AsyncContent.TryReleaseVideos();
             SceneLoader.LoadMenu();
         }
 

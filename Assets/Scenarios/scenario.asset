@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b56d3ec8f6141549b009efab33e071e, type: 3}
+  m_Name: scenario
+  m_EditorClassIdentifier: 
+  scenarioStages:
+  - typeStage: 0
+    imageId: 1
+    id: 1
+  - typeStage: 0
+    imageId: 2
+    id: 2
+  - typeStage: 1
+    imageId: 2
+    id: 0
+  - typeStage: 2
+    imageId: 0
+    id: 1
+  - typeStage: 0
+    imageId: 3
+    id: 3
+  - typeStage: 1
+    imageId: 3
+    id: 0
+  - typeStage: 4
+    imageId: 3
+    id: 0
+  - typeStage: 2
+    imageId: 0
+    id: 2
+  - typeStage: 0
+    imageId: 4
+    id: 4
+  - typeStage: 1
+    imageId: 4
+    id: 0
+  - typeStage: 2
+    imageId: 0
+    id: 3
+  - typeStage: 0
+    imageId: 5
+    id: 5
+  - typeStage: 1
+    imageId: 5
+    id: 0
+  - typeStage: 2
+    imageId: 0
+    id: 4
+  - typeStage: 3
+    imageId: 0
+    id: 0
+  - typeStage: 1
+    imageId: 6
+    id: 0
+  - typeStage: 2
+    imageId: 0
+    id: 5

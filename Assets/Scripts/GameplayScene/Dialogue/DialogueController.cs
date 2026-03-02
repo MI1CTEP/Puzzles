@@ -28,7 +28,7 @@ namespace MyGame.Gameplay.Dialogue
         public UnityAction OnEnd { get; set; }
         public UnityAction OnSkipTextAnim { get; set; }
 
-        public void Init(Scenario scenario, ProgressPanel progressPanel)
+        public void Init(ProgressPanel progressPanel)
         {
             _button = GetComponent<Button>();
             _button.onClick.AddListener(TrySkipTextAnim);
@@ -38,7 +38,7 @@ namespace MyGame.Gameplay.Dialogue
             _continueButton.gameObject.SetActive(false);
             _continueButtonRect = _continueButton.GetComponent<RectTransform>();
             _continueButtonRect.anchoredPosition = new Vector2(0, _offsetAnswers);
-            CountMaxSympathy(scenario);
+            CountMaxSympathy();
         }
 
         public void Play(ScenarioStage scenarioStage)
@@ -46,7 +46,7 @@ namespace MyGame.Gameplay.Dialogue
             _progressPanel.SetSympathy(_currentSympathy, _maxSympathy);
             _messageHistory.anchoredPosition = new Vector2(0, _offsetAnswers);
             gameObject.SetActive(true);
-            _simpleDialogue = scenarioStage.Dialogue;
+            _simpleDialogue = AsyncContent.Dialogues.simpleDialogues[scenarioStage.id - 1];
             SetFirstPhrase();
         }
 
@@ -116,13 +116,8 @@ namespace MyGame.Gameplay.Dialogue
 
         private void SetSecondPhrase(int id)
         {
-            if(_simpleDialogue.phraseVariants[id].secondPhrase == null)
-            {
-                EnableContinueButton();
-                return;
-            }
-            _anim.MoveMessageHistory(_offsetAnswers);
-            SetPhrase(_simpleDialogue.phraseVariants[id].secondPhrase, false, EnableContinueButton);
+            EnableContinueButton();
+            return;
         }
 
         private void SetPhrase(Languages phrase, bool isPlayerPhrase, UnityAction onSetPhrase)
@@ -143,31 +138,22 @@ namespace MyGame.Gameplay.Dialogue
             OnSkipTextAnim?.Invoke();
         }
 
-        private void CountMaxSympathy(Scenario scenario)
+        private void CountMaxSympathy()
         {
-            ScenarioStage scenarioStage;
-            int id = 0;
-            while (true)
+            for (int i = 0; i < AsyncContent.Dialogues.simpleDialogues.Length; i++)
             {
-                scenarioStage = scenario.TryGetScenarioStage(id);
-                id++;
-                if (scenarioStage == null)
-                    return;
-                if (scenarioStage.typeStage == "Dialogue")
+                List<PhraseVariant> phraseVariants = AsyncContent.Dialogues.simpleDialogues[i].phraseVariants;
+
+                if (phraseVariants == null || phraseVariants.Count == 0)
+                    continue;
+
+                int max = 0;
+                for (int j = 0; j < phraseVariants.Count; j++)
                 {
-                    List<PhraseVariant> phraseVariants = scenarioStage.Dialogue.phraseVariants;
-
-                    if (phraseVariants == null || phraseVariants.Count == 0)
-                        continue;
-
-                    int max = 0;
-                    for (int i = 0; i < phraseVariants.Count; i++)
-                    {
-                        if (phraseVariants[i].respect > max)
-                            max = phraseVariants[i].respect;
-                    }
-                    _maxSympathy += max;
+                    if (phraseVariants[j].respect > max)
+                        max = phraseVariants[i].respect;
                 }
+                _maxSympathy += max;
             }
         }
 

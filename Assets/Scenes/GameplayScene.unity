@@ -10475,6 +10475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e898d0ccdda7cdd41a471bb9d3760cd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scenario: {fileID: 11400000, guid: 88303b771dd2cd340af81228e4c2c404, type: 2}
   _progressPanel: {fileID: 261889779}
   _videoController: {fileID: 1410148594}
   _extraLevelUnlocker: {fileID: 1699038989}

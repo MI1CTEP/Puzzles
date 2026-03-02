@@ -3,12 +3,12 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using DG.Tweening;
 using TMPro;
-using MyGame.Bundles;
 
 namespace MyGame.Menu
 {
     public sealed class GallaryPanel : MenuPanel
     {
+        [SerializeField] private Levels _levels;
         [SerializeField] private UpInfoPanel _upInfoPanel;
         [SerializeField] private Image _contentImage;
         [SerializeField] private SympathyPanel _sympathyPanel;
@@ -24,24 +24,19 @@ namespace MyGame.Menu
         [SerializeField] private GameObject _extraLevelInfo;
         [SerializeField] private GameObject _lock;
         [SerializeField] private Image _priceLogo;
-        [SerializeField] private ContentDownloadingPanel _contentDownloadingPanel;
         [SerializeField] private Sprite _downloadBackground;
         [SerializeField] private Sprite _respectIcon;
         [SerializeField] private Sprite _detailIcon;
 
         private RespectPanel _respectPanel;
-        private BundlesController _bundlesController;
         private Sequence _seqContentShow;
         private UnityAction _onShowUnlockPanel;
 
         public void Init(RespectPanel respectPanel, UnityAction onShowMainPanel, UnityAction onShowStoryPanel, UnityAction onShowAnbumPanel, UnityAction onShowUnlockPanel)
         {
             _respectPanel = respectPanel;
-            _bundlesController = BundlesController.Instance;
-            _bundlesController.OnStartDownloadLevel += TrySetDownloading;
-            _bundlesController.OnEndDownloadLevel += TryActivateLevel;
             MenuPanelInit();
-            _upInfoPanel.Init(_buttonPlay, _contentImage, _bundlesController.LevelsCount);
+            _upInfoPanel.Init(_buttonPlay, _contentImage, _levels.levels.Length);
             _sympathyPanel.Init();
             _achievemetnsPanel.Init();
             gameObject.SetActive(false);
@@ -95,102 +90,45 @@ namespace MyGame.Menu
         public void SwitchLevel(int value)
         {
             GameData.CurrentLevel += value;
-            if (GameData.CurrentLevel >= _bundlesController.LevelsCount)
+            if (GameData.CurrentLevel >= _levels.levels.Length)
                 GameData.CurrentLevel = 0;
             else if (GameData.CurrentLevel < 0)
-                GameData.CurrentLevel = _bundlesController.LevelsCount - 1;
+                GameData.CurrentLevel = _levels.levels.Length - 1;
 
-            if (_bundlesController.TypeLevelStatus(GameData.CurrentLevel) == TypeLevelStatus.NotDownloaded)
-                SetNotDownloaded();
-            else if (_bundlesController.TypeLevelStatus(GameData.CurrentLevel) == TypeLevelStatus.Downloading)
-                SetDownloading();
-            else
-                SetDownloaded();
+            SetDownloaded();
         }
 
 
         public void SetLevel(int value)
         {
             GameData.CurrentLevel = 0;
-
-            if (_bundlesController.TypeLevelStatus(GameData.CurrentLevel) == TypeLevelStatus.NotDownloaded)
-                SetNotDownloaded();
-            else if (_bundlesController.TypeLevelStatus(GameData.CurrentLevel) == TypeLevelStatus.Downloading)
-                SetDownloading();
-            else
-                SetDownloaded();
-
-        }
-
-
-        private void TrySetDownloading(int id)
-        {
-            if (GameData.CurrentLevel == id)
-                SetDownloading();
-        }
-
-        private void TryActivateLevel(int id)
-        {
-            if (GameData.CurrentLevel == id)
-                SetDownloaded();
-        }
-
-        private void SetNotDownloaded()
-        {
-            _upInfoPanel.OnStartLoad();
-            _upInfoPanel.UpdateAll(GameData.CurrentLevel + 1, "not downloaded");
-            _contentImage.color = new Color(1, 1, 1, 1);
-            _contentImage.sprite = _downloadBackground;
-            _contentDownloadingPanel.Show(false);
-            _buttonPlay.Hide();
-            _buttonAlbum.Hide();
-            _buttonHistory.Hide();
-            _buttonOpenLevel.Hide();
-            _sympathyPanel.Hide();
-            _achievemetnsPanel.Hide();
-            _priceText.gameObject.SetActive(false);
-            _extraLevelInfo.SetActive(false);
-            _lock.SetActive(false);
-        }
-
-        private void SetDownloading()
-        {
-            _upInfoPanel.OnStartLoad();
-            _upInfoPanel.UpdateAll(GameData.CurrentLevel + 1, "downloading");
-            _contentImage.color = new Color(1, 1, 1, 1);
-            _contentImage.sprite = _downloadBackground;
-            _contentDownloadingPanel.Show(true);
-            _buttonPlay.Hide();
-            _buttonAlbum.Hide();
-            _buttonHistory.Hide();
-            _buttonOpenLevel.Hide();
-            _sympathyPanel.Hide();
-            _achievemetnsPanel.Hide();
-            _priceText.gameObject.SetActive(false);
-            _extraLevelInfo.SetActive(false);
-            _lock.SetActive(false);
+            SetDownloaded();
         }
 
         private void SetDownloaded()
         {
-            _contentDownloadingPanel.Hide();
             _upInfoPanel.OnStartLoad();
-            if (IsOpenedLevel())
+            if (IsOpenedLevel()) SetOpened();
+            else SetClosed();
+            AsyncContent.LoadLevelInfo((levelInfo) =>
             {
-                SetOpened();
-                _bundlesController.MainResourcesBundle.Load(GameData.CurrentLevel, () => EndLoad(true));
-            }
-            else
+                _upInfoPanel.OnEndLoad();
+                _upInfoPanel.UpdateAll(GameData.CurrentLevel + 1, AsyncContent.LevelInfo.nameLevel);
+            });
+            AsyncContent.LoadImages((images) =>
             {
-                SetClosed();
-                _bundlesController.MainResourcesBundle.Load(GameData.CurrentLevel, () => EndLoad(false));
-            }
+                SetStartColor();
+                _contentImage.sprite = AsyncContent.Images.sprites[0];
+                TryStopAnim();
+                _seqContentShow = DOTween.Sequence();
+                _seqContentShow.Insert(0, _contentImage.DOFade(1, 0.2f));
+            });
         }
 
         private bool IsOpenedLevel()
         {
-            Level level = _bundlesController.LevelsInfo.Level(GameData.CurrentLevel);
-            if ((level.price == 0 || GameData.Levels.IsOpenedAll()) && level.type != "Extra" || GameData.Levels.IsOpened(GameData.CurrentLevel))
+            Level level = _levels.levels[GameData.CurrentLevel];
+            if ((level.price == 0 || GameData.Levels.IsOpenedAll()) && level.typeLevel != TypeLevel.Extra || GameData.Levels.IsOpened(GameData.CurrentLevel))
                 return true;
 
             return false;
@@ -219,7 +157,7 @@ namespace MyGame.Menu
             _achievemetnsPanel.Hide();
             _priceText.gameObject.SetActive(true);
             _lock.SetActive(true);
-            if (_bundlesController.LevelsInfo.Level(GameData.CurrentLevel).type == "Extra")
+            if (_levels.levels[GameData.CurrentLevel].typeLevel == TypeLevel.Extra)
             {
                 _priceLogo.sprite = _detailIcon;
                 _priceText.text = $"{GameData.ExtraLevel.GetOpenedPartsValue()}/{GameData.ExtraLevel.PartSize.x * GameData.ExtraLevel.PartSize.y}";
@@ -229,7 +167,7 @@ namespace MyGame.Menu
             else
             {
                 _priceLogo.sprite = _respectIcon;
-                _priceText.text = _bundlesController.LevelsInfo.Level(GameData.CurrentLevel).price.ToString();
+                _priceText.text = _levels.levels[GameData.CurrentLevel].price.ToString();
                 _buttonOpenLevel.Show();
                 _extraLevelInfo.SetActive(false);
             }
@@ -237,7 +175,7 @@ namespace MyGame.Menu
 
         private void OpenLevel()
         {
-            int price = _bundlesController.LevelsInfo.Level(GameData.CurrentLevel).price;
+            int price = _levels.levels[GameData.CurrentLevel].price;
             if (GameData.Respect.Load() >= price)
             {
                 GameData.Respect.Add(-price);
@@ -245,17 +183,6 @@ namespace MyGame.Menu
                 _respectPanel.UpdateView();
             }
             else _onShowUnlockPanel?.Invoke();
-        }
-
-        private void EndLoad(bool isOpened)
-        {
-            _upInfoPanel.OnEndLoad();
-            _upInfoPanel.UpdateAll(GameData.CurrentLevel + 1, _bundlesController.MainResourcesBundle.GetName);
-            SetStartColor();
-            _contentImage.sprite = _bundlesController.MainResourcesBundle.Sprites[0];
-            TryStopAnim();
-            _seqContentShow = DOTween.Sequence();
-            _seqContentShow.Insert(0, _contentImage.DOFade(1, 0.2f));
         }
 
         private void SetStartColor()
@@ -275,8 +202,7 @@ namespace MyGame.Menu
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            _bundlesController.OnStartDownloadLevel -= TrySetDownloading;
-            _bundlesController.OnEndDownloadLevel -= TryActivateLevel;
+            AsyncContent.TryReleaseLevelInfo();
             TryStopAnim();
         }
     }

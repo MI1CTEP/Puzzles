@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6982f52e7d42440a758671d1357932, type: 3}
+  m_Name: dialogue_2
+  m_EditorClassIdentifier: 
+  firstPhrase:
+    ru: "\u041E\u0439, \u043D\u0430\u0434\u043E \u043F\u043E\u043F\u0440\u0430\u0432\u0438\u0442\u044C
+      \u0445\u0430\u043B\u0430\u0442, \u043A\u0441\u0442\u0430\u0442\u0438 \u043A\u0430\u043A
+      \u0442\u0435\u0431\u0435 \u043C\u043E\u044F \u043F\u043E\u043F\u043A\u0430?"
+    en: "Oops, need to fix my robe \u2014 by the way, how do you like my ass?"
+    de: "Oje, muss meinen Bademantel richten \u2013 \xFCbrigens, wie gef\xE4llt dir
+      mein Hintern?"
+    zh: "\u54CE\u5440\uFF0C\u5F97\u6574\u7406\u4E0B\u888D\u5B50\uFF0C\u987A\u4FBF\u95EE\u95EE\uFF0C\u4F60\u89C9\u5F97\u6211\u7684\u5C41\u80A1\u600E\u4E48\u6837\uFF1F"
+    fr: "Oups, faut que je rajuste mon peignoir \u2013 au fait, mon cul te pla\xEEt
+      ?"
+    hi: "\u0913\u0939, \u0917\u093E\u0909\u0928 \u0920\u0940\u0915 \u0915\u0930\u0928\u093E
+      \u092A\u0921\u093C\u0947\u0917\u093E \u2014 \u0935\u0948\u0938\u0947, \u092E\u0947\u0930\u0940
+      \u0917\u093E\u0902\u0921 \u0915\u0948\u0938\u0940 \u0932\u0917\u0940?"
+    it: "Oops, devo sistemare la vestaglia \u2014 a proposito, ti piace il mio culo?"
+    ja: "\u3042\u3001\u30AC\u30A6\u30F3\u76F4\u3055\u306A\u304D\u3083\u3002\u3068\u3053\u308D\u3067\u3001\u79C1\u306E\u304A\u5C3B\u3069\u3046\uFF1F"
+    pt: "Ops, preciso arrumar o roup\xE3o \u2014 a prop\xF3sito, gostas do meu rabo?"
+    es: "Ups, tengo que arreglar el bata \u2014 por cierto, \xBFqu\xE9 te parece
+      mi culo?"
+  phraseVariants:
+  - answer:
+      ru: "\u041C\u043D\u0435 \u0445\u043E\u0447\u0435\u0442\u0441\u044F \u0435\u0451
+        \u043F\u043E\u0442\u0440\u043E\u0433\u0430\u0442\u044C \u0438 \u0441\u0442\u0440\u0430\u0441\u0442\u043D\u043E
+        \u0446\u0435\u043B\u043E\u0432\u0430\u0442\u044C!"
+      en: I want to touch it and kiss it passionately!
+      de: "Ich will sie anfassen und leidenschaftlich k\xFCssen!"
+      zh: "\u597D\u60F3\u6478\u6478\u5B83\uFF0C\u7136\u540E\u70ED\u543B\uFF01"
+      fr: "Je veux la caresser et l\u2019embrasser passionn\xE9ment !"
+      hi: "\u0907\u0938\u0947 \u091B\u0942\u0928\u093E \u0914\u0930 \u091C\u094B\u0936
+        \u0938\u0947 \u091A\u0942\u092E\u0928\u093E \u091A\u093E\u0939\u0924\u093E
+        \u0939\u0942\u0901!"
+      it: Voglio toccarla e baciarla con passione!
+      ja: "\u89E6\u308A\u305F\u304F\u3066\u3001\u60C5\u71B1\u7684\u306B\u30AD\u30B9\u3057\u305F\u3044\uFF01"
+      pt: "Quero toc\xE1-la e beij\xE1-la com paix\xE3o!"
+      es: "\xA1Quiero tocarla y besarla con pasi\xF3n!"
+    respect: 4
+  - answer:
+      ru: "\u0412\u043F\u0435\u0447\u0430\u0442\u043B\u044F\u0435\u0442 \u0438 \u0432\u043E\u0437\u0431\u0443\u0436\u0434\u0430\u0435\u0442!"
+      en: Impressive and so arousing!
+      de: Beeindruckend und total erregend!
+      zh: "\u4EE4\u4EBA\u5370\u8C61\u6DF1\u523B\uFF0C\u8FD8\u597D\u523A\u6FC0\uFF01"
+      fr: Impressionnant et tellement excitant !
+      hi: "\u092A\u094D\u0930\u092D\u093E\u0935\u0936\u093E\u0932\u0940 \u0914\u0930
+        \u0909\u0924\u094D\u0924\u0947\u091C\u0915!"
+      it: Impressionante e eccitante!
+      ja: "\u5370\u8C61\u7684\u3067\u8208\u596E\u3059\u308B\uFF01"
+      pt: Impressionante e excitante!
+      es: Impresionante y muy excitante!
+    respect: 2
+  - answer:
+      ru: "\u0425\u043E\u0447\u0443 \u0432 \u043D\u0435\u0451 \u0432\u043E\u0439\u0442\u0438
+        \u043F\u0440\u044F\u043C\u043E \u0441\u0435\u0439\u0447\u0430\u0441!"
+      en: I want to slide inside right now!
+      de: Ich will sofort in sie rein!
+      zh: "\u73B0\u5728\u5C31\u60F3\u63D2\u8FDB\u53BB\uFF01"
+      fr: "Je veux la p\xE9n\xE9trer tout de suite !"
+      hi: "\u0905\u092D\u0940 \u0924\u0947\u0930\u0940 \u0917\u093E\u0902\u0921 \u092E\u0947\u0902
+        \u0918\u0941\u0938\u0928\u093E \u091A\u093E\u0939\u0924\u093E \u0939\u0942\u0901!"
+      it: Voglio entrarti dentro subito!
+      ja: "\u4ECA\u3059\u3050\u5165\u308C\u305F\u3044\uFF01"
+      pt: Quero entrar agora mesmo!
+      es: "\xA1Quiero met\xE9rmela ahora mismo!"
+    respect: 0
+  id: 0

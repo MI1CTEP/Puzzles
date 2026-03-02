@@ -11,6 +11,7 @@ namespace MyGame.Gameplay
         [SerializeField] private Button _restartButton;
         [SerializeField] private Button _continueButton;
 
+        private Videos _videos;
         private ScenarioStage _scenarioStage;
         private VideoPlayer _videoPlayer;
 
@@ -32,7 +33,7 @@ namespace MyGame.Gameplay
             _scenarioStage = scenarioStage;
             _buttons.SetActive(false);
             gameObject.SetActive(true);
-            _videoPlayer.clip = scenarioStage.Video;
+            _videoPlayer.clip = AsyncContent.Videos.videoClips[scenarioStage.id - 1];
             _videoPlayer.Play();
         }
 

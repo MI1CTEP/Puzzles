@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6982f52e7d42440a758671d1357932, type: 3}
+  m_Name: dialogue_1
+  m_EditorClassIdentifier: 
+  firstPhrase:
+    ru: "\u0414\u043E\u0431\u0440\u044B\u0439 \u0434\u0435\u043D\u044C! \u042F \u0432\u0430\u0448\u0430
+      \u043C\u0435\u0434\u0441\u0435\u0441\u0442\u0440\u0430, \u0434\u043E\u0431\u0440\u043E
+      \u043F\u043E\u0436\u0430\u043B\u043E\u0432\u0430\u0442\u044C \u0432 \u043D\u0430\u0448\u0443
+      \u043A\u043B\u0438\u043D\u0438\u043A\u0443! \u0412\u0430\u043C \u0437\u0434\u0435\u0441\u044C
+      \u043D\u0440\u0430\u0432\u0438\u0442\u0441\u044F?"
+    en: "Good afternoon! I'm your nurse \u2014 welcome to our clinic. Do you like
+      it here?"
+    de: "Guten Tag! Ich bin Ihre Krankenschwester \u2013 willkommen in unserer Klinik.
+      Gef\xE4llt es Ihnen hier?"
+    zh: "\u4E0B\u5348\u597D\uFF01\u6211\u662F\u60A8\u7684\u62A4\u58EB\uFF0C\u6B22\u8FCE\u6765\u5230\u6211\u4EEC\u7684\u8BCA\u6240\u3002\u60A8\u559C\u6B22\u8FD9\u91CC\u5417\uFF1F"
+    fr: "Bon apr\xE8s-midi ! Je suis votre infirmi\xE8re \u2014 bienvenue dans notre
+      clinique. \xC7a vous pla\xEEt ici ?"
+    hi: "\u0928\u092E\u0938\u094D\u0915\u093E\u0930! \u092E\u0948\u0902 \u0906\u092A\u0915\u0940
+      \u0928\u0930\u094D\u0938 \u0939\u0942\u0901 \u2014 \u0939\u092E\u093E\u0930\u0940
+      \u0915\u094D\u0932\u093F\u0928\u093F\u0915 \u092E\u0947\u0902 \u0938\u094D\u0935\u093E\u0917\u0924
+      \u0939\u0948\u0964 \u0906\u092A\u0915\u094B \u092F\u0939\u093E\u0901 \u0905\u091A\u094D\u091B\u093E
+      \u0932\u0917 \u0930\u0939\u093E \u0939\u0948?"
+    it: "Buongiorno! Sono la tua infermiera \u2014 benvenuto nella nostra clinica.
+      Ti piace qui?"
+    ja: "\u3053\u3093\u306B\u3061\u306F\uFF01\u3042\u306A\u305F\u306E\u770B\u8B77\u5E2B\u3088\u3002\u3053\u306E\u30AF\u30EA\u30CB\u30C3\u30AF\u3078\u3088\u3046\u3053\u305D\u3002\u3053\u3053\u3001\u6C17\u306B\u5165\u3063\u305F\uFF1F"
+    pt: "Boa tarde! Sou a tua enfermeira \u2014 bem-vindo \xE0 nossa cl\xEDnica.
+      Gostas daqui?"
+    es: "\xA1Buenas tardes! Soy tu enfermera \u2014 bienvenido a nuestra cl\xEDnica.
+      \xBFTe gusta aqu\xED?"
+  phraseVariants:
+  - answer:
+      ru: "\u0414\u043E\u0431\u0440\u044B\u0439 \u0434\u0435\u043D\u044C! \u0422\u044B
+        \u043F\u0440\u0435\u043A\u0440\u0430\u0441\u043D\u043E \u0432\u044B\u0433\u043B\u044F\u0434\u0438\u0448\u044C!"
+      en: Good day! You look wonderful!
+      de: Guten Tag! Du siehst wundervoll aus!
+      zh: "\u4E0B\u5348\u597D\uFF01\u4F60\u770B\u8D77\u6765\u68D2\u6781\u4E86\uFF01"
+      fr: Bonjour ! Tu es magnifique !
+      hi: "\u0936\u0941\u092D \u0926\u093F\u0928! \u0924\u0941\u092E \u0915\u092E\u093E\u0932
+        \u0915\u0940 \u0932\u0917 \u0930\u0939\u0940 \u0939\u094B!"
+      it: Buongiorno! Sembri stupenda!
+      ja: "\u3053\u3093\u306B\u3061\u306F\uFF01\u541B\u3001\u3081\u3063\u3061\u3083\u7DBA\u9E97\u3060\u3088\uFF01"
+      pt: "Bom dia! Est\xE1s linda demais!"
+      es: "\xA1Buen d\xEDa! \xA1Te ves preciosa!"
+    respect: 4
+  - answer:
+      ru: "\u041F\u0440\u0438\u0432\u0435\u0442! \u041A\u0430\u0436\u0435\u0442\u0441\u044F,
+        \u0442\u0432\u043E\u0439 \u0445\u0430\u043B\u0430\u0442 \u043D\u0435\u043C\u043D\u043E\u0433\u043E
+        \u0440\u0430\u0441\u0441\u0442\u0435\u0433\u043D\u0443\u043B\u0441\u044F.."
+      en: "Hi! It seems your robe is a little undone\u2026"
+      de: "Hallo! Dein Bademantel scheint ein bisschen offen zu sein\u2026"
+      zh: "\u55E8\uFF01\u4F60\u7684\u888D\u5B50\u597D\u50CF\u6709\u70B9\u677E\u5F00\u4E86\u2026"
+      fr: "Salut ! Ton peignoir est un peu entrouvert\u2026"
+      hi: "\u0939\u093E\u092F! \u0932\u0917\u0924\u093E \u0939\u0948 \u0924\u0947\u0930\u093E
+        \u0917\u093E\u0909\u0928 \u0925\u094B\u0921\u093C\u093E \u0916\u0941\u0932
+        \u0917\u092F\u093E \u0939\u0948\u2026"
+      it: "Ciao! Sembra che la tua vestaglia sia un po' slacciata\u2026"
+      ja: "\u3084\u3042\uFF01\u541B\u306E\u30AC\u30A6\u30F3\u304C\u5C11\u3057\u958B\u3044\u3066\u308B\u3088\u2026"
+      pt: "Oi! Parece que o teu roup\xE3o est\xE1 um pouco aberto\u2026"
+      es: "Hola! Parece que tu bata est\xE1 un poco desabrochada\u2026"
+    respect: 2
+  - answer:
+      ru: "\u041C\u043E\u0436\u0435\u0442 \u043F\u0435\u0440\u0435\u0439\u0434\u0435\u043C
+        \u0441\u0440\u0430\u0437\u0443 \u043A \u0431\u043E\u043B\u0435\u0435 \u0431\u043B\u0438\u0437\u043A\u043E\u043C\u0443
+        \u0437\u043D\u0430\u043A\u043E\u043C\u0441\u0442\u0432\u0443?"
+      en: Maybe we should move straight to something more intimate?
+      de: "Sollen wir direkt zu etwas Intimerem \xFCbergehen?"
+      zh: "\u8981\u4E0D\u6211\u4EEC\u76F4\u63A5\u6765\u70B9\u66F4\u4EB2\u5BC6\u7684\u63A5\u89E6\uFF1F"
+      fr: "Et si on passait directement \xE0 quelque chose de plus intime ?"
+      hi: "\u0915\u094D\u092F\u093E \u0939\u092E \u0938\u0940\u0927\u0947 \u091C\u094D\u092F\u093E\u0926\u093E
+        \u0905\u0902\u0924\u0930\u0902\u0917 \u091C\u093E\u0928-\u092A\u0939\u091A\u093E\u0928
+        \u0915\u0930\u0947\u0902?"
+      it: "Magari passiamo subito a qualcosa di pi\xF9 intimo?"
+      ja: "\u3082\u3063\u3068\u89AA\u5BC6\u306B\u306A\u308D\u3046\u304B\uFF1F\u76F4\u63A5\u3069\u3046\uFF1F"
+      pt: "Que tal irmos direto para algo mais \xEDntimo?"
+      es: "\xBFY si pasamos directo a algo m\xE1s \xEDntimo?"
+    respect: 0
+  id: 0

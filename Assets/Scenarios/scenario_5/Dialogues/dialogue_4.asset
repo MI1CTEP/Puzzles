@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6982f52e7d42440a758671d1357932, type: 3}
+  m_Name: dialogue_4
+  m_EditorClassIdentifier: 
+  firstPhrase:
+    ru: "\u0422\u0435\u043F\u0435\u0440\u044C \u043C\u044B \u0432 \u043E\u0434\u043D\u043E\u043C
+      \u043F\u043E\u043C\u0435\u0449\u0435\u043D\u0438\u0438 \u0438 \u043F\u0440\u0438\u0448\u043B\u043E
+      \u0432\u0440\u0435\u043C\u044F, \u043F\u043E\u043A\u0430\u0437\u0430\u0442\u044C
+      \u0442\u0435\u0431\u0435 \u043C\u043E\u044E \u043A\u0438\u0441\u043A\u0443!
+      \u0425\u043E\u0447\u0435\u0448\u044C \u043C\u0435\u043D\u044F?"
+    en: "Now we\u2019re in the same room \u2014 time to show you my pussy! Want me?"
+    de: "Jetzt sind wir im selben Raum \u2013 Zeit, dir meine Muschi zu zeigen! Willst
+      du mich?"
+    zh: "\u73B0\u5728\u6211\u4EEC\u5728\u4E00\u4E2A\u623F\u95F4\u4E86\uFF0C\u8BE5\u7ED9\u4F60\u770B\u6211\u7684\u5C0F\u7A74\u4E86\uFF01\u60F3\u8981\u6211\u5417\uFF1F"
+    fr: "On est enfin dans la m\xEAme pi\xE8ce \u2013 il est temps de te montrer
+      ma chatte ! Tu me veux ?"
+    hi: "\u0905\u092C \u0939\u092E \u090F\u0915 \u0939\u0940 \u0915\u092E\u0930\u0947
+      \u092E\u0947\u0902 \u0939\u0948\u0902 \u0914\u0930 \u092F\u0939 \u0906\u092A\u0915\u094B
+      \u092E\u0947\u0930\u0940 \u091A\u0942\u0924 \u0926\u093F\u0916\u093E\u0928\u0947
+      \u0915\u093E \u0938\u092E\u092F \u0939\u0948! \u0915\u094D\u092F\u093E \u0924\u0941\u092E
+      \u092E\u0941\u091D\u0947 \u091A\u093E\u0939\u0924\u0947 \u0939\u094B?"
+    it: "Ora siamo nella stessa stanza \u2013 \xE8 ora di mostrarti la mia figa!
+      Mi vuoi?"
+    ja: "\u3084\u3063\u3068\u540C\u3058\u90E8\u5C4B\u3002\u4ECA\u5EA6\u306F\u30DE\u30F3\u30B3\u898B\u305B\u3066\u3042\u3052\u308B\uFF01\u6B32\u3057\u3044\uFF1F"
+    pt: "Agora estamos na mesma sala \u2013 hora de te mostrar a rata! Queres-me?"
+    es: "Ahora estamos en la misma habitaci\xF3n \u2013 hora de ense\xF1arte mi co\xF1o.
+      \xBFMe deseas?"
+  phraseVariants:
+  - answer:
+      ru: "\u0414\u0430\u0432\u0430\u0439 \u0437\u0430\u0439\u043C\u0451\u043C\u0441\u044F
+        \u0441\u0435\u043A\u0441\u043E\u043C \u043F\u0440\u044F\u043C\u043E \u0441\u0435\u0439\u0447\u0430\u0441."
+      en: "Let\u2019s fuck right now."
+      de: Komm, lass uns sofort ficken.
+      zh: "\u6765\u5427\uFF0C\u9A6C\u4E0A\u505A\u7231\u3002"
+      fr: Vas-y, on baise tout de suite.
+      hi: "\u091A\u0932 \u0905\u092D\u0940 \u0938\u0947\u0915\u094D\u0938 \u0915\u0930\u0924\u0947
+        \u0939\u0948\u0902\u0964"
+      it: Scopiamo subito.
+      ja: "\u4ECA\u3059\u3050\u30BB\u30C3\u30AF\u30B9\u3057\u3088\u3046\u3002"
+      pt: "Vamos foder j\xE1."
+      es: Venga, follamos ahora mismo.
+    respect: 4
+  - answer:
+      ru: "\u0422\u044B \u043C\u0435\u043D\u044F \u0432\u043E\u0437\u0431\u0443\u0436\u0434\u0430\u0435\u0448\u044C,
+        \u043D\u043E \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u044F \u0432\u0441\u0435
+        \u043F\u043E\u0440\u0442\u0438\u0442."
+      en: You turn me on so much, but the situation is killing the mood.
+      de: "Du machst mich wahnsinnig geil \u2013 aber die Situation killt die Stimmung
+        ein bisschen."
+      zh: "\u4F60\u8BA9\u6211\u597D\u5174\u594B\uFF0C\u4F46\u8FD9\u573A\u666F\u6709\u70B9\u626B\u5174\u3002"
+      fr: "Tu m\u2019excites \xE0 mort \u2013 mais la situation g\xE2che un peu l\u2019ambiance."
+      hi: "\u0924\u0942 \u092E\u0941\u091D\u0947 \u092C\u0939\u0941\u0924 \u0909\u0924\u094D\u0924\u0947\u091C\u093F\u0924
+        \u0915\u0930 \u0930\u0939\u0940 \u0939\u0948 \u2013 \u092A\u0930 \u092F\u0947
+        \u0938\u093F\u091A\u0941\u090F\u0936\u0928 \u0925\u094B\u0921\u093C\u093E
+        \u092E\u0942\u0921 \u0916\u0930\u093E\u092C \u0915\u0930 \u0930\u0939\u0940
+        \u0939\u0948\u0964"
+      it: "Mi fai impazzire \u2013 per\xF2 la situazione rovina un po\u2019 l\u2019atmosfera."
+      ja: "\u8208\u596E\u3055\u305B\u3066\u304F\u308C\u308B\u3051\u3069\u3001\u72B6\u6CC1\u304C\u3061\u3087\u3063\u3068\u306D\u3002"
+      pt: "Deixas-me louco \u2013 mas a situa\xE7\xE3o estraga um pouco o clima."
+      es: "Me pones muy cachondo \u2013 pero la situaci\xF3n mata un poco el rollo."
+    respect: 2
+  - answer:
+      ru: "\u0422\u0430\u043A\u043E\u0439 \u0434\u043E\u043F\u0440\u043E\u0441, \u043C\u043E\u0433
+        \u0431\u044B\u0442\u044C \u0442\u043E\u043B\u044C\u043A\u043E \u0432 \u043C\u043E\u0438\u0445
+        \u0444\u0430\u043D\u0442\u0430\u0437\u0438\u044F\u0445."
+      en: This interrogation could only happen in my wildest fantasies.
+      de: "So eine Vernehmung gab\u2019s nur in meinen geilsten Fantasien."
+      zh: "\u8FD9\u6837\u7684\u5BA1\u8BAF\u53EA\u6709\u6211\u6700\u6DEB\u8361\u7684\u5E7B\u60F3\u91CC\u624D\u6709\u3002"
+      fr: "Ce genre d\u2019interrogatoire n\u2019existait que dans mes fantasmes
+        les plus torrides."
+      hi: "\u0910\u0938\u093E \u092A\u0942\u091B\u0924\u093E\u091B \u0924\u094B \u092E\u0947\u0930\u0940
+        \u0938\u092C\u0938\u0947 \u0935\u093E\u0907\u0932\u094D\u0921 \u092B\u0948\u0902\u091F\u0938\u0940
+        \u092E\u0947\u0902 \u0939\u0940 \u0925\u093E\u0964"
+      it: "Un interrogatorio cos\xEC solo nelle mie fantasie pi\xF9 spinte."
+      ja: "\u3053\u3093\u306A\u53D6\u308A\u8ABF\u3079\u3001\u4FFA\u306E\u30A8\u30ED\u5984\u60F3\u3067\u3057\u304B\u306A\u304B\u3063\u305F\u3002"
+      pt: "Este tipo de interrogat\xF3rio s\xF3 nas minhas fantasias mais quentes."
+      es: "Esta clase de interrogatorio s\xF3lo estaba en mis fantas\xEDas m\xE1s
+        calientes."
+    respect: 0
+  id: 0

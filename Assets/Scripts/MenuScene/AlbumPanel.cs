@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
-using MyGame.Bundles;
 
 namespace MyGame.Menu
 {
@@ -31,7 +30,7 @@ namespace MyGame.Menu
 
         protected override void OnStartShow()
         {
-            BundlesController.Instance.ExtraImagesBundle.Load(GameData.CurrentLevel, null);
+            AsyncContent.LoadImages(null);
         }
 
         protected override void OnEndShow()
@@ -46,7 +45,7 @@ namespace MyGame.Menu
 
         protected override void OnHide()
         {
-            BundlesController.Instance.ExtraImagesBundle.TryUnload();
+            AsyncContent.TryReleaseExtraImages();
             _content.gameObject.SetActive(false);
             _infoBackground.SetActive(false);
             _buttonPrevious.Hide();
@@ -63,7 +62,7 @@ namespace MyGame.Menu
             if (GameData.Achievements.IsUnlock(GameData.CurrentLevel, _currentId))
             {
                 _noImage.SetActive(false);
-                _content.sprite = BundlesController.Instance.ExtraImagesBundle.Sprites[_currentId];
+                _content.sprite = AsyncContent.ExtraImages.sprites[_currentId];
                 _infoBackground.SetActive(false);
             }
             else
@@ -94,7 +93,7 @@ namespace MyGame.Menu
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            BundlesController.Instance.ExtraImagesBundle.TryUnload();
+            AsyncContent.TryReleaseExtraImages();
         }
     }
 }

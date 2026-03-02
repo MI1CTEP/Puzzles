@@ -1,8 +1,10 @@
 using System.Collections.Generic;
+using UnityEngine;
 
-namespace MyGame.Gameplay.Dialogue
+namespace MyGame
 {
-    public sealed class SimpleDialogue
+    [CreateAssetMenu(menuName = "ScriptableObjects/SimpleDialogue")]
+    public sealed class SimpleDialogue : ScriptableObject
     {
         public Languages firstPhrase;
         public List<PhraseVariant> phraseVariants;
@@ -14,6 +16,5 @@ namespace MyGame.Gameplay.Dialogue
     {
         public Languages answer;
         public int respect;
-        public Languages secondPhrase;
     }
 }

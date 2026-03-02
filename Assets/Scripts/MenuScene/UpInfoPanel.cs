@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using MyGame.Bundles;
 
 namespace MyGame.Menu
 {
@@ -69,12 +68,12 @@ namespace MyGame.Menu
         private void ChangeStep(int value)
         {
             _step += value;
-            int maxCurentIndexStage = BundlesController.Instance.MainResourcesBundle.Sprites.Count - 1;
+            int maxCurentIndexStage = AsyncContent.Images.sprites.Length - 1;
             if (_step < 0) _step = maxCurentIndexStage;
             else if (_step > maxCurentIndexStage) _step = 0;
             GameData.CurrentPuzzleStep = _step;
-            if (BundlesController.Instance.MainResourcesBundle.Sprites.Count > _step)
-                _contentImage.sprite = BundlesController.Instance.MainResourcesBundle.Sprites[_step];
+            //if (BundlesController.Instance.MainResourcesBundle.Sprites.Count > _step)
+            //    _contentImage.sprite = BundlesController.Instance.MainResourcesBundle.Sprites[_step];
             UpdateTextStep();
 
             //Если доступен
