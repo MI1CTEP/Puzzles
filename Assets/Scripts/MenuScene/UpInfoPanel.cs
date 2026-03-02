@@ -72,8 +72,7 @@ namespace MyGame.Menu
             if (_step < 0) _step = maxCurentIndexStage;
             else if (_step > maxCurentIndexStage) _step = 0;
             GameData.CurrentPuzzleStep = _step;
-            //if (BundlesController.Instance.MainResourcesBundle.Sprites.Count > _step)
-            //    _contentImage.sprite = BundlesController.Instance.MainResourcesBundle.Sprites[_step];
+            _contentImage.sprite = AsyncContent.Images.sprites[_step];
             UpdateTextStep();
 
             //Если доступен

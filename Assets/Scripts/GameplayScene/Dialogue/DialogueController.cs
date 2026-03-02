@@ -151,7 +151,7 @@ namespace MyGame.Gameplay.Dialogue
                 for (int j = 0; j < phraseVariants.Count; j++)
                 {
                     if (phraseVariants[j].respect > max)
-                        max = phraseVariants[i].respect;
+                        max = phraseVariants[j].respect;
                 }
                 _maxSympathy += max;
             }
