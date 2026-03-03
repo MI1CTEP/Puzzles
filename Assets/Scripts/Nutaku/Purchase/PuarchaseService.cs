@@ -1,6 +1,3 @@
-
-
-
 #if UNITY_WEBGL
 using Cysharp.Threading.Tasks;
 using I2.Loc.SimpleJSON;
@@ -34,7 +31,7 @@ public class PuarchaseService : MonoBehaviour
 
     public void Initialize()
     {
-        Debug.Log("PuarchaseService initialized for WebGL");
+       // Debug.Log("PuarchaseService initialized for WebGL");
     }
 
 
@@ -45,18 +42,12 @@ public class PuarchaseService : MonoBehaviour
     {
         if (!item.available)
         {
-            Debug.Log("Item is not available for purchase");
+          //  Debug.Log("Item is not available for purchase");
             return;
         }
 
         _currentPurchaseItem = item;
-        Debug.Log("Purchasing");
 
-        Debug.Log(item.priceGold);
-        Debug.Log(item.name);
-        Debug.Log(item.sku);
-        Debug.Log(item.imageUrl);
-        Debug.Log(item.description);
 
         var paymentData = new PaymentData
         {
@@ -69,7 +60,7 @@ public class PuarchaseService : MonoBehaviour
         };
 
         string json = JsonUtility.ToJson(paymentData);
-        Debug.Log(json);
+       
 
 
         _currentPaymentId = "";
@@ -85,9 +76,7 @@ public class PuarchaseService : MonoBehaviour
 
     public void OnPaymentResultFromBrowser(string jsonResult)
     {
-        Debug.Log("Browser payment result");
 
-        Debug.Log(jsonResult);
 
         var json = JSON.Parse(jsonResult);
         string status = json["status"].Value;
@@ -102,7 +91,7 @@ public class PuarchaseService : MonoBehaviour
 
             if (status == "success")
             {
-                Debug.Log("Purchase completed in browser!");
+                //Debug.Log("Purchase completed in browser!");
 
                 succesCallbackPurchase?.Invoke();
                 succesCallbackPurchase = null;
@@ -112,17 +101,17 @@ public class PuarchaseService : MonoBehaviour
             else if (status == "cancel")
             {
                 succesCallbackPurchase = null;
-                Debug.Log("Purchase cancelled in browser");
+               // Debug.Log("Purchase cancelled in browser");
             }
             else if (status == "errorFromGPHS")
             {
                 succesCallbackPurchase = null;
-                Debug.Log("Payment failed: Server error (GPHS)");
+                //Debug.Log("Payment failed: Server error (GPHS)");
             }
             else
             {
                 succesCallbackPurchase = null;
-                Debug.Log("Payment error in browser");
+               // Debug.Log("Payment error in browser");
             }
 
 
@@ -165,17 +154,17 @@ public class PuarchaseService : MonoBehaviour
     {
         await UniTask.Delay(TimeSpan.FromSeconds(1.5f));
         await LoadInventoryAsync();
-        Debug.Log("Successfully purchased");
+      //  Debug.Log("Successfully purchased");
     }
 
 
     // ========== ИНВЕНТАРЬ ==========
     public async UniTask LoadInventoryAsync()
     {
-        Debug.Log("Start LoadInventoryAsync");
+        //Debug.Log("Start LoadInventoryAsync");
 
         string tempUrl = "https://api.tetragon-games.org";
-        Debug.Log("Inventory URL");
+       // Debug.Log("Inventory URL");
 
         var (success, json) = await MakeAuthenticatedRequestAsync($"{tempUrl}/api/inventory", "GET", null);
 
@@ -183,18 +172,18 @@ public class PuarchaseService : MonoBehaviour
         {
             try
             {
-                Debug.Log("Raw inventory JSON length}");
+               // Debug.Log("Raw inventory JSON length}");
 
                 if (string.IsNullOrEmpty(json))
                 {
-                    Debug.LogError("Empty inventory response from server");
+                   // Debug.LogError("Empty inventory response from server");
                     return;
                 }
 
                 // Проверяем, что ответ начинается с { (объект)
                 if (!json.TrimStart().StartsWith("{"))
                 {
-                    Debug.LogError("Invalid JSON format - doesn't start with ");
+                   // Debug.LogError("Invalid JSON format - doesn't start with ");
                     return;
                 }
 
@@ -205,7 +194,7 @@ public class PuarchaseService : MonoBehaviour
                 var inventoryArray = response["inventory"] as JArray;
                 if (inventoryArray == null)
                 {
-                    Debug.LogError("inventory array is null");
+                   // Debug.LogError("inventory array is null");
                     return;
                 }
 
@@ -228,18 +217,18 @@ public class PuarchaseService : MonoBehaviour
                 }
 
                 int totalItems = response["total_items"]?.Value<int>() ?? _inventoryItems.Count;
-                Debug.Log("Loaded inventory items");
+               // Debug.Log("Loaded inventory items");
             }
             catch (Exception ex)
             {
-                Debug.LogError("Error parsing inventory:");
-                Debug.LogError("Stack trace: ");
-                Debug.LogError("JSON that caused error:");
+                //Debug.LogError("Error parsing inventory:");
+                //Debug.LogError("Stack trace: ");
+                //Debug.LogError("JSON that caused error:");
             }
         }
         else
         {
-            Debug.LogError("Failed to load inventory");
+            //Debug.LogError("Failed to load inventory");
         }
     }
 
@@ -364,7 +353,7 @@ public class PuarchaseService : MonoBehaviour
 
     public bool IsAvaliableBonusStage(int idLevel)
     {
-        Debug.Log("IsAvaliableBonusStage");
+        //Debug.Log("IsAvaliableBonusStage");
         string category = "bonus_stage";
         foreach (var item in _inventoryItems)
         {
@@ -471,42 +460,42 @@ public class PuarchaseService : MonoBehaviour
         {
             try
             {
-                Debug.Log("Raw shop JSON response length:");
+               // Debug.Log("Raw shop JSON response length:");
 
                 if (string.IsNullOrEmpty(json))
                 {
-                    Debug.LogError("Empty shop response from server");
+                  //  Debug.LogError("Empty shop response from server");
                     return;
                 }
 
                 // Проверяем, что ответ начинается с { (объект)
                 if (!json.TrimStart().StartsWith("{"))
                 {
-                    Debug.LogError("Invalid JSON format - doesn't start with ");
+                    //Debug.LogError("Invalid JSON format - doesn't start with ");
                     return;
                 }
 
                 // ИСПОЛЬЗУЕМ NEWTONSOFT ВМЕСТО JsonUtility
 
-                Debug.Log("Raw shop JSON response length: 0");
-                Debug.Log(_shopItems);
+                //Debug.Log("Raw shop JSON response length: 0");
+                //Debug.Log(_shopItems);
                 var response = JObject.Parse(json);
                 //Debug.Log(response);
 
 
-                Debug.Log(gameObject);
+               // Debug.Log(gameObject);
 
                 _shopItems.Clear();
-                Debug.Log(_shopItems);
+               // Debug.Log(_shopItems);
                 var itemsArray = response["items"] as JArray;
                 if (itemsArray == null)
                 {
-                    Debug.LogError("items array is null");
+                   // Debug.LogError("items array is null");
                     return;
                 }
 
 
-                Debug.Log("Raw shop JSON response length: 1");
+              //  Debug.Log("Raw shop JSON response length: 1");
 
                 //Дошла вот до сюда _shopItems == null
                 //Поэтому не может добавит в _shopItems
@@ -531,19 +520,19 @@ public class PuarchaseService : MonoBehaviour
                 }
 
 
-                Debug.Log("Raw shop JSON response length: 2");
+                //Debug.Log("Raw shop JSON response length: 2");
 
             }
             catch (Exception ex)
             {
-                Debug.LogError("Error parsing shop items");
-                Debug.LogError("Stack trace");
-                Debug.LogError("JSON that caused error");
+                //Debug.LogError("Error parsing shop items");
+                //Debug.LogError("Stack trace");
+                //Debug.LogError("JSON that caused error");
             }
         }
         else
         {
-            Debug.LogError("Failed to load shop items");
+          //  Debug.LogError("Failed to load shop items");
         }
     }
 
@@ -566,7 +555,7 @@ public class PuarchaseService : MonoBehaviour
 
     public ShopItem GetShopItemBonusStage(int index)
     {
-        Debug.Log("GetShopItemBonusStage");
+        //Debug.Log("GetShopItemBonusStage");
 
         string category = "bonus_stage";
         foreach (var shopItem in _shopItems)
@@ -731,11 +720,11 @@ public class PuarchaseService : MonoBehaviour
             try
             {
                 var profileResponse = JsonUtility.FromJson<ProfileResponse>(json);
-                Debug.Log("Profile loaded: ");
+               // Debug.Log("Profile loaded: ");
             }
             catch (Exception ex)
             {
-                Debug.Log("Error parsing profile");
+               // Debug.Log("Error parsing profile");
             }
         }
     }
@@ -748,8 +737,8 @@ public class PuarchaseService : MonoBehaviour
     // ========== HTTP ЗАПРОСЫ (UniTask версии) ==========
     private async UniTask<(bool success, string response)> MakeAuthenticatedRequestAsync(string url, string method, string body)
     {
-        Debug.Log("MakeAuthenticatedRequestAsync");
-        Debug.Log("SessionToken exists");
+        //Debug.Log("MakeAuthenticatedRequestAsync");
+        //Debug.Log("SessionToken exists");
 
         using (UnityWebRequest request = new UnityWebRequest(url, method))
         {
@@ -769,23 +758,23 @@ public class PuarchaseService : MonoBehaviour
             }
             else
             {
-                Debug.LogError("No session token available for authenticated request!");
+               // Debug.LogError("No session token available for authenticated request!");
             }
 
             request.timeout = 10;
 
             await request.SendWebRequest();
 
-            Debug.Log("Response code");
+            //Debug.Log("Response code");
 
             if (request.result == UnityWebRequest.Result.Success)
             {
                 string responseText = request.downloadHandler?.text ?? "";
-                Debug.Log("MakeAuthenticatedRequestAsync Success, response length");
+               // Debug.Log("MakeAuthenticatedRequestAsync Success, response length");
 
                 if (responseText.Length > 0)
                 {
-                    Debug.Log("Response preview");
+                    //Debug.Log("Response preview");
                 }
 
                 return (true, responseText);
@@ -793,19 +782,19 @@ public class PuarchaseService : MonoBehaviour
             else
             {
                 string errorText = request.error ?? "Unknown error";
-                Debug.LogError("Auth request error ");
+               // Debug.LogError("Auth request error ");
 
                 if (request.downloadHandler != null && !string.IsNullOrEmpty(request.downloadHandler.text))
                 {
                     string errorResponse = request.downloadHandler.text;
-                    Debug.LogError("Error response body");
+                   // Debug.LogError("Error response body");
 
                     try
                     {
                         var errorResponseObj = JsonUtility.FromJson<ErrorResponse>(errorResponse);
                         if (!string.IsNullOrEmpty(errorResponseObj?.detail))
                         {
-                            Debug.LogError("Server error detail");
+                           // Debug.LogError("Server error detail");
                         }
                     }
                     catch { }
@@ -813,12 +802,12 @@ public class PuarchaseService : MonoBehaviour
 
                 if (request.responseCode == 401)
                 {
-                    Debug.LogError("Session expired or invalid. Please log in again.");
+                   // Debug.LogError("Session expired or invalid. Please log in again.");
                     //NutakuAPIInitializator.instance?.ShowLoginScreen();
                 }
                 else if (request.responseCode == 0)
                 {
-                    Debug.LogError("Network error - possible CORS or connection issue");
+                  //  Debug.LogError("Network error - possible CORS or connection issue");
                 }
 
                 return (false, errorText);
@@ -828,7 +817,7 @@ public class PuarchaseService : MonoBehaviour
 
     private async UniTask<(bool success, string response)> MakeGetRequestAsync(string url)
     {
-        Debug.Log("MakeGetRequestAsync");
+       // Debug.Log("MakeGetRequestAsync");
 
         using (UnityWebRequest request = UnityWebRequest.Get(url))
         {
@@ -839,11 +828,11 @@ public class PuarchaseService : MonoBehaviour
             if (request.result == UnityWebRequest.Result.Success)
             {
                 string responseText = request.downloadHandler?.text ?? "";
-                Debug.Log("MakeGetRequestAsync Success, response length");
+               // Debug.Log("MakeGetRequestAsync Success, response length");
 
                 if (responseText.Length > 0)
                 {
-                    Debug.Log("Response preview");
+                   // Debug.Log("Response preview");
                 }
 
                 return (true, responseText);
@@ -851,19 +840,19 @@ public class PuarchaseService : MonoBehaviour
             else
             {
                 string errorText = request.error ?? "Unknown error";
-                Debug.LogError("HTTP GET error ");
+                //Debug.LogError("HTTP GET error ");
 
                 if (request.downloadHandler != null && !string.IsNullOrEmpty(request.downloadHandler.text))
                 {
                     string errorResponse = request.downloadHandler.text;
-                    Debug.LogError("Error response body");
+                   // Debug.LogError("Error response body");
 
                     try
                     {
                         var errorResponseObj = JsonUtility.FromJson<ErrorResponse>(errorResponse);
                         if (!string.IsNullOrEmpty(errorResponseObj?.detail))
                         {
-                            Debug.LogError("Server error detail");
+                          //  Debug.LogError("Server error detail");
                         }
                     }
                     catch { }
@@ -871,7 +860,7 @@ public class PuarchaseService : MonoBehaviour
 
                 if (request.responseCode == 0)
                 {
-                    Debug.LogError("Network error - possible CORS or connection issue");
+                   // Debug.LogError("Network error - possible CORS or connection issue");
                 }
 
                 return (false, errorText);
@@ -882,7 +871,7 @@ public class PuarchaseService : MonoBehaviour
     // ========== УПРАВЛЕНИЕ ИНВЕНТАРЕМ ==========
     public async UniTask MakeInventoryRequestAsync(string sku, int quantityChange, UnityAction succesCallback = null, UnityAction failCallback = null)
     {
-        Debug.Log("MakeInventoryRequestAsync");
+       // Debug.Log("MakeInventoryRequestAsync");
 
         var requestData = new UpdateInventoryRequest
         {
@@ -905,14 +894,14 @@ public class PuarchaseService : MonoBehaviour
 
             if (request.result == UnityWebRequest.Result.Success)
             {
-                Debug.Log("MakeInventoryRequestAsync Success");
+               // Debug.Log("MakeInventoryRequestAsync Success");
               
                 await LoadInventoryAsync();
                 succesCallback?.Invoke();
             }
             else
             {
-                Debug.LogError("Failed to update inventory");
+              //  Debug.LogError("Failed to update inventory");
                 failCallback?.Invoke();
             }
         }

@@ -20,6 +20,10 @@ namespace MyGame
             SceneManager.LoadScene(nameScene);
         }
 
-        public static void Exit() => Application.Quit();
+        public static void Exit()
+        {
+            NutakuAPIInitializator.instance.ExitGame();
+        }
+
     }
 }

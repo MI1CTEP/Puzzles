@@ -35,7 +35,7 @@ namespace MyGame.Gameplay
             //OnPlayVideo(scenarioStage).Forget();
 
 
-            Debug.Log(scenarioStage.videoId);
+           // Debug.Log(scenarioStage.videoId);
 
             _scenarioStage = scenarioStage;
             _buttons.SetActive(false);
@@ -47,7 +47,7 @@ namespace MyGame.Gameplay
             //string pathClip = $"{Application.streamingAssetsPath}/Videos/scenario_{GameData.CurrentLevel + 1}/video_{_scenarioStage.videoId}.mp4";
            // https://api.tetragon-games.org/
                 string pathClip = $"https://api.tetragon-games.org/webgl/StreamingAssets/Videos/scenario_{GameData.CurrentLevel + 1}/video_{_scenarioStage.videoId}.mp4";
-                Debug.Log(pathClip);
+                //Debug.Log(pathClip);
                 _videoPlayer.url = pathClip;
             }
             else

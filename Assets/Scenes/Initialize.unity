@@ -2180,6 +2180,7 @@ MonoBehaviour:
   _PanelQA: {fileID: 910730663}
   _buttonQA: {fileID: 1215279734}
   _panelDeactivitedSession: {fileID: 1686271401}
+  IsEditorWebGL: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

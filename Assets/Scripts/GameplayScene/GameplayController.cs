@@ -138,7 +138,7 @@ namespace MyGame.Gameplay
                     break;
                 case "PaidContent":
 
-                    Debug.Log("PaidContent");
+                   // Debug.Log("PaidContent");
                     //GameData.StageGirlLevel.UnlockStage(GameData.CurrentLevel, GameData.CurrentStep);
 
 
