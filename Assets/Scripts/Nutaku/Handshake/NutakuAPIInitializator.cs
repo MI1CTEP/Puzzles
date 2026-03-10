@@ -13,6 +13,10 @@ public class NutakuAPIInitializator : MonoBehaviour
 {
     public static NutakuAPIInitializator instance;
 
+    private string _apiBaseUrl = "https://api.tetragon-games.org"; //"https://sandbox-api.tetragon-games.org";
+    public string APIBaseUrl => _apiBaseUrl;
+
+
     [SerializeField] private LoginPanel _loginPanel;
     [SerializeField] private PanelUserInfo _panelUserInfo;
     //[SerializeField] private UIShopController _uIShopController;
@@ -57,9 +61,10 @@ public class NutakuAPIInitializator : MonoBehaviour
     private void Start()
     {
 
+        SetSandboxArea();
         // Debug.Log(Application.persistentDataPath);
 
-        
+
 
         NutakuSdkConfig.loginResultToGameCallbackDelegate = LoginResultCallback;
 
@@ -89,6 +94,16 @@ public class NutakuAPIInitializator : MonoBehaviour
 
     }
 
+
+    public void SetSandboxArea()
+    {
+        NutakuSdkConfig.Environment = "SANDBOX"; // Can use "SANDBOX" or "PRODUCTION"
+        NutakuSdkConfig.TitleId = "hot-stories-puzzles"; // the TITLE ID of your game from the CMS // sandbox "hot-stories-puzzles" //prod "sweet-stories-puzzles"
+
+        _apiBaseUrl = "https://sandbox-api.tetragon-games.org";
+
+        Debug.Log(NutakuSdkConfig.Environment);
+    }
 
     void OnApplicationPause(bool pauseStatus)
     {

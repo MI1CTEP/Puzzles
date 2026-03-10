@@ -11,7 +11,7 @@ using UnityEngine.Networking;
 public class PuarchaseService : MonoBehaviour
 {
 
-    private string _apiBaseUrl = "https://api.tetragon-games.org";
+    private string _apiBaseUrl => NutakuAPIInitializator.instance.APIBaseUrl; // "https://api.tetragon-games.org"; //"https://sandbox-api.tetragon-games.org";
     public string ApiBaseUrl => _apiBaseUrl;
 
 
